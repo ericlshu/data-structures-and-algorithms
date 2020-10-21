@@ -99,4 +99,11 @@ public class LeetCodeTest
         ListNode node1 = new ListNode(1,node2);
         obj.reorderList(node1);
     }
+
+    @Test
+    public void testP0925()
+    {
+        P0925_LongPressedName obj = new P0925_LongPressedName();
+        System.out.println("result = " + obj.isLongPressedName("saeedi","ssaaeediixxxiii"));
+    }
 }
