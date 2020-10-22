@@ -106,4 +106,11 @@ public class LeetCodeTest
         P0925_LongPressedName obj = new P0925_LongPressedName();
         System.out.println("result = " + obj.isLongPressedName("saeedi","ssaaeediixxxiii"));
     }
+
+    @Test
+    public void testP0028()
+    {
+        P0028_ImplementStrStr obj = new P0028_ImplementStrStr();
+        System.out.println("result = " + obj.strStr("mississippi","issippip"));
+    }
 }
