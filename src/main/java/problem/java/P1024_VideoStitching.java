@@ -50,7 +50,7 @@ import java.util.Arrays;
  */
 public class P1024_VideoStitching
 {
-    public int videoStitching(int[][] clips, int T)
+    public int videoStitching_1(int[][] clips, int T)
     {
         int[] dp = new int[T + 1];
         Arrays.fill(dp, T + 1);
@@ -65,5 +65,33 @@ public class P1024_VideoStitching
             if (dp[i] == T + 1) return -1;
         }
         return dp[T] == T + 1 ? -1 : dp[T];
+    }
+
+    public int videoStitching(int[][] clips, int T)
+    {
+        // 用于保存以当前下标为起点的区间的最大的结束位置
+        int[] maxEnd = new int[T];
+        // 遍历clips，初始化maxEnd数组(每个元素开头的区间的最大结束位置)
+        for (int[] clip : clips)
+        {
+            if (clip[0] < T)
+                maxEnd[clip[0]] = Math.max(maxEnd[clip[0]], clip[1]);
+        }
+        // preEnd    记录结果中上一次的最大结束位置(本轮的最小开始位置)
+        // nextStart 记录当前遍历到的区间最大结束位置(下一轮的起始位置)
+        int nextStart = 0, result = 0, preEnd = 0;
+        for (int i = 0; i < T; i++)
+        {
+            nextStart = Math.max(nextStart, maxEnd[i]);
+            // 当前元素 == 本区间最大元素(无法到达后续位置)
+            if (i == nextStart) return -1;
+            // 当前元素 == 上一个区间的最大元素
+            if (i == preEnd)
+            {
+                result++;
+                preEnd = nextStart;
+            }
+        }
+        return result;
     }
 }
