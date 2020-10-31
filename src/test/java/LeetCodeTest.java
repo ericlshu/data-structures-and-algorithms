@@ -130,4 +130,11 @@ public class LeetCodeTest
         int[] nums = {0,2,0,0,2,0,2,1,1,0,2,1,0,0,1,0,2,1,2,0,1,1,0,2,2,1,2,2,0,0,0,1,0,2,0,0,1,2,0,1,0,2,0,2,0,0,0,0,2,1,0,0,0,0,1,0,2,1,2,2,1,0,0,1,0,2,0,0,0,2,1,0,1,2,1,0,1,0,2,1,0,2,0,2,1,1,2,0,1,0,1,1,1,1,2,1,2,2,2,0};
         System.out.println("result = " + obj.longestMountain(nums));
     }
+
+    @Test
+    public void testP1207()
+    {
+        P0017_LetterCombinationsOfAPhoneNumber obj = new P0017_LetterCombinationsOfAPhoneNumber();
+        System.out.println("result = " + obj.letterCombinations("232"));
+    }
 }
