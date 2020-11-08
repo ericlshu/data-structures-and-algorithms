@@ -1,7 +1,9 @@
 import domain.ListNode;
 import org.junit.Test;
-import problem.java.*;
-import sun.security.util.Length;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Description :
@@ -127,7 +129,7 @@ public class LeetCodeTest
     public void testP0845()
     {
         P0845_LongestMountainInArray obj = new P0845_LongestMountainInArray();
-        int[] nums = {0,2,0,0,2,0,2,1,1,0,2,1,0,0,1,0,2,1,2,0,1,1,0,2,2,1,2,2,0,0,0,1,0,2,0,0,1,2,0,1,0,2,0,2,0,0,0,0,2,1,0,0,0,0,1,0,2,1,2,2,1,0,0,1,0,2,0,0,0,2,1,0,1,2,1,0,1,0,2,1,0,2,0,2,1,1,2,0,1,0,1,1,1,1,2,1,2,2,2,0};
+        int[] nums = {0, 2, 0, 0, 2, 0, 2, 1, 1, 0, 2, 1, 0, 0, 1, 0, 2, 1, 2, 0, 1, 1, 0, 2, 2, 1, 2, 2, 0, 0, 0, 1, 0, 2, 0, 0, 1, 2, 0, 1, 0, 2, 0, 2, 0, 0, 0, 0, 2, 1, 0, 0, 0, 0, 1, 0, 2, 1, 2, 2, 1, 0, 0, 1, 0, 2, 0, 0, 0, 2, 1, 0, 1, 2, 1, 0, 1, 0, 2, 1, 0, 2, 0, 2, 1, 1, 2, 0, 1, 0, 1, 1, 1, 1, 2, 1, 2, 2, 2, 0};
         System.out.println("result = " + obj.longestMountain(nums));
     }
 
@@ -136,5 +138,124 @@ public class LeetCodeTest
     {
         P0017_LetterCombinationsOfAPhoneNumber obj = new P0017_LetterCombinationsOfAPhoneNumber();
         System.out.println("result = " + obj.letterCombinations("232"));
+    }
+
+    @Test
+    public void testP0381()
+    {
+        P0381_InsertDeleteAndGetRandom obj = new P0381_InsertDeleteAndGetRandom();
+        P0381_InsertDeleteAndGetRandom.RandomizedCollection randomizedCollection = obj.new RandomizedCollection();
+        System.out.println("result = " + randomizedCollection.insert(21));
+    }
+
+    @Test
+    public void testP0139()
+    {
+        P0139_WordBreak obj = new P0139_WordBreak();
+        String s = "catsandog";
+        List<String> wordDict = new ArrayList<>();
+        wordDict.add("cats");
+        wordDict.add("dog");
+        wordDict.add("sand");
+        wordDict.add("and");
+        wordDict.add("cat");
+        wordDict.add("leet");
+        wordDict.add("code");
+        wordDict.add("apple");
+        wordDict.add("pen");
+        System.out.println("result = " + obj.wordBreak(s, wordDict));
+    }
+
+    @Test
+    public void testP0035()
+    {
+        P0035_SearchInsertPosition obj = new P0035_SearchInsertPosition();
+        int[] nums = {1, 3, 5, 6};
+        int target = 7;
+        System.out.println("result = " + obj.searchInsert_1(nums, target));
+    }
+
+
+    @Test
+    public void testP0349()
+    {
+        P0349_IntersectionOfTwoArrays obj = new P0349_IntersectionOfTwoArrays();
+        int[] nums1 = {1, 2, 2, 1}, nums2 = {2, 2};
+        int[] result = obj.intersection(nums1, nums2);
+        for (int i : result)
+        {
+            System.out.println("i = " + i);
+        }
+    }
+
+    @Test
+    public void testP0053()
+    {
+        P0053_MaximumSubarray obj = new P0053_MaximumSubarray();
+        int[] nums = {-24};
+        System.out.println("result = " + obj.maxSubArray_1(nums));
+    }
+
+    @Test
+    public void testP0941()
+    {
+        P0941_ValidMountainArray obj = new P0941_ValidMountainArray();
+        int[] nums = {
+                9, 8, 7, 6, 5, 4};
+        System.out.println("result = " + obj.validMountainArray(nums));
+    }
+
+    @Test
+    public void testP0057()
+    {
+        P0057_InsertInterval obj = new P0057_InsertInterval();
+        int[][] intervals = {{1, 2}, {3, 5}, {6, 7}, {8, 10}, {12, 16}};
+        int[] newInterval = {4, 8};
+        int[][] ansList = obj.insert(intervals, newInterval);
+        for (int[] ints : ansList)
+        {
+            System.out.println("ansList[i] = " + Arrays.toString(ints));
+        }
+    }
+
+    @Test
+    public void testP0056()
+    {
+        P0056_MergeIntervals obj = new P0056_MergeIntervals();
+        int[][] intervals = {{1, 3}, {2, 6}, {8, 10}, {15, 18}};
+        int[][] merge = obj.merge(intervals);
+        for (int[] ints : merge)
+        {
+            System.out.println("ints = " + Arrays.toString(ints));
+        }
+    }
+
+    @Test
+    public void testP1356()
+    {
+        P1356_SortIntegersByTheNumberOf1Bits obj = new P1356_SortIntegersByTheNumberOf1Bits();
+
+        int[] arr = {0, 1, 2, 3, 4, 5, 6, 7, 8};
+        System.out.println("obj.get(i) : " + Arrays.toString(obj.sortByBits_1(arr)));
+    }
+
+    @Test
+    public void testP0121()
+    {
+        P0121_BestTimeToBuyAndSellStock obj = new P0121_BestTimeToBuyAndSellStock();
+
+        int[] arr = {0, 1, 2, 3, 4, 5, 6, 7, 8};
+        int[] nums = {7,1,5,3,6,4};
+        System.out.println("result = " + obj.maxProfit_1(nums));
+    }
+
+    @Test
+    public void testP0122()
+    {
+        P0122_BestTimeToBuyAndSellStockII obj = new P0122_BestTimeToBuyAndSellStockII();
+
+        int[] arr = {0, 1, 2, 3, 4, 5, 6, 7, 8};
+        int[] nums = {7,1,5,3,6,4};
+        System.out.println("result = " + obj.maxProfit_1(nums));
     }
 }
