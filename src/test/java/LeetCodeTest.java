@@ -1,5 +1,6 @@
 import domain.ListNode;
 import org.junit.Test;
+import solution.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -31,7 +32,7 @@ public class LeetCodeTest
     public void testP0003()
     {
         P0003_LongestSubstringWithoutRepeatingCharacters obj = new P0003_LongestSubstringWithoutRepeatingCharacters();
-        int length = obj.lengthOfLongestSubstring("P0003_LongestSubstringWithoutRepeatingCharacters");
+        int length = obj.lengthOfLongestSubstring("solution.P0003_LongestSubstringWithoutRepeatingCharacters");
         System.out.println("length = " + length);
     }
 
