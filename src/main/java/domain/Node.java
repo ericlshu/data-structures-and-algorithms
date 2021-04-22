@@ -7,7 +7,7 @@ package domain;
  * @date 2020-10-15 22:34
  * @since JDK 1.8
  */
-public class Node
+public class Node implements Comparable<Node>
 {
     public int val;
     public Node left;
@@ -25,5 +25,11 @@ public class Node
         left = _left;
         right = _right;
         next = _next;
+    }
+
+    @Override
+    public int compareTo(Node o)
+    {
+        return 0;
     }
 }
