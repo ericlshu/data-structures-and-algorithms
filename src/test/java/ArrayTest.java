@@ -12,8 +12,7 @@ import java.util.Arrays;
  * @date 2021-03-27 13:33
  * @since JDK 1.8
  */
-public class ArrayTest
-{
+public class ArrayTest {
     @Test
     public void testP0001()
     {
@@ -21,8 +20,7 @@ public class ArrayTest
         int[] numbers = {2, 5, 7, 9, 12};
         int sum = 17;
         int[] result = obj.twoNumbersAddUp02(numbers, sum);
-        for (int i : result)
-        {
+        for (int i : result) {
             System.out.println("    i = " + i);
         }
     }
@@ -55,8 +53,7 @@ public class ArrayTest
         P0056_MergeIntervals obj = new P0056_MergeIntervals();
         int[][] intervals = {{1, 3}, {2, 6}, {8, 10}, {15, 18}};
         int[][] merge = obj.merge(intervals);
-        for (int[] ints : merge)
-        {
+        for (int[] ints : merge) {
             System.out.println("ints = " + Arrays.toString(ints));
         }
     }
@@ -68,8 +65,7 @@ public class ArrayTest
         int[][] intervals = {{1, 2}, {3, 5}, {6, 7}, {8, 10}, {12, 16}};
         int[] newInterval = {4, 8};
         int[][] ansList = obj.insert(intervals, newInterval);
-        for (int[] ints : ansList)
-        {
+        for (int[] ints : ansList) {
             System.out.println("ansList[i] = " + Arrays.toString(ints));
         }
     }
@@ -104,8 +100,34 @@ public class ArrayTest
     public void test1122()
     {
         P1122_RelativeSortArray obj = new P1122_RelativeSortArray();
-        int[] arr1 = {2,3,1,3,2,4,6,7,9,2,19}, arr2 = {2,1,4,3,9,6};
-        System.out.println("result = " + Arrays.toString(obj.relativeSortArray(arr1,arr2)));
+        int[] arr1 = {2, 3, 1, 3, 2, 4, 6, 7, 9, 2, 19}, arr2 = {2, 1, 4, 3, 9, 6};
+        System.out.println("result = " + Arrays.toString(obj.relativeSortArray(arr1, arr2)));
     }
+
+    @Test
+    public void test016()
+    {
+        P0016_3SumClosest obj = new P0016_3SumClosest();
+    }
+
+
+    @Test
+    public void test0018()
+    {
+        P0018_4Sum obj = new P0018_4Sum();
+    }
+
+    @Test
+    public void test0033()
+    {
+        P0033_SearchInRotatedSortedArray obj = new P0033_SearchInRotatedSortedArray();
+//        int[] nums = {4,5,6,7,0,1,2};
+        int[] nums = {1};
+        int result = obj.search(nums, 1);
+        System.out.println("result = " + result);
+    }
+
+
+
 
 }
