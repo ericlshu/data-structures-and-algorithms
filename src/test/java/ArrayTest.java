@@ -4,6 +4,7 @@ import solution.array.*;
 import solution.binary_search.P1122_RelativeSortArray;
 
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * Description :
@@ -135,6 +136,16 @@ public class ArrayTest {
 //        int[] nums = {1};
         int[] result = obj.searchRange(nums, 8);
         System.out.println("result = " + Arrays.toString(result));
+    }
+
+    @Test
+    public void test0039()
+    {
+        P0039_CombinationSum obj = new P0039_CombinationSum();
+        int[] nums = {2,3,5};
+        System.out.println("candidates = " + Arrays.toString(nums));
+        List<List<Integer>> result = obj.combinationSum(nums, 8);
+        System.out.println("result = " + result);
     }
 
 }
