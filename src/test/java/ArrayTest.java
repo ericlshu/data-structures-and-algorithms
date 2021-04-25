@@ -127,7 +127,14 @@ public class ArrayTest {
         System.out.println("result = " + result);
     }
 
-
-
+    @Test
+    public void test0034()
+    {
+        P0034_FindFirstAndLastPositionOfElementInSortedArray obj = new P0034_FindFirstAndLastPositionOfElementInSortedArray();
+        int[] nums = {5,7,7,8,8,8,10};
+//        int[] nums = {1};
+        int[] result = obj.searchRange(nums, 8);
+        System.out.println("result = " + Arrays.toString(result));
+    }
 
 }
