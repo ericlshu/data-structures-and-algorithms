@@ -148,4 +148,13 @@ public class ArrayTest {
         System.out.println("result = " + result);
     }
 
+    @Test
+    public void testOffer45()
+    {
+        Offer45_ArrayToMinNumber obj = new Offer45_ArrayToMinNumber();
+        int[] nums = {3,30,34,5,9};
+        String result = obj.minNumber(nums);
+        System.out.println("result = " + result);
+    }
+
 }

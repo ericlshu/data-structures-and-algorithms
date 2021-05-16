@@ -1,7 +1,5 @@
 package solution.array;
 
-import sun.font.FontRunIterator;
-
 /**
  * Description : 搜索插入位置
  * <p>
@@ -29,8 +27,7 @@ import sun.font.FontRunIterator;
  * @date 2020-11-01 15:13
  * @since JDK 1.8
  */
-public class P0035_SearchInsertPosition
-{
+public class P0035_SearchInsertPosition {
     public int searchInsert(int[] nums, int target)
     {
         int i = 0;
@@ -42,8 +39,7 @@ public class P0035_SearchInsertPosition
     {
         int left = 0, right = nums.length - 1;
         int mid;
-        while (left <= right)
-        {
+        while (left <= right) {
             mid = left + (right - left) / 2;
             if (nums[mid] >= target)
                 right = mid - 1;

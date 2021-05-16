@@ -43,8 +43,7 @@ package solution.array;
  * @date 2020-10-16 21:29
  * @since JDK 1.8
  */
-public class P0004_MedianOfTwoSortedArrays
-{
+public class P0004_MedianOfTwoSortedArrays {
     public double findMedianSortedArrays(int[] nums1, int[] nums2)
     {
         int n = nums1.length;
@@ -64,21 +63,18 @@ public class P0004_MedianOfTwoSortedArrays
         int len2 = end2 - start2 + 1;
         // 让 len1 的长度小于 len2，这样就能保证如果有数组空了，一定是 len1
         // 就是如果len1长度小于len2，把getKth()中参数互换位置，即原来的len2就变成了len1，即len1，永远比len2小
-        if (len1 > len2)
-        {
+        if (len1 > len2) {
             return getKth(nums2, start2, end2, nums1, start1, end1, k);
         }
         // 如果一个数组中没有了元素，那么即从剩余数组nums2的其实start2开始加k再-1.
         // 因为k代表个数，而不是索引，那么从nums2后再找k个数，那个就是start2 + k-1索引处就行了。
         // 因为还包含nums2[start2]也是一个数。因为它在上次迭代时并没有被排除
-        if (len1 == 0)
-        {
+        if (len1 == 0) {
             return nums2[start2 + k - 1];
         }
         // 如果k=1，表明最接近中位数了，即两个数组中start索引处，谁的值小，中位数就是谁
         // (start索引之前表示经过迭代已经被排出的不合格的元素，即数组没被抛弃的逻辑上的范围是nums[start]--->nums[end])。
-        if (k == 1)
-        {
+        if (k == 1) {
             return Math.min(nums1[start1], nums2[start2]);
         }
         //为了防止数组长度小于 k/2,每次比较都会从当前数组所生长度和k/2作比较，取其中的小的(如果取大的，数组就会越界)
@@ -88,12 +84,10 @@ public class P0004_MedianOfTwoSortedArrays
 
         //如果nums1[i] > nums2[j]，表示nums2数组中包含j索引，之前的元素，逻辑上全部淘汰，即下次从J+1开始。
         //而k则变为k - (j - start2 + 1)，即减去逻辑上排出的元素的个数(要加1，因为索引相减，相对于实际排除的时要少一个的)
-        if (nums1[i] > nums2[j])
-        {
+        if (nums1[i] > nums2[j]) {
             return getKth(nums1, start1, end1, nums2, j + 1, end2, k - (j - start2 + 1));
         }
-        else
-        {
+        else {
             return getKth(nums1, i + 1, end1, nums2, start2, end2, k - (i - start1 + 1));
         }
     }
@@ -105,65 +99,50 @@ public class P0004_MedianOfTwoSortedArrays
         int m = nums1.length;
         int n = nums2.length;
         nums = new int[m + n];
-        if (m == 0)
-        {
-            if (n % 2 == 0)
-            {
+        if (m == 0) {
+            if (n % 2 == 0) {
                 return (nums2[n / 2 - 1] + nums2[n / 2]) / 2.0;
             }
-            else
-            {
+            else {
                 return nums2[n / 2];
             }
         }
-        if (n == 0)
-        {
-            if (m % 2 == 0)
-            {
+        if (n == 0) {
+            if (m % 2 == 0) {
                 return (nums1[m / 2 - 1] + nums1[m / 2]) / 2.0;
             }
-            else
-            {
+            else {
                 return nums1[m / 2];
             }
         }
 
         int count = 0;
         int i = 0, j = 0;
-        while (count != (m + n))
-        {
-            if (i == m)
-            {
-                while (j != n)
-                {
+        while (count != (m + n)) {
+            if (i == m) {
+                while (j != n) {
                     nums[count++] = nums2[j++];
                 }
                 break;
             }
-            if (j == n)
-            {
-                while (i != m)
-                {
+            if (j == n) {
+                while (i != m) {
                     nums[count++] = nums1[i++];
                 }
                 break;
             }
-            if (nums1[i] < nums2[j])
-            {
+            if (nums1[i] < nums2[j]) {
                 nums[count++] = nums1[i++];
             }
-            else
-            {
+            else {
                 nums[count++] = nums2[j++];
             }
         }
 
-        if (count % 2 == 0)
-        {
+        if (count % 2 == 0) {
             return (nums[count / 2 - 1] + nums[count / 2]) / 2.0;
         }
-        else
-        {
+        else {
             return nums[count / 2];
         }
     }
