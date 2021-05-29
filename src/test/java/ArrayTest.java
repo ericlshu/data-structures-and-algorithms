@@ -27,8 +27,7 @@ public class ArrayTest {
     }
 
     @Test
-    public void testP0019()
-    {:
+    public void testP0019(){
         P0019_RemoveNthNodeFromEndOfList obj = new P0019_RemoveNthNodeFromEndOfList();
         ListNode node5 = new ListNode(5);
         ListNode node4 = new ListNode(4, node5);
