@@ -28,7 +28,7 @@ public class ArrayTest {
 
     @Test
     public void testP0019()
-    {
+    {:
         P0019_RemoveNthNodeFromEndOfList obj = new P0019_RemoveNthNodeFromEndOfList();
         ListNode node5 = new ListNode(5);
         ListNode node4 = new ListNode(4, node5);
@@ -151,7 +151,7 @@ public class ArrayTest {
     @Test
     public void testOffer45()
     {
-        Offer45_ArrayToMinNumber obj = new Offer45_ArrayToMinNumber();
+        Offer45ArrayToMinNumber obj = new Offer45ArrayToMinNumber();
         int[] nums = {3,30,34,5,9};
         String result = obj.minNumber(nums);
         System.out.println("result = " + result);

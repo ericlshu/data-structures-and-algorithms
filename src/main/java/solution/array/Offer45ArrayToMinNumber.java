@@ -25,7 +25,7 @@ import java.util.ArrayList;
  * @date 2021-03-27 13:33
  * @since JDK 1.8
  */
-public class Offer45_ArrayToMinNumber {
+public class Offer45ArrayToMinNumber {
     public String minNumber(int[] nums) {
         if (nums == null || nums.length == 0) {
             return null;
