@@ -14,6 +14,7 @@ import java.util.List;
  * @since JDK 1.8
  */
 public class ArrayTest {
+
     @Test
     public void testP0001()
     {

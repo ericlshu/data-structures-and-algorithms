@@ -59,7 +59,9 @@ public class P0127_WordLadder
             addEdge(word);
         }
         addEdge(beginWord);
-        if (!wordId.containsKey(endWord)) return 0;
+        if (!wordId.containsKey(endWord)) {
+            return 0;
+        }
         int[] dis = new int[nodeNum];
         Arrays.fill(dis, Integer.MAX_VALUE);
         int beginId = wordId.get(beginWord), endId = wordId.get(endWord);
@@ -70,7 +72,9 @@ public class P0127_WordLadder
         while (!que.isEmpty())
         {
             int x = que.poll();
-            if (x == endId) return dis[endId] / 2 + 1;
+            if (x == endId) {
+                return dis[endId] / 2 + 1;
+            }
             for (int it : edge.get(x))
             {
                 if (dis[it] == Integer.MAX_VALUE)
