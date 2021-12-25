@@ -1,5 +1,5 @@
 import org.junit.Test;
-import solution.stack.P0402_RemoveKDigits;
+import solution.stack.P0402RemoveKDigits;
 
 /**
  * Description :
@@ -13,7 +13,7 @@ public class StackTest
     @Test
     public void test0402()
     {
-        P0402_RemoveKDigits obj = new P0402_RemoveKDigits();
+        P0402RemoveKDigits obj = new P0402RemoveKDigits();
         System.out.println("result = " + obj.removeKDigits("1432219",3));
         System.out.println("result = " + obj.removeKDigits("10200",1));
         System.out.println("result = " + obj.removeKDigits("10",1));

@@ -1,6 +1,6 @@
 import domain.ListNode;
 import org.junit.Test;
-import solution.linked_list.P0143_ReorderList;
+import solution.linked_list.P0143ReorderList;
 import solution.linked_list.P0206ReverseLinkedList;
 
 /**
@@ -15,7 +15,7 @@ public class LinkedListTest {
     @Test
     public void testP0143()
     {
-        P0143_ReorderList obj = new P0143_ReorderList();
+        P0143ReorderList obj = new P0143ReorderList();
         ListNode node5 = new ListNode(5);
         ListNode node4 = new ListNode(4, node5);
         ListNode node3 = new ListNode(3, node4);

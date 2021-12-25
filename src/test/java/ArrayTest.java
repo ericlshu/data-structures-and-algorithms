@@ -1,7 +1,7 @@
 import domain.ListNode;
 import org.junit.Test;
 import solution.array.*;
-import solution.binary_search.P1122_RelativeSortArray;
+import solution.binary_search.P1122RelativeSortArray;
 
 import java.util.Arrays;
 import java.util.List;
@@ -18,7 +18,7 @@ public class ArrayTest {
     @Test
     public void testP0001()
     {
-        P0001_TwoSum obj = new P0001_TwoSum();
+        P0001TwoSum obj = new P0001TwoSum();
         int[] numbers = {2, 5, 7, 9, 12};
         int sum = 17;
         int[] result = obj.twoNumbersAddUp02(numbers, sum);
@@ -29,7 +29,7 @@ public class ArrayTest {
 
     @Test
     public void testP0019(){
-        P0019_RemoveNthNodeFromEndOfList obj = new P0019_RemoveNthNodeFromEndOfList();
+        P0019RemoveNthNodeFromEndOfList obj = new P0019RemoveNthNodeFromEndOfList();
         ListNode node5 = new ListNode(5);
         ListNode node4 = new ListNode(4, node5);
         ListNode node3 = new ListNode(3, node4);
@@ -42,7 +42,7 @@ public class ArrayTest {
     @Test
     public void testP0035()
     {
-        P0035_SearchInsertPosition obj = new P0035_SearchInsertPosition();
+        P0035SearchInsertPosition obj = new P0035SearchInsertPosition();
         int[] nums = {1, 3, 5, 6};
         int target = 7;
         System.out.println("result = " + obj.searchInsert_1(nums, target));
@@ -51,7 +51,7 @@ public class ArrayTest {
     @Test
     public void testP0056()
     {
-        P0056_MergeIntervals obj = new P0056_MergeIntervals();
+        P0056MergeIntervals obj = new P0056MergeIntervals();
         int[][] intervals = {{1, 3}, {2, 6}, {8, 10}, {15, 18}};
         int[][] merge = obj.merge(intervals);
         for (int[] nums : merge) {
@@ -62,7 +62,7 @@ public class ArrayTest {
     @Test
     public void testP0057()
     {
-        P0057_InsertInterval obj = new P0057_InsertInterval();
+        P0057InsertInterval obj = new P0057InsertInterval();
         int[][] intervals = {{1, 2}, {3, 5}, {6, 7}, {8, 10}, {12, 16}};
         int[] newInterval = {4, 8};
         int[][] ansList = obj.insert(intervals, newInterval);
@@ -74,7 +74,7 @@ public class ArrayTest {
     @Test
     public void testP0122()
     {
-        P0122_BestTimeToBuyAndSellStockII obj = new P0122_BestTimeToBuyAndSellStockII();
+        P0122BestTimeToBuyAndSellStockII obj = new P0122BestTimeToBuyAndSellStockII();
 
         // int[] arr = {0, 1, 2, 3, 4, 5, 6, 7, 8};
         int[] nums = {7, 1, 5, 3, 6, 4};
@@ -84,7 +84,7 @@ public class ArrayTest {
     @Test
     public void testP0941()
     {
-        P0941_ValidMountainArray obj = new P0941_ValidMountainArray();
+        P0941ValidMountainArray obj = new P0941ValidMountainArray();
         int[] nums = {9, 8, 7, 6, 5, 4};
         System.out.println("result = " + obj.validMountainArray(nums));
     }
@@ -92,7 +92,7 @@ public class ArrayTest {
     @Test
     public void testP1356()
     {
-        P1356_SortIntegersByTheNumberOf1Bits obj = new P1356_SortIntegersByTheNumberOf1Bits();
+        P1356SortIntegersByTheNumberOf1Bits obj = new P1356SortIntegersByTheNumberOf1Bits();
         int[] arr = {0, 1, 2, 3, 4, 5, 6, 7, 8};
         System.out.println("obj.get(i) : " + Arrays.toString(obj.sortByBits_1(arr)));
     }
@@ -100,7 +100,7 @@ public class ArrayTest {
     @Test
     public void test1122()
     {
-        P1122_RelativeSortArray obj = new P1122_RelativeSortArray();
+        P1122RelativeSortArray obj = new P1122RelativeSortArray();
         int[] arr1 = {2, 3, 1, 3, 2, 4, 6, 7, 9, 2, 19}, arr2 = {2, 1, 4, 3, 9, 6};
         System.out.println("result = " + Arrays.toString(obj.relativeSortArray(arr1, arr2)));
     }
@@ -108,7 +108,7 @@ public class ArrayTest {
     @Test
     public void test016()
     {
-        P0016_3SumClosest obj = new P0016_3SumClosest();
+        P0016ThreeSumClosest obj = new P0016ThreeSumClosest();
         obj.threeSumClosest(new int[]{}, 0);
     }
 
@@ -116,14 +116,14 @@ public class ArrayTest {
     @Test
     public void test0018()
     {
-        P0018_4Sum obj = new P0018_4Sum();
+        P0018FourSum obj = new P0018FourSum();
         obj.fourSum(new int[]{}, 0);
     }
 
     @Test
     public void test0033()
     {
-        P0033_SearchInRotatedSortedArray obj = new P0033_SearchInRotatedSortedArray();
+        P0033SearchInRotatedSortedArray obj = new P0033SearchInRotatedSortedArray();
 //        int[] nums = {4,5,6,7,0,1,2};
         int[] nums = {1};
         int result = obj.search(nums, 1);
@@ -133,7 +133,7 @@ public class ArrayTest {
     @Test
     public void test0034()
     {
-        P0034_FindFirstAndLastPositionOfElementInSortedArray obj = new P0034_FindFirstAndLastPositionOfElementInSortedArray();
+        P0034FindFirstAndLastPositionOfElementInSortedArray obj = new P0034FindFirstAndLastPositionOfElementInSortedArray();
         int[] nums = {5,7,7,8,8,8,10};
 //        int[] nums = {1};
         int[] result = obj.searchRange(nums, 8);
@@ -143,7 +143,7 @@ public class ArrayTest {
     @Test
     public void test0039()
     {
-        P0039_CombinationSum obj = new P0039_CombinationSum();
+        P0039CombinationSum obj = new P0039CombinationSum();
         int[] nums = {2,3,5};
         System.out.println("candidates = " + Arrays.toString(nums));
         List<List<Integer>> result = obj.combinationSum(nums, 8);

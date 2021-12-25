@@ -1,5 +1,5 @@
 import org.junit.Test;
-import solution.hash_table.P0381_InsertDeleteAndGetRandom;
+import solution.hash_table.P0381InsertDeleteAndGetRandom;
 
 /**
  * Description :
@@ -13,8 +13,8 @@ public class HashTableTest
     @Test
     public void testP0381()
     {
-        P0381_InsertDeleteAndGetRandom obj = new P0381_InsertDeleteAndGetRandom();
-        P0381_InsertDeleteAndGetRandom.RandomizedCollection randomizedCollection = obj.new RandomizedCollection();
+        P0381InsertDeleteAndGetRandom obj = new P0381InsertDeleteAndGetRandom();
+        P0381InsertDeleteAndGetRandom.RandomizedCollection randomizedCollection = new P0381InsertDeleteAndGetRandom.RandomizedCollection();
         System.out.println("result = " + randomizedCollection.insert(21));
     }
 

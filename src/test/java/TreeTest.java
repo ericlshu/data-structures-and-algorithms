@@ -1,5 +1,5 @@
 import org.junit.Test;
-import solution.tree.P0925_LongPressedName;
+import solution.tree.P0925LongPressedName;
 
 /**
  * Description :
@@ -13,7 +13,7 @@ public class TreeTest
     @Test
     public void testP0925()
     {
-        P0925_LongPressedName obj = new P0925_LongPressedName();
+        P0925LongPressedName obj = new P0925LongPressedName();
         System.out.println("result = " + obj.isLongPressedName("saeedi", "ssaaeediixxxiii"));
     }
 }
