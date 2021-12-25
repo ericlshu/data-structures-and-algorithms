@@ -29,7 +29,7 @@ public class DynamicProgrammingTest
     {
         P0121_BestTimeToBuyAndSellStock obj = new P0121_BestTimeToBuyAndSellStock();
 
-        int[] nums1 = {0, 1, 2, 3, 4, 5, 6, 7, 8};
+        // int[] nums1 = {0, 1, 2, 3, 4, 5, 6, 7, 8};
         int[] nums2 = {7, 1, 5, 3, 6, 4};
         System.out.println("result = " + obj.maxProfit_1(nums2));
     }

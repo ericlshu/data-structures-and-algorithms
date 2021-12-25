@@ -54,8 +54,8 @@ public class ArrayTest {
         P0056_MergeIntervals obj = new P0056_MergeIntervals();
         int[][] intervals = {{1, 3}, {2, 6}, {8, 10}, {15, 18}};
         int[][] merge = obj.merge(intervals);
-        for (int[] ints : merge) {
-            System.out.println("ints = " + Arrays.toString(ints));
+        for (int[] nums : merge) {
+            System.out.println("nums = " + Arrays.toString(nums));
         }
     }
 
@@ -66,8 +66,8 @@ public class ArrayTest {
         int[][] intervals = {{1, 2}, {3, 5}, {6, 7}, {8, 10}, {12, 16}};
         int[] newInterval = {4, 8};
         int[][] ansList = obj.insert(intervals, newInterval);
-        for (int[] ints : ansList) {
-            System.out.println("ansList[i] = " + Arrays.toString(ints));
+        for (int[] nums : ansList) {
+            System.out.println("ansList[i] = " + Arrays.toString(nums));
         }
     }
 
@@ -76,7 +76,7 @@ public class ArrayTest {
     {
         P0122_BestTimeToBuyAndSellStockII obj = new P0122_BestTimeToBuyAndSellStockII();
 
-        int[] arr = {0, 1, 2, 3, 4, 5, 6, 7, 8};
+        // int[] arr = {0, 1, 2, 3, 4, 5, 6, 7, 8};
         int[] nums = {7, 1, 5, 3, 6, 4};
         System.out.println("result = " + obj.maxProfit_1(nums));
     }
@@ -109,6 +109,7 @@ public class ArrayTest {
     public void test016()
     {
         P0016_3SumClosest obj = new P0016_3SumClosest();
+        obj.threeSumClosest(new int[]{}, 0);
     }
 
 
@@ -116,6 +117,7 @@ public class ArrayTest {
     public void test0018()
     {
         P0018_4Sum obj = new P0018_4Sum();
+        obj.fourSum(new int[]{}, 0);
     }
 
     @Test
