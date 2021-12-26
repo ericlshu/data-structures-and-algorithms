@@ -159,4 +159,23 @@ public class ArrayTest {
         System.out.println("result = " + result);
     }
 
+    @Test
+    public void test0080()
+    {
+        P0080RemoveDuplicatesFromSortedArrayTwo obj = new P0080RemoveDuplicatesFromSortedArrayTwo();
+        int[] nums = {0,0,1,1,1,1,2,3,3};
+        // int[] nums = {1,1,1};
+        int result = obj.removeDuplicatesOfficial(nums);
+        System.out.println("result = " + result);
+        for (int i = 0; i < result; i++) {
+            System.out.println("nums = " + nums[i]);
+        }
+    }
+
+    @Test
+    public void testOffer03(){
+        Offer03FindRepeatNumberInArray obj = new Offer03FindRepeatNumberInArray();
+        int repeatNumber = obj.findRepeatNumber(new int[]{2, 3, 1, 0, 2, 5, 3});
+        System.out.println("repeatNumber = " + repeatNumber);
+    }
 }
