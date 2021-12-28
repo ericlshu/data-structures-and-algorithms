@@ -178,4 +178,14 @@ public class ArrayTest {
         int repeatNumber = obj.findRepeatNumber(new int[]{2, 3, 1, 0, 2, 5, 3});
         System.out.println("repeatNumber = " + repeatNumber);
     }
+
+    @Test
+    public void test0724()
+    {
+        P0724FindPivotIndex obj = new P0724FindPivotIndex();
+        // int[] nums = {1, 7, 3, 6, 5, 6};
+        int[] nums = {1,1,1};
+        int result = obj.pivotIndex(nums);
+        System.out.println("result = " + result);
+    }
 }
