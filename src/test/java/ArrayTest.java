@@ -22,13 +22,15 @@ public class ArrayTest {
         int[] numbers = {2, 5, 7, 9, 12};
         int sum = 17;
         int[] result = obj.twoNumbersAddUp02(numbers, sum);
-        for (int i : result) {
+        for (int i : result)
+        {
             System.out.println("    i = " + i);
         }
     }
 
     @Test
-    public void testP0019(){
+    public void testP0019()
+    {
         P0019RemoveNthNodeFromEndOfList obj = new P0019RemoveNthNodeFromEndOfList();
         ListNode node5 = new ListNode(5);
         ListNode node4 = new ListNode(4, node5);
@@ -54,7 +56,8 @@ public class ArrayTest {
         P0056MergeIntervals obj = new P0056MergeIntervals();
         int[][] intervals = {{1, 3}, {2, 6}, {8, 10}, {15, 18}};
         int[][] merge = obj.merge(intervals);
-        for (int[] nums : merge) {
+        for (int[] nums : merge)
+        {
             System.out.println("nums = " + Arrays.toString(nums));
         }
     }
@@ -66,7 +69,8 @@ public class ArrayTest {
         int[][] intervals = {{1, 2}, {3, 5}, {6, 7}, {8, 10}, {12, 16}};
         int[] newInterval = {4, 8};
         int[][] ansList = obj.insert(intervals, newInterval);
-        for (int[] nums : ansList) {
+        for (int[] nums : ansList)
+        {
             System.out.println("ansList[i] = " + Arrays.toString(nums));
         }
     }
@@ -134,7 +138,7 @@ public class ArrayTest {
     public void test0034()
     {
         P0034FindFirstAndLastPositionOfElementInSortedArray obj = new P0034FindFirstAndLastPositionOfElementInSortedArray();
-        int[] nums = {5,7,7,8,8,8,10};
+        int[] nums = {5, 7, 7, 8, 8, 8, 10};
 //        int[] nums = {1};
         int[] result = obj.searchRange(nums, 8);
         System.out.println("result = " + Arrays.toString(result));
@@ -144,7 +148,7 @@ public class ArrayTest {
     public void test0039()
     {
         P0039CombinationSum obj = new P0039CombinationSum();
-        int[] nums = {2,3,5};
+        int[] nums = {2, 3, 5};
         System.out.println("candidates = " + Arrays.toString(nums));
         List<List<Integer>> result = obj.combinationSum(nums, 8);
         System.out.println("result = " + result);
@@ -153,8 +157,8 @@ public class ArrayTest {
     @Test
     public void testOffer45()
     {
-        Offer45ArrayToMinNumber obj = new Offer45ArrayToMinNumber();
-        int[] nums = {3,30,34,5,9};
+        Offer045ArrayToMinNumber obj = new Offer045ArrayToMinNumber();
+        int[] nums = {3, 30, 34, 5, 9};
         String result = obj.minNumber(nums);
         System.out.println("result = " + result);
     }
@@ -163,18 +167,20 @@ public class ArrayTest {
     public void test0080()
     {
         P0080RemoveDuplicatesFromSortedArrayTwo obj = new P0080RemoveDuplicatesFromSortedArrayTwo();
-        int[] nums = {0,0,1,1,1,1,2,3,3};
+        int[] nums = {0, 0, 1, 1, 1, 1, 2, 3, 3};
         // int[] nums = {1,1,1};
         int result = obj.removeDuplicatesOfficial(nums);
         System.out.println("result = " + result);
-        for (int i = 0; i < result; i++) {
+        for (int i = 0; i < result; i++)
+        {
             System.out.println("nums = " + nums[i]);
         }
     }
 
     @Test
-    public void testOffer03(){
-        Offer03FindRepeatNumberInArray obj = new Offer03FindRepeatNumberInArray();
+    public void testOffer03()
+    {
+        Offer003FindRepeatNumberInArray obj = new Offer003FindRepeatNumberInArray();
         int repeatNumber = obj.findRepeatNumber(new int[]{2, 3, 1, 0, 2, 5, 3});
         System.out.println("repeatNumber = " + repeatNumber);
     }
@@ -184,8 +190,31 @@ public class ArrayTest {
     {
         P0724FindPivotIndex obj = new P0724FindPivotIndex();
         // int[] nums = {1, 7, 3, 6, 5, 6};
-        int[] nums = {1,1,1};
+        int[] nums = {1, 1, 1};
         int result = obj.pivotIndex(nums);
         System.out.println("result = " + result);
+    }
+
+    @Test
+    public void test2022()
+    {
+        P2022Convert1DArrayInto2DArray obj = new P2022Convert1DArrayInto2DArray();
+        System.out.println("result = " + Arrays.deepToString(obj.construct2DArray(new int[]{1, 2, 3, 4}, 1, 2)));
+    }
+
+    @Test
+    public void test0628()
+    {
+        P0628MaximumProductOfThreeNumbers obj = new P0628MaximumProductOfThreeNumbers();
+        System.out.println("result = " + obj.maximumProductNormalLinearScan(new int[]{1, 2, 3, 4}));
+    }
+
+    @Test
+    public void testOfferII006()
+    {
+        OfferII006TwoSumInSortedArray obj = new OfferII006TwoSumInSortedArray();
+        int[] index = obj.twoSumByBisection(new int[]{1, 2, 3, 4, 5}, 8);
+        System.out.println("result = " + Arrays.toString(index));
+
     }
 }

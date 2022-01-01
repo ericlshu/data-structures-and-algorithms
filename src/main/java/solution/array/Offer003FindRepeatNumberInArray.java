@@ -20,12 +20,14 @@ package solution.array;
  * @date 2021-12-26 19:03
  * @since JDK 1.8
  */
-public class Offer03FindRepeatNumberInArray {
+public class Offer003FindRepeatNumberInArray {
     public int findRepeatNumber(int[] nums) {
         int[] results = new int[nums.length];
-        for (int num : nums) {
+        for (int num : nums)
+        {
             results[num]++;
-            if (results[num] > 1) {
+            if (results[num] > 1)
+            {
                 return num;
             }
         }
