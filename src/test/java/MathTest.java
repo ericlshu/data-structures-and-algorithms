@@ -1,7 +1,10 @@
 import org.junit.Test;
+import solution.dynamic_programming.Offer101FibonacciSequence;
 import solution.math.OfferII072;
 import solution.math.P0007ReverseInteger;
 import solution.math.P0009PalindromeNumber;
+
+import java.util.Arrays;
 
 /**
  * Description :
@@ -36,5 +39,11 @@ public class MathTest
         System.out.println("result = " + obj.mySqrtNewton(2147395600));
     }
 
+    @Test
+    public void testOffer101(){
+        Offer101FibonacciSequence obj = new Offer101FibonacciSequence();
+        System.out.println("result = " + obj.fib3(20));
+        System.out.println("mul = " + obj.fib4(20) );
+    }
 
 }
