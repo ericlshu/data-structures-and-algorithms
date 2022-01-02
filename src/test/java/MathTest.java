@@ -58,8 +58,9 @@ public class MathTest
     @Test
     public void test1137(){
         P1137NthTribonacciNumber obj = new P1137NthTribonacciNumber();
-        System.out.println("result = " + obj.tribonacci_(37));
-        System.out.println("result = " + obj.tribonacci(37));
+        System.out.println("result1 = " + obj.tribonacci_1(37));
+        System.out.println("result2 = " + obj.tribonacci_2(37));
+        System.out.println("result3 = " + obj.tribonacci_3(37));
     }
 
 }

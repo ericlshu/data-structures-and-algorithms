@@ -1,5 +1,8 @@
 package solution.math;
 
+import org.apache.commons.math3.linear.Array2DRowRealMatrix;
+import org.apache.commons.math3.linear.RealMatrix;
+
 /**
  * Description : 第 N 个泰波那契数
  * <p>
@@ -28,7 +31,7 @@ package solution.math;
  */
 public class P1137NthTribonacciNumber {
 
-    public int tribonacci_(int n)
+    public int tribonacci_1(int n)
     {
         int[] dp = {0, 1, 1, 2};
         for (int i = 0; i < n; i++)
@@ -41,7 +44,7 @@ public class P1137NthTribonacciNumber {
         return dp[0];
     }
 
-    public int tribonacci(int n)
+    public int tribonacci_2(int n)
     {
         if (n < 2) return n;
         if (n == 2) return 1;
@@ -73,5 +76,25 @@ public class P1137NthTribonacciNumber {
             }
         }
         return result;
+    }
+
+    public int tribonacci_3(int n)
+    {
+        if (n < 2) return n;
+        if (n == 2) return 1;
+        double[][] param = {{1, 1, 1}, {1, 0, 0}, {0, 1, 0}};
+        double[][] result = {{1}, {1}, {0}};
+        RealMatrix paramMatrix = new Array2DRowRealMatrix(param);
+        RealMatrix resultMatrix = new Array2DRowRealMatrix(result);
+        int x = n - 2;
+        while (x > 0)
+        {
+            if ((x & 1) == 1)
+                resultMatrix = paramMatrix.multiply(resultMatrix);
+            paramMatrix = paramMatrix.multiply(paramMatrix);
+            x >>= 1;
+        }
+        double[][] data = resultMatrix.getData();
+        return (int) data[0][0];
     }
 }
