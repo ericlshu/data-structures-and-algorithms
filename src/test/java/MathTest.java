@@ -3,6 +3,8 @@ import solution.dynamic_programming.Offer101FibonacciSequence;
 import solution.math.OfferII072;
 import solution.math.P0007ReverseInteger;
 import solution.math.P0009PalindromeNumber;
+import solution.math.P0509FibonacciNumber;
+import solution.math.P1137NthTribonacciNumber;
 
 import java.util.Arrays;
 
@@ -42,8 +44,22 @@ public class MathTest
     @Test
     public void testOffer101(){
         Offer101FibonacciSequence obj = new Offer101FibonacciSequence();
-        System.out.println("result = " + obj.fib3(20));
-        System.out.println("mul = " + obj.fib4(20) );
+        System.out.println("result = " + obj.fib3(30));
+        System.out.println("mul = " + obj.fib4(30) );
+    }
+
+    @Test
+    public void testP0509(){
+        P0509FibonacciNumber obj = new P0509FibonacciNumber();
+        System.out.println("result = " + obj.fib(37));
+        System.out.println("result = " + obj.fibonacci(37));
+    }
+
+    @Test
+    public void test1137(){
+        P1137NthTribonacciNumber obj = new P1137NthTribonacciNumber();
+        System.out.println("result = " + obj.tribonacci_(37));
+        System.out.println("result = " + obj.tribonacci(37));
     }
 
 }
