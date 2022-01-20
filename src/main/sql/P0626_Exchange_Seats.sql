@@ -18,7 +18,7 @@
 |    2    | Doris   |
 |    3    | Emerson |
 |    4    | Green   |
-|    5    | Jeames  |
+|    5    | James  |
 +---------+---------+
 假如数据输入的是上表，则输出结果如下：
 
@@ -29,7 +29,7 @@
 |    2    | Abbot   |
 |    3    | Green   |
 |    4    | Emerson |
-|    5    | Jeames  |
+|    5    | James  |
 +---------+---------+
 注意：
 
@@ -42,8 +42,9 @@ insert into Seat (id, student) values ('1', 'Abbot');
 insert into Seat (id, student) values ('2', 'Doris');
 insert into Seat (id, student) values ('3', 'Emerson');
 insert into Seat (id, student) values ('4', 'Green');
-insert into Seat (id, student) values ('5', 'Jeames');
+insert into Seat (id, student) values ('5', 'James');
 
+/*
 select
     case
         when mod(id,2) = 1 then id + 1
@@ -53,7 +54,14 @@ from seat where id <= (select floor(max(id) / 2) * 2 from seat )
 union
 select * from seat where id > (select floor(max(id) / 2) * 2 from seat )
 order by id;
+*/
 
+select IF(mod(id, 2) = 1, id + 1, id - 1) as id,
+    student
+from seat where id <= (select floor(max(id) / 2) * 2 from seat )
+union
+select * from seat where id > (select floor(max(id) / 2) * 2 from seat )
+order by id;
 
 SELECT
     (CASE
@@ -68,7 +76,7 @@ FROM
          COUNT(*) AS counts
      FROM
          seat) AS seat_counts
-ORDER BY id ASC;
+ORDER BY id;
 
 SELECT
     s1.id, COALESCE(s2.student, s1.student) AS student

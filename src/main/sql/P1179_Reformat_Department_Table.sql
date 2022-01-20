@@ -47,19 +47,35 @@ insert into Department (id, revenue, month) values ('2', '9000', 'Jan');
 insert into Department (id, revenue, month) values ('3', '10000', 'Feb');
 insert into Department (id, revenue, month) values ('1', '7000', 'Feb');
 insert into Department (id, revenue, month) values ('1', '6000', 'Mar');
-
+/*
 select
     id,
     sum(case month when 'Jan' then revenue else null end) as Jan_Revenue,
     sum(case month when 'Feb' then revenue else null end) as Feb_Revenue,
     sum(case month when 'Mar' then revenue else null end) as Mar_Revenue,
-#     sum(case month when 'Apr' then revenue else null end) as Apr_Revenue,
-#     sum(case month when 'May' then revenue else null end) as May_Revenue,
-#     sum(case month when 'Jun' then revenue else null end) as Jun_Revenue,
-#     sum(case month when 'Jul' then revenue else null end) as Jul_Revenue,
-#     sum(case month when 'Aug' then revenue else null end) as Aug_Revenue,
-#     sum(case month when 'Sep' then revenue else null end) as Sep_Revenue,
-#     sum(case month when 'Oct' then revenue else null end) as Oct_Revenue,
-#     sum(case month when 'Nov' then revenue else null end) as Nov_Revenue,
+    sum(case month when 'Apr' then revenue else null end) as Apr_Revenue,
+    sum(case month when 'May' then revenue else null end) as May_Revenue,
+    sum(case month when 'Jun' then revenue else null end) as Jun_Revenue,
+    sum(case month when 'Jul' then revenue else null end) as Jul_Revenue,
+    sum(case month when 'Aug' then revenue else null end) as Aug_Revenue,
+    sum(case month when 'Sep' then revenue else null end) as Sep_Revenue,
+    sum(case month when 'Oct' then revenue else null end) as Oct_Revenue,
+    sum(case month when 'Nov' then revenue else null end) as Nov_Revenue,
     sum(case month when 'Dec' then revenue else null end) as Dec_Revenue
-from Department group by id order by id
+from Department group by id order by id;
+*/
+select
+    id,
+    sum(case month when 'Jan' then revenue end) as Jan_Revenue,
+    sum(case month when 'Feb' then revenue end) as Feb_Revenue,
+    sum(case month when 'Mar' then revenue end) as Mar_Revenue,
+    sum(case month when 'Apr' then revenue end) as Apr_Revenue,
+    sum(case month when 'May' then revenue end) as May_Revenue,
+    sum(case month when 'Jun' then revenue end) as Jun_Revenue,
+    sum(case month when 'Jul' then revenue end) as Jul_Revenue,
+    sum(case month when 'Aug' then revenue end) as Aug_Revenue,
+    sum(case month when 'Sep' then revenue end) as Sep_Revenue,
+    sum(case month when 'Oct' then revenue end) as Oct_Revenue,
+    sum(case month when 'Nov' then revenue end) as Nov_Revenue,
+    sum(case month when 'Dec' then revenue end) as Dec_Revenue
+from Department group by id order by id;
