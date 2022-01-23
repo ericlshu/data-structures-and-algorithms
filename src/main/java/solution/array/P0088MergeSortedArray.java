@@ -44,6 +44,9 @@ import java.util.Arrays;
  */
 public class P0088MergeSortedArray {
 
+    /**
+     * 逆向双指针
+     */
     public void merge1(int[] nums1, int m, int[] nums2, int n)
     {
         int i = m - 1, j = n - 1, k = m + n - 1;
@@ -71,7 +74,7 @@ public class P0088MergeSortedArray {
     }
 
     /**
-     * 逆向双指针
+     * 逆向双指针优化
      */
     public void merge(int[] nums1, int m, int[] nums2, int n)
     {
@@ -98,7 +101,7 @@ public class P0088MergeSortedArray {
         // {
         //     nums1[m+i] = nums2[i];
         // }
-        if (n >= 0) System.arraycopy(nums2, 0, nums1, m, n);
+        System.arraycopy(nums2, 0, nums1, m, n);
         Arrays.sort(nums1);
     }
 
@@ -120,6 +123,6 @@ public class P0088MergeSortedArray {
                 value = nums2[j++];
             sorted[i + j - 1] = value;
         }
-        if (m + n >= 0) System.arraycopy(sorted, 0, nums1, 0, m + n);
+        System.arraycopy(sorted, 0, nums1, 0, m + n);
     }
 }
