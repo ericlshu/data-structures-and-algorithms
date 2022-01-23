@@ -217,4 +217,32 @@ public class ArrayTest {
         System.out.println("result = " + Arrays.toString(index));
 
     }
+
+    @Test
+    public void testP0088()
+    {
+        int[] nums1 = {1, 2, 3, 0, 0, 0};
+        int[] nums2 = {2, 5, 6};
+        int m = 3, n = 3;
+
+        // int[] nums1 = {0};
+        // int[] nums2 = {1};
+        // int m = 0, n = 1;
+
+        P0088MergeSortedArray obj = new P0088MergeSortedArray();
+        obj.merge3(nums1, m, nums2, n);
+        System.out.println("nums = " + Arrays.toString(nums1));
+    }
+
+    @Test
+    public void test1001()
+    {
+        int[] nums1 = {1, 2, 3, 0, 0, 0};
+        int[] nums2 = {2, 5, 6};
+        int m = 3, n = 3;
+
+        MianShi1001SortedMergeLCCI lcci = new MianShi1001SortedMergeLCCI();
+        lcci.merge(nums1, m, nums2, n);
+        System.out.println("lcci = " + Arrays.toString(nums1));
+    }
 }
