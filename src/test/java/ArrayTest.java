@@ -260,4 +260,11 @@ public class ArrayTest {
         int maxSubArray = lcof.maxSubArray(new int[]{-2,1,-3,4,-1,2,1,-5,4});
         System.out.println("maxSubArray = " + maxSubArray);
     }
+
+    @Test
+    public void test0066(){
+        P0066PlusOne plusOne = new P0066PlusOne();
+        int[] result = plusOne.plusOne(new int[]{9,9,9,9});
+        System.out.println("result = " + Arrays.toString(result));
+    }
 }
