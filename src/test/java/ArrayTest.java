@@ -3,6 +3,7 @@ import org.junit.Test;
 import solution.array.*;
 import solution.binary_search.P1122RelativeSortArray;
 import solution.dynamic_programming.Offer042LCOF;
+import solution.math.P1688CountOfMatchesInTournament;
 
 import java.util.Arrays;
 import java.util.List;
@@ -266,5 +267,12 @@ public class ArrayTest {
         P0066PlusOne plusOne = new P0066PlusOne();
         int[] result = plusOne.plusOne(new int[]{9,9,9,9});
         System.out.println("result = " + Arrays.toString(result));
+    }
+
+    @Test
+    public void test1688(){
+        P1688CountOfMatchesInTournament obj = new P1688CountOfMatchesInTournament();
+        int matches = obj.numberOfMatches(13);
+        System.out.println("matches = " + matches);
     }
 }
