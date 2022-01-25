@@ -43,8 +43,7 @@ public class P1688CountOfMatchesInTournament {
         while (n > 1)
         {
             result += n % 2;
-            n = n / 2;
-            result += n;
+            result += n /= 2;
         }
         return result;
         // return n - 1;
