@@ -46,19 +46,19 @@ public class P0144BinaryTreePreorderTraversal {
     public List<Integer> preorderTraversal(TreeNode root)
     {
         List<Integer> res = new ArrayList<>();
-        preOrderTraversalRecursion(root, res);
+        preorderTraversalRecursion(root, res);
         return res;
     }
 
     /**
      * 递归
      */
-    private void preOrderTraversalRecursion(TreeNode node, List<Integer> res)
+    private void preorderTraversalRecursion(TreeNode node, List<Integer> res)
     {
         if (node == null) return;
         res.add(node.val);
-        preOrderTraversalRecursion(node.left, res);
-        preOrderTraversalRecursion(node.right, res);
+        preorderTraversalRecursion(node.left, res);
+        preorderTraversalRecursion(node.right, res);
     }
 
     /**
