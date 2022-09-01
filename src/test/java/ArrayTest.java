@@ -15,8 +15,8 @@ import java.util.List;
  * @date 2021-03-27 13:33
  * @since JDK 1.8
  */
-public class ArrayTest {
-
+public class ArrayTest
+{
     @Test
     public void testP0001()
     {
@@ -283,5 +283,15 @@ public class ArrayTest {
         P1688CountOfMatchesInTournament obj = new P1688CountOfMatchesInTournament();
         int matches = obj.numberOfMatches(1000);
         System.out.println("matches = " + matches);
+    }
+
+    @Test
+    public void test0469()
+    {
+        P0496NextGreaterElementI obj = new P0496NextGreaterElementI();
+        int[] nums1 = {4, 1, 2};
+        int[] nums2 = {1, 3, 4, 2};
+        int[] result = obj.nextGreaterElement(nums1, nums2);
+        System.out.println("result = " + Arrays.toString(result));
     }
 }
