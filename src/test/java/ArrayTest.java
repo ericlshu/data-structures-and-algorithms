@@ -294,4 +294,13 @@ public class ArrayTest
         int[] result = obj.nextGreaterElement(nums1, nums2);
         System.out.println("result = " + Arrays.toString(result));
     }
+
+    @Test
+    public void test1475()
+    {
+        P1475FinalPricesWithASpecialDiscountInAShop obj = new P1475FinalPricesWithASpecialDiscountInAShop();
+        int[] prices = {8, 4, 6, 2, 3};
+        int[] result = obj.finalPrices(prices);
+        System.out.println("result = " + Arrays.toString(result));
+    }
 }
