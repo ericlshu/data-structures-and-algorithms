@@ -3,6 +3,8 @@ import org.junit.Test;
 import solution.array.*;
 import solution.binary_search.P1122RelativeSortArray;
 import solution.dynamic_programming.Offer042LCOF;
+import solution.hash_table.P0169MajorityElementHash;
+import solution.math.P0169MajorityElementMath;
 import solution.math.P1688CountOfMatchesInTournament;
 
 import java.util.Arrays;
@@ -302,5 +304,17 @@ public class ArrayTest
         int[] prices = {8, 4, 6, 2, 3};
         int[] result = obj.finalPrices(prices);
         System.out.println("result = " + Arrays.toString(result));
+    }
+
+    @Test
+    public void test0169()
+    {
+        P0169MajorityElementArray array = new P0169MajorityElementArray();
+        P0169MajorityElementHash hash = new P0169MajorityElementHash();
+        P0169MajorityElementMath math = new P0169MajorityElementMath();
+        int[] nums = {2, 2, 1, 1, 1, 2, 2};
+        System.out.println("array result = " + array.majorityElement(nums));
+        System.out.println("hash result  = " + hash.majorityElement(nums));
+        System.out.println("math result  = " + math.majorityElement(nums));
     }
 }
