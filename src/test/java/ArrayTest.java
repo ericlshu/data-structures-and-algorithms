@@ -4,6 +4,7 @@ import solution.array.*;
 import solution.binary_search.P1122RelativeSortArray;
 import solution.dynamic_programming.Offer042LCOF;
 import solution.hash_table.P0169MajorityElementHash;
+import solution.hash_table.P0242ValidAnagramHash;
 import solution.math.P0169MajorityElementMath;
 import solution.math.P1688CountOfMatchesInTournament;
 
@@ -316,5 +317,14 @@ public class ArrayTest
         System.out.println("array result = " + array.majorityElement(nums));
         System.out.println("hash result  = " + hash.majorityElement(nums));
         System.out.println("math result  = " + math.majorityElement(nums));
+    }
+
+    @Test
+    public void test0242()
+    {
+        P0242ValidAnagramArray array = new P0242ValidAnagramArray();
+        P0242ValidAnagramHash hash = new P0242ValidAnagramHash();
+        System.out.println("array result = " + array.isAnagram("anagram", "nagaram"));
+        System.out.println("hash result  = " + hash.isAnagram("anagram", "nagaram"));
     }
 }
