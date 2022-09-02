@@ -5,7 +5,9 @@ import solution.binary_search.P1122RelativeSortArray;
 import solution.dynamic_programming.Offer042LCOF;
 import solution.hash_table.P0169MajorityElementHash;
 import solution.hash_table.P0242ValidAnagramHash;
+import solution.hash_table.P0268MissingNumberHash;
 import solution.math.P0169MajorityElementMath;
+import solution.math.P0268MissingNumberMath;
 import solution.math.P1688CountOfMatchesInTournament;
 
 import java.util.Arrays;
@@ -326,5 +328,18 @@ public class ArrayTest
         P0242ValidAnagramHash hash = new P0242ValidAnagramHash();
         System.out.println("array result = " + array.isAnagram("anagram", "nagaram"));
         System.out.println("hash result  = " + hash.isAnagram("anagram", "nagaram"));
+    }
+
+    @Test
+    public void test0268()
+    {
+        P0268MissingNumberArray array = new P0268MissingNumberArray();
+        P0268MissingNumberHash hash = new P0268MissingNumberHash();
+        P0268MissingNumberMath math = new P0268MissingNumberMath();
+
+        int[] nums = {9, 6, 4, 2, 3, 5, 7, 0, 1};
+        System.out.println("array result = " + array.missingNumber(nums));
+        System.out.println("hash  result = " + hash.missingNumber(nums));
+        System.out.println("array result = " + math.missingNumber(nums));
     }
 }
