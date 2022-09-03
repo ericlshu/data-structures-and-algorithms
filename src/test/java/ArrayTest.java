@@ -342,4 +342,14 @@ public class ArrayTest
         // int[] nums = {1, 1, 2};
         System.out.println("array result = " + array.thirdMax(nums));
     }
+
+    @Test
+    public void test0283()
+    {
+        int[] nums = {0, 1, 0, 3, 12};
+        // int[] nums = {2, 2,3, 1};
+        // int[] nums = {1, 1, 2};
+        new P0283MoveZeroes().moveZeroes(nums);
+        System.out.println("nums = " + Arrays.toString(nums));
+    }
 }
