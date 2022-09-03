@@ -332,4 +332,14 @@ public class ArrayTest
         System.out.println("hash  result = " + hash.missingNumber(nums));
         System.out.println("array result = " + math.missingNumber(nums));
     }
+
+    @Test
+    public void test0414()
+    {
+        P0414ThirdMaximumNumber array = new P0414ThirdMaximumNumber();
+        int[] nums = {2, 2, 4, 6, 9, 9, 9, 8, 8, 3, 1};
+        // int[] nums = {2, 2,3, 1};
+        // int[] nums = {1, 1, 2};
+        System.out.println("array result = " + array.thirdMax(nums));
+    }
 }
