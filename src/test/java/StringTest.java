@@ -1,5 +1,6 @@
 import org.junit.Test;
 import solution.array.P0242ValidAnagramArray;
+import solution.array.P1796SecondLargestDigitInAString;
 import solution.hash_table.P0242ValidAnagramHash;
 import solution.math.P0389FindTheDifference;
 import solution.string.P0003LongestSubstringWithoutRepeatingCharacters;
@@ -103,6 +104,15 @@ public class StringTest
         String t = "abcde";
         System.out.println("hash result  = " + math.findTheDifference(s, t));
 
+    }
+
+    @Test
+    public void test1796()
+    {
+        P1796SecondLargestDigitInAString obj = new P1796SecondLargestDigitInAString();
+        // String s = "abc1111";
+        String s = "dfa12321afd";
+        System.out.println("result  = " + obj.secondHighest(s));
     }
 
 }
