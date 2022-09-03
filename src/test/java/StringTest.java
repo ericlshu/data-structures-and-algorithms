@@ -1,4 +1,7 @@
 import org.junit.Test;
+import solution.array.P0242ValidAnagramArray;
+import solution.hash_table.P0242ValidAnagramHash;
+import solution.math.P0389FindTheDifference;
 import solution.string.P0003LongestSubstringWithoutRepeatingCharacters;
 import solution.string.P0012IntegerToRoman;
 import solution.string.P0013RomanToInteger;
@@ -76,10 +79,30 @@ public class StringTest
     }
 
     @Test
-    public void testP0017(){
+    public void testP0017()
+    {
         P0017LetterCombinationsOfAPhoneNumber obj = new P0017LetterCombinationsOfAPhoneNumber();
         List<String> list = obj.letterCombinations("23");
         System.out.println(list);
+    }
+
+    @Test
+    public void test0242()
+    {
+        P0242ValidAnagramArray array = new P0242ValidAnagramArray();
+        P0242ValidAnagramHash hash = new P0242ValidAnagramHash();
+        System.out.println("array result = " + array.isAnagram("anagram", "nagaram"));
+        System.out.println("hash result  = " + hash.isAnagram("anagram", "nagaram"));
+    }
+
+    @Test
+    public void test0389()
+    {
+        P0389FindTheDifference math = new P0389FindTheDifference();
+        String s = "abcd";
+        String t = "abcde";
+        System.out.println("hash result  = " + math.findTheDifference(s, t));
+
     }
 
 }
