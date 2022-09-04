@@ -400,4 +400,13 @@ public class ArrayTest
         System.out.println("nums = " + Arrays.toString(nums));
         System.out.println("list = " + list);
     }
+
+    @Test
+    public void test0485()
+    {
+        P0485MaxConsecutiveOnes obj = new P0485MaxConsecutiveOnes();
+        int[] nums = {1,1,0,1,1,1};
+        // int[] nums = {1,1,1,1,0,1};
+        System.out.println("result = " + obj.findMaxConsecutiveOnes(nums));
+    }
 }
