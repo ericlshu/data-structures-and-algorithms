@@ -352,4 +352,42 @@ public class ArrayTest
         new P0283MoveZeroes().moveZeroes(nums);
         System.out.println("nums = " + Arrays.toString(nums));
     }
+
+    @Test
+    public void test1582()
+    {
+        int[][] mat1 = {
+                {1, 0, 0},
+                {0, 0, 1},
+                {1, 0, 0}
+        };
+
+        int[][] mat2 = {
+                {1, 0, 0},
+                {0, 1, 0},
+                {0, 0, 1}
+        };
+
+        int[][] mat3 = {
+                {0,0,0,1},
+                {1,0,0,0},
+                {0,1,1,0},
+                {0,0,0,0}
+        };
+
+        int[][] mat4 = {
+                {0,0,0,0,0},
+                {1,0,0,0,0},
+                {0,1,0,0,0},
+                {0,0,1,0,0},
+                {0,0,0,1,1}
+        };
+
+        P1582SpecialPositionsInABinaryMatrix binaryMatrix = new P1582SpecialPositionsInABinaryMatrix();
+
+        System.out.println("mat1 = " + binaryMatrix.numSpecial(mat1));
+        System.out.println("mat2 = " + binaryMatrix.numSpecial(mat2));
+        System.out.println("mat3 = " + binaryMatrix.numSpecial(mat3));
+        System.out.println("mat4 = " + binaryMatrix.numSpecial(mat4));
+    }
 }
