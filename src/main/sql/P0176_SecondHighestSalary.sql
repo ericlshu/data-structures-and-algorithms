@@ -20,18 +20,27 @@
 +---------------------+
 */
 
-Create table If Not Exists Employee (Id int, Salary int);
+Create table If Not Exists Employee
+(
+    Id     int,
+    Salary int
+);
 Truncate table Employee;
-insert into Employee (Id, Salary) values ('1', '100');
-insert into Employee (Id, Salary) values ('2', '200');
-insert into Employee (Id, Salary) values ('3', '300');
+insert into Employee (Id, Salary)
+values ('1', '100');
+insert into Employee (Id, Salary)
+values ('2', '200');
+insert into Employee (Id, Salary)
+values ('3', '300');
 
-SELECT
-    IFNULL(
-            (
-                SELECT
-                    DISTINCT Salary
-                FROM Employee
-                ORDER BY Salary DESC
-                LIMIT 1 OFFSET 1
-            ), NULL ) AS SecondHighestSalary;
+select *
+from Employee
+order by Salary desc
+limit 1 offset 1;
+
+SELECT IFNULL(
+    (SELECT DISTINCT Salary
+     FROM Employee
+     ORDER BY Salary DESC
+     LIMIT 1 OFFSET 1), NULL
+) AS SecondHighestSalary;
