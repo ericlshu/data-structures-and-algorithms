@@ -369,18 +369,18 @@ public class ArrayTest
         };
 
         int[][] mat3 = {
-                {0,0,0,1},
-                {1,0,0,0},
-                {0,1,1,0},
-                {0,0,0,0}
+                {0, 0, 0, 1},
+                {1, 0, 0, 0},
+                {0, 1, 1, 0},
+                {0, 0, 0, 0}
         };
 
         int[][] mat4 = {
-                {0,0,0,0,0},
-                {1,0,0,0,0},
-                {0,1,0,0,0},
-                {0,0,1,0,0},
-                {0,0,0,1,1}
+                {0, 0, 0, 0, 0},
+                {1, 0, 0, 0, 0},
+                {0, 1, 0, 0, 0},
+                {0, 0, 1, 0, 0},
+                {0, 0, 0, 1, 1}
         };
 
         P1582SpecialPositionsInABinaryMatrix binaryMatrix = new P1582SpecialPositionsInABinaryMatrix();
@@ -389,5 +389,15 @@ public class ArrayTest
         System.out.println("mat2 = " + binaryMatrix.numSpecial(mat2));
         System.out.println("mat3 = " + binaryMatrix.numSpecial(mat3));
         System.out.println("mat4 = " + binaryMatrix.numSpecial(mat4));
+    }
+
+    @Test
+    public void test0448()
+    {
+        P0448FindAllNumbersDisappearedInAnArray obj = new P0448FindAllNumbersDisappearedInAnArray();
+        int[] nums = {4, 3, 2, 7, 8, 2, 3, 1};
+        List<Integer> list = obj.findDisappearedNumbers(nums);
+        System.out.println("nums = " + Arrays.toString(nums));
+        System.out.println("list = " + list);
     }
 }
