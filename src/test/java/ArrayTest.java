@@ -423,8 +423,16 @@ public class ArrayTest
     public void test0506()
     {
         P0506RelativeRanks obj = new P0506RelativeRanks();
-        int[] score = {10,3,8,9,4};
+        int[] score = {10, 3, 8, 9, 4};
         String[] relativeRanks = obj.findRelativeRanks(score);
         System.out.println("result = " + Arrays.toString(relativeRanks));
+    }
+
+    @Test
+    public void test0561()
+    {
+        P0561ArrayPartition obj = new P0561ArrayPartition();
+        int[] nums = {6, 2, 6, 5, 1, 2};
+        System.out.println("result = " + obj.arrayPairSum(nums));
     }
 }
