@@ -435,4 +435,12 @@ public class ArrayTest
         int[] nums = {6, 2, 6, 5, 1, 2};
         System.out.println("result = " + obj.arrayPairSum(nums));
     }
+
+    @Test
+    public void test0575()
+    {
+        P0575DistributeCandies obj = new P0575DistributeCandies();
+        int[] nums = {1,1,2,2,3,3};
+        System.out.println("result = " + obj.distributeCandies(nums));
+    }
 }
