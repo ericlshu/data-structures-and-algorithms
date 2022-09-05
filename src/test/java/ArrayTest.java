@@ -418,4 +418,13 @@ public class ArrayTest
         String[] result = obj.findWords(words);
         System.out.println("result = " + Arrays.toString(result));
     }
+
+    @Test
+    public void test0506()
+    {
+        P0506RelativeRanks obj = new P0506RelativeRanks();
+        int[] score = {10,3,8,9,4};
+        String[] relativeRanks = obj.findRelativeRanks(score);
+        System.out.println("result = " + Arrays.toString(relativeRanks));
+    }
 }
