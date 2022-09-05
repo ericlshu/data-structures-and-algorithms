@@ -405,8 +405,17 @@ public class ArrayTest
     public void test0485()
     {
         P0485MaxConsecutiveOnes obj = new P0485MaxConsecutiveOnes();
-        int[] nums = {1,1,0,1,1,1};
+        int[] nums = {1, 1, 0, 1, 1, 1};
         // int[] nums = {1,1,1,1,0,1};
         System.out.println("result = " + obj.findMaxConsecutiveOnes(nums));
+    }
+
+    @Test
+    public void test0500()
+    {
+        String[] words = {"Hello", "Alaska", "Dad", "Peace"};
+        P0500KeyboardRow obj = new P0500KeyboardRow();
+        String[] result = obj.findWords(words);
+        System.out.println("result = " + Arrays.toString(result));
     }
 }
