@@ -3,14 +3,7 @@ import solution.array.P0242ValidAnagramArray;
 import solution.array.P1796SecondLargestDigitInAString;
 import solution.hash_table.P0242ValidAnagramHash;
 import solution.math.P0389FindTheDifference;
-import solution.string.P0003LongestSubstringWithoutRepeatingCharacters;
-import solution.string.P0012IntegerToRoman;
-import solution.string.P0013RomanToInteger;
-import solution.string.P0014LongestCommonPrefix;
-import solution.string.P0017LetterCombinationsOfAPhoneNumber;
-import solution.string.P0028ImplementStrStr;
-import solution.string.P0844BackspaceStringCompare;
-import solution.string.P0973KClosestPointsToOrigin;
+import solution.string.*;
 
 import java.util.Arrays;
 import java.util.List;
@@ -115,4 +108,19 @@ public class StringTest
         System.out.println("result  = " + obj.secondHighest(s));
     }
 
+    @Test
+    public void test1592()
+    {
+        String text1 = "  this   is  a sentence ";
+        String text2 = " practice   makes   perfect";
+        String text3 = "hello   world";
+        String text4 = "  walks  udp package   into  bar a";
+        String text5 = "a";
+        P1592RearrangeSpacesBetweenWords obj = new P1592RearrangeSpacesBetweenWords();
+        System.out.println("result 1 = " + obj.reorderSpaces(text1));
+        System.out.println("result 2 = " + obj.reorderSpaces(text2));
+        System.out.println("result 3 = " + obj.reorderSpaces(text3));
+        System.out.println("result 4 = " + obj.reorderSpaces(text4));
+        System.out.println("result 5 = " + obj.reorderSpaces(text5));
+    }
 }
