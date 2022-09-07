@@ -440,7 +440,16 @@ public class ArrayTest
     public void test0575()
     {
         P0575DistributeCandies obj = new P0575DistributeCandies();
-        int[] nums = {1,1,2,2,3,3};
+        int[] nums = {1, 1, 2, 2, 3, 3};
         System.out.println("result = " + obj.distributeCandies(nums));
+    }
+
+    @Test
+    public void test0250()
+    {
+        P0350IntersectionOfTwoArraysII obj = new P0350IntersectionOfTwoArraysII();
+        int[] nums1 = {4, 9, 5};
+        int[] nums2 = {9, 4, 9, 8, 4};
+        System.out.println("result = " + Arrays.toString(obj.intersect(nums1, nums2)));
     }
 }
