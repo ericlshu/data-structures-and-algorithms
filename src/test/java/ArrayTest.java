@@ -468,4 +468,14 @@ public class ArrayTest
         List<List<Integer>> lists = obj.generate(10);
         lists.forEach(System.out::println);
     }
+
+    @Test
+    public void test0119()
+    {
+        P0119PascalsTriangleII obj = new P0119PascalsTriangleII();
+        System.out.println(obj.getRow(5));
+        System.out.println(obj.getRow_1(6));
+        System.out.println(obj.getRow_2(7));
+        System.out.println(obj.getRow_3(8));
+    }
 }
