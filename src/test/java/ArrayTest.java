@@ -478,4 +478,13 @@ public class ArrayTest
         System.out.println(obj.getRow_2(7));
         System.out.println(obj.getRow_3(8));
     }
+
+    @Test
+    public void test0645()
+    {
+        P0645SetMismatch obj = new P0645SetMismatch();
+        System.out.println(Arrays.toString(obj.findErrorNums_math(new int[]{1, 2, 2, 4})));
+        System.out.println(Arrays.toString(obj.findErrorNums_hash(new int[]{1, 2, 3, 4, 6, 5, 3})));
+        System.out.println(Arrays.toString(obj.findErrorNums_sort(new int[]{1, 2, 3, 4, 6, 5, 3})));
+    }
 }
