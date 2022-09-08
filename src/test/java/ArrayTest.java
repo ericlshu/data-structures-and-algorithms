@@ -460,4 +460,12 @@ public class ArrayTest
         int[][] mat = {{1, 2}, {3, 4}, {5, 6}, {7, 8}};
         System.out.println(Arrays.deepToString(obj.matrixReshape(mat, 2, 4)));
     }
+
+    @Test
+    public void test0118()
+    {
+        P0118PascalsTriangle obj = new P0118PascalsTriangle();
+        List<List<Integer>> lists = obj.generate(10);
+        lists.forEach(System.out::println);
+    }
 }
