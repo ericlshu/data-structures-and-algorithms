@@ -452,4 +452,12 @@ public class ArrayTest
         int[] nums2 = {9, 4, 9, 8, 4};
         System.out.println("result = " + Arrays.toString(obj.intersect(nums1, nums2)));
     }
+
+    @Test
+    public void test0566()
+    {
+        P0566ReshapeTheMatrix obj = new P0566ReshapeTheMatrix();
+        int[][] mat = {{1, 2}, {3, 4}, {5, 6}, {7, 8}};
+        System.out.println(Arrays.deepToString(obj.matrixReshape(mat, 2, 4)));
+    }
 }
