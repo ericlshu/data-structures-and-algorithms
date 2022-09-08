@@ -1,5 +1,6 @@
-package solution.hash_table;
+package solution.array;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -27,9 +28,15 @@ import java.util.Map;
  * @date 2022-09-02 20:54
  * @since jdk-11.0.14
  */
-public class P0169MajorityElementHash
+public class P0169MajorityElement
 {
-    public int majorityElement(int[] nums)
+    public int majorityElement_sort(int[] nums)
+    {
+        Arrays.sort(nums);
+        return nums[nums.length / 2];
+    }
+
+    public int majorityElement_hash(int[] nums)
     {
         Map<Integer, Integer> counts = countNums(nums);
 
@@ -59,5 +66,25 @@ public class P0169MajorityElementHash
             counts.put(num, counts.containsKey(num) ? counts.get(num) + 1 : 1);
         }
         return counts;
+    }
+
+    /**
+     * Boyer-Moore 投票算法
+     * 如果我们把众数记为 +1，把其他数记为 -1，将它们全部加起来，显然和大于 0，从结果本身我们可以看出众数比其他数多。
+     */
+    public int majorityElement_math(int[] nums)
+    {
+        int count = 0;
+        Integer candidate = null;
+        for (int num : nums)
+        {
+            if (count == 0)
+                candidate = num;
+            if (num == candidate)
+                count++;
+            else
+                count--;
+        }
+        return candidate;
     }
 }

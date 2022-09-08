@@ -1,5 +1,6 @@
-package solution.hash_table;
+package solution.array;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -39,12 +40,54 @@ import java.util.Set;
  * @date 2022-09-02 21:45
  * @since jdk-11.0.14
  */
-public class P0268MissingNumberHash
+public class P0268MissingNumber
 {
+    public int missingNumber_sort(int[] nums)
+    {
+        Arrays.sort(nums);
+        int n = nums.length;
+        for (int i = 0; i < n; i++)
+        {
+            if (nums[i] != i)
+                return i;
+        }
+        return n;
+    }
+
+    public int missingNumber_math_sum(int[] nums)
+    {
+        int n = nums.length;
+        int total = n * (n + 1) / 2;
+        int arrSum = 0;
+        for (int num : nums)
+        {
+            arrSum += num;
+        }
+        return total - arrSum;
+    }
+
+    /**
+     * 位运算
+     */
+    public int missingNumber_math_bit(int[] nums)
+    {
+        int xor = 0;
+        int n = nums.length;
+        for (int num : nums)
+        {
+            xor ^= num;
+        }
+        for (int i = 0; i <= n; i++)
+        {
+            xor ^= i;
+        }
+        return xor;
+    }
+
     /**
      * 哈希集合
      */
-    public int missingNumber(int[] nums)
+    public int missingNumber_hash(int[] nums)
     {
         Set<Integer> set = new HashSet<>();
         int n = nums.length;

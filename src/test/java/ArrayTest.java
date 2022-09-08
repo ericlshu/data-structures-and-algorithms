@@ -3,10 +3,6 @@ import org.junit.Test;
 import solution.array.*;
 import solution.binary_search.P1122RelativeSortArray;
 import solution.dynamic_programming.Offer042LCOF;
-import solution.hash_table.P0169MajorityElementHash;
-import solution.hash_table.P0268MissingNumberHash;
-import solution.math.P0169MajorityElementMath;
-import solution.math.P0268MissingNumberMath;
 import solution.math.P1688CountOfMatchesInTournament;
 
 import java.util.Arrays;
@@ -311,26 +307,23 @@ public class ArrayTest
     @Test
     public void test0169()
     {
-        P0169MajorityElementArray array = new P0169MajorityElementArray();
-        P0169MajorityElementHash hash = new P0169MajorityElementHash();
-        P0169MajorityElementMath math = new P0169MajorityElementMath();
+        P0169MajorityElement obj = new P0169MajorityElement();
         int[] nums = {2, 2, 1, 1, 1, 2, 2};
-        System.out.println("array result = " + array.majorityElement(nums));
-        System.out.println("hash result  = " + hash.majorityElement(nums));
-        System.out.println("math result  = " + math.majorityElement(nums));
+        System.out.println("sort result = " + obj.majorityElement_sort(nums));
+        System.out.println("hash result = " + obj.majorityElement_hash(nums));
+        System.out.println("math result = " + obj.majorityElement_math(nums));
     }
 
     @Test
     public void test0268()
     {
-        P0268MissingNumberArray array = new P0268MissingNumberArray();
-        P0268MissingNumberHash hash = new P0268MissingNumberHash();
-        P0268MissingNumberMath math = new P0268MissingNumberMath();
+        P0268MissingNumber obj = new P0268MissingNumber();
 
         int[] nums = {9, 6, 4, 2, 3, 5, 7, 0, 1};
-        System.out.println("array result = " + array.missingNumber(nums));
-        System.out.println("hash  result = " + hash.missingNumber(nums));
-        System.out.println("array result = " + math.missingNumber(nums));
+        System.out.println("array result = " + obj.missingNumber_sort(nums));
+        System.out.println("hash  result = " + obj.missingNumber_hash(nums));
+        System.out.println("math  result = " + obj.missingNumber_math_sum(nums));
+        System.out.println("math  result = " + obj.missingNumber_math_bit(nums));
     }
 
     @Test

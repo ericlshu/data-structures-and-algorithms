@@ -1,7 +1,6 @@
 import org.junit.Test;
-import solution.array.P0242ValidAnagramArray;
+import solution.array.P0242ValidAnagram;
 import solution.array.P1796SecondLargestDigitInAString;
-import solution.hash_table.P0242ValidAnagramHash;
 import solution.math.P0389FindTheDifference;
 import solution.string.*;
 
@@ -83,10 +82,10 @@ public class StringTest
     @Test
     public void test0242()
     {
-        P0242ValidAnagramArray array = new P0242ValidAnagramArray();
-        P0242ValidAnagramHash hash = new P0242ValidAnagramHash();
-        System.out.println("array result = " + array.isAnagram("anagram", "nagaram"));
-        System.out.println("hash result  = " + hash.isAnagram("anagram", "nagaram"));
+        P0242ValidAnagram obj = new P0242ValidAnagram();
+        System.out.println("sort result = " + obj.isAnagram_sort("anagram", "nagaram"));
+        System.out.println("hash result = " + obj.isAnagram_hash_1("anagram", "nagaram"));
+        System.out.println("hash result = " + obj.isAnagram_hash_2("anagram", "nagaram"));
     }
 
     @Test

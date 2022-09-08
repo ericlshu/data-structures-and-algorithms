@@ -1,4 +1,6 @@
-package solution.hash_table;
+package solution.array;
+
+import java.util.Arrays;
 
 /**
  * Description : 242. 有效的字母异位词
@@ -23,9 +25,20 @@ package solution.hash_table;
  * @date 2022-09-02 21:24
  * @since jdk-11.0.14
  */
-public class P0242ValidAnagramHash
+public class P0242ValidAnagram
 {
-    public boolean isAnagram_1(String s, String t)
+    public boolean isAnagram_sort(String s, String t)
+    {
+        if (s.length() != t.length())
+            return false;
+        char[] ss = s.toCharArray();
+        char[] tt = t.toCharArray();
+        Arrays.sort(ss);
+        Arrays.sort(tt);
+        return Arrays.equals(ss, tt);
+    }
+
+    public boolean isAnagram_hash_1(String s, String t)
     {
         if (s.length() != t.length())
             return false;
@@ -52,7 +65,7 @@ public class P0242ValidAnagramHash
      * s 负责在对应位置增加，t 负责在对应位置减少
      * 如果哈希表的值都为 0，则二者是字母异位词
      */
-    public boolean isAnagram(String s, String t)
+    public boolean isAnagram_hash_2(String s, String t)
     {
         if (s.length() != t.length())
             return false;
