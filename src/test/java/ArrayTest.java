@@ -508,4 +508,16 @@ public class ArrayTest
         System.out.println("result 1 = " + obj.isValidSudoku(board1));
         System.out.println("result 2 = " + obj.isValidSudoku(board2));
     }
+
+    @Test
+    public void test0073()
+    {
+        P0073SetMatrixZeroes obj = new P0073SetMatrixZeroes();
+        int[][] matrix1 = {{1, 1, 1}, {1, 0, 1}, {1, 1, 1}};
+        int[][] matrix2 = {{0, 1, 2, 0}, {3, 4, 5, 2}, {1, 3, 1, 5}};
+        obj.setZeroes_2(matrix1);
+        obj.setZeroes_3(matrix2);
+        System.out.println("matrix1 = " + Arrays.deepToString(matrix1));
+        System.out.println("matrix2 = " + Arrays.deepToString(matrix2));
+    }
 }
