@@ -520,4 +520,14 @@ public class ArrayTest
         System.out.println("matrix1 = " + Arrays.deepToString(matrix1));
         System.out.println("matrix2 = " + Arrays.deepToString(matrix2));
     }
+
+    @Test
+    public void test1598()
+    {
+        P1598CrawlerLogFolder obj = new P1598CrawlerLogFolder();
+        String[] logs1 = {"d1/", "d2/", "../", "d21/", "./"};
+        String[] logs2 = {"d1/", "d2/", "./", "d3/", "../", "d31/"};
+        System.out.println("logs1 = " + obj.minOperations(logs1));
+        System.out.println("logs2 = " + obj.minOperations(logs2));
+    }
 }
