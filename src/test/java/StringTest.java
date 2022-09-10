@@ -132,4 +132,12 @@ public class StringTest
         System.out.println(obj.firstUniqChar_index("aabb"));
     }
 
+    @Test
+    public void test0383()
+    {
+        P0383RansomNote obj = new P0383RansomNote();
+        System.out.println(obj.canConstruct("a","b"));
+        System.out.println(obj.canConstruct("aa","ab"));
+        System.out.println(obj.canConstruct("aa","aab"));
+    }
 }
