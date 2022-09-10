@@ -122,4 +122,14 @@ public class StringTest
         System.out.println("result 4 = " + obj.reorderSpaces(text4));
         System.out.println("result 5 = " + obj.reorderSpaces(text5));
     }
+
+    @Test
+    public void test0387()
+    {
+        P0387FirstUniqueCharacterInAString obj = new P0387FirstUniqueCharacterInAString();
+        System.out.println(obj.firstUniqChar_index("leetcode"));
+        System.out.println(obj.firstUniqChar_index("loveleetcode"));
+        System.out.println(obj.firstUniqChar_index("aabb"));
+    }
+
 }
