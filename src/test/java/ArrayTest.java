@@ -1,6 +1,7 @@
 import domain.ListNode;
 import org.junit.Test;
 import solution.array.*;
+import solution.binary_search.P0035SearchInsertPosition;
 import solution.binary_search.P1122RelativeSortArray;
 import solution.dynamic_programming.Offer042LCOF;
 import solution.math.P1688CountOfMatchesInTournament;
@@ -546,5 +547,16 @@ public class ArrayTest
         int[] nums = {1, 2, 3, 4, 5, 6, 7};
         obj.rotate(nums, 3);
         System.out.println("result = " + Arrays.toString(nums));
+    }
+
+    @Test
+    public void test0035()
+    {
+        int[] nums = {1,3,5,6};
+        P0035SearchInsertPosition obj = new P0035SearchInsertPosition();
+        System.out.println("result 5 = " + obj.searchInsert_2(nums, 5));
+        System.out.println("result 2 = " + obj.searchInsert_2(nums, 2));
+        System.out.println("result 7 = " + obj.searchInsert_2(nums, 7));
+
     }
 }
