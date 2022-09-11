@@ -1,5 +1,6 @@
 import domain.ListNode;
 import org.junit.Test;
+import solution.linked_list.P0021MergeTwoSortedLists;
 import solution.linked_list.P0143ReorderList;
 import solution.linked_list.P0203RemoveLinkedListElements;
 import solution.linked_list.P0206ReverseLinkedList;
@@ -67,5 +68,21 @@ public class LinkedListTest
         }
 
         System.out.println("result = " + obj.removeElements_iteration(null, 1));
+    }
+
+    @Test
+    public void test0021()
+    {
+        P0021MergeTwoSortedLists obj = new P0021MergeTwoSortedLists();
+
+        ListNode l1 = new ListNode(1, new ListNode(2, new ListNode(4)));
+        ListNode l2 = new ListNode(1, new ListNode(3, new ListNode(4)));
+
+        ListNode result = obj.mergeTwoLists(l1, l2);
+        while (result != null)
+        {
+            System.out.println(result.val);
+            result = result.next;
+        }
     }
 }
