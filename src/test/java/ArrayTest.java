@@ -535,7 +535,16 @@ public class ArrayTest
     public void test0977()
     {
         P0977SquaresOfASortedArray obj = new P0977SquaresOfASortedArray();
-        int[] nums = {-7,-3,2,3,11};
+        int[] nums = {-7, -3, 2, 3, 11};
         System.out.println("result = " + Arrays.toString(obj.sortedSquares(nums)));
+    }
+
+    @Test
+    public void test0189()
+    {
+        P0189RotateArray obj = new P0189RotateArray();
+        int[] nums = {1, 2, 3, 4, 5, 6, 7};
+        obj.rotate(nums, 3);
+        System.out.println("result = " + Arrays.toString(nums));
     }
 }
