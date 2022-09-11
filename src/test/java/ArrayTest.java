@@ -530,4 +530,12 @@ public class ArrayTest
         System.out.println("logs1 = " + obj.minOperations(logs1));
         System.out.println("logs2 = " + obj.minOperations(logs2));
     }
+
+    @Test
+    public void test0977()
+    {
+        P0977SquaresOfASortedArray obj = new P0977SquaresOfASortedArray();
+        int[] nums = {-7,-3,2,3,11};
+        System.out.println("result = " + Arrays.toString(obj.sortedSquares(nums)));
+    }
 }
