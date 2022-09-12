@@ -25,11 +25,13 @@ import domain.ListNode;
  * @date 2022-01-20 22:17
  * @since JDK 1.8
  */
-public class P0083RemoveDuplicatesFromSortedList {
+public class P0083RemoveDuplicatesFromSortedList
+{
     public ListNode deleteDuplicates(ListNode head)
     {
+        if (head == null) return null;
         ListNode curr = head;
-        while (curr != null && curr.next != null)
+        while (curr.next != null)
         {
             if (curr.val == curr.next.val)
                 curr.next = curr.next.next;

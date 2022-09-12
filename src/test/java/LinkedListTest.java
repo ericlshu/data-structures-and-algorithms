@@ -1,9 +1,6 @@
 import domain.ListNode;
 import org.junit.Test;
-import solution.linked_list.P0021MergeTwoSortedLists;
-import solution.linked_list.P0143ReorderList;
-import solution.linked_list.P0203RemoveLinkedListElements;
-import solution.linked_list.P0206ReverseLinkedList;
+import solution.linked_list.*;
 
 /**
  * Description :
@@ -85,4 +82,21 @@ public class LinkedListTest
             result = result.next;
         }
     }
+
+    @Test
+    public void test0083()
+    {
+        P0083RemoveDuplicatesFromSortedList obj = new P0083RemoveDuplicatesFromSortedList();
+
+        ListNode head = new ListNode(1, new ListNode(1, new ListNode(2,
+                new ListNode(3, new ListNode(3, null)))));
+
+        ListNode result = obj.deleteDuplicates(head);
+        while (result != null)
+        {
+            System.out.println(result.val);
+            result = result.next;
+        }
+    }
+
 }
