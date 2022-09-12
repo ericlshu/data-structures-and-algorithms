@@ -552,11 +552,19 @@ public class ArrayTest
     @Test
     public void test0035()
     {
-        int[] nums = {1,3,5,6};
+        int[] nums = {1, 3, 5, 6};
         P0035SearchInsertPosition obj = new P0035SearchInsertPosition();
         System.out.println("result 5 = " + obj.searchInsert_2(nums, 5));
         System.out.println("result 2 = " + obj.searchInsert_2(nums, 2));
         System.out.println("result 7 = " + obj.searchInsert_2(nums, 7));
+    }
 
+    @Test
+    public void test0167()
+    {
+        P0167TwoSum_II_InputArrayIsSorted obj = new P0167TwoSum_II_InputArrayIsSorted();
+        System.out.println("result = " + Arrays.toString(obj.twoSum(new int[]{2, 7, 11, 15}, 9)));
+        System.out.println("result = " + Arrays.toString(obj.twoSum(new int[]{2, 3, 4}, 6)));
+        System.out.println("result = " + Arrays.toString(obj.twoSum(new int[]{-1, 0}, -1)));
     }
 }

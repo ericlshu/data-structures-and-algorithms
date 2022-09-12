@@ -33,9 +33,13 @@ public class P0283MoveZeroes
             if (num != 0)
                 nums[index++] = num;
         }
-        for (int i = index; i < nums.length; i++)
+        // for (int i = index; i < nums.length; i++)
+        // {
+        //     nums[i] = 0;
+        // }
+        while (index < nums.length)
         {
-            nums[i] = 0;
+            nums[index++] = 0;
         }
     }
 
