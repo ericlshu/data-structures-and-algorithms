@@ -567,4 +567,14 @@ public class ArrayTest
         System.out.println("result = " + Arrays.toString(obj.twoSum(new int[]{2, 3, 4}, 6)));
         System.out.println("result = " + Arrays.toString(obj.twoSum(new int[]{-1, 0}, -1)));
     }
+
+    @Test
+    public void test1608()
+    {
+        P1608SpecialArrayWithXElementsGreaterThanOrEqualX obj = new P1608SpecialArrayWithXElementsGreaterThanOrEqualX();
+        System.out.println("obj 2  = " + obj.specialArray(new int[]{3, 5}));
+        System.out.println("obj -1 = " + obj.specialArray(new int[]{0, 0}));
+        System.out.println("obj 3  = " + obj.specialArray(new int[]{0, 4, 3, 0, 4}));
+        System.out.println("obj -1 = " + obj.specialArray(new int[]{3, 6, 7, 7, 0}));
+    }
 }
