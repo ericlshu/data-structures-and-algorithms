@@ -170,4 +170,16 @@ public class StringTest
         System.out.println(obj.reverseWords_1(s1));
         System.out.println(obj.reverseWords_2(s2));
     }
+
+    @Test
+    public void test0151()
+    {
+        P0151ReverseWordsInAString obj = new P0151ReverseWordsInAString();
+        String s1 = "the sky is blue";
+        String s2 = "  hello world  ";
+        String s3 = "  a good   example   ";
+        System.out.println(obj.reverseWords_1(s1));
+        System.out.println(obj.reverseWords_2(s2));
+        System.out.println(obj.reverseWords_3(s3));
+    }
 }
