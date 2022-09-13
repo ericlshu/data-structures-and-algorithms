@@ -2,6 +2,7 @@ import domain.ListNode;
 import org.junit.Test;
 import solution.array.*;
 import solution.binary_search.P0035SearchInsertPosition;
+import solution.binary_search.P0852PeakIndexInAMountainArray;
 import solution.binary_search.P1122RelativeSortArray;
 import solution.dynamic_programming.Offer042LCOF;
 import solution.math.P1688CountOfMatchesInTournament;
@@ -576,5 +577,14 @@ public class ArrayTest
         System.out.println("obj -1 = " + obj.specialArray(new int[]{0, 0}));
         System.out.println("obj 3  = " + obj.specialArray(new int[]{0, 4, 3, 0, 4}));
         System.out.println("obj -1 = " + obj.specialArray(new int[]{3, 6, 7, 7, 0}));
+    }
+
+    @Test
+    public void test0852()
+    {
+        P0852PeakIndexInAMountainArray obj = new P0852PeakIndexInAMountainArray();
+        System.out.println(obj.peakIndexInMountainArray_1(new int[]{0, 10, 5, 2}));
+        System.out.println(obj.peakIndexInMountainArray_2(new int[]{3, 4, 5, 1}));
+        System.out.println(obj.peakIndexInMountainArray_3(new int[]{24, 69, 100, 99, 79, 78, 67, 36, 26, 19}));
     }
 }
