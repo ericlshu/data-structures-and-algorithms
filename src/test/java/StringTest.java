@@ -136,8 +136,20 @@ public class StringTest
     public void test0383()
     {
         P0383RansomNote obj = new P0383RansomNote();
-        System.out.println(obj.canConstruct("a","b"));
-        System.out.println(obj.canConstruct("aa","ab"));
-        System.out.println(obj.canConstruct("aa","aab"));
+        System.out.println(obj.canConstruct("a", "b"));
+        System.out.println(obj.canConstruct("aa", "ab"));
+        System.out.println(obj.canConstruct("aa", "aab"));
+    }
+
+    @Test
+    public void test0344()
+    {
+        P0344ReverseString obj = new P0344ReverseString();
+        char[] s1 = {'h', 'e', 'l', 'l', 'o'};
+        char[] s2 = {'H', 'a', 'n', 'n', 'a', 'h'};
+        obj.reverseString(s1);
+        obj.reverseString(s2);
+        System.out.println("s1 = " + Arrays.toString(s1));
+        System.out.println("s1 = " + Arrays.toString(s1));
     }
 }
