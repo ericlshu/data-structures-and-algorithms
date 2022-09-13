@@ -160,4 +160,14 @@ public class StringTest
         System.out.println(obj.reverseStr_1("abcdefg", 2));
         System.out.println(obj.reverseStr_2("abcd", 2));
     }
+
+    @Test
+    public void test0557()
+    {
+        P0557ReverseWordsInAStringIII obj = new P0557ReverseWordsInAStringIII();
+        String s1 = "Let's take LeetCode contest";
+        String s2 = "God Ding";
+        System.out.println(obj.reverseWords_1(s1));
+        System.out.println(obj.reverseWords_2(s2));
+    }
 }
