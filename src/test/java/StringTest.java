@@ -182,4 +182,16 @@ public class StringTest
         System.out.println(obj.reverseWords_2(s2));
         System.out.println(obj.reverseWords_3(s3));
     }
+
+    @Test
+    public void test0020()
+    {
+        String s1 = "()";
+        String s2 = "()[]{}";
+        String s3 = "(]";
+        P0020ValidParentheses obj = new P0020ValidParentheses();
+        System.out.println(obj.isValid_1(s1));
+        System.out.println(obj.isValid_2(s2));
+        System.out.println(obj.isValid_3(s3));
+    }
 }
