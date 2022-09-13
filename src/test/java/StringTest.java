@@ -152,4 +152,12 @@ public class StringTest
         System.out.println("s1 = " + Arrays.toString(s1));
         System.out.println("s1 = " + Arrays.toString(s1));
     }
+
+    @Test
+    public void test0541()
+    {
+        P0541ReverseStringII obj = new P0541ReverseStringII();
+        System.out.println(obj.reverseStr_1("abcdefg", 2));
+        System.out.println(obj.reverseStr_2("abcd", 2));
+    }
 }
