@@ -5,6 +5,7 @@ import solution.binary_search.P0035SearchInsertPosition;
 import solution.binary_search.P0852PeakIndexInAMountainArray;
 import solution.binary_search.P1122RelativeSortArray;
 import solution.dynamic_programming.Offer042LCOF;
+import solution.math.P0367ValidPerfectSquare;
 import solution.math.P1688CountOfMatchesInTournament;
 
 import java.util.Arrays;
@@ -602,5 +603,19 @@ public class ArrayTest
         System.out.println(p1619.trimMean(arr3));
         System.out.println(p1619.trimMean(arr4));
         System.out.println(p1619.trimMean(arr5));
+    }
+
+    @Test
+    public void test0367()
+    {
+        P0367ValidPerfectSquare p0367 = new P0367ValidPerfectSquare();
+        for (int i = 1; i <= 4096; i++)
+        {
+            if (p0367.isPerfectSquare_3(i))
+            {
+                System.out.print("i = " + i);
+                System.out.println("; Math.sqrt(i) = " + Math.sqrt(i));
+            }
+        }
     }
 }
