@@ -618,4 +618,14 @@ public class ArrayTest
             }
         }
     }
+
+    @Test
+    public void test1385()
+    {
+        P1385FindTheDistanceValueBetweenTwoArrays p1385 = new P1385FindTheDistanceValueBetweenTwoArrays();
+        int[] arr1 = {4, 5, 8}, arr2 = {10, 9, 1, 8};
+        int d = 2;
+        System.out.println(p1385.findTheDistanceValue_1(arr1, arr2, d));
+        System.out.println(p1385.findTheDistanceValue_2(arr1, arr2, d));
+    }
 }
