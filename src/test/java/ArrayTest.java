@@ -5,6 +5,7 @@ import solution.binary_search.P0035SearchInsertPosition;
 import solution.binary_search.P0852PeakIndexInAMountainArray;
 import solution.binary_search.P1122RelativeSortArray;
 import solution.dynamic_programming.Offer042LCOF;
+import solution.linked_list.P0019RemoveNthNodeFromEndOfList;
 import solution.math.P0367ValidPerfectSquare;
 import solution.math.P1688CountOfMatchesInTournament;
 
@@ -42,7 +43,7 @@ public class ArrayTest
         ListNode node3 = new ListNode(3, node4);
         ListNode node2 = new ListNode(2, node3);
         ListNode node1 = new ListNode(1, node2);
-        ListNode node = obj.removeNthFromEnd(node1, 3);
+        ListNode node = obj.removeNthFromEnd_stack(node1, 3);
         System.out.println("node = " + node);
     }
 
