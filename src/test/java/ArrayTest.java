@@ -629,4 +629,13 @@ public class ArrayTest
         System.out.println(p1385.findTheDistanceValue_1(arr1, arr2, d));
         System.out.println(p1385.findTheDistanceValue_2(arr1, arr2, d));
     }
+
+    @Test
+    public void test0744()
+    {
+        P0744FindSmallestLetterGreaterThanTarget obj = new P0744FindSmallestLetterGreaterThanTarget();
+        System.out.println(obj.nextGreatestLetter(new char[]{'c', 'f', 'j'}, 'a'));
+        System.out.println(obj.nextGreatestLetter(new char[]{'c', 'f', 'j'}, 'c'));
+        System.out.println(obj.nextGreatestLetter(new char[]{'c', 'f', 'j'}, 'd'));
+    }
 }
