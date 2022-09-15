@@ -68,4 +68,14 @@ public class MathTest
         System.out.println(obj.maximumSwap_1(2736));
         System.out.println(obj.maximumSwap_2(9973));
     }
+
+    @Test
+    public void test0069()
+    {
+        P0069SqrtOfX obj = new P0069SqrtOfX();
+        for (int i = 0; i < Integer.MAX_VALUE; i++)
+        {
+            System.out.println(obj.mySqrt_1(i));
+        }
+    }
 }
