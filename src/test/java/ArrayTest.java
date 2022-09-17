@@ -638,4 +638,12 @@ public class ArrayTest
         System.out.println(obj.nextGreatestLetter(new char[]{'c', 'f', 'j'}, 'c'));
         System.out.println(obj.nextGreatestLetter(new char[]{'c', 'f', 'j'}, 'd'));
     }
+
+    @Test
+    public void test2539()
+    {
+        P1539KthMissingPositiveNumber obj = new P1539KthMissingPositiveNumber();
+        System.out.println(obj.findKthPositive(new int[]{2, 3, 4, 7, 11}, 5));
+        System.out.println(obj.findKthPositive(new int[]{1, 2, 3, 4}, 2));
+    }
 }
