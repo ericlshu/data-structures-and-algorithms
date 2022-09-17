@@ -23,7 +23,8 @@ package solution.array;
  * @date 2022-01-20 22:06
  * @since JDK 1.8
  */
-public class P0441ArrangingCoins {
+public class P0441ArrangingCoins
+{
 
     public int arrangeCoins1(int n)
     {
@@ -39,5 +40,19 @@ public class P0441ArrangingCoins {
     public int arrangeCoins2(int n)
     {
         return (int) ((Math.sqrt((long) 8 * n + 1) - 1) / 2);
+    }
+
+    public int arrangeCoins(int n)
+    {
+        int left = 1, right = n;
+        while (left < right)
+        {
+            int mid = (right + left + 1) >>> 1;
+            if ((long) mid * (mid + 1) <= (long) 2 * n)
+                left = mid;
+            else
+                right = mid - 1;
+        }
+        return left;
     }
 }

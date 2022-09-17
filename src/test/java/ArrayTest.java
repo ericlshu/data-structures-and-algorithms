@@ -646,4 +646,12 @@ public class ArrayTest
         System.out.println(obj.findKthPositive(new int[]{2, 3, 4, 7, 11}, 5));
         System.out.println(obj.findKthPositive(new int[]{1, 2, 3, 4}, 2));
     }
+
+    @Test
+    public void test0441()
+    {
+        P0441ArrangingCoins obj = new P0441ArrangingCoins();
+        System.out.println(obj.arrangeCoins(5));
+        System.out.println(obj.arrangeCoins(8));
+    }
 }
