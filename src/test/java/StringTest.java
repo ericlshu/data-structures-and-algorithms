@@ -194,4 +194,14 @@ public class StringTest
         System.out.println(obj.isValid_2(s2));
         System.out.println(obj.isValid_3(s3));
     }
+
+    @Test
+    public void test1624()
+    {
+        P1624LargestSubstringBetweenTwoEqualCharacters obj = new P1624LargestSubstringBetweenTwoEqualCharacters();
+        System.out.println(obj.maxLengthBetweenEqualCharacters("aa"));
+        System.out.println(obj.maxLengthBetweenEqualCharacters("abca"));
+        System.out.println(obj.maxLengthBetweenEqualCharacters("cbzxy"));
+        System.out.println(obj.maxLengthBetweenEqualCharacters("cabbac"));
+    }
 }
