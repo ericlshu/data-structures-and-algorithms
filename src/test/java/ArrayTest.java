@@ -682,4 +682,14 @@ public class ArrayTest
         System.out.println(obj.searchMatrix(matrix, 3));
         System.out.println(obj.searchMatrix(matrix, 13));
     }
+
+    @Test
+    public void test1636()
+    {
+        P1636SortArrayByIncreasingFrequency obj = new P1636SortArrayByIncreasingFrequency();
+        int[] nums1 = {2, 3, 1, 3, 2};
+        int[] nums2 = {-1, 1, -6, 4, 5, -6, 1, 4, 1};
+        System.out.println(Arrays.toString(obj.frequencySort(nums1)));
+        System.out.println(Arrays.toString(obj.frequencySort(nums2)));
+    }
 }
