@@ -654,4 +654,23 @@ public class ArrayTest
         System.out.println(obj.arrangeCoins(5));
         System.out.println(obj.arrangeCoins(8));
     }
+
+    @Test
+    public void test1351()
+    {
+        P1351CountNegativeNumbersInASortedMatrix obj = new P1351CountNegativeNumbersInASortedMatrix();
+        int[][] grid1 = {
+                {4, 3, 2, 1, -1},
+                {3, 2, 1, -1, -2},
+                {1, 1, 0, -1, -2},
+                {1, -1, -2, -3, -4},
+                {-2, -3, -4, -5, -6}
+        };
+        int[][] grid2 = {
+                {3, 2},
+                {1, 0}
+        };
+        System.out.println(obj.countNegatives(grid1));
+        System.out.println(obj.countNegatives(grid2));
+    }
 }
