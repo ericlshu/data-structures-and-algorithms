@@ -709,4 +709,18 @@ public class ArrayTest
         System.out.println(Arrays.toString(p1377.kWeakestRows_1(mat1, 3)));
         System.out.println(Arrays.toString(p1377.kWeakestRows_2(mat2, 2)));
     }
+
+    @Test
+    public void test1346()
+    {
+        P1346CheckIfNAndItsDoubleExist p1346 = new P1346CheckIfNAndItsDoubleExist();
+        int[] arr1 = {10, 2, 5, 3};
+        int[] arr2 = {7, 1, 14, 11};
+        int[] arr3 = {3, 1, 7, 11};
+        int[] arr4 = {-10, 12, -20, -8, 15};
+        System.out.println(p1346.checkIfExist_3(arr1));
+        System.out.println(p1346.checkIfExist_3(arr2));
+        System.out.println(p1346.checkIfExist_3(arr3));
+        System.out.println(p1346.checkIfExist_3(arr4));
+    }
 }
