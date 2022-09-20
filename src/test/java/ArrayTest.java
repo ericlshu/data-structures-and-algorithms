@@ -692,4 +692,21 @@ public class ArrayTest
         System.out.println(Arrays.toString(obj.frequencySort(nums1)));
         System.out.println(Arrays.toString(obj.frequencySort(nums2)));
     }
+
+    @Test
+    public void test1337()
+    {
+        int[][] mat1 = {{1, 1, 0, 0, 0},
+                {1, 1, 1, 1, 0},
+                {1, 0, 0, 0, 0},
+                {1, 1, 0, 0, 0},
+                {1, 1, 1, 1, 1}};
+        int[][] mat2 = {{1, 0, 0, 0},
+                {1, 1, 1, 1},
+                {1, 0, 0, 0},
+                {1, 0, 0, 0}};
+        P1337TheKWeakestRowsInAMatrix p1377 = new P1337TheKWeakestRowsInAMatrix();
+        System.out.println(Arrays.toString(p1377.kWeakestRows_1(mat1, 3)));
+        System.out.println(Arrays.toString(p1377.kWeakestRows_2(mat2, 2)));
+    }
 }
