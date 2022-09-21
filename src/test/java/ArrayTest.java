@@ -723,4 +723,25 @@ public class ArrayTest
         System.out.println(p1346.checkIfExist_3(arr3));
         System.out.println(p1346.checkIfExist_3(arr4));
     }
+
+    @Test
+    public void test0633()
+    {
+        P0633SumOfSquareNumbers p0633 = new P0633SumOfSquareNumbers();
+        for (int i = 0; i <= 100; i++)
+        {
+            if (p0633.judgeSquareSum(i))
+            {
+                System.out.print("i = " + i);
+            }
+            if (p0633.judgeSquareSum_sqrt(i))
+            {
+                System.out.print(" ; Sqrt = " + i);
+            }
+            if (p0633.judgeSquareSum_math(i))
+            {
+                System.out.println(" ; Math = " + i);
+            }
+        }
+    }
 }
