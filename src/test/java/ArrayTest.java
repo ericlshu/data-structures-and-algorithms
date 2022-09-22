@@ -7,6 +7,7 @@ import solution.binary_search.P1122RelativeSortArray;
 import solution.dynamic_programming.Offer042LCOF;
 import solution.linked_list.P0019RemoveNthNodeFromEndOfList;
 import solution.math.P0191NumberOf1Bits;
+import solution.math.P0231PowerOfTwo;
 import solution.math.P0367ValidPerfectSquare;
 import solution.math.P1688CountOfMatchesInTournament;
 
@@ -769,5 +770,18 @@ public class ArrayTest
         System.out.println(p0191.hammingWeight_1(3));
         System.out.println(p0191.hammingWeight_1(1));
         System.out.println(p0191.hammingWeight_2(31));
+    }
+
+    @Test
+    public void test0231()
+    {
+        P0231PowerOfTwo p0231 = new P0231PowerOfTwo();
+        for (int i = 1; i <= 1024; i++)
+        {
+            if (p0231.isPowerOfTwo_2(i) && p0231.isPowerOfTwo_3(i))
+            {
+                System.out.println("i = " + i);
+            }
+        }
     }
 }
