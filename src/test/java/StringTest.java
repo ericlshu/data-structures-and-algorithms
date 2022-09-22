@@ -204,4 +204,11 @@ public class StringTest
         System.out.println(obj.maxLengthBetweenEqualCharacters("cbzxy"));
         System.out.println(obj.maxLengthBetweenEqualCharacters("cabbac"));
     }
+
+    @Test
+    public void test0567()
+    {
+        P0567PermutationInString p0567 = new P0567PermutationInString();
+        System.out.println(p0567.checkInclusion("ab", "eidbaooo"));
+    }
 }
