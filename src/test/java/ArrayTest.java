@@ -784,4 +784,22 @@ public class ArrayTest
             }
         }
     }
+
+    @Test
+    public void test1640()
+    {
+        P1640CheckArrayFormationThroughConcatenation p1640 = new P1640CheckArrayFormationThroughConcatenation();
+
+        int[] arr = {15, 88};
+        int[][] pieces = {{88}, {15}};
+        System.out.println(p1640.canFormArray(arr, pieces));
+
+        arr = new int[]{49, 18, 16};
+        pieces = new int[][]{{16, 18, 49}};
+        System.out.println(p1640.canFormArray(arr, pieces));
+
+        arr = new int[]{91, 4, 64, 78};
+        pieces = new int[][]{{78}, {4, 64}, {91}};
+        System.out.println(p1640.canFormArray(arr, pieces));
+    }
 }
