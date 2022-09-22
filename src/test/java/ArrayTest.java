@@ -744,4 +744,20 @@ public class ArrayTest
             }
         }
     }
+
+    @Test
+    public void test1855()
+    {
+        P1855MaximumDistanceBetweenAPairOfValues p1855 = new P1855MaximumDistanceBetweenAPairOfValues();
+        int[] nums1 = {55, 30, 5, 4, 2}, nums2 = {100, 20, 10, 10, 5};
+        System.out.println(p1855.maxDistance_1(nums1, nums2));
+
+        nums1 = new int[]{2, 2, 2};
+        nums2 = new int[]{10, 10, 1};
+        System.out.println(p1855.maxDistance_2(nums1, nums2));
+
+        nums1 = new int[]{30, 29, 19, 5};
+        nums2 = new int[]{25, 25, 25, 25, 25};
+        System.out.println(p1855.maxDistance_2(nums1, nums2));
+    }
 }
