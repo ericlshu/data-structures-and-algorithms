@@ -6,6 +6,7 @@ import solution.binary_search.P0852PeakIndexInAMountainArray;
 import solution.binary_search.P1122RelativeSortArray;
 import solution.dynamic_programming.Offer042LCOF;
 import solution.linked_list.P0019RemoveNthNodeFromEndOfList;
+import solution.math.P0191NumberOf1Bits;
 import solution.math.P0367ValidPerfectSquare;
 import solution.math.P1688CountOfMatchesInTournament;
 
@@ -759,5 +760,14 @@ public class ArrayTest
         nums1 = new int[]{30, 29, 19, 5};
         nums2 = new int[]{25, 25, 25, 25, 25};
         System.out.println(p1855.maxDistance_2(nums1, nums2));
+    }
+
+    @Test
+    public void test0191()
+    {
+        P0191NumberOf1Bits p0191 = new P0191NumberOf1Bits();
+        System.out.println(p0191.hammingWeight_1(3));
+        System.out.println(p0191.hammingWeight_1(1));
+        System.out.println(p0191.hammingWeight_2(31));
     }
 }
