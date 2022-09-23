@@ -1,10 +1,9 @@
 import org.junit.Test;
-import solution.dynamic_programming.P0053MaximumSubarray;
-import solution.dynamic_programming.P0121BestTimeToBuyAndSellStock;
-import solution.dynamic_programming.P0139WordBreak;
-import solution.dynamic_programming.P1024VideoStitching;
+import solution.dynamic_programming.*;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -60,4 +59,15 @@ public class DynamicProgrammingTest
         System.out.println("result = " + obj.videoStitching(clips, 9));
     }
 
+    @Test
+    public void test0120()
+    {
+        P0120Triangle p0120 = new P0120Triangle();
+        List<List<Integer>> triangle = new ArrayList<>();
+        triangle.add(Collections.singletonList(2));
+        triangle.add(Arrays.asList(3, 4));
+        triangle.add(Arrays.asList(6, 5, 7));
+        triangle.add(Arrays.asList(4, 1, 8, 3));
+        System.out.println(p0120.minimumTotal(triangle));
+    }
 }
