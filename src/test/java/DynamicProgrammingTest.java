@@ -82,4 +82,12 @@ public class DynamicProgrammingTest
         System.out.println(p0070.climbStairs_5(45));
         System.out.println(p0070.climbStairs_6(45));
     }
+
+    @Test
+    public void test0198()
+    {
+        P0198HouseRobber p0198 = new P0198HouseRobber();
+        System.out.println(p0198.rob_1(new int[]{1, 2, 3, 1}));
+        System.out.println(p0198.rob_2(new int[]{2, 7, 9, 3, 1}));
+    }
 }
