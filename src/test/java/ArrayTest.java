@@ -802,4 +802,16 @@ public class ArrayTest
         pieces = new int[][]{{78}, {4, 64}, {91}};
         System.out.println(p1640.canFormArray(arr, pieces));
     }
+
+    @Test
+    public void test0153()
+    {
+        P0153FindMinimumInRotatedSortedArray p0153 = new P0153FindMinimumInRotatedSortedArray();
+        int[] nums1 = {3, 4, 5, 1, 2};
+        int[] nums2 = {4, 5, 6, 7, 0, 1, 2};
+        int[] nums3 = {11, 13, 15, 17};
+        System.out.println(p0153.findMin(nums1));
+        System.out.println(p0153.findMin(nums2));
+        System.out.println(p0153.findMin(nums3));
+    }
 }
