@@ -70,4 +70,16 @@ public class DynamicProgrammingTest
         triangle.add(Arrays.asList(4, 1, 8, 3));
         System.out.println(p0120.minimumTotal(triangle));
     }
+
+    @Test
+    public void test0070()
+    {
+        P0070ClimbingStairs p0070 = new P0070ClimbingStairs();
+        System.out.println(p0070.climbStairs_1(45));
+        System.out.println(p0070.climbStairs_2(45));
+        System.out.println(p0070.climbStairs_3(45));
+        System.out.println(p0070.climbStairs_4(45));
+        System.out.println(p0070.climbStairs_5(45));
+        System.out.println(p0070.climbStairs_6(45));
+    }
 }
