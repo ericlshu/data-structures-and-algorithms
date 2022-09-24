@@ -68,7 +68,13 @@ public class DynamicProgrammingTest
         triangle.add(Arrays.asList(3, 4));
         triangle.add(Arrays.asList(6, 5, 7));
         triangle.add(Arrays.asList(4, 1, 8, 3));
-        System.out.println(p0120.minimumTotal(triangle));
+        System.out.println(p0120.minimumTotal_n2(triangle));
+        System.out.println(p0120.minimumTotal_2n(triangle));
+        System.out.println(p0120.minimumTotal_n(triangle));
+        System.out.println(p0120.minimumTotal_recursion_1(triangle));
+        System.out.println(p0120.minimumTotal_recursion_2(triangle));
+        System.out.println(p0120.minimumTotal_dpn2(triangle));
+        System.out.println(p0120.minimumTotal_dpn(triangle));
     }
 
     @Test
