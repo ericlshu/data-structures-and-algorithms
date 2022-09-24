@@ -78,4 +78,15 @@ public class MathTest
             System.out.println(obj.mySqrt_1(i));
         }
     }
+
+    @Test
+    public void test0190()
+    {
+        P0190ReverseBits p0190 = new P0190ReverseBits();
+        int n1 = 0b00000010100101000001111010011100;
+        int n2 = 0b11111111111111111111111111111101;
+        System.out.println(p0190.reverseBits_1(n1));
+        System.out.println(p0190.reverseBits_2(n2));
+        System.out.println(p0190.reverseBits_3(n2));
+    }
 }
