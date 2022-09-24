@@ -125,4 +125,12 @@ public class P0387FirstUniqueCharacterInAString
             this.pos = pos;
         }
     }
+
+    public int firstUniqChar_api(String s)
+    {
+        for (int i = 0; i < s.length(); i++)
+            if (s.indexOf(s.charAt(i)) == s.lastIndexOf(s.charAt(i)))
+                return i;
+        return -1;
+    }
 }

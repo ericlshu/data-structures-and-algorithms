@@ -42,7 +42,8 @@ import java.util.Arrays;
  * @date 2022-01-23 16:15
  * @since JDK 1.8
  */
-public class P0088MergeSortedArray {
+public class P0088MergeSortedArray
+{
 
     /**
      * 逆向双指针
@@ -124,5 +125,14 @@ public class P0088MergeSortedArray {
             sorted[i + j - 1] = value;
         }
         System.arraycopy(sorted, 0, nums1, 0, m + n);
+    }
+
+    public void merge4(int[] nums1, int m, int[] nums2, int n)
+    {
+        int i = m-- + --n;
+        while (n >= 0)
+        {
+            nums1[i--] = m >= 0 && nums1[m] > nums2[n] ? nums1[m--] : nums2[n--];
+        }
     }
 }
