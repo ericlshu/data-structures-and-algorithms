@@ -814,4 +814,13 @@ public class ArrayTest
         System.out.println(p0153.findMin(nums2));
         System.out.println(p0153.findMin(nums3));
     }
+
+    @Test
+    public void test1652()
+    {
+        P1652DefuseTheBomb p1652 = new P1652DefuseTheBomb();
+        System.out.println(Arrays.toString(p1652.decrypt(new int[]{5, 7, 1, 4}, 3)));
+        System.out.println(Arrays.toString(p1652.decrypt(new int[]{1, 2, 3, 4}, 0)));
+        System.out.println(Arrays.toString(p1652.decrypt(new int[]{2, 4, 9, 3}, -2)));
+    }
 }
