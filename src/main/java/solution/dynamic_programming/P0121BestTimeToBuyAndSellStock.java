@@ -34,10 +34,36 @@ public class P0121BestTimeToBuyAndSellStock
                 maxProfit = Math.max(prices[j] - prices[i], maxProfit);
             }
         }
-        return Math.max(0, maxProfit);
+        return maxProfit;
     }
 
-    public int maxProfit_1(int[] prices)
+    public int maxProfit_dp1(int[] prices)
+    {
+        int max = 0;
+        // dp[i]表示截止到i，价格的最低点是多少
+        int[] dp = new int[prices.length];
+        dp[0] = prices[0];
+        for (int i = 1; i < prices.length; i++)
+        {
+            dp[i] = Math.min(dp[i - 1], prices[i]);
+            max = Math.max((prices[i] - dp[i]), max);
+        }
+        return max;
+    }
+
+    public int maxProfit_dp3(int[] prices)
+    {
+        int minPrice = prices[0];
+        int maxProfit = 0;
+        for (int i = 1; i < prices.length; i++)
+        {
+            minPrice = Math.min(minPrice, prices[i]);
+            maxProfit = Math.max((prices[i] - minPrice), maxProfit);
+        }
+        return maxProfit;
+    }
+
+    public int maxProfit_dp2(int[] prices)
     {
         int minPrice = Integer.MAX_VALUE;
         int maxProfit = 0;

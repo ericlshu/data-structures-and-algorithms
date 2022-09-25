@@ -1,5 +1,7 @@
 package solution.dynamic_programming;
 
+import java.util.Arrays;
+
 /**
  * Description : 最大子序和
  * <p>
@@ -19,7 +21,7 @@ package solution.dynamic_programming;
  */
 public class P0053MaximumSubarray
 {
-    public int maxSubArray(int[] nums)
+    public int maxSubArray_greedy(int[] nums)
     {
         int preSum = 0, curSum, maxSum = nums[0];
         for (int x : nums)
@@ -31,7 +33,7 @@ public class P0053MaximumSubarray
         return maxSum;
     }
 
-    public int maxSubArray_1(int[] nums)
+    public int maxSubArray_dp1(int[] nums)
     {
         int n = nums.length;
         if (n == 0) return 0;
@@ -45,8 +47,31 @@ public class P0053MaximumSubarray
         return result;
     }
 
+    public int maxSubArray_dp2(int[] nums)
+    {
+        int pre = 0, maxAns = nums[0];
+        for (int x : nums)
+        {
+            pre = Math.max(pre + x, x);
+            maxAns = Math.max(maxAns, pre);
+        }
+        return maxAns;
+    }
 
-    public static class Status
+    public int maxSubArray_dp3(int[] nums)
+    {
+        int result = nums[0];
+        for (int i = 1; i < nums.length; ++i)
+        {
+            if (nums[i - 1] > 0)
+                nums[i] += nums[i - 1];
+            result = Math.max(result, nums[i]);
+        }
+        System.out.println("nums = " + Arrays.toString(nums));
+        return result;
+    }
+
+    public class Status
     {
         public int lSum, rSum, mSum, iSum;
 
@@ -59,7 +84,7 @@ public class P0053MaximumSubarray
         }
     }
 
-    public int maxSubArray_2(int[] nums)
+    public int maxSubArray_partition(int[] nums)
     {
         return getInfo(nums, 0, nums.length - 1).mSum;
     }

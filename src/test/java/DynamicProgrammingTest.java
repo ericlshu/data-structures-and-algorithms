@@ -18,19 +18,25 @@ public class DynamicProgrammingTest
     @Test
     public void testP0053()
     {
-        P0053MaximumSubarray obj = new P0053MaximumSubarray();
-        int[] nums = {-24};
-        System.out.println("result = " + obj.maxSubArray_1(nums));
+        P0053MaximumSubarray p0053 = new P0053MaximumSubarray();
+        int[] nums = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
+        System.out.println(p0053.maxSubArray_greedy(nums));
+        System.out.println(p0053.maxSubArray_partition(nums));
+        System.out.println(p0053.maxSubArray_dp1(nums));
+        System.out.println(p0053.maxSubArray_dp2(nums));
+        System.out.println(p0053.maxSubArray_dp3(nums));
     }
 
     @Test
     public void testP0121()
     {
         P0121BestTimeToBuyAndSellStock obj = new P0121BestTimeToBuyAndSellStock();
-
-        // int[] nums1 = {0, 1, 2, 3, 4, 5, 6, 7, 8};
-        int[] nums2 = {7, 1, 5, 3, 6, 4};
-        System.out.println("result = " + obj.maxProfit_1(nums2));
+        // int[] nums = {1, 2, 3, 4, 5, 6, 7, 8};
+        int[] nums = {7, 1, 5, 3, 6, 4};
+        System.out.println("result = " + obj.maxProfit(nums));
+        System.out.println("result = " + obj.maxProfit_dp1(nums));
+        System.out.println("result = " + obj.maxProfit_dp2(nums));
+        System.out.println("result = " + obj.maxProfit_dp3(nums));
     }
 
     @Test
