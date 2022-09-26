@@ -119,4 +119,25 @@ public class LinkedListTest
         }
     }
 
+    @Test
+    public void test0160()
+    {
+        P0160IntersectionOfTwoLinkedLists p0160 = new P0160IntersectionOfTwoLinkedLists();
+        ListNode listA = new ListNode(4);
+        ListNode node1 = new ListNode(1);
+        listA.next = node1;
+
+        ListNode listB = new ListNode(5);
+        ListNode node2 = new ListNode(6);
+        ListNode node3 = new ListNode(1);
+        listB.next = node2;
+        node2.next = node3;
+
+        ListNode intersect = new ListNode(8, new ListNode(4, new ListNode(5, null)));
+        node1.next = intersect;
+        node3.next = intersect;
+
+        System.out.println(p0160.getIntersectionNode_hash(listA, listB));
+        System.out.println(p0160.getIntersectionNode_pointers(listA, listB));
+    }
 }
