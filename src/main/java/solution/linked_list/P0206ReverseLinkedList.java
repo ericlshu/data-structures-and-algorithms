@@ -2,6 +2,8 @@ package solution.linked_list;
 
 import domain.ListNode;
 
+import java.util.Stack;
+
 /**
  * Description : 反转链表
  * <p>
@@ -62,5 +64,24 @@ public class P0206ReverseLinkedList
         node.next.next = node;
         node.next = null;
         return head;
+    }
+
+    public ListNode reverseListByStack(ListNode head)
+    {
+        Stack<ListNode> stack = new Stack<>();
+        while (head != null)
+        {
+            stack.push(head);
+            head = head.next;
+        }
+        ListNode dummyHead = new ListNode(-1, null);
+        ListNode node = dummyHead;
+        while (!stack.isEmpty())
+        {
+            node.next = stack.pop();
+            node = node.next;
+        }
+        node.next = null;
+        return dummyHead.next;
     }
 }

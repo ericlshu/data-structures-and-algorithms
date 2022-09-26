@@ -1,7 +1,5 @@
 package domain;
 
-import java.util.Objects;
-
 /**
  * Description :
  *
@@ -9,7 +7,8 @@ import java.util.Objects;
  * @date 2020-10-14 20:33
  * @since JDK 1.8
  */
-public class ListNode {
+public class ListNode
+{
     public int val;
     public ListNode next;
 
@@ -26,21 +25,6 @@ public class ListNode {
     {
         this.val = val;
         this.next = next;
-    }
-
-    @Override
-    public boolean equals(Object o)
-    {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        ListNode listNode = (ListNode) o;
-        return val == listNode.val && Objects.equals(next, listNode.next);
-    }
-
-    @Override
-    public int hashCode()
-    {
-        return Objects.hash(val, next);
     }
 
     @Override

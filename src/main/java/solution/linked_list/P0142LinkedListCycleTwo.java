@@ -41,7 +41,8 @@ import java.util.Set;
  * @date 2022-01-23 14:32
  * @since JDK 1.8
  */
-public class P142LinkedListCycleTwo {
+public class P0142LinkedListCycleTwo
+{
     public ListNode detectCycle1(ListNode head)
     {
         Set<ListNode> set = new HashSet<>();
