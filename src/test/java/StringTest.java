@@ -220,4 +220,15 @@ public class StringTest
         System.out.println(m0102.CheckPermutation_array("abc", "bca"));
         System.out.println(m0102.CheckPermutation_sort("abc", "bca"));
     }
+
+    @Test
+    public void test0058()
+    {
+        P0058LengthOfLastWord p0058 = new P0058LengthOfLastWord();
+        System.out.println(p0058.lengthOfLastWord("Hello World"));
+        System.out.println(p0058.lengthOfLastWord("   fly me   to   the moon  "));
+        System.out.println(p0058.lengthOfLastWord("luffy is still joyboy"));
+        System.out.println(p0058.lengthOfLastWord("a"));
+        System.out.println(p0058.lengthOfLastWord(" a "));
+    }
 }
