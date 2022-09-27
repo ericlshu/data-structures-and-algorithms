@@ -211,4 +211,13 @@ public class StringTest
         P0567PermutationInString p0567 = new P0567PermutationInString();
         System.out.println(p0567.checkInclusion("ab", "eidbaooo"));
     }
+
+    @Test
+    public void test0102()
+    {
+        MianShi0102CheckPermutationLCCI m0102 = new MianShi0102CheckPermutationLCCI();
+        System.out.println(m0102.CheckPermutation_hash("abc", "bca"));
+        System.out.println(m0102.CheckPermutation_array("abc", "bca"));
+        System.out.println(m0102.CheckPermutation_sort("abc", "bca"));
+    }
 }
