@@ -240,4 +240,15 @@ public class StringTest
         System.out.println(p0125.isPalindrome_pointers("A man, a plan, a canal: Panama"));
         System.out.println(p0125.isPalindrome_pointers("race a car"));
     }
+
+    @Test
+    public void test0171()
+    {
+        P0171ExcelSheetColumnNumber p0171 = new P0171ExcelSheetColumnNumber();
+        System.out.println(p0171.titleToNumber("AB"));
+        System.out.println(p0171.titleToNumber("FXSHRXW"));
+        System.out.println(p0171.titleToNumber("A"));
+        System.out.println(p0171.titleToNumber("ZY"));
+        System.out.println(Integer.MAX_VALUE);
+    }
 }
