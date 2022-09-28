@@ -57,10 +57,40 @@ public class P0283MoveZeroes
         }
     }
 
-    private void swap(int[] nums, int left, int right)
+    // private void swap(int[] nums, int left, int right)
+    // {
+    //     int temp = nums[left];
+    //     nums[left] = nums[right];
+    //     nums[right] = temp;
+    // }
+
+    public void moveZeroes_2(int[] nums)
     {
-        int temp = nums[left];
-        nums[left] = nums[right];
-        nums[right] = temp;
+        int len = nums.length;
+        int left = 0, right = 0;
+        while (left < len && right < len)
+        {
+            while (left < len && nums[left] != 0)
+            {
+                left++;
+            }
+            right = left + 1;
+            while (right < len && nums[right] == 0)
+            {
+                right++;
+            }
+            if (right < len)
+            {
+                swap(nums, left, right);
+            }
+            left++;
+        }
+    }
+
+    private void swap(int[] nums, int i, int j)
+    {
+        nums[i] = nums[i] ^ nums[j];
+        nums[j] = nums[i] ^ nums[j];
+        nums[i] = nums[i] ^ nums[j];
     }
 }
