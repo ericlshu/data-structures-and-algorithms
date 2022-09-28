@@ -231,4 +231,13 @@ public class StringTest
         System.out.println(p0058.lengthOfLastWord("a"));
         System.out.println(p0058.lengthOfLastWord(" a "));
     }
+
+    @Test
+    public void test0125()
+    {
+        P0125ValidPalindrome p0125 = new P0125ValidPalindrome();
+        String s = "A man, a plan, a canal: Panama";
+        System.out.println(p0125.isPalindrome_pointers("A man, a plan, a canal: Panama"));
+        System.out.println(p0125.isPalindrome_pointers("race a car"));
+    }
 }
