@@ -1,6 +1,5 @@
 package solution.tree;
 
-import domain.Node;
 import domain.TreeNode;
 
 import java.util.ArrayList;
@@ -15,23 +14,22 @@ import java.util.List;
  * @date 2022-01-25 15:22
  * @since JDK 1.8
  */
-public class P0145BinaryTreePostorderTraversal {
-
-    public List<Integer> postorderTraversal(TreeNode root)
+public class P0145BinaryTreePostorderTraversal
+{
+    public List<Integer> postorderTraversalRecursion(TreeNode root)
     {
         List<Integer> list = new ArrayList<>();
-        postorderTraversalRecursion(root, list);
+        postorderTraversal(root, list);
         return list;
     }
 
-    private void postorderTraversalRecursion(TreeNode node, List<Integer> list)
+    private void postorderTraversal(TreeNode node, List<Integer> list)
     {
         if (node == null) return;
-        postorderTraversalRecursion(node.left, list);
-        postorderTraversalRecursion(node.right, list);
+        postorderTraversal(node.left, list);
+        postorderTraversal(node.right, list);
         list.add(node.val);
     }
-
 
     public List<Integer> postorderTraversalIteration(TreeNode root)
     {
@@ -61,5 +59,62 @@ public class P0145BinaryTreePostorderTraversal {
             }
         }
         return list;
+    }
+
+    public List<Integer> postorderTraversalMorris(TreeNode root)
+    {
+        List<Integer> res = new ArrayList<Integer>();
+        if (root == null)
+        {
+            return res;
+        }
+
+        TreeNode p1 = root, p2 = null;
+
+        while (p1 != null)
+        {
+            p2 = p1.left;
+            if (p2 != null)
+            {
+                while (p2.right != null && p2.right != p1)
+                {
+                    p2 = p2.right;
+                }
+                if (p2.right == null)
+                {
+                    p2.right = p1;
+                    p1 = p1.left;
+                    continue;
+                }
+                else
+                {
+                    p2.right = null;
+                    addPath(res, p1.left);
+                }
+            }
+            p1 = p1.right;
+        }
+        addPath(res, root);
+        return res;
+    }
+
+    private void addPath(List<Integer> res, TreeNode node)
+    {
+        int count = 0;
+        while (node != null)
+        {
+            ++count;
+            res.add(node.val);
+            node = node.right;
+        }
+        int left = res.size() - count, right = res.size() - 1;
+        while (left < right)
+        {
+            int temp = res.get(left);
+            res.set(left, res.get(right));
+            res.set(right, temp);
+            left++;
+            right--;
+        }
     }
 }
