@@ -21,6 +21,26 @@ public class TreeTest
     }
 
     @Test
+    public void test0094()
+    {
+        TreeNode node3 = new TreeNode(3);
+        TreeNode node4 = new TreeNode(4);
+        TreeNode node5 = new TreeNode(5);
+        TreeNode node6 = new TreeNode(6);
+
+        TreeNode node1 = new TreeNode(1, node3, node4);
+        TreeNode node2 = new TreeNode(2, node5, node6);
+
+        TreeNode root = new TreeNode(0, node1, node2);
+
+        P0094BinaryTreeInorderTraversal p0094 = new P0094BinaryTreeInorderTraversal();
+
+        System.out.println(p0094.inorderTraversalRecursion(root));
+        System.out.println(p0094.inorderTraversalIteration(root));
+        System.out.println(p0094.inorderTraversalMorris(root));
+    }
+
+    @Test
     public void test0144()
     {
         TreeNode node3 = new TreeNode(3);
