@@ -248,7 +248,16 @@ public class StringTest
         System.out.println(p0171.titleToNumber("AB"));
         System.out.println(p0171.titleToNumber("FXSHRXW"));
         System.out.println(p0171.titleToNumber("A"));
-        System.out.println(p0171.titleToNumber("ZY"));
+        System.out.println(p0171.titleToNumber("ZZY"));
         System.out.println(Integer.MAX_VALUE);
+    }
+
+    @Test
+    public void test0168()
+    {
+        P0168ExcelSheetColumnTitle p0168 = new P0168ExcelSheetColumnTitle();
+        System.out.println(p0168.convertToTitle(Integer.MAX_VALUE));
+        System.out.println(p0168.convertToTitle(701));
+        System.out.println(p0168.convertToTitle(18277));
     }
 }
