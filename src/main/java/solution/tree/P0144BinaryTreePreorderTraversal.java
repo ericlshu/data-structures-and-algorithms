@@ -42,28 +42,23 @@ import java.util.List;
  * @date 2020-10-27 20:51
  * @since JDK 1.8
  */
-public class P0144BinaryTreePreorderTraversal {
-    public List<Integer> preorderTraversal(TreeNode root)
+public class P0144BinaryTreePreorderTraversal
+{
+    public List<Integer> preorderTraversalRecursion(TreeNode root)
     {
         List<Integer> res = new ArrayList<>();
-        preorderTraversalRecursion(root, res);
+        preorderTraversal(root, res);
         return res;
     }
 
-    /**
-     * 递归
-     */
-    private void preorderTraversalRecursion(TreeNode node, List<Integer> res)
+    private void preorderTraversal(TreeNode node, List<Integer> res)
     {
         if (node == null) return;
         res.add(node.val);
-        preorderTraversalRecursion(node.left, res);
-        preorderTraversalRecursion(node.right, res);
+        preorderTraversal(node.left, res);
+        preorderTraversal(node.right, res);
     }
 
-    /**
-     * 迭代
-     */
     public List<Integer> preorderTraversalIteration(TreeNode root)
     {
         List<Integer> list = new ArrayList<>();
@@ -85,9 +80,6 @@ public class P0144BinaryTreePreorderTraversal {
         return list;
     }
 
-    /**
-     * Morris
-     */
     public List<Integer> preorderTraversalMorris(TreeNode root)
     {
         List<Integer> res = new ArrayList<>();
