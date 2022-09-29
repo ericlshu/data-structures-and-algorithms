@@ -1,9 +1,8 @@
 import domain.TreeNode;
 import org.junit.Test;
-import solution.tree.P0094BinaryTreeInorderTraversal;
-import solution.tree.P0144BinaryTreePreorderTraversal;
-import solution.tree.P0145BinaryTreePostorderTraversal;
-import solution.tree.P0925LongPressedName;
+import solution.tree.*;
+
+import java.util.List;
 
 /**
  * Description :
@@ -59,5 +58,16 @@ public class TreeTest
         System.out.println(p0145.postorderTraversalRecursion(root));
         System.out.println(p0145.postorderTraversalIteration(root));
         System.out.println(p0145.postorderTraversalMorris(root));
+    }
+
+    @Test
+    public void test0102()
+    {
+        P0102BinaryTreeLevelOrderTraversal p0102 = new P0102BinaryTreeLevelOrderTraversal();
+        List<List<Integer>> lists = p0102.levelOrderIteration(root);
+        lists.forEach(System.out::println);
+
+        lists = p0102.levelOrderRecursion(root);
+        lists.forEach(System.out::println);
     }
 }
