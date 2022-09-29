@@ -236,7 +236,6 @@ public class StringTest
     public void test0125()
     {
         P0125ValidPalindrome p0125 = new P0125ValidPalindrome();
-        String s = "A man, a plan, a canal: Panama";
         System.out.println(p0125.isPalindrome_pointers("A man, a plan, a canal: Panama"));
         System.out.println(p0125.isPalindrome_pointers("race a car"));
     }
@@ -268,5 +267,14 @@ public class StringTest
         System.out.println(m0109.isFlipedStringPointers1("waterbottle", "erbottlewat"));
         System.out.println(m0109.isFlipedStringPointers2("waterbottle", "erbottlewat"));
         System.out.println(m0109.isFlipedStringSearch("waterbottle", "erbottlewat"));
+    }
+
+    @Test
+    public void test0392()
+    {
+        P0392IsSubsequence p0392 = new P0392IsSubsequence();
+        System.out.println(p0392.isSubsequenceDp("abc", "ahbgdc"));
+        System.out.println(p0392.isSubsequence2("abc", "ahbgdc"));
+        System.out.println(p0392.isSubsequence1("a", "b"));
     }
 }
