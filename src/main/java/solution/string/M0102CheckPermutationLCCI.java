@@ -24,7 +24,7 @@ import java.util.Map;
  * @date 2022-09-27 12:43
  * @since jdk-11.0.14
  */
-public class MianShi0102CheckPermutationLCCI
+public class M0102CheckPermutationLCCI
 {
     public boolean CheckPermutation_hash(String s1, String s2)
     {

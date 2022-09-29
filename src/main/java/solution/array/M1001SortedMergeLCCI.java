@@ -21,7 +21,8 @@ package solution.array;
  * @date 2022-01-23 17:06
  * @since JDK 1.8
  */
-public class MianShi1001SortedMergeLCCI {
+public class M1001SortedMergeLCCI
+{
 
     public void merge(int[] A, int m, int[] B, int n)
     {

@@ -249,7 +249,7 @@ public class ArrayTest
         int[] nums2 = {2, 5, 6};
         int m = 3, n = 3;
 
-        MianShi1001SortedMergeLCCI lcci = new MianShi1001SortedMergeLCCI();
+        M1001SortedMergeLCCI lcci = new M1001SortedMergeLCCI();
         lcci.merge(nums1, m, nums2, n);
         System.out.println("lcci = " + Arrays.toString(nums1));
     }

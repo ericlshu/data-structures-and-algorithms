@@ -215,7 +215,7 @@ public class StringTest
     @Test
     public void test0102()
     {
-        MianShi0102CheckPermutationLCCI m0102 = new MianShi0102CheckPermutationLCCI();
+        M0102CheckPermutationLCCI m0102 = new M0102CheckPermutationLCCI();
         System.out.println(m0102.CheckPermutation_hash("abc", "bca"));
         System.out.println(m0102.CheckPermutation_array("abc", "bca"));
         System.out.println(m0102.CheckPermutation_sort("abc", "bca"));
@@ -259,5 +259,14 @@ public class StringTest
         System.out.println(p0168.convertToTitle(Integer.MAX_VALUE));
         System.out.println(p0168.convertToTitle(701));
         System.out.println(p0168.convertToTitle(18277));
+    }
+
+    @Test
+    public void test0109()
+    {
+        M0109StringRotationLCCI m0109 = new M0109StringRotationLCCI();
+        System.out.println(m0109.isFlipedStringPointers1("waterbottle", "erbottlewat"));
+        System.out.println(m0109.isFlipedStringPointers2("waterbottle", "erbottlewat"));
+        System.out.println(m0109.isFlipedStringSearch("waterbottle", "erbottlewat"));
     }
 }
