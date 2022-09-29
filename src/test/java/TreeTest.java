@@ -78,4 +78,24 @@ public class TreeTest
         System.out.println(p0104.maxDepthIteration(root));
         System.out.println(p0104.maxDepthRecursion(root));
     }
+
+    @Test
+    public void test0101()
+    {
+        TreeNode node3 = new TreeNode(3);
+        TreeNode node4 = new TreeNode(4, null, new TreeNode(5));
+        TreeNode node5 = new TreeNode(4, new TreeNode(5), null);
+        TreeNode node6 = new TreeNode(3);
+
+        TreeNode node1 = new TreeNode(2, node3, node4);
+        TreeNode node2 = new TreeNode(2, node5, node6);
+
+        TreeNode root = new TreeNode(1, node1, node2);
+
+        P0101SymmetricTree p0101 = new P0101SymmetricTree();
+        System.out.println(p0101.isSymmetricIteration1(root));
+        System.out.println(p0101.isSymmetricIteration2(root));
+        System.out.println(p0101.isSymmetricRecursion1(root));
+        System.out.println(p0101.isSymmetricRecursion2(root));
+    }
 }

@@ -34,8 +34,6 @@ public class TreeNode
     {
         return "TreeNode{" +
                 "val=" + val +
-                ", left=" + left +
-                ", right=" + right +
                 '}';
     }
 }
