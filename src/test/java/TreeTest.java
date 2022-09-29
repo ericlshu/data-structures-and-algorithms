@@ -70,4 +70,12 @@ public class TreeTest
         lists = p0102.levelOrderRecursion(root);
         lists.forEach(System.out::println);
     }
+
+    @Test
+    public void test0104()
+    {
+        P0104MaximumDepthOfBinaryTree p0104 = new P0104MaximumDepthOfBinaryTree();
+        System.out.println(p0104.maxDepthIteration(root));
+        System.out.println(p0104.maxDepthRecursion(root));
+    }
 }
