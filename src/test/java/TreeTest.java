@@ -125,4 +125,27 @@ public class TreeTest
         root = p0226.invertTreeDFS(root);
         System.out.println(p0144.preorderTraversalRecursion(root));
     }
+
+    @Test
+    public void test0112()
+    {
+        TreeNode node6 = new TreeNode(7);
+        TreeNode node7 = new TreeNode(2);
+        TreeNode node8 = new TreeNode(1);
+
+        TreeNode node3 = new TreeNode(11, node6, node7);
+        TreeNode node4 = new TreeNode(13);
+        TreeNode node5 = new TreeNode(4, null, node8);
+
+        TreeNode node1 = new TreeNode(4, node3, null);
+        TreeNode node2 = new TreeNode(8, node4, node5);
+
+        TreeNode root = new TreeNode(5, node1, node2);
+
+        P0112PathSum p0112 = new P0112PathSum();
+        System.out.println(p0112.hasPathSumRecursion(root, 22));
+        // System.out.println(p0112.hasPathSumBFS1(root, 22));
+        System.out.println(p0112.hasPathSumBFS2(root, 22));
+        // System.out.println(p0112.hasPathSumDFS(root, 22));
+    }
 }
