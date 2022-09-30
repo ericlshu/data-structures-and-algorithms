@@ -98,4 +98,31 @@ public class TreeTest
         System.out.println(p0101.isSymmetricRecursion1(root));
         System.out.println(p0101.isSymmetricRecursion2(root));
     }
+
+    @Test
+    public void test0226()
+    {
+        P0144BinaryTreePreorderTraversal p0144 = new P0144BinaryTreePreorderTraversal();
+
+        TreeNode node3 = new TreeNode(1);
+        TreeNode node4 = new TreeNode(3);
+        TreeNode node5 = new TreeNode(6);
+        TreeNode node6 = new TreeNode(9);
+        TreeNode node1 = new TreeNode(2, node3, node4);
+        TreeNode node2 = new TreeNode(7, node5, node6);
+        TreeNode root = new TreeNode(4, node1, node2);
+
+        System.out.println(p0144.preorderTraversalRecursion(root));
+
+        P0226InvertBinaryTree p0226 = new P0226InvertBinaryTree();
+
+        root = p0226.invertTreeRecursion(root);
+        System.out.println(p0144.preorderTraversalRecursion(root));
+
+        root = p0226.invertTreeBFS(root);
+        System.out.println(p0144.preorderTraversalRecursion(root));
+
+        root = p0226.invertTreeDFS(root);
+        System.out.println(p0144.preorderTraversalRecursion(root));
+    }
 }
