@@ -280,4 +280,15 @@ public class StringTest
         System.out.println(p0392.isSubsequence2("abc", "ahbgdc"));
         System.out.println(p0392.isSubsequence1("a", "b"));
     }
+
+    @Test
+    public void test1694()
+    {
+        P1694ReformatPhoneNumber p1694 = new P1694ReformatPhoneNumber();
+        System.out.println(p1694.reformatNumber_baoli("1-23-45 6"));
+        System.out.println(p1694.reformatNumber_baoli("123 4-567"));
+        System.out.println(p1694.reformatNumber_baoli("123 4-5678"));
+        System.out.println(p1694.reformatNumber_baoli("12"));
+        System.out.println(p1694.reformatNumber_official("--17-5 229 35-39475 "));
+    }
 }
