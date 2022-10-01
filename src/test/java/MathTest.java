@@ -1,6 +1,6 @@
 import org.junit.Test;
-import solution.dynamic_programming.Offer101FibonacciSequence;
-import solution.greedy.P0670MaximumSwap;
+import solution.dp.Offer101FibonacciSequence;
+import solution.math.P0670MaximumSwap;
 import solution.math.*;
 
 /**
