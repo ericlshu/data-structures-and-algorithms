@@ -158,4 +158,16 @@ public class TreeTest
         System.out.println(p0700.searchBSTRecursion(root, 5));
         System.out.println(p0700.searchBSTIteration(root, 4));
     }
+
+    @Test
+    public void test0701()
+    {
+        P0701InsertIntoABinarySearchTree p0701 = new P0701InsertIntoABinarySearchTree();
+        TreeNode node = new TreeNode(2, new TreeNode(1), new TreeNode(3));
+        TreeNode root = new TreeNode(4, node, new TreeNode(7));
+        TreeNode result = p0701.insertIntoBST(root, 5);
+
+        P0094BinaryTreeInorderTraversal p0094 = new P0094BinaryTreeInorderTraversal();
+        System.out.println(p0094.inorderTraversalRecursion(result));
+    }
 }
