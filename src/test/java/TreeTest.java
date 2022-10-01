@@ -148,4 +148,14 @@ public class TreeTest
         System.out.println(p0112.hasPathSumBFS2(root, 22));
         // System.out.println(p0112.hasPathSumDFS(root, 22));
     }
+
+    @Test
+    public void test0700()
+    {
+        P0700SearchInABinarySearchTree p0700 = new P0700SearchInABinarySearchTree();
+        TreeNode node = new TreeNode(2, new TreeNode(1), new TreeNode(3));
+        TreeNode root = new TreeNode(4, node, new TreeNode(7));
+        System.out.println(p0700.searchBSTRecursion(root, 5));
+        System.out.println(p0700.searchBSTIteration(root, 4));
+    }
 }
