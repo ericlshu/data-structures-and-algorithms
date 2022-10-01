@@ -209,7 +209,10 @@ public class StringTest
     public void test0567()
     {
         P0567PermutationInString p0567 = new P0567PermutationInString();
-        System.out.println(p0567.checkInclusion("ab", "eidbaooo"));
+        System.out.println(p0567.checkInclusion_sw1("ab", "eidbaooo"));
+        System.out.println(p0567.checkInclusion_sw2("ab", "eidbaooo"));
+        System.out.println(p0567.checkInclusion_sw3("ab", "eidboaoo"));
+        System.out.println(p0567.checkInclusion_pointers("ab", "eidboaoo"));
     }
 
     @Test

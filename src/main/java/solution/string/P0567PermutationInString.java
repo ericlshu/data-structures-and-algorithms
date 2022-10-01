@@ -1,5 +1,7 @@
 package solution.string;
 
+import java.util.Arrays;
+
 /**
  * Description : 字符串的排列
  * 给你两个字符串 s1 和 s2 ，写一个函数来判断 s2 是否包含 s1 的排列。如果是，返回 true ；否则，返回 false 。
@@ -24,7 +26,7 @@ package solution.string;
  */
 public class P0567PermutationInString
 {
-    public boolean checkInclusion(String s1, String s2)
+    public boolean checkInclusion_sw1(String s1, String s2)
     {
         char[] pattern = s1.toCharArray();
         char[] text = s2.toCharArray();
@@ -81,6 +83,104 @@ public class P0567PermutationInString
                 }
                 left++;
             }
+        }
+        return false;
+    }
+
+    public boolean checkInclusion_sw2(String s1, String s2)
+    {
+        int n = s1.length(), m = s2.length();
+        if (n > m)
+            return false;
+
+        int[] cnt1 = new int[26];
+        int[] cnt2 = new int[26];
+        for (int i = 0; i < n; ++i)
+        {
+            cnt1[s1.charAt(i) - 'a']++;
+            cnt2[s2.charAt(i) - 'a']++;
+        }
+
+        if (Arrays.equals(cnt1, cnt2))
+            return true;
+
+        for (int i = n; i < m; ++i)
+        {
+            cnt2[s2.charAt(i) - 'a']++;
+            cnt2[s2.charAt(i - n) - 'a']--;
+            if (Arrays.equals(cnt1, cnt2))
+                return true;
+        }
+        return false;
+    }
+
+    public boolean checkInclusion_sw3(String s1, String s2)
+    {
+        int n = s1.length(), m = s2.length();
+        if (n > m)
+            return false;
+
+        int[] cnt = new int[26];
+        for (int i = 0; i < n; ++i)
+        {
+            --cnt[s1.charAt(i) - 'a'];
+            ++cnt[s2.charAt(i) - 'a'];
+        }
+
+        int diff = 0;
+        for (int c : cnt)
+        {
+            if (c != 0)
+                ++diff;
+        }
+        if (diff == 0)
+            return true;
+
+        for (int i = n; i < m; ++i)
+        {
+            int x = s2.charAt(i) - 'a', y = s2.charAt(i - n) - 'a';
+            if (x == y)
+                continue;
+            if (cnt[x] == 0)
+                ++diff;
+            ++cnt[x];
+            if (cnt[x] == 0)
+                --diff;
+            if (cnt[y] == 0)
+                ++diff;
+            --cnt[y];
+            if (cnt[y] == 0)
+                --diff;
+            if (diff == 0)
+                return true;
+        }
+        return false;
+    }
+
+    public boolean checkInclusion_pointers(String s1, String s2)
+    {
+        int n = s1.length(), m = s2.length();
+        if (n > m)
+            return false;
+
+        int[] cnt = new int[26];
+        for (int i = 0; i < n; ++i)
+        {
+            cnt[s1.charAt(i) - 'a']--;
+        }
+
+        int left = 0;
+        for (int right = 0; right < m; ++right)
+        {
+            int x = s2.charAt(right) - 'a';
+            cnt[x]++;
+            while (cnt[x] > 0)
+            {
+                cnt[s2.charAt(left) - 'a']--;
+                left++;
+            }
+            if (right - left + 1 == n)
+                return true;
         }
         return false;
     }
