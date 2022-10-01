@@ -31,39 +31,30 @@ import java.util.Set;
  */
 public class P0003LongestSubstringWithoutRepeatingCharacters
 {
-    public int lengthOfLongestSubstring_1(String s)
+    public int lengthOfLongestSubstring_map(String s)
     {
-        if (s.length() == 0)
+        HashMap<Character, Integer> map = new HashMap<>(10);
+        int max = 0, start = 0;
+        for (int end = 0; end < s.length(); end++)
         {
-            return 0;
-        }
-        HashMap<Character, Integer> map = new HashMap<>();
-        int max = 0;
-        int left = 0;
-        for (int i = 0; i < s.length(); i++)
-        {
-            char ch = s.charAt(i);
-
+            char ch = s.charAt(end);
             if (map.containsKey(ch))
-            {
-                left = Math.max(left, map.get(ch) + 1);
-            }
-            map.put(ch, i);
+                start = Math.max(map.get(ch) + 1, start);
+            max = Math.max(max, end - start + 1);
+            map.put(ch, end);
 
-            max = Math.max(max, i - left + 1);
-
-            System.out.print("| i -->> " + i + "\t");
+            System.out.print("| end -->> " + end + "\t");
             System.out.print("| char = " + ch + "\t");
-            System.out.print("| left = " + left + "\t");
+            System.out.print("| stat = " + start + "\t");
             System.out.print("| maxl = " + max + "\t");
-            System.out.print("| leng = " + (i - left + 1) + "\t");
-            System.out.print("| subs = " + s.substring(left, i + 1));
+            System.out.print("| leng = " + (end - start + 1) + "\t");
+            System.out.print("| subs = " + s.substring(start, end + 1));
             System.out.println();
         }
         return max;
     }
 
-    public int lengthOfLongestSubstring(String s)
+    public int lengthOfLongestSubstring_set(String s)
     {
         Set<Character> set = new HashSet<>();
         int n = s.length();

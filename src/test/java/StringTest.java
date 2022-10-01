@@ -20,8 +20,8 @@ public class StringTest
     public void testP0003()
     {
         P0003LongestSubstringWithoutRepeatingCharacters obj = new P0003LongestSubstringWithoutRepeatingCharacters();
-        int length = obj.lengthOfLongestSubstring("solution.string.P0003_LongestSubstringWithoutRepeatingCharacters");
-        System.out.println("length = " + length);
+        System.out.println(obj.lengthOfLongestSubstring_set("solution.string.P0003_LongestSubstringWithoutRepeatingCharacters"));
+        System.out.println(obj.lengthOfLongestSubstring_map("solution.string.P0003_LongestSubstringWithoutRepeatingCharacters"));
     }
 
     @Test
