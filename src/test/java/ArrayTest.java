@@ -843,4 +843,29 @@ public class ArrayTest
         int[] nums = {0, 2, 0, 0, 2, 0, 2, 1, 1, 0, 2, 1, 0, 0, 1, 0, 2, 1, 2, 0, 1, 1, 0, 2, 2, 1, 2, 2, 0, 0, 0, 1, 0, 2, 0, 0, 1, 2, 0, 1, 0, 2, 0, 2, 0, 0, 0, 0, 2, 1, 0, 0, 0, 0, 1, 0, 2, 1, 2, 2, 1, 0, 0, 1, 0, 2, 0, 0, 0, 2, 1, 0, 1, 2, 1, 0, 1, 0, 2, 1, 0, 2, 0, 2, 1, 1, 2, 0, 1, 0, 1, 1, 1, 1, 2, 1, 2, 2, 2, 0};
         System.out.println("result = " + obj.longestMountain(nums));
     }
+
+    @Test
+    public void test0733()
+    {
+        int[][] image1 = {
+                {1, 1, 1},
+                {1, 1, 0},
+                {1, 0, 1}
+        };
+
+        int[][] image2 = {
+                {0, 0, 0},
+                {0, 1, 0}
+        };
+
+        int[][] image3 = {
+                {0, 0, 0},
+                {0, 0, 0}
+        };
+
+        P0733FloodFill p0733 = new P0733FloodFill();
+        System.out.println(Arrays.deepToString(p0733.floodFill_dfs_recursion(image1, 1, 1, 2)));
+        System.out.println(Arrays.deepToString(p0733.floodFill_dfs_stack(image2, 1, 1, 2)));
+        System.out.println(Arrays.deepToString(p0733.floodFill_bfs_queue(image3, 0, 0, 2)));
+    }
 }
