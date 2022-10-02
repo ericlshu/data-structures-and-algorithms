@@ -184,4 +184,16 @@ public class TreeTest
         System.out.println(p0653.findTarget_dfs_pt(root, 12));
         System.out.println(p0653.findTarget_iteration_dp(root, 12));
     }
+
+    @Test
+    public void test0098()
+    {
+        P0098ValidateBinarySearchTree p0098 = new P0098ValidateBinarySearchTree();
+        TreeNode node1 = new TreeNode(3, new TreeNode(2), new TreeNode(4));
+        TreeNode node2 = new TreeNode(6, null, new TreeNode(7));
+        TreeNode root = new TreeNode(5, node1, node2);
+        System.out.println(p0098.isValidBST_sort(root));
+        System.out.println(p0098.isValidBST_inorder(root));
+        System.out.println(p0098.isValidBST_recursion(root));
+    }
 }
