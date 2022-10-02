@@ -196,4 +196,17 @@ public class TreeTest
         System.out.println(p0098.isValidBST_inorder(root));
         System.out.println(p0098.isValidBST_recursion(root));
     }
+
+    @Test
+    public void test0235()
+    {
+        P0235LowestCommonAncestorOfABFS p0235 = new P0235LowestCommonAncestorOfABFS();
+        TreeNode node4 = new TreeNode(4, new TreeNode(3), new TreeNode(5));
+        TreeNode node2 = new TreeNode(2, new TreeNode(0), node4);
+        TreeNode node8 = new TreeNode(8, new TreeNode(7), new TreeNode(9));
+        TreeNode node6 = new TreeNode(6, node2, node8);
+
+        System.out.println(p0235.lowestCommonAncestor_nn(node6, node2, node8));
+        System.out.println(p0235.lowestCommonAncestor_n1(node6, node2, node4));
+    }
 }
