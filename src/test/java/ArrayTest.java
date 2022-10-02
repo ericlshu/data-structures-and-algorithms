@@ -868,4 +868,23 @@ public class ArrayTest
         System.out.println(Arrays.deepToString(p0733.floodFill_dfs_stack(image2, 1, 1, 2)));
         System.out.println(Arrays.deepToString(p0733.floodFill_bfs_queue(image3, 0, 0, 2)));
     }
+
+    @Test
+    public void test0695()
+    {
+        P0695MaxAreaOfIsland p0695 = new P0695MaxAreaOfIsland();
+        int[][] grid = {
+                {0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0},
+                {0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0},
+                {0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0},
+                {0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0},
+                {0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0},
+                {0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0},
+                {0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0},
+                {0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0}
+        };
+        System.out.println(p0695.maxAreaOfIsland_bfs_queue(grid));
+        System.out.println(p0695.maxAreaOfIsland_dfs_stack(grid));
+        System.out.println(p0695.maxAreaOfIsland_dfs_recursion(grid));
+    }
 }
