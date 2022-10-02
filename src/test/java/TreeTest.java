@@ -170,4 +170,18 @@ public class TreeTest
         P0094BinaryTreeInorderTraversal p0094 = new P0094BinaryTreeInorderTraversal();
         System.out.println(p0094.inorderTraversalRecursion(result));
     }
+
+    @Test
+    public void test0653()
+    {
+        P0653TwoSumIVInputIsABST p0653 = new P0653TwoSumIVInputIsABST();
+        TreeNode node1 = new TreeNode(3, new TreeNode(2), new TreeNode(4));
+        TreeNode node2 = new TreeNode(6, null, new TreeNode(7));
+        TreeNode root = new TreeNode(5, node1, node2);
+        System.out.println(p0653.findTarget_dfs_hash(root, 9));
+        System.out.println(p0653.findTarget_dfs_hash(root, 28));
+        System.out.println(p0653.findTarget_bfs_hash(root, 12));
+        System.out.println(p0653.findTarget_dfs_pt(root, 12));
+        System.out.println(p0653.findTarget_iteration_dp(root, 12));
+    }
 }
