@@ -1,4 +1,4 @@
-package solution.dfs;
+package solution.array;
 
 /**
  * Description : 按奇偶排序数组 II

@@ -1,4 +1,4 @@
-package solution.bfs;
+package solution.string;
 
 import java.util.ArrayList;
 import java.util.Arrays;
