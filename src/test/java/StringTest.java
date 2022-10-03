@@ -291,4 +291,15 @@ public class StringTest
         System.out.println(p1694.reformatNumber_baoli("12"));
         System.out.println(p1694.reformatNumber_official("--17-5 229 35-39475 "));
     }
+
+    @Test
+    public void test1784()
+    {
+        P1784CheckIfBinaryStringHasAtMostOneSegmentOfOnes p1784 = new P1784CheckIfBinaryStringHasAtMostOneSegmentOfOnes();
+        System.out.println(p1784.checkOnesSegment("1"));
+        System.out.println(p1784.checkOnesSegment("11"));
+        System.out.println(p1784.checkOnesSegment("110"));
+        System.out.println(p1784.checkOnesSegment("11100001"));
+        System.out.println(p1784.checkOnesSegment("1110000110011111"));
+    }
 }
