@@ -209,4 +209,16 @@ public class TreeTest
         System.out.println(p0235.lowestCommonAncestor_nn(node6, node2, node8));
         System.out.println(p0235.lowestCommonAncestor_n1(node6, node2, node4));
     }
+
+    @Test
+    public void test0617()
+    {
+        P0617MergeTwoBinaryTrees p0617 = new P0617MergeTwoBinaryTrees();
+        P0144BinaryTreePreorderTraversal p0144 = new P0144BinaryTreePreorderTraversal();
+        TreeNode root1 = new TreeNode(1, new TreeNode(3, new TreeNode(5), null), new TreeNode(2));
+        TreeNode root2 = new TreeNode(2, new TreeNode(1, null, new TreeNode(4)), new TreeNode(3, null, new TreeNode(7)));
+        System.out.println(p0144.preorderTraversalRecursion(p0617.mergeTrees_dfs(root1, root2)));
+        System.out.println(p0144.preorderTraversalRecursion(p0617.mergeTrees_bfs_1(root1, root2)));
+        System.out.println(p0144.preorderTraversalRecursion(p0617.mergeTrees_bfs_2(root1, root2)));
+    }
 }
