@@ -1,3 +1,4 @@
+import domain.Node;
 import domain.TreeNode;
 import org.junit.Test;
 import solution.tree.*;
@@ -220,5 +221,26 @@ public class TreeTest
         System.out.println(p0144.preorderTraversalRecursion(p0617.mergeTrees_dfs(root1, root2)));
         System.out.println(p0144.preorderTraversalRecursion(p0617.mergeTrees_bfs_1(root1, root2)));
         System.out.println(p0144.preorderTraversalRecursion(p0617.mergeTrees_bfs_2(root1, root2)));
+    }
+
+    @Test
+    public void test0116()
+    {
+        P0116PopulatingNextRightPointersInEachNode p0116 = new P0116PopulatingNextRightPointersInEachNode();
+
+        Node node2 = new Node(2, new Node(4), new Node(5), null);
+        Node node3 = new Node(3, new Node(6), new Node(7), null);
+        Node node1 = new Node(3, node2, node3, null);
+        node1 = p0116.connect_dfs(node1);
+
+        node2 = new Node(2, new Node(4), new Node(5), null);
+        node3 = new Node(3, new Node(6), new Node(7), null);
+        node1 = new Node(3, node2, node3, null);
+        node1 = p0116.connect_bfs_1(node1);
+
+        node2 = new Node(2, new Node(4), new Node(5), null);
+        node3 = new Node(3, new Node(6), new Node(7), null);
+        node1 = new Node(3, node2, node3, null);
+        node1 = p0116.connect_bfs_2(node1);
     }
 }
