@@ -919,4 +919,29 @@ public class ArrayTest
         System.out.println(Arrays.deepToString(p0542.updateMatrix_bfs_2(mat)));
         System.out.println(Arrays.deepToString(p0542.updateMatrix_dp(mat)));
     }
+
+    @Test
+    public void test0994()
+    {
+        P0994RottingOranges p0994 = new P0994RottingOranges();
+        int[][] grid1 = {
+                {2, 1, 1},
+                {1, 1, 0},
+                {0, 1, 1}};
+        int[][] grid2 = {
+                {2, 1, 1},
+                {0, 1, 1},
+                {1, 0, 1}};
+        int[][] grid3 = {{0, 2}};
+
+        int[][] grid4 = {
+                {2, 2, 1, 1},
+                {1, 1, 1, 0},
+                {1, 1, 1, 0},
+                {0, 0, 1, 1}};
+        System.out.println(p0994.orangesRotting(grid1));
+        System.out.println(p0994.orangesRotting(grid2));
+        System.out.println(p0994.orangesRotting(grid3));
+        System.out.println(p0994.orangesRotting(grid4));
+    }
 }
