@@ -887,4 +887,36 @@ public class ArrayTest
         System.out.println(p0695.maxAreaOfIsland_dfs_stack(grid));
         System.out.println(p0695.maxAreaOfIsland_dfs_recursion(grid));
     }
+
+    @Test
+    public void test0542()
+    {
+        P0542ZeroOneMatrix p0542 = new P0542ZeroOneMatrix();
+
+        int[][] mat1 = {
+                {1, 1, 1, 1, 1, 1, 1, 1, 1, 0},
+                {1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+                {1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+                {1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+                {1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+                {1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+                {1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+                {1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+                {1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+                {1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
+        };
+
+
+        int[][] mat = {
+                {1, 1, 1, 1, 1},
+                {1, 1, 1, 1, 1},
+                {1, 1, 0, 1, 1},
+                {1, 1, 1, 1, 1},
+                {1, 1, 1, 1, 1}
+        };
+        System.out.println(Arrays.deepToString(p0542.updateMatrix_bfs(mat)));
+        System.out.println(Arrays.deepToString(p0542.updateMatrix_bfs_1(mat)));
+        System.out.println(Arrays.deepToString(p0542.updateMatrix_bfs_2(mat)));
+        System.out.println(Arrays.deepToString(p0542.updateMatrix_dp(mat)));
+    }
 }
