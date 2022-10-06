@@ -89,4 +89,12 @@ public class MathTest
         System.out.println(p0190.reverseBits_2(n2));
         System.out.println(p0190.reverseBits_3(n2));
     }
+
+    @Test
+    public void test0077()
+    {
+        P0077Combinations p0077 = new P0077Combinations();
+        System.out.println(p0077.combine_dfs(5, 3));
+        System.out.println(p0077.combine_dict(5, 3));
+    }
 }
