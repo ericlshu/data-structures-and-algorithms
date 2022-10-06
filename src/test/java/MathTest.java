@@ -106,4 +106,11 @@ public class MathTest
         System.out.println(p0046.permute_dfs(new int[]{1, 2, 3}));
         System.out.println(p0046.permute_bt2(new int[]{1, 2, 3}));
     }
+
+    @Test
+    public void test0784()
+    {
+        P0784LetterCasePermutation p0784 = new P0784LetterCasePermutation();
+        System.out.println(p0784.letterCasePermutation("a1b2"));
+    }
 }
