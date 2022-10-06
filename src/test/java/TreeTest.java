@@ -232,15 +232,27 @@ public class TreeTest
         Node node3 = new Node(3, new Node(6), new Node(7), null);
         Node node1 = new Node(3, node2, node3, null);
         node1 = p0116.connect_dfs(node1);
+        System.out.println("node1 = " + node1);
 
         node2 = new Node(2, new Node(4), new Node(5), null);
         node3 = new Node(3, new Node(6), new Node(7), null);
         node1 = new Node(3, node2, node3, null);
         node1 = p0116.connect_bfs_1(node1);
+        System.out.println("node1 = " + node1);
 
         node2 = new Node(2, new Node(4), new Node(5), null);
         node3 = new Node(3, new Node(6), new Node(7), null);
         node1 = new Node(3, node2, node3, null);
         node1 = p0116.connect_bfs_2(node1);
+        System.out.println("node1 = " + node1);
+    }
+
+    @Test
+    public void test0257()
+    {
+        P0257BinaryTreePaths p0257 = new P0257BinaryTreePaths();
+        TreeNode root = new TreeNode(1, new TreeNode(2, null, new TreeNode(5)), new TreeNode(3));
+        System.out.println(p0257.binaryTreePaths_dfs(root));
+        System.out.println(p0257.binaryTreePaths_bfs(root));
     }
 }
