@@ -255,4 +255,19 @@ public class TreeTest
         System.out.println(p0257.binaryTreePaths_dfs(root));
         System.out.println(p0257.binaryTreePaths_bfs(root));
     }
+
+    @Test
+    public void test0111()
+    {
+        P0111MinimumDepthOfBinaryTree p0111 = new P0111MinimumDepthOfBinaryTree();
+        TreeNode node1 = new TreeNode(3, new TreeNode(9), new TreeNode(20, new TreeNode(15), new TreeNode(7)));
+        TreeNode node2 = new TreeNode(2, null, new TreeNode(3, null, new TreeNode(4, null, new TreeNode(5, null, new TreeNode(6)))));
+        System.out.println(p0111.minDepth_bfs(node1));
+        System.out.println(p0111.minDepth_bfs(node2));
+        System.out.println(p0111.minDepth_bfs(null));
+
+        System.out.println(p0111.minDepth_dfs_1(node1));
+        System.out.println(p0111.minDepth_dfs_2(node1));
+        System.out.println(p0111.minDepth_dfs_3(node1));
+    }
 }
