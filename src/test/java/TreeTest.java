@@ -270,4 +270,19 @@ public class TreeTest
         System.out.println(p0111.minDepth_dfs_2(node1));
         System.out.println(p0111.minDepth_dfs_3(node1));
     }
+
+    @Test
+    public void test0404()
+    {
+        P0404SumOfLeftLeaves p0404 = new P0404SumOfLeftLeaves();
+        TreeNode node1 = new TreeNode(3, new TreeNode(9), new TreeNode(20, new TreeNode(15), new TreeNode(7)));
+        TreeNode node2 = new TreeNode(3);
+        System.out.println(p0404.sumOfLeftLeaves_status(node1));
+        System.out.println(p0404.sumOfLeftLeaves_status(node2));
+        System.out.println(p0404.sumOfLeftLeaves_dfs(node1));
+        System.out.println(p0404.sumOfLeftLeaves_dfs(node2));
+        System.out.println(p0404.sumOfLeftLeaves_bfs(node1));
+        System.out.println(p0404.sumOfLeftLeaves_bfs(node2));
+
+    }
 }
