@@ -1,3 +1,4 @@
+import domain.NaryNode;
 import domain.Node;
 import domain.TreeNode;
 import org.junit.Test;
@@ -283,6 +284,28 @@ public class TreeTest
         System.out.println(p0404.sumOfLeftLeaves_dfs(node2));
         System.out.println(p0404.sumOfLeftLeaves_bfs(node1));
         System.out.println(p0404.sumOfLeftLeaves_bfs(node2));
+    }
 
+    @Test
+    public void test0559()
+    {
+        P0559MaximumDepthOfNaryTree p0559 = new P0559MaximumDepthOfNaryTree();
+
+        NaryNode node7 = new NaryNode(7, List.of(new NaryNode(11, List.of(new NaryNode(14)))));
+        NaryNode node8 = new NaryNode(8, List.of(new NaryNode(12)));
+        NaryNode node9 = new NaryNode(9, List.of(new NaryNode(13)));
+
+        NaryNode node6 = new NaryNode(6);
+        NaryNode node10 = new NaryNode(10);
+
+        NaryNode node3 = new NaryNode(3, List.of(node6, node7));
+        NaryNode node4 = new NaryNode(4, List.of(node8));
+        NaryNode node5 = new NaryNode(5, List.of(node9, node10));
+
+        NaryNode node2 = new NaryNode(2);
+
+        NaryNode node1 = new NaryNode(1, List.of(node2, node3, node4, node5));
+        System.out.println(p0559.maxDepth_dfs(node1));
+        System.out.println(p0559.maxDepth_bfs(node1));
     }
 }
