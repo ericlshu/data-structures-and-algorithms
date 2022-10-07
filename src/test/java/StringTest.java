@@ -302,4 +302,12 @@ public class StringTest
         System.out.println(p1784.checkOnesSegment("11100001"));
         System.out.println(p1784.checkOnesSegment("1110000110011111"));
     }
+
+    @Test
+    public void test0345()
+    {
+        P0345ReverseVowelsOfAString p0345 = new P0345ReverseVowelsOfAString();
+        System.out.println(p0345.reverseVowels("hello"));
+        System.out.println(p0345.reverseVowels("leetcode"));
+    }
 }
