@@ -81,6 +81,8 @@ public class DPTest
         System.out.println(p0120.minimumTotal_recursion_2(triangle));
         System.out.println(p0120.minimumTotal_dpn2(triangle));
         System.out.println(p0120.minimumTotal_dpn(triangle));
+        System.out.println(p0120.minimumTotal_iteration(triangle));
+
     }
 
     @Test
@@ -93,6 +95,7 @@ public class DPTest
         System.out.println(p0070.climbStairs_4(45));
         System.out.println(p0070.climbStairs_5(45));
         System.out.println(p0070.climbStairs_6(45));
+        System.out.println(p0070.climbStairs_7(45));
     }
 
     @Test

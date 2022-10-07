@@ -47,14 +47,15 @@ public class P0198HouseRobber
         int len = nums.length;
         if (len == 1)
             return nums[0];
-        int first = nums[0];
-        int second = Math.max(nums[1], nums[0]);
+        int prev = nums[0];
+        int curr = Math.max(nums[1], nums[0]);
+        int temp;
         for (int i = 2; i < len; i++)
         {
-            int tmp = second;
-            second = Math.max(nums[i] + first, second);
-            first = tmp;
+            temp = curr;
+            curr = Math.max(nums[i] + prev, curr);
+            prev = temp;
         }
-        return second;
+        return curr;
     }
 }

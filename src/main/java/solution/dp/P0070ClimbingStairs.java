@@ -83,7 +83,7 @@ public class P0070ClimbingStairs
      */
     public int climbStairs_4(int n)
     {
-        int p = 0, q = 0, r = 1;
+        int p, q = 0, r = 1;
         for (int i = 0; i < n; i++)
         {
             p = q;
@@ -91,6 +91,18 @@ public class P0070ClimbingStairs
             r = p + q;
         }
         return r;
+    }
+
+    public int climbStairs_7(int n)
+    {
+        int first, second = 1, third = 1;
+        for (int i = 1; i < n; i++)
+        {
+            first = second;
+            second = third;
+            third = first + second;
+        }
+        return third;
     }
 
     /**
