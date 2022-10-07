@@ -914,7 +914,7 @@ public class ArrayTest
                 {1, 1, 1, 1, 1},
                 {1, 1, 1, 1, 1}
         };
-        System.out.println(Arrays.deepToString(p0542.updateMatrix_bfs(mat)));
+        System.out.println(Arrays.deepToString(p0542.updateMatrix_bfs(mat1)));
         System.out.println(Arrays.deepToString(p0542.updateMatrix_bfs_1(mat)));
         System.out.println(Arrays.deepToString(p0542.updateMatrix_bfs_2(mat)));
         System.out.println(Arrays.deepToString(p0542.updateMatrix_dp(mat)));
@@ -943,5 +943,21 @@ public class ArrayTest
         System.out.println(p0994.orangesRotting(grid2));
         System.out.println(p0994.orangesRotting(grid3));
         System.out.println(p0994.orangesRotting(grid4));
+    }
+
+    @Test
+    public void test1800()
+    {
+        P1800MaximumAscendingSubarraySum p1800 = new P1800MaximumAscendingSubarraySum();
+        int[] nums1 = {10, 20, 30, 5, 10, 50};
+        int[] nums2 = {10, 20, 30, 40, 50};
+        int[] nums3 = {12, 17, 15, 13, 10, 11, 12};
+        int[] nums4 = {100, 10, 1};
+        int[] nums5 = {1};
+        System.out.println(p1800.maxAscendingSum(nums1));
+        System.out.println(p1800.maxAscendingSum_dp_n(nums2));
+        System.out.println(p1800.maxAscendingSum_dp_n(nums3));
+        System.out.println(p1800.maxAscendingSum_dp_1(nums4));
+        System.out.println(p1800.maxAscendingSum_dp_1(nums5));
     }
 }
