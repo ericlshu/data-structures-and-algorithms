@@ -968,4 +968,16 @@ public class ArrayTest
         System.out.println(p0412.fizzBuzz_1(15));
         System.out.println(p0412.fizzBuzz_2(15));
     }
+
+    @Test
+    public void test1480()
+    {
+        P1480RunningSumOf1dArray p1480 = new P1480RunningSumOf1dArray();
+        int[] nums1 = {1, 2, 3, 4};
+        int[] nums2 = {1, 1, 1, 1, 1};
+        int[] nums3 = {3, 1, 2, 10, 1};
+        System.out.println(Arrays.toString(p1480.runningSum_1(nums1)));
+        System.out.println(Arrays.toString(p1480.runningSum_1(nums2)));
+        System.out.println(Arrays.toString(p1480.runningSum_2(nums3)));
+    }
 }
