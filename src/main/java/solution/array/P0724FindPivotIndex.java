@@ -41,15 +41,20 @@ import java.util.Arrays;
  * @date 2021-12-28 21:38
  * @since JDK 1.8
  */
-public class P0724FindPivotIndex {
-    public int pivotIndexBaoLi(int[] nums) {
-        for (int i = 0; i < nums.length; i++) {
+public class P0724FindPivotIndex
+{
+    public int pivotIndex_1(int[] nums)
+    {
+        for (int i = 0; i < nums.length; i++)
+        {
             int leftSum = 0;
             int rightSum = 0;
-            for (int j = 0; j < i; j++) {
+            for (int j = 0; j < i; j++)
+            {
                 leftSum += nums[j];
             }
-            for (int j = i + 1; j < nums.length; j++) {
+            for (int j = i + 1; j < nums.length; j++)
+            {
                 rightSum += nums[j];
             }
             if (leftSum == rightSum)
@@ -58,15 +63,18 @@ public class P0724FindPivotIndex {
         return -1;
     }
 
-    public int pivotIndex(int[] nums) {
+    public int pivotIndex_2(int[] nums)
+    {
         /*int totalSum = 0;
         for (int i = 0; i < nums.length; i++) {
             totalSum += nums[i];
         }*/
         int totalSum = Arrays.stream(nums).sum();
         int leftSum = 0;
-        for (int i = 0; i < nums.length; i++) {
-            if (2 * leftSum + nums[i] == totalSum) return i;
+        for (int i = 0; i < nums.length; i++)
+        {
+            if (2 * leftSum + nums[i] == totalSum)
+                return i;
             leftSum += nums[i];
         }
         return -1;

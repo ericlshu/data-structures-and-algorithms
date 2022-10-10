@@ -196,11 +196,14 @@ public class ArrayTest
     @Test
     public void test0724()
     {
-        P0724FindPivotIndex obj = new P0724FindPivotIndex();
-        // int[] nums = {1, 7, 3, 6, 5, 6};
-        int[] nums = {1, 1, 1};
-        int result = obj.pivotIndex(nums);
-        System.out.println("result = " + result);
+        P0724FindPivotIndex p0724 = new P0724FindPivotIndex();
+        int[] nums1 = {1, 7, 3, 6, 5, 6};
+        int[] nums2 = {1, 2, 3};
+        int[] nums3 = {2, 1, -1};
+        System.out.println(p0724.pivotIndex_1(nums3));
+        System.out.println(p0724.pivotIndex_2(nums1));
+        System.out.println(p0724.pivotIndex_2(nums2));
+        System.out.println(p0724.pivotIndex_2(nums3));
     }
 
     @Test
