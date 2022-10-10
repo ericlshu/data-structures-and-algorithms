@@ -960,4 +960,12 @@ public class ArrayTest
         System.out.println(p1800.maxAscendingSum_dp_1(nums4));
         System.out.println(p1800.maxAscendingSum_dp_1(nums5));
     }
+
+    @Test
+    public void test0412()
+    {
+        P0412FizzBuzz p0412 = new P0412FizzBuzz();
+        System.out.println(p0412.fizzBuzz_1(15));
+        System.out.println(p0412.fizzBuzz_2(15));
+    }
 }
