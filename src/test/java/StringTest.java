@@ -310,4 +310,13 @@ public class StringTest
         System.out.println(p0345.reverseVowels("hello"));
         System.out.println(p0345.reverseVowels("leetcode"));
     }
+
+    @Test
+    public void test0434()
+    {
+        P0434NumberOfSegmentsInAString p0434 = new P0434NumberOfSegmentsInAString();
+        System.out.println(p0434.countSegments_1("Hello, my name is John"));
+        System.out.println(p0434.countSegments_2("Hello, my name is John"));
+        System.out.println(p0434.countSegments_3("Hello, my name is John"));
+    }
 }
