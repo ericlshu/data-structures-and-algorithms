@@ -147,4 +147,28 @@ public class CollectionTest
         System.out.println(p0160.getIntersectionNode_hash(listA, listB));
         System.out.println(p0160.getIntersectionNode_pointers(listA, listB));
     }
+
+    @Test
+    public void test0706()
+    {
+        P0706DesignHashMap.MyHashMapArray myHashMapArray = new P0706DesignHashMap.MyHashMapArray();
+        myHashMapArray.put(1, 1);                       // myHashMap 现在为 [[1,1]]
+        myHashMapArray.put(2, 2);                       // myHashMap 现在为 [[1,1], [2,2]]
+        System.out.println(myHashMapArray.get(1));      // 返回 1 ，myHashMap 现在为 [[1,1], [2,2]]
+        System.out.println(myHashMapArray.get(3));      // 返回 -1（未找到），myHashMap 现在为 [[1,1], [2,2]]
+        myHashMapArray.put(2, 1);                       // myHashMap 现在为 [[1,1], [2,1]]（更新已有的值）
+        System.out.println(myHashMapArray.get(2));      // 返回 1 ，myHashMap 现在为 [[1,1], [2,1]]
+        myHashMapArray.remove(2);                   // 删除键为 2 的数据，myHashMap 现在为 [[1,1]]
+        System.out.println(myHashMapArray.get(2));      // 返回 -1（未找到），myHashMap 现在为 [[1,1]]
+
+        P0706DesignHashMap.MyHashMapNode myHashMapNode = new P0706DesignHashMap.MyHashMapNode();
+        myHashMapNode.put(1, 1);                        // myHashMap 现在为 [[1,1]]
+        myHashMapNode.put(2, 2);                        // myHashMap 现在为 [[1,1], [2,2]]
+        System.out.println(myHashMapNode.get(1));       // 返回 1 ，myHashMap 现在为 [[1,1], [2,2]]
+        System.out.println(myHashMapNode.get(3));       // 返回 -1（未找到），myHashMap 现在为 [[1,1], [2,2]]
+        myHashMapNode.put(2, 1);                        // myHashMap 现在为 [[1,1], [2,1]]（更新已有的值）
+        System.out.println(myHashMapNode.get(2));       // 返回 1 ，myHashMap 现在为 [[1,1], [2,1]]
+        myHashMapNode.remove(2);                    // 删除键为 2 的数据，myHashMap 现在为 [[1,1]]
+        System.out.println(myHashMapNode.get(2));       // 返回 -1（未找到），myHashMap 现在为 [[1,1]]
+    }
 }
