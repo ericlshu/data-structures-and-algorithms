@@ -319,4 +319,13 @@ public class StringTest
         System.out.println(p0434.countSegments_2("Hello, my name is John"));
         System.out.println(p0434.countSegments_3("Hello, my name is John"));
     }
+
+    @Test
+    public void test0205()
+    {
+        P0205IsomorphicStrings p0205 = new P0205IsomorphicStrings();
+        System.out.println(p0205.isIsomorphic("egg", "add"));
+        System.out.println(p0205.isIsomorphic_hash("foo", "bar"));
+        System.out.println(p0205.isIsomorphic_array("paper", "title"));
+    }
 }
