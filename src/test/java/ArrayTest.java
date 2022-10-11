@@ -983,4 +983,19 @@ public class ArrayTest
         System.out.println(Arrays.toString(p1480.runningSum_1(nums2)));
         System.out.println(Arrays.toString(p1480.runningSum_2(nums3)));
     }
+
+    @Test
+    public void test0075()
+    {
+        P0075SortColors p0075 = new P0075SortColors();
+        int[] nums1 = {2, 0, 2, 1, 1, 0};
+        int[] nums2 = {2, 0, 1};
+        int[] nums3 = {1};
+        p0075.sortColors_2n(nums1);
+        p0075.sortColors_n(nums2);
+        p0075.sortColors(nums3);
+        System.out.println(Arrays.toString(nums1));
+        System.out.println(Arrays.toString(nums2));
+        System.out.println(Arrays.toString(nums3));
+    }
 }
