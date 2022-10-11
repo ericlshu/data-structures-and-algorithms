@@ -328,4 +328,18 @@ public class StringTest
         System.out.println(p0205.isIsomorphic_hash("foo", "bar"));
         System.out.println(p0205.isIsomorphic_array("paper", "title"));
     }
+
+    @Test
+    public void test1790()
+    {
+        P1790CheckIfOneStringSwapCanMakeStringsEqual p1790 = new P1790CheckIfOneStringSwapCanMakeStringsEqual();
+        System.out.println(p1790.areAlmostEqual_2p("bank", "kanb"));
+        System.out.println(p1790.areAlmostEqual_2p("attack", "defend"));
+        System.out.println(p1790.areAlmostEqual_2p("kelb", "kelb"));
+        System.out.println(p1790.areAlmostEqual_2p("abcd", "dcba"));
+        System.out.println(p1790.areAlmostEqual_2p("ysmpagrkzsmmzmsssutzgpxrmoylkgemgfcperptsxjcsgojwourhxlhqkxumonfgrczmjvbhwvhpnocz",
+                "ysmpagrqzsmmzmsssutzgpxrmoylkgemgfcperptsxjcsgojwourhxlhkkxumonfgrczmjvbhwvhpnocz"));
+        System.out.println(p1790.areAlmostEqual_list("ysmpagrkzsmmzmsssutzgpxrmoylkgemgfcperptsxjcsgojwourhxlhqkxumonfgrczmjvbhwvhpnocz",
+                "ysmpagrqzsmmzmsssutzgpxrmoylkgemgfcperptsxjcsgojwourhxlhkkxumonfgrczmjvbhwvhpnocz"));
+    }
 }
