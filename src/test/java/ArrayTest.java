@@ -998,4 +998,12 @@ public class ArrayTest
         System.out.println(Arrays.toString(nums2));
         System.out.println(Arrays.toString(nums3));
     }
+
+    @Test
+    public void test0976()
+    {
+        P0976LargestPerimeterTriangle p0976 = new P0976LargestPerimeterTriangle();
+        System.out.println(p0976.largestPerimeter(new int[]{2, 1, 2}));
+        System.out.println(p0976.largestPerimeter(new int[]{1, 2, 1}));
+    }
 }
