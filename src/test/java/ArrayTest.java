@@ -1006,4 +1006,16 @@ public class ArrayTest
         System.out.println(p0976.largestPerimeter(new int[]{2, 1, 2}));
         System.out.println(p0976.largestPerimeter(new int[]{1, 2, 1}));
     }
+
+    @Test
+    public void test1779()
+    {
+        P1779FindNearestPointThatHasTheSameXOrY p1779 = new P1779FindNearestPointThatHasTheSameXOrY();
+        int[][] points1 = {{1, 2}, {3, 1}, {2, 4}, {2, 3}, {4, 4}};
+        int[][] points2 = {{3, 4}};
+        int[][] points3 = {{12, 3}};
+        System.out.println(p1779.nearestValidPoint(3, 4, points1));
+        System.out.println(p1779.nearestValidPoint(3, 4, points2));
+        System.out.println(p1779.nearestValidPoint(3, 4, points3));
+    }
 }
