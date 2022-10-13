@@ -1081,4 +1081,16 @@ public class ArrayTest
         System.out.println(p0240.searchMatrix_2(matrix, 14));
         System.out.println(p0240.searchMatrix_2(matrix, 20));
     }
+
+    @Test
+    public void test0059()
+    {
+        P0059SpiralMatrixII p0059 = new P0059SpiralMatrixII();
+        System.out.println(Arrays.deepToString(p0059.generateMatrix(1)));
+        System.out.println(Arrays.deepToString(p0059.generateMatrix(3)));
+        for (int[] row : p0059.generateMatrix(20))
+        {
+            System.out.println("row = " + Arrays.toString(row));
+        }
+    }
 }
