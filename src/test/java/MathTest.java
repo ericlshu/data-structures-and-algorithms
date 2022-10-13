@@ -113,4 +113,16 @@ public class MathTest
         P0784LetterCasePermutation p0784 = new P0784LetterCasePermutation();
         System.out.println(p0784.letterCasePermutation("a1b2"));
     }
+
+    @Test
+    public void test0202()
+    {
+        P0202HappyNumber p0202 = new P0202HappyNumber();
+        System.out.println(p0202.isHappy_1(19));
+        System.out.println(p0202.isHappy_2(19));
+        System.out.println(p0202.isHappy_3(19));
+        System.out.println(p0202.isHappy_1(2));
+        System.out.println(p0202.isHappy_2(2));
+        System.out.println(p0202.isHappy_3(2));
+    }
 }
