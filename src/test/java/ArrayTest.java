@@ -1065,4 +1065,20 @@ public class ArrayTest
         System.out.println(p1502.canMakeArithmeticProgression_1(new int[]{3, 5, 1}));
         System.out.println(p1502.canMakeArithmeticProgression_2(new int[]{1, 2, 4}));
     }
+
+    @Test
+    public void test0240()
+    {
+        P0240SearchA2DMatrixII p0240 = new P0240SearchA2DMatrixII();
+        int[][] matrix = {
+                {1, 4, 7, 11, 15},
+                {2, 5, 8, 12, 19},
+                {3, 6, 9, 16, 22},
+                {10, 13, 14, 17, 24},
+                {18, 21, 23, 26, 30}};
+        System.out.println(p0240.searchMatrix_1(matrix, 5));
+        System.out.println(p0240.searchMatrix_1(matrix, 20));
+        System.out.println(p0240.searchMatrix_2(matrix, 14));
+        System.out.println(p0240.searchMatrix_2(matrix, 20));
+    }
 }
