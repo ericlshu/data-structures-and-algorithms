@@ -1057,4 +1057,12 @@ public class ArrayTest
         System.out.println(p1822.arraySign_1(nums2));
         System.out.println(p1822.arraySign_2(nums3));
     }
+
+    @Test
+    public void test1502()
+    {
+        P1502CanMakeArithmeticProgressionFromSequence p1502 = new P1502CanMakeArithmeticProgressionFromSequence();
+        System.out.println(p1502.canMakeArithmeticProgression_1(new int[]{3, 5, 1}));
+        System.out.println(p1502.canMakeArithmeticProgression_2(new int[]{1, 2, 4}));
+    }
 }
