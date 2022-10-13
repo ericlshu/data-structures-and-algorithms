@@ -1045,4 +1045,16 @@ public class ArrayTest
         p0048.rotate_3(matrix2);
         System.out.println("matrix2 = " + Arrays.deepToString(matrix2));
     }
+
+    @Test
+    public void test1822()
+    {
+        P1822SignOfTheProductOfAnArray p1822 = new P1822SignOfTheProductOfAnArray();
+        int[] nums1 = {-1, -2, -3, -4, 3, 2, 1};
+        int[] nums2 = {1, 5, 0, 2, -3};
+        int[] nums3 = {-1, 1, -1, 1, -1};
+        System.out.println(p1822.arraySign_1(nums1));
+        System.out.println(p1822.arraySign_1(nums2));
+        System.out.println(p1822.arraySign_2(nums3));
+    }
 }
