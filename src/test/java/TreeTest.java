@@ -286,11 +286,8 @@ public class TreeTest
         System.out.println(p0404.sumOfLeftLeaves_bfs(node2));
     }
 
-    @Test
-    public void test0559()
+    private NaryNode construct()
     {
-        P0559MaximumDepthOfNaryTree p0559 = new P0559MaximumDepthOfNaryTree();
-
         NaryNode node7 = new NaryNode(7, List.of(new NaryNode(11, List.of(new NaryNode(14)))));
         NaryNode node8 = new NaryNode(8, List.of(new NaryNode(12)));
         NaryNode node9 = new NaryNode(9, List.of(new NaryNode(13)));
@@ -304,8 +301,25 @@ public class TreeTest
 
         NaryNode node2 = new NaryNode(2);
 
-        NaryNode node1 = new NaryNode(1, List.of(node2, node3, node4, node5));
-        System.out.println(p0559.maxDepth_dfs(node1));
-        System.out.println(p0559.maxDepth_bfs(node1));
+        return new NaryNode(1, List.of(node2, node3, node4, node5));
+    }
+
+
+    @Test
+    public void test0559()
+    {
+        P0559MaximumDepthOfNaryTree p0559 = new P0559MaximumDepthOfNaryTree();
+        System.out.println(p0559.maxDepth_dfs(construct()));
+        System.out.println(p0559.maxDepth_bfs(construct()));
+    }
+
+
+    @Test
+    public void test0589()
+    {
+        P0589NaryTreePreorderTraversal p0589 = new P0589NaryTreePreorderTraversal();
+        NaryNode root = construct();
+        System.out.println(p0589.preorder_iteration(root));
+        System.out.println(p0589.preorder_recursion(root));
     }
 }
