@@ -331,4 +331,11 @@ public class TreeTest
         System.out.println(p0590.postorder_iteration(root));
         System.out.println(p0590.preorder_reverse(root));
     }
+
+    @Test
+    public void test0429()
+    {
+        P0429NaryTreeLevelOrderTraversal p0429 = new P0429NaryTreeLevelOrderTraversal();
+        System.out.println(p0429.levelOrder(construct()));
+    }
 }
