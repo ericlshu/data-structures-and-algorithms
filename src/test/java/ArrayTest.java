@@ -7,6 +7,7 @@ import solution.bs.P1122RelativeSortArray;
 import solution.dp.Offer042LCOF;
 import solution.collection.P0019RemoveNthNodeFromEndOfList;
 import solution.math.*;
+import solution.string.P0409LongestPalindrome;
 
 import java.util.Arrays;
 import java.util.List;
@@ -1122,5 +1123,13 @@ public class ArrayTest
         int[][] coordinates2 = {{1, 1}, {2, 2}, {3, 4}, {4, 5}, {5, 6}, {7, 7}};
         System.out.println(p1232.checkStraightLine(coordinates1));
         System.out.println(p1232.checkStraightLine(coordinates2));
+    }
+
+    @Test
+    public void test0409()
+    {
+        P0409LongestPalindrome p0409 = new P0409LongestPalindrome();
+        System.out.println(p0409.longestPalindrome("abccccdd"));
+        System.out.println(p0409.longestPalindrome("a"));
     }
 }
