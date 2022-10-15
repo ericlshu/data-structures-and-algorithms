@@ -35,22 +35,22 @@ public class P0102BinaryTreeLevelOrderTraversal
 {
     public List<List<Integer>> levelOrderRecursion(TreeNode root)
     {
-        List<List<Integer>> ret = new ArrayList<>();
+        List<List<Integer>> res = new ArrayList<>();
         if (root == null)
-            return ret;
-        dfs(0, root, ret);
-        return ret;
+            return res;
+        dfs(0, root, res);
+        return res;
     }
 
-    private void dfs(int level, TreeNode node, List<List<Integer>> ret)
+    private void dfs(int level, TreeNode node, List<List<Integer>> res)
     {
-        if (ret.size() <= level)
-            ret.add(new ArrayList<>());
-        ret.get(level).add(node.val);
+        if (res.size() <= level)
+            res.add(new ArrayList<>());
+        res.get(level).add(node.val);
         if (node.left != null)
-            dfs(level + 1, node.left, ret);
+            dfs(level + 1, node.left, res);
         if (node.right != null)
-            dfs(level + 1, node.right, ret);
+            dfs(level + 1, node.right, res);
     }
 
     public List<List<Integer>> levelOrderIteration(TreeNode root)
@@ -66,7 +66,8 @@ public class P0102BinaryTreeLevelOrderTraversal
         {
             row = new ArrayList<>();
             int size = queue.size();
-            for (int i = 0; i < size; i++)
+            // for (int i = 0; i < size; i++)
+            while (size-- > 0)
             {
                 node = queue.remove();
                 row.add(node.val);
