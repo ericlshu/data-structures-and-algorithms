@@ -6,10 +6,7 @@ import solution.bs.P0852PeakIndexInAMountainArray;
 import solution.bs.P1122RelativeSortArray;
 import solution.dp.Offer042LCOF;
 import solution.collection.P0019RemoveNthNodeFromEndOfList;
-import solution.math.P0191NumberOf1Bits;
-import solution.math.P0231PowerOfTwo;
-import solution.math.P0367ValidPerfectSquare;
-import solution.math.P1688CountOfMatchesInTournament;
+import solution.math.*;
 
 import java.util.Arrays;
 import java.util.List;
@@ -1115,5 +1112,15 @@ public class ArrayTest
         System.out.println(Arrays.toString(p0739.dailyTemperatures_forward(temperatures1)));
         System.out.println(Arrays.toString(p0739.dailyTemperatures_forward(temperatures2)));
         System.out.println(Arrays.toString(p0739.dailyTemperatures_forward(temperatures3)));
+    }
+
+    @Test
+    public void test1232()
+    {
+        P1232CheckIfItIsAStraightLine p1232 = new P1232CheckIfItIsAStraightLine();
+        int[][] coordinates1 = {{1, 2}, {2, 3}, {3, 4}, {4, 5}, {5, 6}, {6, 7}};
+        int[][] coordinates2 = {{1, 1}, {2, 2}, {3, 4}, {4, 5}, {5, 6}, {7, 7}};
+        System.out.println(p1232.checkStraightLine(coordinates1));
+        System.out.println(p1232.checkStraightLine(coordinates2));
     }
 }
