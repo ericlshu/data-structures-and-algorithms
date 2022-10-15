@@ -313,7 +313,6 @@ public class TreeTest
         System.out.println(p0559.maxDepth_bfs(construct()));
     }
 
-
     @Test
     public void test0589()
     {
@@ -321,5 +320,15 @@ public class TreeTest
         NaryNode root = construct();
         System.out.println(p0589.preorder_iteration(root));
         System.out.println(p0589.preorder_recursion(root));
+    }
+
+    @Test
+    public void test0590()
+    {
+        P0590NaryTreePostorderTraversal p0590 = new P0590NaryTreePostorderTraversal();
+        NaryNode root = construct();
+        System.out.println(p0590.postorder_recursion(root));
+        System.out.println(p0590.postorder_iteration(root));
+        System.out.println(p0590.preorder_reverse(root));
     }
 }
