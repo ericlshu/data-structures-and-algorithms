@@ -1101,4 +1101,19 @@ public class ArrayTest
         System.out.println(Arrays.toString(p0503.nextGreaterElements(new int[]{1, 2, 1})));
         System.out.println(Arrays.toString(p0503.nextGreaterElements(new int[]{1, 2, 3, 4, 3})));
     }
+
+    @Test
+    public void test0739()
+    {
+        P0739DailyTemperatures p0739 = new P0739DailyTemperatures();
+        int[] temperatures1 = {73, 74, 75, 71, 69, 72, 76, 73};
+        int[] temperatures2 = {30, 40, 50, 60};
+        int[] temperatures3 = {30, 60, 90};
+        System.out.println(Arrays.toString(p0739.dailyTemperatures_reverse(temperatures1)));
+        System.out.println(Arrays.toString(p0739.dailyTemperatures_reverse(temperatures2)));
+        System.out.println(Arrays.toString(p0739.dailyTemperatures_reverse(temperatures3)));
+        System.out.println(Arrays.toString(p0739.dailyTemperatures_forward(temperatures1)));
+        System.out.println(Arrays.toString(p0739.dailyTemperatures_forward(temperatures2)));
+        System.out.println(Arrays.toString(p0739.dailyTemperatures_forward(temperatures3)));
+    }
 }
