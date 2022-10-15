@@ -1144,4 +1144,16 @@ public class ArrayTest
         System.out.println(p1672.maximumWealth(accounts2));
         System.out.println(p1672.maximumWealth(accounts3));
     }
+
+    @Test
+    public void test1588()
+    {
+        P1588SumOfAllOddLengthSubArrays p1588 = new P1588SumOfAllOddLengthSubArrays();
+        int[] arr1 = {1, 4, 2, 5, 3};
+        int[] arr2 = {1, 2};
+        int[] arr3 = {10, 11, 12};
+        System.out.println(p1588.sumOddLengthSubArrays_n3(arr1));
+        System.out.println(p1588.sumOddLengthSubArrays_n3(arr2));
+        System.out.println(p1588.sumOddLengthSubArrays_n3(arr3));
+    }
 }
