@@ -1132,4 +1132,16 @@ public class ArrayTest
         System.out.println(p0409.longestPalindrome("abccccdd"));
         System.out.println(p0409.longestPalindrome("a"));
     }
+
+    @Test
+    public void test2672()
+    {
+        P1672RichestCustomerWealth p1672 = new P1672RichestCustomerWealth();
+        int[][] accounts1 = {{1, 2, 3}, {3, 2, 1}};
+        int[][] accounts2 = {{1, 5}, {7, 3}, {3, 5}};
+        int[][] accounts3 = {{2, 8, 7}, {7, 1, 3}, {1, 9, 5}};
+        System.out.println(p1672.maximumWealth(accounts1));
+        System.out.println(p1672.maximumWealth(accounts2));
+        System.out.println(p1672.maximumWealth(accounts3));
+    }
 }
