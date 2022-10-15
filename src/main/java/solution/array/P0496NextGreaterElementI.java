@@ -1,9 +1,6 @@
 package solution.array;
 
-import java.util.ArrayDeque;
-import java.util.Deque;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Description : 496. 下一个更大元素 I
@@ -81,5 +78,49 @@ public class P0496NextGreaterElementI
             nums1[i] = k < nums2.length ? nums2[k] : -1;
         }
         return nums1;
+    }
+
+    public int[] nextGreaterElement_2(int[] nums1, int[] nums2)
+    {
+        for (int i = 0; i < nums1.length; i++)
+        {
+            boolean matched = false;
+            int nextGreaterElement = -1;
+            for (int num : nums2)
+            {
+                if (num == nums1[i])
+                {
+                    matched = true;
+                    continue;
+                }
+                if (matched && num > nums1[i])
+                {
+                    nextGreaterElement = num;
+                    break;
+                }
+            }
+            nums1[i] = nextGreaterElement;
+        }
+        return nums1;
+    }
+
+    public int[] nextGreaterElement_3(int[] nums1, int[] nums2)
+    {
+        HashMap<Integer, Integer> map = new HashMap<>();
+        Deque<Integer> stack = new LinkedList<>();
+        for (int i = 0; i < nums2.length; i++)
+        {
+            while (!stack.isEmpty() && nums2[stack.peek()] < nums2[i])
+            {
+                map.put(nums2[stack.pop()], nums2[i]);
+            }
+            stack.push(i); // 下标入栈
+        }
+        int[] ans = new int[nums1.length];
+        for (int i = 0; i < nums1.length; i++)
+        {
+            ans[i] = map.getOrDefault(nums1[i], -1);
+        }
+        return ans;
     }
 }
