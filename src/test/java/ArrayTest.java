@@ -1093,4 +1093,12 @@ public class ArrayTest
             System.out.println("row = " + Arrays.toString(row));
         }
     }
+
+    @Test
+    public void test0503()
+    {
+        P0503NextGreaterElementII p0503 = new P0503NextGreaterElementII();
+        System.out.println(Arrays.toString(p0503.nextGreaterElements(new int[]{1, 2, 1})));
+        System.out.println(Arrays.toString(p0503.nextGreaterElements(new int[]{1, 2, 3, 4, 3})));
+    }
 }
