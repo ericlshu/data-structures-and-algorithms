@@ -352,4 +352,14 @@ public class StringTest
         System.out.println(p0290.wordPattern_2("aaaa", "dog cat cat dog"));
         System.out.println(p0290.wordPattern_2("abba", "dog dog dog dog"));
     }
+
+    @Test
+    public void test0415()
+    {
+        P0415AddStrings p0415 = new P0415AddStrings();
+        System.out.println(p0415.addStrings("11", "123"));
+        System.out.println(p0415.addStrings("456", "77"));
+        System.out.println(p0415.addStrings("0", "0"));
+        System.out.println(p0415.addStrings("99", "1"));
+    }
 }
