@@ -1156,4 +1156,23 @@ public class ArrayTest
         System.out.println(p1588.sumOddLengthSubArrays_n3(arr2));
         System.out.println(p1588.sumOddLengthSubArrays_n3(arr3));
     }
+
+    @Test
+    public void test1572()
+    {
+        P1572MatrixDiagonalSum p1572 = new P1572MatrixDiagonalSum();
+        int[][] mat1 = {
+                {1, 2, 3},
+                {4, 5, 6},
+                {7, 8, 9}};
+        int[][] mat2 = {
+                {1, 1, 1, 1},
+                {1, 1, 1, 1},
+                {1, 1, 1, 1},
+                {1, 1, 1, 1}};
+        int[][] mat3 = {{5}};
+        System.out.println(p1572.diagonalSum(mat1));
+        System.out.println(p1572.diagonalSum(mat2));
+        System.out.println(p1572.diagonalSum(mat3));
+    }
 }
