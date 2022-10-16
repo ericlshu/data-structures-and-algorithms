@@ -342,4 +342,14 @@ public class StringTest
         System.out.println(p1790.areAlmostEqual_list("ysmpagrkzsmmzmsssutzgpxrmoylkgemgfcperptsxjcsgojwourhxlhqkxumonfgrczmjvbhwvhpnocz",
                 "ysmpagrqzsmmzmsssutzgpxrmoylkgemgfcperptsxjcsgojwourhxlhkkxumonfgrczmjvbhwvhpnocz"));
     }
+
+    @Test
+    public void test0290()
+    {
+        P0290WordPattern p0290 = new P0290WordPattern();
+        System.out.println(p0290.wordPattern_1("abba", "dog cat cat dog"));
+        System.out.println(p0290.wordPattern_1("abba", "dog cat cat fish"));
+        System.out.println(p0290.wordPattern_2("aaaa", "dog cat cat dog"));
+        System.out.println(p0290.wordPattern_2("abba", "dog dog dog dog"));
+    }
 }
