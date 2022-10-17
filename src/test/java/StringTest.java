@@ -371,4 +371,12 @@ public class StringTest
         System.out.println(p1768.mergeAlternately_2("ab", "pqrs"));
         System.out.println(p1768.mergeAlternately_2("abcd", "pq"));
     }
+
+    @Test
+    public void test1678()
+    {
+        P1678GoalParserInterpretation p1678 = new P1678GoalParserInterpretation();
+        System.out.println(p1678.interpret_1("G()(al)"));
+        System.out.println(p1678.interpret_2("(al)G(al)()()G"));
+    }
 }
