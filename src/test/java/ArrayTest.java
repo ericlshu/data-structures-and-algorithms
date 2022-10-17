@@ -1175,4 +1175,16 @@ public class ArrayTest
         System.out.println(p1572.diagonalSum(mat2));
         System.out.println(p1572.diagonalSum(mat3));
     }
+
+    @Test
+    public void test0435()
+    {
+        P0435NonOverlappingIntervals p0435 = new P0435NonOverlappingIntervals();
+        int[][] intervals1 = {{1, 2}, {2, 3}, {3, 4}, {1, 3}};
+        int[][] intervals2 = {{1, 2}, {1, 2}, {1, 2}};
+        int[][] intervals3 = {{1, 2}, {2, 3}};
+        System.out.println(p0435.eraseOverlapIntervals_1(intervals1));
+        System.out.println(p0435.eraseOverlapIntervals_2(intervals2));
+        System.out.println(p0435.eraseOverlapIntervals_2(intervals3));
+    }
 }
