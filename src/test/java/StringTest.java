@@ -379,4 +379,12 @@ public class StringTest
         System.out.println(p1678.interpret_1("G()(al)"));
         System.out.println(p1678.interpret_2("(al)G(al)()()G"));
     }
+
+    @Test
+    public void test0043()
+    {
+        P0043MultiplyStrings p0043 = new P0043MultiplyStrings();
+        System.out.println(p0043.multiply_1("2", "3"));
+        System.out.println(p0043.multiply_2("123", "456"));
+    }
 }
