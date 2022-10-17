@@ -1197,4 +1197,16 @@ public class ArrayTest
         System.out.println(Arrays.toString(p0238.productExceptSelf_1(nums1)));
         System.out.println(Arrays.toString(p0238.productExceptSelf_2(nums2)));
     }
+
+    @Test
+    public void test0334()
+    {
+        P0334IncreasingTripletSubsequence p0334 = new P0334IncreasingTripletSubsequence();
+        int[] nums1 = {1, 2, 3, 4, 5};
+        int[] nums2 = {5, 4, 3, 2, 1};
+        int[] nums3 = {2, 1, 5, 0, 4, 6};
+        System.out.println(p0334.increasingTriplet_1(nums1));
+        System.out.println(p0334.increasingTriplet_2(nums2));
+        System.out.println(p0334.increasingTriplet_2(nums3));
+    }
 }
