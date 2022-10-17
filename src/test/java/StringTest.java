@@ -362,4 +362,13 @@ public class StringTest
         System.out.println(p0415.addStrings("0", "0"));
         System.out.println(p0415.addStrings("99", "1"));
     }
+
+    @Test
+    public void test1768()
+    {
+        P1768MergeStringsAlternately p1768 = new P1768MergeStringsAlternately();
+        System.out.println(p1768.mergeAlternately_1("abc", "pqr"));
+        System.out.println(p1768.mergeAlternately_2("ab", "pqrs"));
+        System.out.println(p1768.mergeAlternately_2("abcd", "pq"));
+    }
 }
