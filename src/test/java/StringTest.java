@@ -396,4 +396,11 @@ public class StringTest
         System.out.println(p0049.groupAnagrams_2(new String[]{"eat", "tea", "tan", "ate", "nat", "bat"}));
         System.out.println(p0049.groupAnagrams_3(new String[]{"a"}));
     }
+
+    @Test
+    public void test0763()
+    {
+        P0763PartitionLabels p0763 = new P0763PartitionLabels();
+        System.out.println(p0763.partitionLabels("ababcbacadefegdehijhklij"));
+    }
 }
