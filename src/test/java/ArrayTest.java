@@ -60,12 +60,10 @@ public class ArrayTest
     public void testP0056()
     {
         P0056MergeIntervals obj = new P0056MergeIntervals();
-        int[][] intervals = {{1, 3}, {2, 6}, {8, 10}, {15, 18}};
-        int[][] merge = obj.merge(intervals);
-        for (int[] nums : merge)
-        {
-            System.out.println("nums = " + Arrays.toString(nums));
-        }
+        int[][] intervals1 = {{1, 3}, {2, 6}, {8, 10}, {15, 18}};
+        int[][] intervals2 = {{1, 4}, {4, 5}};
+        System.out.println(Arrays.deepToString(obj.merge_1(intervals1)));
+        System.out.println(Arrays.deepToString(obj.merge_2(intervals2)));
     }
 
     @Test

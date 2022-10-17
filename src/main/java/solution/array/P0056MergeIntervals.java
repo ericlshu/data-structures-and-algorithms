@@ -30,33 +30,39 @@ import java.util.List;
  */
 public class P0056MergeIntervals
 {
-    public int[][] merge(int[][] intervals)
+    public int[][] merge_1(int[][] intervals)
     {
-        if (intervals.length == 0) return new int[0][2];
-        Arrays.sort(intervals, Comparator.comparingInt(interval -> interval[0]));
+        // if (intervals.length == 0) return new int[0][2];
+        Arrays.sort(intervals, (interval1, interval2) -> interval1[0] - interval2[0]);
         List<int[]> merged = new ArrayList<>();
         merged.add(intervals[0]);
-        /*for (int i = 1; i < intervals.length; i++)
+        for (int i = 1; i < intervals.length; i++)
         {
             int[] last = merged.get(merged.size() - 1);
-            int left = intervals[i][0], right = intervals[i][1];
-            if(last[1] < left)
-                merged.add(intervals[i]);
+            int[] curr = intervals[i];
+            if (last[1] < curr[0])
+                merged.add(curr);
             else
-                last[1] = Math.max(last[1], right);
-        }*/
-        for (int[] interval : intervals)
+                last[1] = Math.max(last[1], curr[1]);
+        }
+        return merged.toArray(new int[merged.size()][]);
+    }
+
+    public int[][] merge_2(int[][] intervals)
+    {
+        Arrays.sort(intervals, Comparator.comparingInt(interval -> interval[0]));
+        List<int[]> merged = new ArrayList<>();
+        for (int[] curr : intervals)
         {
             if (merged.size() == 0)
-                merged.add(interval);
+                merged.add(curr);
             else
             {
                 int[] last = merged.get(merged.size() - 1);
-                int left = interval[0], right = interval[1];
-                if(last[1] < left)
-                    merged.add(new int[]{left, right});
+                if (last[1] < curr[0])
+                    merged.add(curr);
                 else
-                    last[1] = Math.max(last[1], right);
+                    last[1] = Math.max(last[1], curr[1]);
             }
         }
         return merged.toArray(new int[merged.size()][]);
