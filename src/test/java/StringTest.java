@@ -387,4 +387,13 @@ public class StringTest
         System.out.println(p0043.multiply_1("2", "3"));
         System.out.println(p0043.multiply_2("123", "456"));
     }
+
+    @Test
+    public void test0049()
+    {
+        P0049GroupAnagrams p0049 = new P0049GroupAnagrams();
+        System.out.println(p0049.groupAnagrams_1(new String[]{""}));
+        System.out.println(p0049.groupAnagrams_2(new String[]{"eat", "tea", "tan", "ate", "nat", "bat"}));
+        System.out.println(p0049.groupAnagrams_3(new String[]{"a"}));
+    }
 }
