@@ -1187,4 +1187,14 @@ public class ArrayTest
         System.out.println(p0435.eraseOverlapIntervals_2(intervals2));
         System.out.println(p0435.eraseOverlapIntervals_2(intervals3));
     }
+
+    @Test
+    public void test0238()
+    {
+        P0238ProductOfArrayExceptSelf p0238 = new P0238ProductOfArrayExceptSelf();
+        int[] nums1 = {1, 2, 3, 4};
+        int[] nums2 = {-1, 1, 0, -3, 3};
+        System.out.println(Arrays.toString(p0238.productExceptSelf_1(nums1)));
+        System.out.println(Arrays.toString(p0238.productExceptSelf_2(nums2)));
+    }
 }
