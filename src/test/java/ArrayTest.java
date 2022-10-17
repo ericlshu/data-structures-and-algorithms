@@ -1209,4 +1209,18 @@ public class ArrayTest
         System.out.println(p0334.increasingTriplet_2(nums2));
         System.out.println(p0334.increasingTriplet_2(nums3));
     }
+
+    @Test
+    public void test0560()
+    {
+        P0560SubarraySumEqualsK p0560 = new P0560SubarraySumEqualsK();
+        int[] nums1 = {1, 1, 1};
+        int[] nums2 = {1, 2, 3};
+        int[] nums3 = {-1, -1, 1};
+        int[] nums4 = {0, 0};
+        System.out.println(p0560.subarraySum_1(nums1, 2));
+        System.out.println(p0560.subarraySum_2(nums2, 3));
+        System.out.println(p0560.subarraySum_2(nums3, 1));
+        System.out.println(p0560.subarraySum_2(nums4, 0));
+    }
 }
