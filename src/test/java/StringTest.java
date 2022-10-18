@@ -411,4 +411,12 @@ public class StringTest
         System.out.println(p1309.freqAlphabets_forward("10#11#12"));
         System.out.println(p1309.freqAlphabets_reverse("1326#"));
     }
+
+    @Test
+    public void test0709()
+    {
+        P0709ToLowerCase p0709 = new P0709ToLowerCase();
+        System.out.println(p0709.toLowerCase_api("LOVELY"));
+        System.out.println(p0709.toLowerCase("Hello"));
+    }
 }
