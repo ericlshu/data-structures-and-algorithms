@@ -428,4 +428,12 @@ public class StringTest
         System.out.println(p0953.isAlienSorted(new String[]{"word", "world", "row"}, "worldabcefghijkmnpqstuvxyz"));
         System.out.println(p0953.isAlienSorted(new String[]{"apple", "app"}, "abcdefghijklmnopqrstuvwxyz"));
     }
+
+    @Test
+    public void test0187()
+    {
+        P0187RepeatedDNASequences p0187 = new P0187RepeatedDNASequences();
+        System.out.println(p0187.findRepeatedDnaSequences_1("AAAAAAAAAAAAA"));
+        System.out.println(p0187.findRepeatedDnaSequences_2("AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT"));
+    }
 }
