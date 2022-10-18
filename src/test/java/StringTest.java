@@ -436,4 +436,12 @@ public class StringTest
         System.out.println(p0187.findRepeatedDnaSequences_1("AAAAAAAAAAAAA"));
         System.out.println(p0187.findRepeatedDnaSequences_2("AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT"));
     }
+
+    @Test
+    public void test0005()
+    {
+        P0005LongestPalindromicSubstring p0005 = new P0005LongestPalindromicSubstring();
+        System.out.println(p0005.longestPalindrome("babad"));
+        System.out.println(p0005.longestPalindrome_dp("cbbd"));
+    }
 }
