@@ -419,4 +419,13 @@ public class StringTest
         System.out.println(p0709.toLowerCase_api("LOVELY"));
         System.out.println(p0709.toLowerCase("Hello"));
     }
+
+    @Test
+    public void test0953()
+    {
+        P0953VerifyingAnAlienDictionary p0953 = new P0953VerifyingAnAlienDictionary();
+        System.out.println(p0953.isAlienSorted(new String[]{"hello", "leetcode"}, "hlabcdefgijkmnopqrstuvwxyz"));
+        System.out.println(p0953.isAlienSorted(new String[]{"word", "world", "row"}, "worldabcefghijkmnpqstuvxyz"));
+        System.out.println(p0953.isAlienSorted(new String[]{"apple", "app"}, "abcdefghijklmnopqrstuvwxyz"));
+    }
 }
