@@ -403,4 +403,12 @@ public class StringTest
         P0763PartitionLabels p0763 = new P0763PartitionLabels();
         System.out.println(p0763.partitionLabels("ababcbacadefegdehijhklij"));
     }
+
+    @Test
+    public void test1309()
+    {
+        P1309DecryptStringFromAlphabetToIntegerMapping p1309 = new P1309DecryptStringFromAlphabetToIntegerMapping();
+        System.out.println(p1309.freqAlphabets_forward("10#11#12"));
+        System.out.println(p1309.freqAlphabets_reverse("1326#"));
+    }
 }
