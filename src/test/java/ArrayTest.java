@@ -1221,4 +1221,22 @@ public class ArrayTest
         System.out.println(p0560.subarraySum_2(nums3, 1));
         System.out.println(p0560.subarraySum_2(nums4, 0));
     }
+
+    @Test
+    public void test0200()
+    {
+        P0200NumberOfIslands p0200 = new P0200NumberOfIslands();
+        char[][] grid1 = {
+                {'1', '1', '1', '1', '0'},
+                {'1', '1', '0', '1', '0'},
+                {'1', '1', '0', '0', '0'},
+                {'0', '0', '0', '0', '0'}};
+        char[][] grid2 = {
+                {'1', '1', '0', '0', '0'},
+                {'1', '1', '0', '0', '0'},
+                {'0', '0', '1', '0', '0'},
+                {'0', '0', '0', '1', '1'}};
+        System.out.println(p0200.numIslands_bfs(grid1));
+        System.out.println(p0200.numIslands_dfs(grid2));
+    }
 }
