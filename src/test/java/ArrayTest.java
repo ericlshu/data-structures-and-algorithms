@@ -1267,4 +1267,12 @@ public class ArrayTest
         };
         System.out.println(o105.maxAreaOfIsland_dfs(grid));
     }
+
+    @Test
+    public void test1700()
+    {
+        P1700NumberOfStudentsUnableToEatLunch p1700 = new P1700NumberOfStudentsUnableToEatLunch();
+        System.out.println(p1700.countStudents_1(new int[]{1, 1, 0, 0}, new int[]{0, 1, 0, 1}));
+        System.out.println(p1700.countStudents_2(new int[]{1, 1, 1, 0, 0, 1}, new int[]{1, 0, 0, 0, 1, 1}));
+    }
 }
