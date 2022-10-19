@@ -171,4 +171,16 @@ public class CollectionTest
         myHashMapNode.remove(2);                    // 删除键为 2 的数据，myHashMap 现在为 [[1,1]]
         System.out.println(myHashMapNode.get(2));       // 返回 -1（未找到），myHashMap 现在为 [[1,1]]
     }
+
+    @Test
+    public void test0002()
+    {
+        P0002AddTwoNumbers p0002 = new P0002AddTwoNumbers();
+        ListNode l1 = new ListNode(2, new ListNode(4, new ListNode(3)));
+        ListNode l2 = new ListNode(5, new ListNode(6, new ListNode(4)));
+        ListNode l3 = new ListNode(9, new ListNode(9, new ListNode(9)));
+        ListNode l4 = new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9)))));
+        System.out.println(p0002.addTwoNumbers_1(l1, l2));
+        System.out.println(p0002.addTwoNumbers_2(l3, l4));
+    }
 }
