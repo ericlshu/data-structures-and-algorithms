@@ -29,11 +29,11 @@ package solution.design;
  * @date 2022-10-21 19:49
  * @since jdk-11.0.14
  */
-public class ParkingSystem2
+public class P1603ParkingSystem2
 {
     int counts;
 
-    public ParkingSystem2(int big, int medium, int small)
+    public P1603ParkingSystem2(int big, int medium, int small)
     {
         counts = (small << 20) | (medium << 10) | big;
     }

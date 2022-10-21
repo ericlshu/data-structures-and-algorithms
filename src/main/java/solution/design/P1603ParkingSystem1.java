@@ -29,11 +29,11 @@ package solution.design;
  * @date 2022-10-21 19:49
  * @since jdk-11.0.14
  */
-public class ParkingSystem1
+public class P1603ParkingSystem1
 {
     int big, medium, small;
 
-    public ParkingSystem1(int big, int medium, int small)
+    public P1603ParkingSystem1(int big, int medium, int small)
     {
         this.big = big;
         this.medium = medium;

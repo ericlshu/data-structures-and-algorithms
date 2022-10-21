@@ -1,4 +1,4 @@
-package solution.stack;
+package solution.collection;
 
 import java.util.Deque;
 import java.util.LinkedList;

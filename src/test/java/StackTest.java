@@ -1,7 +1,7 @@
 import org.junit.Test;
-import solution.stack.P0232MyQueue1;
-import solution.stack.P0232MyQueue2;
-import solution.stack.P0402RemoveKDigits;
+import solution.design.P0232MyQueue1;
+import solution.design.P0232MyQueue2;
+import solution.collection.P0402RemoveKDigits;
 
 /**
  * Description :

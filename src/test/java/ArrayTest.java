@@ -4,10 +4,10 @@ import solution.array.*;
 import solution.bs.P0852PeakIndexInAMountainArray;
 import solution.bs.P1122RelativeSortArray;
 import solution.collection.P0019RemoveNthNodeFromEndOfList;
-import solution.design.NumArray1;
-import solution.design.NumArray2;
-import solution.design.ParkingSystem1;
-import solution.design.ParkingSystem2;
+import solution.design.P0303NumArray1;
+import solution.design.P0303NumArray2;
+import solution.design.P1603ParkingSystem1;
+import solution.design.P1603ParkingSystem2;
 import solution.dp.Offer042LCOF;
 import solution.math.*;
 import solution.string.P0409LongestPalindrome;
@@ -1282,7 +1282,7 @@ public class ArrayTest
     @Test
     public void test1603()
     {
-        ParkingSystem1 system1 = new ParkingSystem1(1, 1, 0);
+        P1603ParkingSystem1 system1 = new P1603ParkingSystem1(1, 1, 0);
         System.out.println(system1.addCar(1));
         System.out.println(system1.addCar(2));
         System.out.println(system1.addCar(3));
@@ -1290,7 +1290,7 @@ public class ArrayTest
 
         System.out.println("-----");
 
-        ParkingSystem2 system2 = new ParkingSystem2(1, 1, 0);
+        P1603ParkingSystem2 system2 = new P1603ParkingSystem2(1, 1, 0);
         System.out.println(system2.addCar(1));
         System.out.println(system2.addCar(2));
         System.out.println(system2.addCar(3));
@@ -1302,14 +1302,14 @@ public class ArrayTest
     {
         int[] nums = {-2, 0, 3, -5, 2, -1};
 
-        NumArray1 numArray1 = new NumArray1(nums);
-        System.out.println(numArray1.sumRange(0, 2)); // return 1 ((-2) + 0 + 3)
-        System.out.println(numArray1.sumRange(2, 5)); // return -1 (3 + (-5) + 2 + (-1))
-        System.out.println(numArray1.sumRange(0, 5)); // return -3 ((-2) + 0 + 3 + (-5) + 2 + (-1))
+        P0303NumArray1 p0303NumArray1 = new P0303NumArray1(nums);
+        System.out.println(p0303NumArray1.sumRange(0, 2)); // return 1 ((-2) + 0 + 3)
+        System.out.println(p0303NumArray1.sumRange(2, 5)); // return -1 (3 + (-5) + 2 + (-1))
+        System.out.println(p0303NumArray1.sumRange(0, 5)); // return -3 ((-2) + 0 + 3 + (-5) + 2 + (-1))
 
-        NumArray2 numArray2 = new NumArray2(nums);
-        System.out.println(numArray2.sumRange(0, 2));
-        System.out.println(numArray2.sumRange(2, 5));
-        System.out.println(numArray2.sumRange(0, 5));
+        P0303NumArray2 p0303NumArray2 = new P0303NumArray2(nums);
+        System.out.println(p0303NumArray2.sumRange(0, 2));
+        System.out.println(p0303NumArray2.sumRange(2, 5));
+        System.out.println(p0303NumArray2.sumRange(0, 5));
     }
 }

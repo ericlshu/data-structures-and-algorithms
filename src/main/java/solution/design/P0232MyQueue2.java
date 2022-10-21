@@ -1,4 +1,4 @@
-package solution.stack;
+package solution.design;
 
 import java.util.Stack;
 
