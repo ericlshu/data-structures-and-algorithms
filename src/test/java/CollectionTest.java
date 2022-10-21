@@ -196,4 +196,14 @@ public class CollectionTest
         System.out.println(p0082.deleteDuplicates_2(head2));
         System.out.println(p0082.deleteDuplicates_3(head3));
     }
+
+    @Test
+    public void test0024()
+    {
+        P0024SwapNodesInPairs p0024 = new P0024SwapNodesInPairs();
+        ListNode head1 = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4))));
+        ListNode head2 = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5, new ListNode(6))))));
+        System.out.println(p0024.swapPairs_recursion(head1));
+        System.out.println(p0024.swapPairs_iteration(head2));
+    }
 }
