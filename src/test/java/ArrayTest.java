@@ -1,11 +1,12 @@
 import domain.ListNode;
 import org.junit.Test;
 import solution.array.*;
-import solution.array.P0035SearchInsertPosition;
 import solution.bs.P0852PeakIndexInAMountainArray;
 import solution.bs.P1122RelativeSortArray;
-import solution.dp.Offer042LCOF;
 import solution.collection.P0019RemoveNthNodeFromEndOfList;
+import solution.design.ParkingSystem1;
+import solution.design.ParkingSystem2;
+import solution.dp.Offer042LCOF;
 import solution.math.*;
 import solution.string.P0409LongestPalindrome;
 
@@ -1274,5 +1275,23 @@ public class ArrayTest
         P1700NumberOfStudentsUnableToEatLunch p1700 = new P1700NumberOfStudentsUnableToEatLunch();
         System.out.println(p1700.countStudents_1(new int[]{1, 1, 0, 0}, new int[]{0, 1, 0, 1}));
         System.out.println(p1700.countStudents_2(new int[]{1, 1, 1, 0, 0, 1}, new int[]{1, 0, 0, 0, 1, 1}));
+    }
+
+    @Test
+    public void test1603()
+    {
+        ParkingSystem1 system1 = new ParkingSystem1(1, 1, 0);
+        System.out.println(system1.addCar(1));
+        System.out.println(system1.addCar(2));
+        System.out.println(system1.addCar(3));
+        System.out.println(system1.addCar(1));
+
+        System.out.println("-----");
+
+        ParkingSystem2 system2 = new ParkingSystem2(1, 1, 0);
+        System.out.println(system2.addCar(1));
+        System.out.println(system2.addCar(2));
+        System.out.println(system2.addCar(3));
+        System.out.println(system2.addCar(1));
     }
 }
