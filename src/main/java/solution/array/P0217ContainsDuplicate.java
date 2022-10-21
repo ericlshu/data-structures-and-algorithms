@@ -1,8 +1,6 @@
 package solution.array;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Description : 存在重复元素
@@ -29,7 +27,8 @@ import java.util.Set;
  * @date 2022-01-20 22:08
  * @since JDK 1.8
  */
-public class P0217ContainsDuplicate {
+public class P0217ContainsDuplicate
+{
     /**
      * 去重计数
      */
@@ -83,4 +82,26 @@ public class P0217ContainsDuplicate {
         return false;
     }
 
+    public boolean containsDuplicate5(int[] nums)
+    {
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int num : nums)
+        {
+            map.put(num, map.getOrDefault(num, 0) + 1);
+            if (map.get(num) > 1)
+                return true;
+        }
+        return false;
+    }
+
+    public boolean containsDuplicate6(int[] nums)
+    {
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int num : nums)
+        {
+            if (map.put(num, 1) != null)
+                return true;
+        }
+        return false;
+    }
 }
