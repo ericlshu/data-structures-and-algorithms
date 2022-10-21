@@ -103,9 +103,10 @@ public class ArrayTest
     @Test
     public void testP1356()
     {
-        P1356SortIntegersByTheNumberOf1Bits obj = new P1356SortIntegersByTheNumberOf1Bits();
-        int[] arr = {0, 1, 2, 3, 4, 5, 6, 7, 8};
-        System.out.println("obj.get(i) : " + Arrays.toString(obj.sortByBits_1(arr)));
+        P1356SortIntegersByTheNumberOf1Bits p1356 = new P1356SortIntegersByTheNumberOf1Bits();
+        System.out.println(Arrays.toString(p1356.sortByBits(new int[]{2, 3, 5, 7, 11, 13, 17, 19})));
+        System.out.println(Arrays.toString(p1356.sortByBits_1(new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8})));
+        System.out.println(Arrays.toString(p1356.sortByBits_2(new int[]{1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1})));
     }
 
     @Test

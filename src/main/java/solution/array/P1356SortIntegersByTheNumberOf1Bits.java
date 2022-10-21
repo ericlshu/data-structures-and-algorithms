@@ -61,7 +61,6 @@ public class P1356SortIntegersByTheNumberOf1Bits
         return arr;
     }
 
-
     public int[] sortByBits_1(int[] arr)
     {
         int[] bit = new int[10001];
@@ -90,5 +89,19 @@ public class P1356SortIntegersByTheNumberOf1Bits
             x /= 2;
         }
         return res;
+    }
+
+    public int[] sortByBits_2(int[] arr)
+    {
+        for (int i = 0; i < arr.length; i++)
+        {
+            arr[i] += get(arr[i]) << 14;
+        }
+        Arrays.sort(arr);
+        for (int i = 0; i < arr.length; i++)
+        {
+            arr[i] &= 16383;
+        }
+        return arr;
     }
 }
