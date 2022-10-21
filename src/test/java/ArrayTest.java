@@ -4,6 +4,8 @@ import solution.array.*;
 import solution.bs.P0852PeakIndexInAMountainArray;
 import solution.bs.P1122RelativeSortArray;
 import solution.collection.P0019RemoveNthNodeFromEndOfList;
+import solution.design.NumArray1;
+import solution.design.NumArray2;
 import solution.design.ParkingSystem1;
 import solution.design.ParkingSystem2;
 import solution.dp.Offer042LCOF;
@@ -1293,5 +1295,21 @@ public class ArrayTest
         System.out.println(system2.addCar(2));
         System.out.println(system2.addCar(3));
         System.out.println(system2.addCar(1));
+    }
+
+    @Test
+    public void test0303()
+    {
+        int[] nums = {-2, 0, 3, -5, 2, -1};
+
+        NumArray1 numArray1 = new NumArray1(nums);
+        System.out.println(numArray1.sumRange(0, 2)); // return 1 ((-2) + 0 + 3)
+        System.out.println(numArray1.sumRange(2, 5)); // return -1 (3 + (-5) + 2 + (-1))
+        System.out.println(numArray1.sumRange(0, 5)); // return -3 ((-2) + 0 + 3 + (-5) + 2 + (-1))
+
+        NumArray2 numArray2 = new NumArray2(nums);
+        System.out.println(numArray2.sumRange(0, 2));
+        System.out.println(numArray2.sumRange(2, 5));
+        System.out.println(numArray2.sumRange(0, 5));
     }
 }
