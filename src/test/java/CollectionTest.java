@@ -183,4 +183,17 @@ public class CollectionTest
         System.out.println(p0002.addTwoNumbers_1(l1, l2));
         System.out.println(p0002.addTwoNumbers_2(l3, l4));
     }
+
+    @Test
+    public void test0082()
+    {
+        P0082RemoveDuplicatesFromSortedListII p0082 = new P0082RemoveDuplicatesFromSortedListII();
+        ListNode head1 = new ListNode(1, new ListNode(2, new ListNode(3,
+                new ListNode(3, new ListNode(4, new ListNode(4, new ListNode(5)))))));
+        ListNode head2 = new ListNode(1, new ListNode(1, new ListNode(1, new ListNode(2, new ListNode(3)))));
+        ListNode head3 = new ListNode(1, new ListNode(1, new ListNode(1)));
+        System.out.println(p0082.deleteDuplicates_1(head1));
+        System.out.println(p0082.deleteDuplicates_2(head2));
+        System.out.println(p0082.deleteDuplicates_3(head3));
+    }
 }
