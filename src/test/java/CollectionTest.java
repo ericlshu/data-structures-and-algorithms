@@ -1,6 +1,8 @@
 import domain.ListNode;
 import org.junit.Test;
 import solution.collection.*;
+import solution.design.P0707DoublyLinkedList;
+import solution.design.P0707SinglyLinkedList;
 
 /**
  * Description :
@@ -205,5 +207,25 @@ public class CollectionTest
         ListNode head2 = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5, new ListNode(6))))));
         System.out.println(p0024.swapPairs_recursion(head1));
         System.out.println(p0024.swapPairs_iteration(head2));
+    }
+
+    @Test
+    public void test0707()
+    {
+        P0707SinglyLinkedList singlyLinkedList = new P0707SinglyLinkedList();
+        singlyLinkedList.addAtHead(1);
+        singlyLinkedList.addAtTail(3);
+        singlyLinkedList.addAtIndex(1, 2); // 链表变为1-> 2-> 3
+        singlyLinkedList.get(1);                    // 返回2
+        singlyLinkedList.deleteAtIndex(1);          // 现在链表是1-> 3
+        singlyLinkedList.get(1);                    // 返回3
+
+        P0707DoublyLinkedList doublyLinkedList = new P0707DoublyLinkedList();
+        doublyLinkedList.addAtHead(1);
+        doublyLinkedList.addAtTail(3);
+        doublyLinkedList.addAtIndex(1, 2); // 链表变为1-> 2-> 3
+        doublyLinkedList.get(1);                    // 返回2
+        doublyLinkedList.deleteAtIndex(1);          // 现在链表是1-> 3
+        doublyLinkedList.get(1);                    // 返回3
     }
 }
