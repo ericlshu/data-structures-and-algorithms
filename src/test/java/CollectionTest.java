@@ -41,13 +41,13 @@ public class CollectionTest
     @Test
     public void testP0143()
     {
-        P0143ReorderList obj = new P0143ReorderList();
-        ListNode node5 = new ListNode(5);
-        ListNode node4 = new ListNode(4, node5);
-        ListNode node3 = new ListNode(3, node4);
-        ListNode node2 = new ListNode(2, node3);
-        ListNode node1 = new ListNode(1, node2);
-        obj.reorderList(node1);
+        P0143ReorderList p0143 = new P0143ReorderList();
+        ListNode head1 = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4))));
+        ListNode head2 = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5)))));
+        p0143.reorderList_1(head1);
+        System.out.println("head1 = " + head1);
+        p0143.reorderList_2(head2);
+        System.out.println("head2 = " + head2);
     }
 
     @Test

@@ -28,7 +28,6 @@ public class P0143ReorderList
     public void reorderList_1(ListNode head)
     {
         if (head == null) return;
-
         List<ListNode> list = new ArrayList<>();
         ListNode node = head;
         while (node != null)
@@ -39,26 +38,20 @@ public class P0143ReorderList
         int i = 0, j = list.size() - 1;
         while (i < j)
         {
-            list.get(i).next = list.get(j);
-            i++;
-
+            list.get(i++).next = list.get(j);
             if (i == j) break;
-
-            list.get(j).next = list.get(i);
-            j--;
+            list.get(j--).next = list.get(i);
         }
         list.get(i).next = null;
     }
 
-    public void reorderList(ListNode head)
+    public void reorderList_2(ListNode head)
     {
         if (head == null) return;
         ListNode mid = middleNode(head);
-        ListNode l1 = head;
-        ListNode l2 = mid.next;
+        ListNode midNext = mid.next;
         mid.next = null;
-        l2 = reverseList(l2);
-        mergeList(l1, l2);
+        mergeList(head, reverseList(midNext));
     }
 
     private ListNode middleNode(ListNode head)
@@ -84,18 +77,16 @@ public class P0143ReorderList
 
     private void mergeList(ListNode l1, ListNode l2)
     {
-        ListNode l1_tmp;
-        ListNode l2_tmp;
+        ListNode node1;
+        ListNode node2;
         while (l1 != null && l2 != null)
         {
-            l1_tmp = l1.next;
-            l2_tmp = l2.next;
-
+            node1 = l1.next;
+            node2 = l2.next;
             l1.next = l2;
-            l1 = l1_tmp;
-
+            l1 = node1;
             l2.next = l1;
-            l2 = l2_tmp;
+            l2 = node2;
         }
     }
 }
