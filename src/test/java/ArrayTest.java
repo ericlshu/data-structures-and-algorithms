@@ -9,6 +9,7 @@ import solution.design.P0303NumArray2;
 import solution.design.P1603ParkingSystem1;
 import solution.design.P1603ParkingSystem2;
 import solution.dp.Offer042LCOF;
+import solution.dp.P0746MinCostClimbingStairs;
 import solution.math.*;
 import solution.string.P0409LongestPalindrome;
 
@@ -1312,5 +1313,17 @@ public class ArrayTest
         System.out.println(p0303NumArray2.sumRange(0, 2));
         System.out.println(p0303NumArray2.sumRange(2, 5));
         System.out.println(p0303NumArray2.sumRange(0, 5));
+    }
+
+    @Test
+    public void test0746()
+    {
+        P0746MinCostClimbingStairs p0746 = new P0746MinCostClimbingStairs();
+        int[] nums1 = {10, 15, 20};
+        int[] nums2 = {1, 100, 1, 1, 1, 100, 1, 1, 100, 1};
+        System.out.println(p0746.minCostClimbingStairs_dpn(nums1));
+        System.out.println(p0746.minCostClimbingStairs_dp1(nums1));
+        System.out.println(p0746.minCostClimbingStairs_dpn(nums2));
+        System.out.println(p0746.minCostClimbingStairs_dp1(nums2));
     }
 }
