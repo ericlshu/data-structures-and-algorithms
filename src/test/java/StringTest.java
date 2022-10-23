@@ -446,4 +446,15 @@ public class StringTest
         System.out.println(p0844.backspaceCompare_2("ab##", "c#d#"));
         System.out.println(p0844.backspaceCompare_2("a#c", "b"));
     }
+
+    @Test
+    public void test0394()
+    {
+        P0394DecodeString p0394 = new P0394DecodeString();
+        System.out.println(p0394.decodeString_baoli("3[a]2[bc]"));
+        System.out.println(p0394.decodeString_baoli("3[a2[c]]"));
+        System.out.println(p0394.decodeString_baoli("2[abc]3[cd]ef"));
+        System.out.println(p0394.decodeString_stack("abc3[cd]xyz"));
+        System.out.println(p0394.decodeString_stack("100[leetcode]"));
+    }
 }
