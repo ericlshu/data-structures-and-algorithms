@@ -1,4 +1,5 @@
 import org.junit.Test;
+import solution.collection.P1249MinimumRemoveToMakeValidParentheses;
 import solution.design.P0155MinStack1;
 import solution.design.P0155MinStack2;
 import solution.design.P0232MyQueue1;
@@ -70,5 +71,14 @@ public class StackTest
         minStack2.pop();
         System.out.println(minStack2.top());
         System.out.println(minStack2.getMin());
+    }
+
+    @Test
+    public void test1249()
+    {
+        P1249MinimumRemoveToMakeValidParentheses p1249 = new P1249MinimumRemoveToMakeValidParentheses();
+        System.out.println(p1249.minRemoveToMakeValid_1("lee(t(c)o)de)"));
+        System.out.println(p1249.minRemoveToMakeValid_2("a)b(c)d"));
+        System.out.println(p1249.minRemoveToMakeValid_3("))(("));
     }
 }
