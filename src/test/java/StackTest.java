@@ -1,4 +1,6 @@
 import org.junit.Test;
+import solution.design.P0155MinStack1;
+import solution.design.P0155MinStack2;
 import solution.design.P0232MyQueue1;
 import solution.design.P0232MyQueue2;
 import solution.collection.P0402RemoveKDigits;
@@ -44,5 +46,29 @@ public class StackTest
         myQueue2.peek(); // return 1
         myQueue2.pop(); // return 1, queue is [2]
         myQueue2.empty(); // return false
+    }
+
+    @Test
+    public void test0155()
+    {
+        P0155MinStack1 minStack1 = new P0155MinStack1();
+        minStack1.push(-2);
+        minStack1.push(0);
+        minStack1.push(-3);
+        System.out.println(minStack1.getMin());
+        minStack1.pop();
+        System.out.println(minStack1.top());
+        System.out.println(minStack1.getMin());
+
+        System.out.println("---------------------------------");
+
+        P0155MinStack2 minStack2 = new P0155MinStack2();
+        minStack2.push(-2);
+        minStack2.push(0);
+        minStack2.push(-3);
+        System.out.println(minStack2.getMin());
+        minStack2.pop();
+        System.out.println(minStack2.top());
+        System.out.println(minStack2.getMin());
     }
 }
