@@ -9,29 +9,31 @@ package solution.string;
  */
 public class P0844BackspaceStringCompare
 {
-    public boolean backspaceCompare(String S, String T)
+    public boolean backspaceCompare_1(String S, String T)
     {
-        return build(S).equals(build(T));
+        return build(S).equals(build(T))
+                && backspaceString(S).equals(backspaceString(T));
     }
 
     private String build(String str)
     {
-        StringBuilder result = new StringBuilder();
-        int length = str.length();
-        for (int i = 0; i < length; i++)
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < str.length(); i++)
         {
             char ch = str.charAt(i);
-            if (ch != '#') result.append(ch);
-            else
+            if (ch == '#')
             {
-                int index = result.length();
-                if (index > 0) result.deleteCharAt(index - 1);
+                int idx = sb.length();
+                if (idx > 0)
+                    sb.deleteCharAt(idx - 1);
             }
+            else
+                sb.append(ch);
         }
-        return result.toString();
+        return sb.toString();
     }
 
-    public String backspaceString(String str)
+    private String backspaceString(String str)
     {
         int index = str.indexOf('#');
         while (index >= 0)
@@ -42,5 +44,60 @@ public class P0844BackspaceStringCompare
             index = str.indexOf('#');
         }
         return str;
+    }
+
+    public boolean backspaceCompare_2(String s, String t)
+    {
+        int idxS = s.length() - 1, idxT = t.length() - 1;
+        int cntS = 0, cntT = 0;
+        while (idxS >= 0 || idxT >= 0)
+        {
+            while (idxS >= 0)
+            {
+                if (s.charAt(idxS) == '#')
+                {
+                    cntS++;
+                    idxS--;
+                }
+                else if (cntS > 0)
+                {
+                    cntS--;
+                    idxS--;
+                }
+                else
+                {
+                    break;
+                }
+            }
+            while (idxT >= 0)
+            {
+                if (t.charAt(idxT) == '#')
+                {
+                    cntT++;
+                    idxT--;
+                }
+                else if (cntT > 0)
+                {
+                    cntT--;
+                    idxT--;
+                }
+                else
+                {
+                    break;
+                }
+            }
+            if (idxS >= 0 && idxT >= 0)
+            {
+                if (s.charAt(idxS) != t.charAt(idxT))
+                    return false;
+            }
+            else if (idxS >= 0 || idxT >= 0)
+            {
+                return false;
+            }
+            idxS--;
+            idxT--;
+        }
+        return true;
     }
 }

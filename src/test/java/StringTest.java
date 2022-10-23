@@ -53,13 +53,6 @@ public class StringTest
     }
 
     @Test
-    public void testP0844()
-    {
-        P0844BackspaceStringCompare obj = new P0844BackspaceStringCompare();
-        System.out.println("result = " + obj.backspaceString("oi###mu#ueo##pk#o##rsztu#y#s#xu###bxx##dqc#gz#djz"));
-    }
-
-    @Test
     public void testP973()
     {
         P0973KClosestPointsToOrigin obj = new P0973KClosestPointsToOrigin();
@@ -443,5 +436,14 @@ public class StringTest
         P0005LongestPalindromicSubstring p0005 = new P0005LongestPalindromicSubstring();
         System.out.println(p0005.longestPalindrome("babad"));
         System.out.println(p0005.longestPalindrome_dp("cbbd"));
+    }
+
+    @Test
+    public void test0844()
+    {
+        P0844BackspaceStringCompare p0844 = new P0844BackspaceStringCompare();
+        System.out.println(p0844.backspaceCompare_1("ab#c", "ad#c"));
+        System.out.println(p0844.backspaceCompare_2("ab##", "c#d#"));
+        System.out.println(p0844.backspaceCompare_2("a#c", "b"));
     }
 }
