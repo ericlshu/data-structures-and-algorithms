@@ -303,4 +303,14 @@ public class CollectionTest
         System.out.println(p1823.findTheWinner_recursion(5, 2));
         System.out.println(p1823.findTheWinner_iteration(5, 2));
     }
+
+    @Test
+    public void test0025()
+    {
+        P0025ReverseNodesInKGroup p0025 = new P0025ReverseNodesInKGroup();
+        ListNode head = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5, new ListNode(6, new ListNode(7)))))));
+        System.out.println(p0025.reverseKGroup_1(head, 2));
+        head = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5, new ListNode(6, new ListNode(7)))))));
+        System.out.println(p0025.reverseKGroup_2(head, 3));
+    }
 }
