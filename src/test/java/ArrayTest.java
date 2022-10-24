@@ -1326,4 +1326,13 @@ public class ArrayTest
         System.out.println(p0746.minCostClimbingStairs_dpn(nums2));
         System.out.println(p0746.minCostClimbingStairs_dp1(nums2));
     }
+
+    @Test
+    public void test1046()
+    {
+        P1046LastStoneWeight p1046 = new P1046LastStoneWeight();
+        int[] stones = {2, 7, 4, 1, 8, 1};
+        System.out.println(p1046.lastStoneWeight_1(stones));
+        System.out.println(p1046.lastStoneWeight_2(stones));
+    }
 }
