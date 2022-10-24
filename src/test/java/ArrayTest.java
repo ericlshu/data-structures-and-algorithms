@@ -9,6 +9,7 @@ import solution.design.P0303NumArray2;
 import solution.design.P1603ParkingSystem1;
 import solution.design.P1603ParkingSystem2;
 import solution.dp.Offer042LCOF;
+import solution.dp.P0062UniquePaths;
 import solution.dp.P0746MinCostClimbingStairs;
 import solution.math.*;
 import solution.string.P0409LongestPalindrome;
@@ -1334,5 +1335,15 @@ public class ArrayTest
         int[] stones = {2, 7, 4, 1, 8, 1};
         System.out.println(p1046.lastStoneWeight_1(stones));
         System.out.println(p1046.lastStoneWeight_2(stones));
+    }
+
+    @Test
+    public void test0062()
+    {
+        P0062UniquePaths p0062 = new P0062UniquePaths();
+        System.out.println(p0062.uniquePaths_dp(3, 2));
+        System.out.println(p0062.uniquePaths_dp(3, 7));
+        System.out.println(p0062.uniquePaths_math(7, 3));
+        System.out.println(p0062.uniquePaths_math(3, 3));
     }
 }
