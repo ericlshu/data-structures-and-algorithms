@@ -475,4 +475,12 @@ public class StringTest
         System.out.println(p0438.findAnagrams("cbaebabacd", "abc"));
         System.out.println(p0438.findAnagrams_sw2("abab", "ab"));
     }
+
+    @Test
+    public void test0299()
+    {
+        P0299BullsAndCows p0299 = new P0299BullsAndCows();
+        System.out.println(p0299.getHint("1807", "7810"));
+        System.out.println(p0299.getHint("1123", "0111"));
+    }
 }
