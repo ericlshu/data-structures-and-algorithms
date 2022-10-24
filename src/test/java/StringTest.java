@@ -467,4 +467,12 @@ public class StringTest
         System.out.println(p0692.topKFrequent_pq(words1, 2));
         System.out.println(p0692.topKFrequent_list(words2, 4));
     }
+
+    @Test
+    public void test0438()
+    {
+        P0438FindAllAnagramsInAString p0438 = new P0438FindAllAnagramsInAString();
+        System.out.println(p0438.findAnagrams("cbaebabacd", "abc"));
+        System.out.println(p0438.findAnagrams_sw2("abab", "ab"));
+    }
 }
