@@ -457,4 +457,14 @@ public class StringTest
         System.out.println(p0394.decodeString_stack("abc3[cd]xyz"));
         System.out.println(p0394.decodeString_stack("100[leetcode]"));
     }
+
+    @Test
+    public void test0692()
+    {
+        P0692TopKFrequentWords p0692 = new P0692TopKFrequentWords();
+        String[] words1 = {"i", "love", "leetcode", "i", "love", "coding"};
+        String[] words2 = {"the", "day", "is", "sunny", "the", "the", "the", "sunny", "is", "is"};
+        System.out.println(p0692.topKFrequent_pq(words1, 2));
+        System.out.println(p0692.topKFrequent_list(words2, 4));
+    }
 }
