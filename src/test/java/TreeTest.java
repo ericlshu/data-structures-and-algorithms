@@ -369,4 +369,17 @@ public class TreeTest
         System.out.println(p0199.rightSideView_bfs(root));
         System.out.println(p0199.rightSideView_dfs(root));
     }
+
+    @Test
+    public void test0113()
+    {
+        P0113PathSumII p0113 = new P0113PathSumII();
+        TreeNode node11 = new TreeNode(11, new TreeNode(7), new TreeNode(2));
+        TreeNode node4 = new TreeNode(4, new TreeNode(5), new TreeNode(1));
+        TreeNode right = new TreeNode(8, new TreeNode(13), node4);
+        TreeNode left = new TreeNode(4, node11, null);
+        TreeNode root = new TreeNode(5, left, right);
+        System.out.println(p0113.pathSum_dfs(root, 22));
+        System.out.println(p0113.pathSum_bfs(root, 22));
+    }
 }
