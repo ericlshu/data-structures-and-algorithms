@@ -348,4 +348,14 @@ public class TreeTest
         System.out.println(p0108.sortedArrayToBST(nums1));
         System.out.println(p0108.sortedArrayToBST(nums2));
     }
+
+    @Test
+    public void test0103()
+    {
+        P0103BinaryTreeZigzagLevelOrderTraversal p0103 = new P0103BinaryTreeZigzagLevelOrderTraversal();
+        TreeNode root = new TreeNode(3, new TreeNode(9, new TreeNode(8), new TreeNode(12)),
+                new TreeNode(20, new TreeNode(15), new TreeNode(7)));
+        System.out.println(p0103.zigzagLevelOrder_1(root));
+        System.out.println(p0103.zigzagLevelOrder_2(root));
+    }
 }
