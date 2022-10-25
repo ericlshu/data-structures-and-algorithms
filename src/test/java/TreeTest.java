@@ -382,4 +382,14 @@ public class TreeTest
         System.out.println(p0113.pathSum_dfs(root, 22));
         System.out.println(p0113.pathSum_bfs(root, 22));
     }
+
+    @Test
+    public void test0105()
+    {
+        P0105ConstructBinaryTree p0105 = new P0105ConstructBinaryTree();
+        int[] preorder = {3, 9, 20, 15, 7}, inorder = {9, 3, 15, 20, 7};
+        System.out.println(p0105.buildTree_recursion(preorder, inorder));
+        System.out.println(p0105.buildTree_iteration(preorder, inorder));
+        // System.out.println(p0105.buildTree_recursion(new int[]{1, 2}, new int[]{1, 2}));
+    }
 }
