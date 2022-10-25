@@ -358,4 +358,15 @@ public class TreeTest
         System.out.println(p0103.zigzagLevelOrder_1(root));
         System.out.println(p0103.zigzagLevelOrder_2(root));
     }
+
+    @Test
+    public void test0199()
+    {
+        P0199BinaryTreeRightSideView p0199 = new P0199BinaryTreeRightSideView();
+        TreeNode root = new TreeNode(1,
+                new TreeNode(2, null, new TreeNode(5)),
+                new TreeNode(3, null, new TreeNode(4)));
+        System.out.println(p0199.rightSideView_bfs(root));
+        System.out.println(p0199.rightSideView_dfs(root));
+    }
 }
