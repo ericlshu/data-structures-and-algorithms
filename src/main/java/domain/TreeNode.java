@@ -32,8 +32,11 @@ public class TreeNode
     @Override
     public String toString()
     {
-        return "TreeNode{" +
-                "val=" + val +
-                '}';
+        StringBuilder sb = new StringBuilder("TreeNode{" + "val=" + val);
+        if (left != null)
+            sb.append(", left=").append(left);
+        if (right != null)
+            sb.append(", right=").append(right);
+        return sb.append("}").toString();
     }
 }

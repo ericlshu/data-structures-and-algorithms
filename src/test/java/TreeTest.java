@@ -338,4 +338,14 @@ public class TreeTest
         P0429NaryTreeLevelOrderTraversal p0429 = new P0429NaryTreeLevelOrderTraversal();
         System.out.println(p0429.levelOrder(construct()));
     }
+
+    @Test
+    public void test0108()
+    {
+        P0108ConvertSortedArrayToBST p0108 = new P0108ConvertSortedArrayToBST();
+        int[] nums1 = {-10, -3, 0, 5, 9};
+        int[] nums2 = {1, 3};
+        System.out.println(p0108.sortedArrayToBST(nums1));
+        System.out.println(p0108.sortedArrayToBST(nums2));
+    }
 }
