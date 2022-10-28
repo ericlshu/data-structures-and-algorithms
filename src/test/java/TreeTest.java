@@ -2,6 +2,8 @@ import domain.NaryNode;
 import domain.Node;
 import domain.TreeNode;
 import org.junit.Test;
+import solution.design.P0173BSTIterator1;
+import solution.design.P0173BSTIterator2;
 import solution.tree.*;
 
 import java.util.List;
@@ -391,5 +393,35 @@ public class TreeTest
         System.out.println(p0105.buildTree_recursion(preorder, inorder));
         System.out.println(p0105.buildTree_iteration(preorder, inorder));
         // System.out.println(p0105.buildTree_recursion(new int[]{1, 2}, new int[]{1, 2}));
+    }
+
+    @Test
+    public void test0173()
+    {
+        TreeNode root = new TreeNode(7, new TreeNode(3),
+                new TreeNode(15, new TreeNode(9), new TreeNode(20)));
+        P0173BSTIterator1 bstIterator1 = new P0173BSTIterator1(root);
+        System.out.println(bstIterator1.next());    // 返回 3
+        System.out.println(bstIterator1.next());    // 返回 7
+        System.out.println(bstIterator1.hasNext()); // 返回 True
+        System.out.println(bstIterator1.next());    // 返回 9
+        System.out.println(bstIterator1.hasNext()); // 返回 True
+        System.out.println(bstIterator1.next());    // 返回 15
+        System.out.println(bstIterator1.hasNext()); // 返回 True
+        System.out.println(bstIterator1.next());    // 返回 20
+        System.out.println(bstIterator1.hasNext()); // 返回 False
+
+        System.out.println("-----");
+
+        P0173BSTIterator2 bstIterator2 = new P0173BSTIterator2(root);
+        System.out.println(bstIterator2.next());    // 返回 3
+        System.out.println(bstIterator2.next());    // 返回 7
+        System.out.println(bstIterator2.hasNext()); // 返回 True
+        System.out.println(bstIterator2.next());    // 返回 9
+        System.out.println(bstIterator2.hasNext()); // 返回 True
+        System.out.println(bstIterator2.next());    // 返回 15
+        System.out.println(bstIterator2.hasNext()); // 返回 True
+        System.out.println(bstIterator2.next());    // 返回 20
+        System.out.println(bstIterator2.hasNext()); // 返回 False
     }
 }
