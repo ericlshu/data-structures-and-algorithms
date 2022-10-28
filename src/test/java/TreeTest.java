@@ -424,4 +424,14 @@ public class TreeTest
         System.out.println(bstIterator2.next());    // 返回 20
         System.out.println(bstIterator2.hasNext()); // 返回 False
     }
+
+    @Test
+    public void test0230()
+    {
+        P0230KthSmallestElementInBST p0230 = new P0230KthSmallestElementInBST();
+        TreeNode root = new TreeNode(5, new TreeNode(3, new TreeNode(2, new TreeNode(1), null),
+                new TreeNode(4)), new TreeNode(6));
+        System.out.println(p0230.kthSmallest_1(root, 3));
+        System.out.println(p0230.kthSmallest_2(root, 3));
+    }
 }
