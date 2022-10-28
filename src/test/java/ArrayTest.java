@@ -1326,6 +1326,8 @@ public class ArrayTest
         System.out.println(p0746.minCostClimbingStairs_dp1(nums1));
         System.out.println(p0746.minCostClimbingStairs_dpn(nums2));
         System.out.println(p0746.minCostClimbingStairs_dp1(nums2));
+        System.out.println(p0746.minCostClimbingStairs_dp(nums1));
+        System.out.println(p0746.minCostClimbingStairs_dp(nums2));
     }
 
     @Test
