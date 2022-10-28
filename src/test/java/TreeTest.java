@@ -434,4 +434,20 @@ public class TreeTest
         System.out.println(p0230.kthSmallest_1(root, 3));
         System.out.println(p0230.kthSmallest_2(root, 3));
     }
+
+    @Test
+    public void test0450()
+    {
+        P0450DeleteNodeInABST p0450 = new P0450DeleteNodeInABST();
+        TreeNode root = new TreeNode(8,
+                new TreeNode(4,
+                        new TreeNode(2, new TreeNode(1), new TreeNode(3)),
+                        new TreeNode(6, new TreeNode(5), new TreeNode(7))),
+                new TreeNode(12,
+                        new TreeNode(10, new TreeNode(9), new TreeNode(11)),
+                        new TreeNode(14, new TreeNode(13), new TreeNode(15)))
+        );
+        System.out.println(p0450.deleteNode_recursion(root, 3));
+        System.out.println(p0450.deleteNode_iteration(root, 12));
+    }
 }
