@@ -470,4 +470,13 @@ public class StringTest
         System.out.println(p0299.getHint("1807", "7810"));
         System.out.println(p0299.getHint("1123", "0111"));
     }
+
+    @Test
+    public void test0451()
+    {
+        P0451SortCharactersByFrequency p0451 = new P0451SortCharactersByFrequency();
+        System.out.println(p0451.frequencySort_pq("tree"));
+        System.out.println(p0451.frequencySort_list("cccaaa"));
+        System.out.println(p0451.frequencySort_bucket("Aabb"));
+    }
 }
