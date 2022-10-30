@@ -53,18 +53,6 @@ public class StringTest
     }
 
     @Test
-    public void testP973()
-    {
-        P0973KClosestPointsToOrigin obj = new P0973KClosestPointsToOrigin();
-        int[][] points = {{3, 3}, {5, -1}, {-2, 4}};
-        points = obj.kClosest(points, 2);
-        for (int[] point : points)
-        {
-            System.out.println("point = " + Arrays.toString(point));
-        }
-    }
-
-    @Test
     public void testP0017()
     {
         P0017LetterCombinationsOfAPhoneNumber obj = new P0017LetterCombinationsOfAPhoneNumber();
@@ -88,7 +76,6 @@ public class StringTest
         String s = "abcd";
         String t = "abcde";
         System.out.println("hash result  = " + math.findTheDifference(s, t));
-
     }
 
     @Test

@@ -13,6 +13,7 @@ import solution.dp.P0062UniquePaths;
 import solution.dp.P0746MinCostClimbingStairs;
 import solution.math.*;
 import solution.string.P0409LongestPalindrome;
+import solution.array.P0973KClosestPointsToOrigin;
 
 import java.util.Arrays;
 import java.util.List;
@@ -1365,5 +1366,17 @@ public class ArrayTest
         P0347TopKFrequentElements p0347 = new P0347TopKFrequentElements();
         int[] nums1 = {1, 1, 1, 2, 2, 3, 4, 0, 0, 0, 4, 4, 4, 0, 0};
         System.out.println(Arrays.toString(p0347.topKFrequent(nums1, 2)));
+    }
+
+    @Test
+    public void test0973()
+    {
+        P0973KClosestPointsToOrigin p0973 = new P0973KClosestPointsToOrigin();
+        int[][] points1 = {{1, 3}, {-2, 2}};
+        int[][] points2 = {{3, 3}, {5, -1}, {-2, 4}};
+        System.out.println(Arrays.deepToString(p0973.kClosest_sort(points1, 1)));
+        System.out.println(Arrays.deepToString(p0973.kClosest_pq1(points2, 2)));
+        System.out.println(Arrays.deepToString(p0973.kClosest_pq2(points1, 1)));
+        System.out.println(Arrays.deepToString(p0973.kClosest_pq2(points2, 2)));
     }
 }

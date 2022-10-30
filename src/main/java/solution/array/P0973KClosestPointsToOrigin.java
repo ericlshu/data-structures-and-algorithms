@@ -1,7 +1,8 @@
-package solution.string;
+package solution.array;
 
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.PriorityQueue;
 
 /**
  * Description : 最接近原点的 K 个点
@@ -35,9 +36,43 @@ import java.util.Comparator;
  */
 public class P0973KClosestPointsToOrigin
 {
-    public int[][] kClosest(int[][] points, int K)
+    public int[][] kClosest_sort(int[][] points, int K)
     {
         Arrays.sort(points, Comparator.comparingInt(o -> (o[0] * o[0] + o[1] * o[1])));
         return Arrays.copyOfRange(points, 0, K);
+    }
+
+    public int[][] kClosest_pq1(int[][] points, int k)
+    {
+        PriorityQueue<int[]> pq = new PriorityQueue<>(
+                Comparator.comparingInt((arr) -> arr[0] * arr[0] + arr[1] * arr[1]));
+        for (int[] point : points)
+        {
+            pq.offer(point);
+        }
+        int[][] res = new int[k][2];
+        for (int i = 0; i < k; i++)
+        {
+            res[i] = pq.poll();
+        }
+        return res;
+    }
+
+    public int[][] kClosest_pq2(int[][] points, int k)
+    {
+        PriorityQueue<int[]> pq = new PriorityQueue<>((arr1, arr2) ->
+                (arr2[0] * arr2[0] + arr2[1] * arr2[1]) - (arr1[0] * arr1[0] + arr1[1] * arr1[1]));
+        for (int[] point : points)
+        {
+            pq.offer(point);
+            if (pq.size() > k)
+                pq.poll();
+        }
+        int[][] res = new int[k][2];
+        for (int i = 0; i < k; i++)
+        {
+            res[i] = pq.poll();
+        }
+        return res;
     }
 }
