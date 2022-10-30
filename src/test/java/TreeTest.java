@@ -450,4 +450,14 @@ public class TreeTest
         System.out.println(p0450.deleteNode_recursion(root, 3));
         System.out.println(p0450.deleteNode_iteration(root, 12));
     }
+
+    @Test
+    public void test0297()
+    {
+        P0297SerializeAndDeserializeBinaryTree p0297 = new P0297SerializeAndDeserializeBinaryTree();
+        TreeNode root = new TreeNode(1, new TreeNode(2), new TreeNode(3, new TreeNode(4), new TreeNode(5)));
+        String serialize = p0297.serialize(root);
+        System.out.println("serialize = " + serialize);
+        System.out.println(p0297.deserialize(serialize));
+    }
 }
