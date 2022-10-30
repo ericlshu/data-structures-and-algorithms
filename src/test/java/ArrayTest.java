@@ -1402,4 +1402,14 @@ public class ArrayTest
         System.out.println(p0841.canVisitAllRooms_bfs(rooms2));
         System.out.println(p0841.canVisitAllRooms_dfs(rooms2));
     }
+
+    @Test
+    public void test1557()
+    {
+        P1557MinimumNumberOfVerticesToReachAllNodes p1557 = new P1557MinimumNumberOfVerticesToReachAllNodes();
+        List<List<Integer>> edges1 = List.of(List.of(0, 1), List.of(0, 1), List.of(2, 5), List.of(3, 4), List.of(4, 2));
+        List<List<Integer>> edges2 = List.of(List.of(0, 1), List.of(2, 1), List.of(3, 1), List.of(1, 4), List.of(2, 4));
+        System.out.println(p1557.findSmallestSetOfVertices(6, edges1));
+        System.out.println(p1557.findSmallestSetOfVertices(5, edges2));
+    }
 }
