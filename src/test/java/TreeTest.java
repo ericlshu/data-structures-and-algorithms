@@ -460,4 +460,20 @@ public class TreeTest
         System.out.println("serialize = " + serialize);
         System.out.println(p0297.deserialize(serialize));
     }
+
+    @Test
+    public void test0236()
+    {
+        P0236LowestCommonAncestorOfABinaryTree p0236 = new P0236LowestCommonAncestorOfABinaryTree();
+        TreeNode root = new TreeNode(3,
+                new TreeNode(5,
+                        new TreeNode(6),
+                        new TreeNode(2,
+                                new TreeNode(7), new TreeNode(4))),
+                new TreeNode(1,
+                        new TreeNode(0), new TreeNode(8)));
+        System.out.println(p0236.lowestCommonAncestor_1(root, new TreeNode(5), new TreeNode(4)));
+        System.out.println(p0236.lowestCommonAncestor_2(root, new TreeNode(6), new TreeNode(4)));
+        System.out.println(p0236.lowestCommonAncestor_3(root, new TreeNode(8), new TreeNode(4)));
+    }
 }
