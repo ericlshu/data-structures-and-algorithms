@@ -1358,4 +1358,12 @@ public class ArrayTest
         System.out.println(p0215.findKthLargest(arr1, 2));
         System.out.println(p0215.findKthLargest(arr2, 4));
     }
+
+    @Test
+    public void test0347()
+    {
+        P0347TopKFrequentElements p0347 = new P0347TopKFrequentElements();
+        int[] nums1 = {1, 1, 1, 2, 2, 3, 4, 0, 0, 0, 4, 4, 4, 0, 0};
+        System.out.println(Arrays.toString(p0347.topKFrequent(nums1, 2)));
+    }
 }
