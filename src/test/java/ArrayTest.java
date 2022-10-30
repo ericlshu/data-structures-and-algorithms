@@ -13,7 +13,6 @@ import solution.dp.P0062UniquePaths;
 import solution.dp.P0746MinCostClimbingStairs;
 import solution.math.*;
 import solution.string.P0409LongestPalindrome;
-import solution.array.P0973KClosestPointsToOrigin;
 
 import java.util.Arrays;
 import java.util.List;
@@ -1390,5 +1389,17 @@ public class ArrayTest
         System.out.println(p0997.findJudge_1(2, trust1));
         System.out.println(p0997.findJudge_2(3, trust2));
         System.out.println(p0997.findJudge_2(3, trust3));
+    }
+
+    @Test
+    public void test0841()
+    {
+        P0841KeysAndRooms p0841 = new P0841KeysAndRooms();
+        List<List<Integer>> rooms1 = List.of(List.of(1), List.of(2), List.of(3), List.of());
+        List<List<Integer>> rooms2 = List.of(List.of(1, 3), List.of(3, 0, 1), List.of(2), List.of(0));
+        System.out.println(p0841.canVisitAllRooms_dfs(rooms1));
+        System.out.println(p0841.canVisitAllRooms_bfs(rooms1));
+        System.out.println(p0841.canVisitAllRooms_bfs(rooms2));
+        System.out.println(p0841.canVisitAllRooms_dfs(rooms2));
     }
 }
