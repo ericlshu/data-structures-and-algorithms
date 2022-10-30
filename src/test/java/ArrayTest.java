@@ -1348,4 +1348,14 @@ public class ArrayTest
         System.out.println(p0062.uniquePaths_math(7, 3));
         System.out.println(p0062.uniquePaths_math(3, 3));
     }
+
+    @Test
+    public void test0215()
+    {
+        P0215KthLargestElementInAnArray p0215 = new P0215KthLargestElementInAnArray();
+        int[] arr1 = {3, 2, 1, 5, 6, 4};
+        int[] arr2 = {3, 2, 3, 1, 2, 4, 5, 5, 6};
+        System.out.println(p0215.findKthLargest(arr1, 2));
+        System.out.println(p0215.findKthLargest(arr2, 4));
+    }
 }
