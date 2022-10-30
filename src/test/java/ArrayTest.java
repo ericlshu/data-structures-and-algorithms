@@ -1379,4 +1379,16 @@ public class ArrayTest
         System.out.println(Arrays.deepToString(p0973.kClosest_pq2(points1, 1)));
         System.out.println(Arrays.deepToString(p0973.kClosest_pq2(points2, 2)));
     }
+
+    @Test
+    public void test0997()
+    {
+        P0997FindTheTownJudge p0997 = new P0997FindTheTownJudge();
+        int[][] trust1 = {{1, 2}};
+        int[][] trust2 = {{1, 3}, {2, 3}};
+        int[][] trust3 = {{1, 3}, {2, 3}, {3, 1}};
+        System.out.println(p0997.findJudge_1(2, trust1));
+        System.out.println(p0997.findJudge_2(3, trust2));
+        System.out.println(p0997.findJudge_2(3, trust3));
+    }
 }
