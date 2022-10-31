@@ -1412,4 +1412,13 @@ public class ArrayTest
         System.out.println(p1557.findSmallestSetOfVertices(6, edges1));
         System.out.println(p1557.findSmallestSetOfVertices(5, edges2));
     }
+
+    @Test
+    public void test0055()
+    {
+        P0055JumpGame p0055 = new P0055JumpGame();
+        System.out.println(p0055.canJump_1(new int[]{2, 3, 1, 1, 4}));
+        System.out.println(p0055.canJump_2(new int[]{3, 2, 1, 0, 4}));
+        System.out.println(p0055.canJump_3(new int[]{2, 3, 0, 1, 4}));
+    }
 }

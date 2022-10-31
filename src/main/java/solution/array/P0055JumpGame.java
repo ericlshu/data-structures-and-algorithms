@@ -23,15 +23,38 @@ package solution.array;
  */
 public class P0055JumpGame
 {
-    public boolean canJump(int[] nums)
+    public boolean canJump_1(int[] nums)
     {
-        int reach = 0;
-        int length = nums.length;
-        for (int i = 0; i < length && reach < length - 1; i++)
+        int reach = 0, n = nums.length;
+        for (int i = 0; i < n; ++i)
         {
-            if (i > reach) return false;
-            reach = Math.max(i + nums[i], reach);
+            if (i > reach)
+                return false;
+            reach = Math.max(reach, i + nums[i]);
+            if (reach >= n - 1)
+                return true;
         }
         return true;
+    }
+
+    public boolean canJump_2(int[] nums)
+    {
+        int reach = 0, n = nums.length;
+        for (int i = 0; i <= reach && reach < n - 1; i++)
+        {
+            reach = Math.max(i + nums[i], reach);
+        }
+        return reach >= n - 1;
+    }
+
+    public boolean canJump_3(int[] nums)
+    {
+        int n = nums.length, last = n - 1;
+        for (int i = last - 1; i >= 0; i--)
+        {
+            if (i + nums[i] >= last)
+                last = i;
+        }
+        return last == 0;
     }
 }
