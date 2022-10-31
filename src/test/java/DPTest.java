@@ -105,4 +105,13 @@ public class DPTest
         System.out.println(p0198.rob_1(new int[]{1, 2, 3, 1}));
         System.out.println(p0198.rob_2(new int[]{2, 7, 9, 3, 1}));
     }
+
+    @Test
+    public void test0213()
+    {
+        P0213HouseRobberII p0213 = new P0213HouseRobberII();
+        System.out.println(p0213.rob(new int[]{2, 3, 2}));
+        System.out.println(p0213.rob(new int[]{1, 2, 3, 1}));
+        System.out.println(p0213.rob(new int[]{1, 2, 3}));
+    }
 }
