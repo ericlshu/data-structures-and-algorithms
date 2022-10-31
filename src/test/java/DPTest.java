@@ -114,4 +114,14 @@ public class DPTest
         System.out.println(p0213.rob(new int[]{1, 2, 3, 1}));
         System.out.println(p0213.rob(new int[]{1, 2, 3}));
     }
+
+    @Test
+    public void test0740()
+    {
+        P0740DeleteAndEarn p0740 = new P0740DeleteAndEarn();
+        int[] nums1 = {3, 4, 2};
+        int[] nums2 = {2, 2, 3, 3, 3, 4};
+        System.out.println(p0740.deleteAndEarn_dp1(nums1));
+        System.out.println(p0740.deleteAndEarn_dp1(nums2));
+    }
 }
