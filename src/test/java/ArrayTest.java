@@ -1421,4 +1421,12 @@ public class ArrayTest
         System.out.println(p0055.canJump_2(new int[]{3, 2, 1, 0, 4}));
         System.out.println(p0055.canJump_3(new int[]{2, 3, 0, 1, 4}));
     }
+
+    @Test
+    public void test0045()
+    {
+        P0045JumpGameII p0045 = new P0045JumpGameII();
+        System.out.println(p0045.jump_1(new int[]{2, 3, 1, 1, 4}));
+        System.out.println(p0045.jump_2(new int[]{2, 3, 0, 1, 4}));
+    }
 }
