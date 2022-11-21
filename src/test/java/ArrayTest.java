@@ -1429,4 +1429,13 @@ public class ArrayTest
         System.out.println(p0045.jump_1(new int[]{2, 3, 1, 1, 4}));
         System.out.println(p0045.jump_2(new int[]{2, 3, 0, 1, 4}));
     }
+
+    @Test
+    public void test0896()
+    {
+        P0896MonotonicArray p0896 = new P0896MonotonicArray();
+        System.out.println(p0896.isMonotonic_2n(new int[]{1, 2, 2, 3}));
+        System.out.println(p0896.isMonotonic_n(new int[]{6, 5, 4, 4}));
+        System.out.println(p0896.isMonotonic_n(new int[]{1, 3, 2}));
+    }
 }
