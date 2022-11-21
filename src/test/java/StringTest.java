@@ -48,8 +48,9 @@ public class StringTest
     @Test
     public void testP0028()
     {
-        P0028ImplementStrStr obj = new P0028ImplementStrStr();
-        System.out.println("result = " + obj.strStr("mississippi", "issippip"));
+        P0028ImplementStrStr p0028 = new P0028ImplementStrStr();
+        System.out.println(p0028.strStr_1("mississippi", "issippip"));
+        System.out.println(p0028.strStr_2("sadbutsad", "sad"));
     }
 
     @Test

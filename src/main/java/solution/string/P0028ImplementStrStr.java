@@ -9,7 +9,7 @@ package solution.string;
  */
 public class P0028ImplementStrStr
 {
-    public int strStr(String haystack, String needle)
+    public int strStr_1(String haystack, String needle)
     {
         if (needle == null || needle.length() == 0) return 0;
         if (needle.length() > haystack.length()) return -1;
@@ -42,5 +42,27 @@ public class P0028ImplementStrStr
             if (index != -1) return index;
         }
         return index;
+    }
+
+    public int strStr_2(String haystack, String needle)
+    {
+        int h = haystack.length(), n = needle.length();
+        for (int i = 0; i <= h - n; i++)
+        {
+            boolean matched = true;
+            for (int j = 0; j < n; j++)
+            {
+                if (haystack.charAt(i + j) != needle.charAt(j))
+                {
+                    matched = false;
+                    break;
+                }
+            }
+            if (matched)
+            {
+                return i;
+            }
+        }
+        return -1;
     }
 }
