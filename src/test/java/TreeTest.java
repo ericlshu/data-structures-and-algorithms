@@ -476,4 +476,24 @@ public class TreeTest
         System.out.println(p0236.lowestCommonAncestor_2(root, new TreeNode(6), new TreeNode(4)));
         System.out.println(p0236.lowestCommonAncestor_3(root, new TreeNode(8), new TreeNode(4)));
     }
+
+    @Test
+    public void test0110()
+    {
+        P0110BalancedBinaryTree p0110 = new P0110BalancedBinaryTree();
+        TreeNode root1 = new TreeNode(3,
+                new TreeNode(9),
+                new TreeNode(20,
+                        new TreeNode(15), new TreeNode(7)));
+        TreeNode root2 = new TreeNode(1,
+                new TreeNode(2,
+                        new TreeNode(3,
+                                new TreeNode(4),
+                                new TreeNode(4)),
+                        new TreeNode(3)),
+                new TreeNode(2));
+
+        System.out.println(p0110.isBalanced_n2(root1));
+        System.out.println(p0110.isBalanced_n(root2));
+    }
 }
