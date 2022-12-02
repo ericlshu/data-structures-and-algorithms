@@ -480,4 +480,13 @@ public class StringTest
         System.out.println(p0451.frequencySort_list("cccaaa"));
         System.out.println(p0451.frequencySort_bucket("Aabb"));
     }
+
+    @Test
+    public void test0459()
+    {
+        P0459RepeatedSubstringPattern p0459 = new P0459RepeatedSubstringPattern();
+        System.out.println(p0459.repeatedSubstringPattern_n2("abab"));
+        System.out.println(p0459.repeatedSubstringPattern_api("aba"));
+        System.out.println(p0459.repeatedSubstringPattern_api("abcabcabcabc"));
+    }
 }
