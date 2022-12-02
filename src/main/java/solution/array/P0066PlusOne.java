@@ -33,8 +33,9 @@ package solution.array;
  * @date 2022-01-24 21:04
  * @since JDK 1.8
  */
-public class P0066PlusOne {
-    public int[] plusOne(int[] digits)
+public class P0066PlusOne
+{
+    public int[] plusOne_1(int[] digits)
     {
         for (int i = digits.length - 1; i >= 0; i--)
         {
@@ -43,6 +44,20 @@ public class P0066PlusOne {
             if (digits[i] != 0) return digits;
         }
         digits = new int[digits.length + 1];
+        digits[0] = 1;
+        return digits;
+    }
+
+    public int[] plusOne_2(int[] digits)
+    {
+        int n = digits.length;
+        for (int i = n - 1; i >= 0; i--)
+        {
+            digits[i] = (digits[i] + 1) % 10;
+            if (digits[i] != 0)
+                return digits;
+        }
+        digits = new int[n + 1];
         digits[0] = 1;
         return digits;
     }

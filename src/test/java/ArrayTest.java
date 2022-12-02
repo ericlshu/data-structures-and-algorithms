@@ -283,9 +283,9 @@ public class ArrayTest
     @Test
     public void test0066()
     {
-        P0066PlusOne plusOne = new P0066PlusOne();
-        int[] result = plusOne.plusOne(new int[]{9, 9, 9, 9});
-        System.out.println("result = " + Arrays.toString(result));
+        P0066PlusOne p0066 = new P0066PlusOne();
+        System.out.println(Arrays.toString(p0066.plusOne_1(new int[]{4, 3, 9, 9})));
+        System.out.println(Arrays.toString(p0066.plusOne_2(new int[]{9, 9, 9, 9})));
     }
 
     @Test
