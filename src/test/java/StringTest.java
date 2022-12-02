@@ -1,6 +1,7 @@
 import org.junit.Test;
 import solution.array.P0242ValidAnagram;
 import solution.array.P1796SecondLargestDigitInAString;
+import solution.math.P0067AddBinary;
 import solution.math.P0389FindTheDifference;
 import solution.string.*;
 
@@ -488,5 +489,13 @@ public class StringTest
         System.out.println(p0459.repeatedSubstringPattern_n2("abab"));
         System.out.println(p0459.repeatedSubstringPattern_api("aba"));
         System.out.println(p0459.repeatedSubstringPattern_api("abcabcabcabc"));
+    }
+
+    @Test
+    public void test0067()
+    {
+        P0067AddBinary p0067 = new P0067AddBinary();
+        System.out.println(p0067.addBinary_1("1010", "1011"));
+        System.out.println(p0067.addBinary_2("111", "1"));
     }
 }
