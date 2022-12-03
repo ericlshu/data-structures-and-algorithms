@@ -125,4 +125,15 @@ public class MathTest
         System.out.println(p0202.isHappy_2(2));
         System.out.println(p0202.isHappy_3(2));
     }
+
+    @Test
+    public void test0989()
+    {
+        P0989AddToArrayFormOfInteger p0989 = new P0989AddToArrayFormOfInteger();
+        System.out.println(p0989.addToArrayForm(new int[]{1, 2, 0, 0}, 34));
+        System.out.println(p0989.addToArrayForm(new int[]{2, 7, 4}, 181));
+        System.out.println(p0989.addToArrayForm(new int[]{2, 1, 5}, 806));
+        System.out.println(p0989.addToArrayForm(new int[]{1, 5}, 806));
+        System.out.println(p0989.addToArrayForm(new int[]{9, 8, 9}, 11));
+    }
 }
