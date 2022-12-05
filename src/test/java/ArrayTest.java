@@ -1438,4 +1438,33 @@ public class ArrayTest
         System.out.println(p0896.isMonotonic_n(new int[]{6, 5, 4, 4}));
         System.out.println(p0896.isMonotonic_n(new int[]{1, 3, 2}));
     }
+
+    @Test
+    public void test1886()
+    {
+        P1886DetermineWhetherMatrixCanBeObtainedByRotation p1886 = new P1886DetermineWhetherMatrixCanBeObtainedByRotation();
+        int[][] matrix1 = {
+                {0, 1},
+                {1, 0}};
+        int[][] target1 = {
+                {1, 0},
+                {0, 1}};
+        int[][] matrix2 = {
+                {0, 1},
+                {1, 1}};
+        int[][] target2 = {
+                {1, 0},
+                {0, 1}};
+        int[][] matrix3 = {
+                {0, 0, 0},
+                {0, 1, 0},
+                {1, 1, 1}};
+        int[][] target3 = {
+                {1, 1, 1},
+                {0, 1, 0},
+                {0, 0, 0}};
+        System.out.println(p1886.findRotation_1(matrix1, target1));
+        System.out.println(p1886.findRotation_1(matrix2, target2));
+        System.out.println(p1886.findRotation_2(matrix3, target3));
+    }
 }
