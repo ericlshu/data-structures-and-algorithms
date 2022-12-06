@@ -1,4 +1,5 @@
 import domain.ListNode;
+import domain.TreeNode;
 import org.junit.Test;
 import solution.collection.*;
 import solution.design.*;
@@ -312,5 +313,26 @@ public class CollectionTest
         System.out.println(p0025.reverseKGroup_1(head, 2));
         head = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5, new ListNode(6, new ListNode(7)))))));
         System.out.println(p0025.reverseKGroup_2(head, 3));
+    }
+
+    @Test
+    public void test1376()
+    {
+        P1367LinkedListInBinaryTree p1376 = new P1367LinkedListInBinaryTree();
+        ListNode head = new ListNode(1, new ListNode(4, new ListNode(2, new ListNode(9))));
+        TreeNode root = new TreeNode(1,
+                new TreeNode(4,
+                        null,
+                        new TreeNode(2,
+                                new TreeNode(1),
+                                null)),
+                new TreeNode(4,
+                        new TreeNode(2,
+                                new TreeNode(6),
+                                new TreeNode(8,
+                                        new TreeNode(1),
+                                        new TreeNode(3))),
+                        null));
+        System.out.println(p1376.isSubPath(head, root));
     }
 }
