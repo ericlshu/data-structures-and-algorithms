@@ -136,4 +136,16 @@ public class MathTest
         System.out.println(p0989.addToArrayForm(new int[]{1, 5}, 806));
         System.out.println(p0989.addToArrayForm(new int[]{9, 8, 9}, 11));
     }
+
+    @Test
+    public void test0150()
+    {
+        P0150EvaluateReversePolishNotation p0150 = new P0150EvaluateReversePolishNotation();
+        String[] tokens1 = {"2", "1", "+", "3", "*"};
+        String[] tokens2 = {"4", "13", "5", "/", "+"};
+        String[] tokens3 = {"10", "6", "9", "3", "+", "-11", "*", "/", "*", "17", "+", "5", "+"};
+        System.out.println(p0150.evalRPN_stack(tokens1));
+        System.out.println(p0150.evalRPN_array(tokens2));
+        System.out.println(p0150.evalRPN_array(tokens3));
+    }
 }
