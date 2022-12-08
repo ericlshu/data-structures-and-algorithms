@@ -1467,4 +1467,21 @@ public class ArrayTest
         System.out.println(p1886.findRotation_1(matrix2, target2));
         System.out.println(p1886.findRotation_2(matrix3, target3));
     }
+
+    @Test
+    public void test0054()
+    {
+        P0054SpiralMatrix p0054 = new P0054SpiralMatrix();
+        int[][] matrix1 = {
+                {1, 2, 3},
+                {4, 5, 6},
+                {7, 8, 9}};
+
+        int[][] matrix2 = {
+                {1, 2, 3, 4},
+                {5, 6, 7, 8},
+                {9, 10, 11, 12}};
+        System.out.println(p0054.spiralOrder_1(matrix1));
+        System.out.println(p0054.spiralOrder_2(matrix2));
+    }
 }
