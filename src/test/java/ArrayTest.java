@@ -1484,4 +1484,15 @@ public class ArrayTest
         System.out.println(p0054.spiralOrder_1(matrix1));
         System.out.println(p0054.spiralOrder_2(matrix2));
     }
+
+    @Test
+    public void test1630()
+    {
+        P1630ArithmeticSubArrays p1630 = new P1630ArithmeticSubArrays();
+        System.out.println(p1630.checkArithmeticSubArrays(new int[]{4, 6, 5, 9, 3, 7}, new int[]{0, 0, 2}, new int[]{2, 3, 5}));
+        System.out.println(p1630.checkArithmeticSubArrays(new int[]{-12, -9, -3, -12, -6, 15, 20, -25, -20, -15, -10},
+                new int[]{0, 1, 6, 4, 8, 7}, new int[]{4, 4, 9, 7, 9, 10}));
+        System.out.println(p1630.checkArithmeticSubArrays(new int[]{1, 2, 10, -6, -7, 8, 16, 0, 0, 10, 20, 15, -2, -3, -1, -4, -4, -8, -2},
+                new int[]{14, 5, 11, 15, 12, 13, 9, 7, 0}, new int[]{15, 8, 14, 18, 15, 16, 12, 8, 1}));
+    }
 }
