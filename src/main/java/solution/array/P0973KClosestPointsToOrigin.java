@@ -38,10 +38,15 @@ public class P0973KClosestPointsToOrigin
 {
     public int[][] kClosest_sort(int[][] points, int K)
     {
+        // Arrays.sort(points, (o1, o2) ->
+        //         (o1[0] * o1[0] + o1[1] * o1[1]) - (o2[0] * o2[0] + o2[1] * o2[1]));
         Arrays.sort(points, Comparator.comparingInt(o -> (o[0] * o[0] + o[1] * o[1])));
         return Arrays.copyOfRange(points, 0, K);
     }
 
+    /**
+     * 优先队列升序
+     */
     public int[][] kClosest_pq1(int[][] points, int k)
     {
         PriorityQueue<int[]> pq = new PriorityQueue<>(
@@ -58,6 +63,9 @@ public class P0973KClosestPointsToOrigin
         return res;
     }
 
+    /**
+     * 优先队列降序
+     */
     public int[][] kClosest_pq2(int[][] points, int k)
     {
         PriorityQueue<int[]> pq = new PriorityQueue<>((arr1, arr2) ->
@@ -69,9 +77,14 @@ public class P0973KClosestPointsToOrigin
                 pq.poll();
         }
         int[][] res = new int[k][2];
-        for (int i = 0; i < k; i++)
+        // for (int i = 0; i < k; i++)
+        // {
+        //     res[i] = pq.poll();
+        // }
+        int idx = 0;
+        while (!pq.isEmpty())
         {
-            res[i] = pq.poll();
+            res[idx++] = pq.poll();
         }
         return res;
     }
