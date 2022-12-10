@@ -299,11 +299,11 @@ public class ArrayTest
     @Test
     public void test0469()
     {
-        P0496NextGreaterElementI obj = new P0496NextGreaterElementI();
-        int[] nums1 = {4, 1, 2};
-        int[] nums2 = {1, 3, 4, 2};
-        int[] result = obj.nextGreaterElement(nums1, nums2);
-        System.out.println("result = " + Arrays.toString(result));
+        P0496NextGreaterElementI p0496 = new P0496NextGreaterElementI();
+        System.out.println(Arrays.toString(p0496.nextGreaterElement_1(new int[]{2, 4}, new int[]{1, 2, 3, 4})));
+        System.out.println(Arrays.toString(p0496.nextGreaterElement_2(new int[]{2, 4}, new int[]{1, 2, 3, 4})));
+        System.out.println(Arrays.toString(p0496.nextGreaterElement_3(new int[]{4, 1, 2}, new int[]{1, 3, 4, 2})));
+        System.out.println(Arrays.toString(p0496.nextGreaterElement_4(new int[]{4, 1, 2}, new int[]{1, 3, 4, 2})));
     }
 
     @Test

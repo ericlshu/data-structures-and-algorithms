@@ -38,7 +38,33 @@ import java.util.*;
  */
 public class P0496NextGreaterElementI
 {
-    public int[] nextGreaterElement(int[] nums1, int[] nums2)
+    /**
+     * 单调栈-下标入栈
+     */
+    public int[] nextGreaterElement_4(int[] nums1, int[] nums2)
+    {
+        HashMap<Integer, Integer> map = new HashMap<>();
+        Deque<Integer> stack = new LinkedList<>();
+        for (int i = 0; i < nums2.length; i++)
+        {
+            while (!stack.isEmpty() && nums2[stack.peek()] < nums2[i])
+            {
+                map.put(nums2[stack.pop()], nums2[i]);
+            }
+            stack.push(i); // 下标入栈
+        }
+        int[] ans = new int[nums1.length];
+        for (int i = 0; i < nums1.length; i++)
+        {
+            ans[i] = map.getOrDefault(nums1[i], -1);
+        }
+        return ans;
+    }
+
+    /**
+     * 单调栈-元素入栈
+     */
+    public int[] nextGreaterElement_3(int[] nums1, int[] nums2)
     {
         Deque<Integer> stack = new ArrayDeque<>();
         Map<Integer, Integer> map = new HashMap<>();
@@ -61,7 +87,10 @@ public class P0496NextGreaterElementI
         return nums1;
     }
 
-    public int[] nextGreaterElement_1(int[] nums1, int[] nums2)
+    /**
+     * 暴力解法-2
+     */
+    public int[] nextGreaterElement_2(int[] nums1, int[] nums2)
     {
         for (int i = 0; i < nums1.length; i++)
         {
@@ -80,7 +109,10 @@ public class P0496NextGreaterElementI
         return nums1;
     }
 
-    public int[] nextGreaterElement_2(int[] nums1, int[] nums2)
+    /**
+     * 暴力解法-1
+     */
+    public int[] nextGreaterElement_1(int[] nums1, int[] nums2)
     {
         for (int i = 0; i < nums1.length; i++)
         {
@@ -102,25 +134,5 @@ public class P0496NextGreaterElementI
             nums1[i] = nextGreaterElement;
         }
         return nums1;
-    }
-
-    public int[] nextGreaterElement_3(int[] nums1, int[] nums2)
-    {
-        HashMap<Integer, Integer> map = new HashMap<>();
-        Deque<Integer> stack = new LinkedList<>();
-        for (int i = 0; i < nums2.length; i++)
-        {
-            while (!stack.isEmpty() && nums2[stack.peek()] < nums2[i])
-            {
-                map.put(nums2[stack.pop()], nums2[i]);
-            }
-            stack.push(i); // 下标入栈
-        }
-        int[] ans = new int[nums1.length];
-        for (int i = 0; i < nums1.length; i++)
-        {
-            ans[i] = map.getOrDefault(nums1[i], -1);
-        }
-        return ans;
     }
 }
