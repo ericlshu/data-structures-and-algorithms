@@ -1495,4 +1495,29 @@ public class ArrayTest
         System.out.println(p1630.checkArithmeticSubArrays(new int[]{1, 2, 10, -6, -7, 8, 16, 0, 0, 10, 20, 15, -2, -3, -1, -4, -4, -8, -2},
                 new int[]{14, 5, 11, 15, 12, 13, 9, 7, 0}, new int[]{15, 8, 14, 18, 15, 16, 12, 8, 1}));
     }
+
+    @Test
+    public void test0031()
+    {
+        P0031NextPermutation p0031 = new P0031NextPermutation();
+        int[] nums1 = {1, 2, 3};
+        int[] nums2 = {3, 2, 1};
+        int[] nums3 = {1, 1, 5};
+        p0031.nextPermutation(nums1);
+        p0031.nextPermutation(nums2);
+        p0031.nextPermutation(nums3);
+        System.out.println(Arrays.toString(nums1));
+        System.out.println(Arrays.toString(nums2));
+        System.out.println(Arrays.toString(nums3));
+    }
+
+    @Test
+    public void test0556()
+    {
+        P0556NextGreaterElementIII p0556 = new P0556NextGreaterElementIII();
+        System.out.println(p0556.nextGreaterElement(12));
+        System.out.println(p0556.nextGreaterElement(21));
+        System.out.println(p0556.nextGreaterElement(123433211));
+        System.out.println(p0556.nextGreaterElement(Integer.MAX_VALUE));
+    }
 }

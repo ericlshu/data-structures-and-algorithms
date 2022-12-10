@@ -37,14 +37,14 @@ public class P0031NextPermutation
         reverse(nums, i + 1);
     }
 
-    public void swap(int[] nums, int i, int j)
+    private void swap(int[] nums, int i, int j)
     {
         int temp = nums[i];
         nums[i] = nums[j];
         nums[j] = temp;
     }
 
-    public void reverse(int[] nums, int start)
+    private void reverse(int[] nums, int start)
     {
         int left = start, right = nums.length - 1;
         while (left < right)
