@@ -1520,4 +1520,12 @@ public class ArrayTest
         System.out.println(p0556.nextGreaterElement(123433211));
         System.out.println(p0556.nextGreaterElement(Integer.MAX_VALUE));
     }
+
+    @Test
+    public void test0713()
+    {
+        P0713SubarrayProductLessThanK p0713 = new P0713SubarrayProductLessThanK();
+        System.out.println(p0713.numSubarrayProductLessThanK_1(new int[]{1, 2, 3}, 0));
+        System.out.println(p0713.numSubarrayProductLessThanK_2(new int[]{10, 5, 2, 6}, 100));
+    }
 }
