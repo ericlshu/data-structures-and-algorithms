@@ -496,4 +496,13 @@ public class TreeTest
         System.out.println(p0110.isBalanced_n2(root1));
         System.out.println(p0110.isBalanced_n(root2));
     }
+
+    @Test
+    public void test1376()
+    {
+        P1376TimeNeededToInformAllEmployees p1376 = new P1376TimeNeededToInformAllEmployees();
+        System.out.println(p1376.numOfMinutes_1(1, 0, new int[]{-1}, new int[]{0}));
+        System.out.println(p1376.numOfMinutes_2(6, 2, new int[]{2, 2, -1, 2, 2, 2}, new int[]{0, 0, 1, 0, 0, 0}));
+        System.out.println(p1376.numOfMinutes_2(6, 2, new int[]{2, 2, -1, 2, 3, 2}, new int[]{0, 0, 1, 2, 0, 0}));
+    }
 }
