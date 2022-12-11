@@ -4,10 +4,7 @@ import solution.array.*;
 import solution.bs.P0852PeakIndexInAMountainArray;
 import solution.bs.P1122RelativeSortArray;
 import solution.collection.P0019RemoveNthNodeFromEndOfList;
-import solution.design.P0303NumArray1;
-import solution.design.P0303NumArray2;
-import solution.design.P1603ParkingSystem1;
-import solution.design.P1603ParkingSystem2;
+import solution.design.*;
 import solution.dp.Offer042LCOF;
 import solution.dp.P0062UniquePaths;
 import solution.dp.P0746MinCostClimbingStairs;
@@ -1314,6 +1311,29 @@ public class ArrayTest
         System.out.println(p0303NumArray2.sumRange(0, 2));
         System.out.println(p0303NumArray2.sumRange(2, 5));
         System.out.println(p0303NumArray2.sumRange(0, 5));
+    }
+
+    @Test
+    public void test0304()
+    {
+        int[][] matrix = {
+                {3, 0, 1, 4, 2},
+                {5, 6, 3, 2, 1},
+                {1, 2, 0, 1, 5},
+                {4, 1, 0, 1, 7},
+                {1, 0, 3, 0, 5}};
+
+        // 一维前缀和
+        P0304NumMatrix1 numMatrix1 = new P0304NumMatrix1(matrix);
+        System.out.println(numMatrix1.sumRegion(2, 1, 4, 3));
+        System.out.println(numMatrix1.sumRegion(1, 1, 2, 2));
+        System.out.println(numMatrix1.sumRegion(1, 2, 2, 4));
+
+        // 二维前缀和
+        P0304NumMatrix2 numMatrix2 = new P0304NumMatrix2(matrix);
+        System.out.println(numMatrix2.sumRegion(2, 1, 4, 3));
+        System.out.println(numMatrix2.sumRegion(1, 1, 2, 2));
+        System.out.println(numMatrix2.sumRegion(1, 2, 2, 4));
     }
 
     @Test
