@@ -500,4 +500,12 @@ public class StringTest
         System.out.println(p0067.addBinary_1("1010", "1011"));
         System.out.println(p0067.addBinary_2("111", "1"));
     }
+
+    @Test
+    public void test1781()
+    {
+        P1781SumOfBeautyOfAllSubstrings p1781 = new P1781SumOfBeautyOfAllSubstrings();
+        System.out.println(p1781.beautySum("aabcb"));
+        System.out.println(p1781.beautySum("aabcbaa"));
+    }
 }
