@@ -50,7 +50,9 @@ public class StringTest
     public void testP0028()
     {
         P0028ImplementStrStr p0028 = new P0028ImplementStrStr();
-        System.out.println(p0028.strStr_1("mississippi", "issippip"));
+        System.out.println(p0028.strStr_1("mississippi", "issippi"));
+        System.out.println(p0028.strStr_kmp("mississippi", "issippi"));
+        System.out.println(p0028.strStr_kmp("sadbutsad", "sad"));
         System.out.println(p0028.strStr_2("sadbutsad", "sad"));
     }
 
