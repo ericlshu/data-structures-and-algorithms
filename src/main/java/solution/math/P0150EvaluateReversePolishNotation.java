@@ -107,9 +107,10 @@ public class P0150EvaluateReversePolishNotation
                     stack[idx] /= stack[idx + 1];
                     break;
                 default:
-                    stack[++idx] = Integer.parseInt(token);
+                    idx++;
+                    stack[idx] = Integer.parseInt(token);
             }
         }
-        return stack[idx];
+        return stack[0];
     }
 }

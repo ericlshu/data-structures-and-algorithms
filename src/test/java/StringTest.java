@@ -508,4 +508,16 @@ public class StringTest
         System.out.println(p1781.beautySum("aabcb"));
         System.out.println(p1781.beautySum("aabcbaa"));
     }
+
+    @Test
+    public void test1832()
+    {
+        P1832CheckIfTheSentenceIsPangram p1832 = new P1832CheckIfTheSentenceIsPangram();
+        System.out.println(p1832.checkIfPangram_arr("thequickbrownfoxjumpsoverthelazydog"));
+        System.out.println(p1832.checkIfPangram_set("thequickbrownfoxjumpsoverthelazydog"));
+        System.out.println(p1832.checkIfPangram_bit("thequickbrownfoxjumpsoverthelazydog"));
+        System.out.println(p1832.checkIfPangram_arr("leetcode"));
+        System.out.println(p1832.checkIfPangram_set("leetcode"));
+        System.out.println(p1832.checkIfPangram_bit("leetcode"));
+    }
 }
