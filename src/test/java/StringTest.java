@@ -530,4 +530,13 @@ public class StringTest
         System.out.println(p0520.detectCapitalUse_regex("FlaG"));
         System.out.println(p0520.detectCapitalUse_official("mL"));
     }
+
+    @Test
+    public void test0551()
+    {
+        P0551StudentAttendanceRecordI p0551 = new P0551StudentAttendanceRecordI();
+        System.out.println(p0551.checkRecord_1("PPALLP"));
+        System.out.println(p0551.checkRecord_2("PPALLAP"));
+        System.out.println(p0551.checkRecord_api("PPALLL"));
+    }
 }
