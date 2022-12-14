@@ -520,4 +520,14 @@ public class StringTest
         System.out.println(p1832.checkIfPangram_set("leetcode"));
         System.out.println(p1832.checkIfPangram_bit("leetcode"));
     }
+
+    @Test
+    public void test0520()
+    {
+        P0520DetectCapital p0520 = new P0520DetectCapital();
+        System.out.println(p0520.detectCapitalUse("USA"));
+        System.out.println(p0520.detectCapitalUse_api("leetcode"));
+        System.out.println(p0520.detectCapitalUse_regex("FlaG"));
+        System.out.println(p0520.detectCapitalUse_official("mL"));
+    }
 }
