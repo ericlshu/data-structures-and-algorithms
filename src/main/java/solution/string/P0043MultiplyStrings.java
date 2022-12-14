@@ -75,14 +75,14 @@ public class P0043MultiplyStrings
     {
         if (num1.equals("0") || num2.equals("0"))
             return "0";
-        int m = num1.length(), n = num2.length();
+        int m = num1.length(), n = num2.length(), x, y;
         int[] tmp = new int[m + n];
         for (int i = m - 1; i >= 0; i--)
         {
-            int x = num1.charAt(i) - '0';
+            x = num1.charAt(i) - '0';
             for (int j = n - 1; j >= 0; j--)
             {
-                int y = num2.charAt(j) - '0';
+                y = num2.charAt(j) - '0';
                 tmp[i + j + 1] += x * y;
             }
         }
