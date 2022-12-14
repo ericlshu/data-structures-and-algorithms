@@ -1550,4 +1550,16 @@ public class ArrayTest
         System.out.println(p0713.numSubarrayProductLessThanK_1(new int[]{1, 2, 3}, 0));
         System.out.println(p0713.numSubarrayProductLessThanK_2(new int[]{10, 5, 2, 6}, 100));
     }
+
+    @Test
+    public void test0599()
+    {
+        P0599MinimumIndexSumOfTwoLists p0599 = new P0599MinimumIndexSumOfTwoLists();
+        String[] list1 = {"Shogun", "Tapioca Express", "Burger King", "KFC"};
+        String[] list2 = {"Piatti", "The Grill at Torrey Pines", "Hungry Hunter Steakhouse", "Shogun"};
+        String[] list3 = {"Shogun", "Tapioca Express", "Burger King", "KFC"};
+        String[] list4 = {"Tapioca Express", "Shogun", "Burger King"};
+        System.out.println(Arrays.toString(p0599.findRestaurant(list1, list2)));
+        System.out.println(Arrays.toString(p0599.findRestaurant(list3, list4)));
+    }
 }
