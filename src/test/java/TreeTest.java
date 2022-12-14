@@ -526,4 +526,40 @@ public class TreeTest
         System.out.println(p0637.averageOfLevels_dfs(root2));
         System.out.println(p0637.averageOfLevels_bfs(root2));
     }
+
+    @Test
+    public void test0530()
+    {
+        P0530MinimumAbsoluteDifferenceInBST p0530 = new P0530MinimumAbsoluteDifferenceInBST();
+        TreeNode root1 = new TreeNode(4,
+                new TreeNode(2,
+                        new TreeNode(1),
+                        new TreeNode(3)),
+                new TreeNode(6));
+        TreeNode root2 = new TreeNode(1,
+                new TreeNode(0),
+                new TreeNode(48,
+                        new TreeNode(12),
+                        new TreeNode(49)));
+        System.out.println(p0530.getMinimumDifference(root1));
+        System.out.println(p0530.getMinimumDifference(root2));
+    }
+
+    @Test
+    public void test0783()
+    {
+        P0783MinimumDistanceBetweenBSTNodes p0783 = new P0783MinimumDistanceBetweenBSTNodes();
+        TreeNode root1 = new TreeNode(4,
+                new TreeNode(2,
+                        new TreeNode(1),
+                        new TreeNode(3)),
+                new TreeNode(6));
+        TreeNode root2 = new TreeNode(1,
+                new TreeNode(0),
+                new TreeNode(48,
+                        new TreeNode(12),
+                        new TreeNode(49)));
+        System.out.println(p0783.minDiffInBST(root1));
+        System.out.println(p0783.minDiffInBST(root2));
+    }
 }
