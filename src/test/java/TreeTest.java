@@ -505,4 +505,25 @@ public class TreeTest
         System.out.println(p1376.numOfMinutes_2(6, 2, new int[]{2, 2, -1, 2, 2, 2}, new int[]{0, 0, 1, 0, 0, 0}));
         System.out.println(p1376.numOfMinutes_2(6, 2, new int[]{2, 2, -1, 2, 3, 2}, new int[]{0, 0, 1, 2, 0, 0}));
     }
+
+    @Test
+    public void test0637()
+    {
+        P0637AverageOfLevelsInBinaryTree p0637 = new P0637AverageOfLevelsInBinaryTree();
+        TreeNode root1 = new TreeNode(3,
+                new TreeNode(9),
+                new TreeNode(20,
+                        new TreeNode(15), new TreeNode(7)));
+        TreeNode root2 = new TreeNode(1,
+                new TreeNode(2,
+                        new TreeNode(3,
+                                new TreeNode(4),
+                                new TreeNode(4)),
+                        new TreeNode(3)),
+                new TreeNode(2));
+        System.out.println(p0637.averageOfLevels_bfs(root1));
+        System.out.println(p0637.averageOfLevels_dfs(root1));
+        System.out.println(p0637.averageOfLevels_dfs(root2));
+        System.out.println(p0637.averageOfLevels_bfs(root2));
+    }
 }
