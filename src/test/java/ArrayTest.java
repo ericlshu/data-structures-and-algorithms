@@ -1585,4 +1585,19 @@ public class ArrayTest
         System.out.println(p0063.uniquePathsWithObstacles_n(obstacleGrid2));
         System.out.println(p0063.uniquePathsWithObstacles_n(obstacleGrid3));
     }
+
+    @Test
+    public void test0064()
+    {
+        P0064MinimumPathSum p0064 = new P0064MinimumPathSum();
+        int[][] grid1 = {
+                {1, 3, 1},
+                {1, 5, 1},
+                {4, 2, 1}};
+        int[][] grid2 = {
+                {1, 2, 3},
+                {4, 5, 6}};
+        System.out.println(p0064.minPathSum_1(grid1));
+        System.out.println(p0064.minPathSum_2(grid2));
+    }
 }
