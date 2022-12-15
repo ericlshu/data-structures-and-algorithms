@@ -539,4 +539,13 @@ public class StringTest
         System.out.println(p0551.checkRecord_2("PPALLAP"));
         System.out.println(p0551.checkRecord_api("PPALLL"));
     }
+
+    @Test
+    public void test1945()
+    {
+        P1945SumOfDigitsOfStringAfterConvert p1945 = new P1945SumOfDigitsOfStringAfterConvert();
+        System.out.println(p1945.getLucky_1("zbax", 2));
+        System.out.println(p1945.getLucky_2("iiii", 1));
+        System.out.println(p1945.getLucky_2("leetcode", 2));
+    }
 }
