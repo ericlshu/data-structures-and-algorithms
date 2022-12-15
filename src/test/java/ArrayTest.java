@@ -1562,4 +1562,27 @@ public class ArrayTest
         System.out.println(Arrays.toString(p0599.findRestaurant(list1, list2)));
         System.out.println(Arrays.toString(p0599.findRestaurant(list3, list4)));
     }
+
+    @Test
+    public void test0063()
+    {
+        P0063UniquePathsII p0063 = new P0063UniquePathsII();
+        int[][] obstacleGrid1 = {
+                {0, 0, 0},
+                {0, 1, 0},
+                {0, 0, 0}};
+        int[][] obstacleGrid2 = {
+                {0, 1},
+                {0, 0}};
+        int[][] obstacleGrid3 = {
+                {1, 0, 0},
+                {0, 1, 0},
+                {0, 0, 0}};
+        System.out.println(p0063.uniquePathsWithObstacles_mn(obstacleGrid1));
+        System.out.println(p0063.uniquePathsWithObstacles_mn(obstacleGrid2));
+        System.out.println(p0063.uniquePathsWithObstacles_mn(obstacleGrid3));
+        System.out.println(p0063.uniquePathsWithObstacles_n(obstacleGrid1));
+        System.out.println(p0063.uniquePathsWithObstacles_n(obstacleGrid2));
+        System.out.println(p0063.uniquePathsWithObstacles_n(obstacleGrid3));
+    }
 }
