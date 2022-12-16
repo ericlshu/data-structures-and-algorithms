@@ -1600,4 +1600,12 @@ public class ArrayTest
         System.out.println(p0064.minPathSum_1(grid1));
         System.out.println(p0064.minPathSum_2(grid2));
     }
+
+    @Test
+    public void test1785()
+    {
+        P1785MinimumElementsToAddToFormAGivenSum p1785 = new P1785MinimumElementsToAddToFormAGivenSum();
+        System.out.println(p1785.minElements(new int[]{1, -1, 1}, 3, -4));
+        System.out.println(p1785.minElements(new int[]{1, -1, 1}, 100, -0));
+    }
 }
