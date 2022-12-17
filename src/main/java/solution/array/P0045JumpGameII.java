@@ -45,12 +45,13 @@ public class P0045JumpGameII
         return steps;
     }
 
+    /**
+     * preEnd 上次跳跃可达范围右边界
+     * maxPos 当前能够到达的最远位置
+     */
     public int jump_2(int[] nums)
     {
-        int n = nums.length;
-        int preEnd = 0; // 上次跳跃可达范围右边界
-        int maxPos = 0; // 当前能够到达的最远位置
-        int steps = 0;
+        int n = nums.length, preEnd = 0, maxPos = 0, steps = 0;
         for (int i = 0; i < n - 1; i++)
         {
             maxPos = Math.max(maxPos, i + nums[i]);

@@ -1450,6 +1450,7 @@ public class ArrayTest
         P0045JumpGameII p0045 = new P0045JumpGameII();
         System.out.println(p0045.jump_1(new int[]{2, 3, 1, 1, 4}));
         System.out.println(p0045.jump_2(new int[]{2, 3, 0, 1, 4}));
+        System.out.println(p0045.jump_2(new int[]{2, 3, 1, 2, 4, 2, 3}));
     }
 
     @Test
