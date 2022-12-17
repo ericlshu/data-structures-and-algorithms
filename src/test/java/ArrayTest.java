@@ -1621,4 +1621,25 @@ public class ArrayTest
         System.out.println(p0918.maxSubarraySumCircular_2(nums2));
         System.out.println(p0918.maxSubarraySumCircular_2(nums3));
     }
+
+    @Test
+    public void test1764()
+    {
+        P1764FormArrayByConcatenatingSubArraysOfAnotherArray p1764 = new P1764FormArrayByConcatenatingSubArraysOfAnotherArray();
+        int[][] groups1 = {
+                {1, -1, -1},
+                {3, -2, 0}};
+        int[] nums1 = {1, -1, 0, 1, -1, -1, 3, -2, 0};
+        System.out.println(p1764.canChoose(groups1, nums1));
+        int[][] groups2 = {
+                {10, -2},
+                {1, 2, 3, 4}};
+        int[] nums2 = {1, 2, 3, 4, 10, -2};
+        System.out.println(p1764.canChoose(groups2, nums2));
+        int[][] groups3 = {
+                {1, 2, 3},
+                {3, 4}};
+        int[] nums3 = {7, 7, 1, 2, 3, 4, 7, 7};
+        System.out.println(p1764.canChoose(groups3, nums3));
+    }
 }
