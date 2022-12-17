@@ -1,7 +1,5 @@
 package solution.dp;
 
-import java.util.Arrays;
-
 /**
  * Description : 最大子序和
  * <p>
@@ -67,11 +65,10 @@ public class P0053MaximumSubarray
                 nums[i] += nums[i - 1];
             result = Math.max(result, nums[i]);
         }
-        System.out.println("nums = " + Arrays.toString(nums));
         return result;
     }
 
-    public class Status
+    public static class Status
     {
         public int lSum, rSum, mSum, iSum;
 
@@ -106,5 +103,16 @@ public class P0053MaximumSubarray
         int rSum = Math.max(r.rSum, r.iSum + l.rSum);
         int mSum = Math.max(Math.max(l.mSum, r.mSum), l.rSum + r.lSum);
         return new Status(lSum, rSum, mSum, iSum);
+    }
+
+    public int minSubArray(int[] nums)
+    {
+        int curSum = nums[0], minSum = nums[0];
+        for(int i = 1; i < nums.length; i++)
+        {
+            curSum = Math.min(curSum + nums[i], nums[i]);
+            minSum = Math.min(minSum, curSum);
+        }
+        return minSum;
     }
 }

@@ -1609,4 +1609,16 @@ public class ArrayTest
         System.out.println(p1785.minElements(new int[]{1, -1, 1}, 3, -4));
         System.out.println(p1785.minElements(new int[]{1, -1, 1}, 100, -0));
     }
+
+    @Test
+    public void test0918()
+    {
+        P0918MaximumSumCircularSubarray p0918 = new P0918MaximumSumCircularSubarray();
+        int[] nums1 = {1, -2, 3, -2};
+        int[] nums2 = {5, -3, 5};
+        int[] nums3 = {3, -2, 2, -3};
+        System.out.println(p0918.maxSubarraySumCircular(nums1));
+        System.out.println(p0918.maxSubarraySumCircular(nums2));
+        System.out.println(p0918.maxSubarraySumCircular(nums3));
+    }
 }

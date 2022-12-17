@@ -19,12 +19,13 @@ public class DPTest
     public void testP0053()
     {
         P0053MaximumSubarray p0053 = new P0053MaximumSubarray();
-        int[] nums = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
+        int[] nums = {-2, -1, -3, 4, -1, 2, 1, -5, 4};
         System.out.println(p0053.maxSubArray_greedy(nums));
         System.out.println(p0053.maxSubArray_partition(nums));
         System.out.println(p0053.maxSubArray_dp1(nums));
         System.out.println(p0053.maxSubArray_dp2(nums));
         System.out.println(p0053.maxSubArray_dp3(nums));
+        System.out.println(p0053.minSubArray(nums));
     }
 
     @Test
