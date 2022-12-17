@@ -1617,8 +1617,8 @@ public class ArrayTest
         int[] nums1 = {1, -2, 3, -2};
         int[] nums2 = {5, -3, 5};
         int[] nums3 = {3, -2, 2, -3};
-        System.out.println(p0918.maxSubarraySumCircular(nums1));
-        System.out.println(p0918.maxSubarraySumCircular(nums2));
-        System.out.println(p0918.maxSubarraySumCircular(nums3));
+        System.out.println(p0918.maxSubarraySumCircular_1(nums1));
+        System.out.println(p0918.maxSubarraySumCircular_2(nums2));
+        System.out.println(p0918.maxSubarraySumCircular_2(nums3));
     }
 }

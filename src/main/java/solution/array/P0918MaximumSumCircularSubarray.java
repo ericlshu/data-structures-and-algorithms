@@ -32,7 +32,7 @@ package solution.array;
  */
 public class P0918MaximumSumCircularSubarray
 {
-    public int maxSubarraySumCircular(int[] nums)
+    public int maxSubarraySumCircular_1(int[] nums)
     {
         int sum = 0, maxSum = nums[0], curMax = 0, minSum = nums[0], curMin = 0;
         for (int num : nums)
@@ -44,5 +44,24 @@ public class P0918MaximumSumCircularSubarray
             minSum = Math.min(minSum, curMin);
         }
         return maxSum > 0 ? Math.max(maxSum, sum - minSum) : maxSum;
+    }
+
+    public int maxSubarraySumCircular_2(int[] nums)
+    {
+        int n = nums.length, dp = nums[0];
+        int sum = dp, maxSum = dp, minSum = 0;
+        for (int i = 1; i < n; i++)
+        {
+            sum += nums[i];
+            dp = nums[i] + Math.max(dp, 0);
+            maxSum = Math.max(dp, maxSum);
+        }
+        dp = nums[0];
+        for (int i = 1; i < n - 1; i++)
+        {
+            dp = nums[i] + Math.min(dp, 0);
+            minSum = Math.min(dp, minSum);
+        }
+        return Math.max(sum - minSum, maxSum);
     }
 }
