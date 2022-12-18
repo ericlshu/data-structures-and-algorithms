@@ -84,4 +84,41 @@ public class P0054SpiralMatrix
         }
         return order;
     }
+
+    public List<Integer> spiralOrder_3(int[][] matrix)
+    {
+        ArrayList<Integer> list = new ArrayList<>();
+        int top = 0, bottom = matrix.length - 1;
+        int left = 0, right = matrix[0].length - 1;
+        int count = matrix.length * matrix[0].length;
+        while (count >= 1)
+        {
+            for (int i = left; i <= right && count >= 1; i++)
+            {
+                list.add(matrix[top][i]);
+                count--;
+            }
+            top++;
+            for (int i = top; i <= bottom && count >= 1; i++)
+            {
+                list.add(matrix[i][right]);
+                count--;
+            }
+            right--;
+            for (int i = right; i >= left && count >= 1; i--)
+            {
+                list.add(matrix[bottom][i]);
+                count--;
+            }
+            bottom--;
+            for (int i = bottom; i >= top && count >= 1; i--)
+            {
+                list.add(matrix[i][left]);
+                count--;
+            }
+            left++;
+        }
+        return list;
+    }
+
 }

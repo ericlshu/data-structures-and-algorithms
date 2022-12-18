@@ -1506,6 +1506,7 @@ public class ArrayTest
                 {9, 10, 11, 12}};
         System.out.println(p0054.spiralOrder_1(matrix1));
         System.out.println(p0054.spiralOrder_2(matrix2));
+        System.out.println(p0054.spiralOrder_3(matrix2));
     }
 
     @Test
