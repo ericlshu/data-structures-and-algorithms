@@ -1,4 +1,4 @@
-package solution.dp;
+package solution.math;
 
 /**
  * Description : 爬楼梯

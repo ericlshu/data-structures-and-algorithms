@@ -1,15 +1,8 @@
-import domain.ListNode;
 import org.junit.Test;
 import solution.array.*;
 import solution.bs.P0852PeakIndexInAMountainArray;
 import solution.bs.P1122RelativeSortArray;
-import solution.collection.P0019RemoveNthNodeFromEndOfList;
 import solution.design.*;
-import solution.dp.Offer042LCOF;
-import solution.dp.P0062UniquePaths;
-import solution.dp.P0746MinCostClimbingStairs;
-import solution.math.*;
-import solution.string.P0409LongestPalindrome;
 
 import java.util.Arrays;
 import java.util.List;
@@ -34,19 +27,6 @@ public class ArrayTest
         {
             System.out.println("    i = " + i);
         }
-    }
-
-    @Test
-    public void testP0019()
-    {
-        P0019RemoveNthNodeFromEndOfList obj = new P0019RemoveNthNodeFromEndOfList();
-        ListNode node5 = new ListNode(5);
-        ListNode node4 = new ListNode(4, node5);
-        ListNode node3 = new ListNode(3, node4);
-        ListNode node2 = new ListNode(2, node3);
-        ListNode node1 = new ListNode(1, node2);
-        ListNode node = obj.removeNthFromEnd_stack(node1, 3);
-        System.out.println("node = " + node);
     }
 
     @Test
@@ -287,13 +267,6 @@ public class ArrayTest
         System.out.println(Arrays.toString(p0066.plusOne_2(new int[]{9, 9, 9, 9})));
     }
 
-    @Test
-    public void test1688()
-    {
-        P1688CountOfMatchesInTournament obj = new P1688CountOfMatchesInTournament();
-        int matches = obj.numberOfMatches(1000);
-        System.out.println("matches = " + matches);
-    }
 
     @Test
     public void test0469()
@@ -612,19 +585,6 @@ public class ArrayTest
         System.out.println(p1619.trimMean(arr5));
     }
 
-    @Test
-    public void test0367()
-    {
-        P0367ValidPerfectSquare p0367 = new P0367ValidPerfectSquare();
-        for (int i = 1; i <= 4096; i++)
-        {
-            if (p0367.isPerfectSquare_3(i))
-            {
-                System.out.print("i = " + i);
-                System.out.println("; Math.sqrt(i) = " + Math.sqrt(i));
-            }
-        }
-    }
 
     @Test
     public void test1385()
@@ -767,27 +727,6 @@ public class ArrayTest
         System.out.println(p1855.maxDistance_2(nums1, nums2));
     }
 
-    @Test
-    public void test0191()
-    {
-        P0191NumberOf1Bits p0191 = new P0191NumberOf1Bits();
-        System.out.println(p0191.hammingWeight_1(3));
-        System.out.println(p0191.hammingWeight_1(1));
-        System.out.println(p0191.hammingWeight_2(31));
-    }
-
-    @Test
-    public void test0231()
-    {
-        P0231PowerOfTwo p0231 = new P0231PowerOfTwo();
-        for (int i = 1; i <= 1024; i++)
-        {
-            if (p0231.isPowerOfTwo_2(i) && p0231.isPowerOfTwo_3(i))
-            {
-                System.out.println("i = " + i);
-            }
-        }
-    }
 
     @Test
     public void test1640()
@@ -1118,23 +1057,6 @@ public class ArrayTest
         System.out.println(Arrays.toString(p0739.dailyTemperatures_forward(temperatures3)));
     }
 
-    @Test
-    public void test1232()
-    {
-        P1232CheckIfItIsAStraightLine p1232 = new P1232CheckIfItIsAStraightLine();
-        int[][] coordinates1 = {{1, 2}, {2, 3}, {3, 4}, {4, 5}, {5, 6}, {6, 7}};
-        int[][] coordinates2 = {{1, 1}, {2, 2}, {3, 4}, {4, 5}, {5, 6}, {7, 7}};
-        System.out.println(p1232.checkStraightLine(coordinates1));
-        System.out.println(p1232.checkStraightLine(coordinates2));
-    }
-
-    @Test
-    public void test0409()
-    {
-        P0409LongestPalindrome p0409 = new P0409LongestPalindrome();
-        System.out.println(p0409.longestPalindrome("abccccdd"));
-        System.out.println(p0409.longestPalindrome("a"));
-    }
 
     @Test
     public void test2672()
@@ -1359,16 +1281,6 @@ public class ArrayTest
         int[] stones = {2, 7, 4, 1, 8, 1};
         System.out.println(p1046.lastStoneWeight_1(stones));
         System.out.println(p1046.lastStoneWeight_2(stones));
-    }
-
-    @Test
-    public void test0062()
-    {
-        P0062UniquePaths p0062 = new P0062UniquePaths();
-        System.out.println(p0062.uniquePaths_dp(3, 2));
-        System.out.println(p0062.uniquePaths_dp(3, 7));
-        System.out.println(p0062.uniquePaths_math(7, 3));
-        System.out.println(p0062.uniquePaths_math(3, 3));
     }
 
     @Test
@@ -1642,5 +1554,67 @@ public class ArrayTest
                 {3, 4}};
         int[] nums3 = {7, 7, 1, 2, 3, 4, 7, 7};
         System.out.println(p1764.canChoose(groups3, nums3));
+    }
+
+    @Test
+    public void testP0053()
+    {
+        P0053MaximumSubarray p0053 = new P0053MaximumSubarray();
+        int[] nums = {-2, -1, -3, 4, -1, 2, 1, -5, 4};
+        System.out.println(p0053.maxSubArray_greedy(nums));
+        System.out.println(p0053.maxSubArray_partition(nums));
+        System.out.println(p0053.maxSubArray_dp1(nums));
+        System.out.println(p0053.maxSubArray_dp2(nums));
+        System.out.println(p0053.maxSubArray_dp3(nums));
+        System.out.println(p0053.minSubArray(nums));
+    }
+
+    @Test
+    public void testP0121()
+    {
+        P0121BestTimeToBuyAndSellStock obj = new P0121BestTimeToBuyAndSellStock();
+        // int[] nums = {1, 2, 3, 4, 5, 6, 7, 8};
+        int[] nums = {7, 1, 5, 3, 6, 4};
+        System.out.println("result = " + obj.maxProfit(nums));
+        System.out.println("result = " + obj.maxProfit_dp1(nums));
+        System.out.println("result = " + obj.maxProfit_dp2(nums));
+        System.out.println("result = " + obj.maxProfit_dp3(nums));
+    }
+
+
+    @Test
+    public void testP1024()
+    {
+        P1024VideoStitching obj = new P1024VideoStitching();
+        int[][] clips = {{0, 1}, {6, 8}, {0, 2}, {5, 6}, {0, 4}, {0, 3}, {6, 7}, {1, 3}, {4, 7}, {1, 4}, {2, 5}, {2, 6}, {3, 4}, {4, 5}, {5, 7}, {6, 9}};
+        System.out.println("result = " + obj.videoStitching(clips, 9));
+    }
+
+
+    @Test
+    public void test0198()
+    {
+        P0198HouseRobber p0198 = new P0198HouseRobber();
+        System.out.println(p0198.rob_1(new int[]{1, 2, 3, 1}));
+        System.out.println(p0198.rob_2(new int[]{2, 7, 9, 3, 1}));
+    }
+
+    @Test
+    public void test0213()
+    {
+        P0213HouseRobberII p0213 = new P0213HouseRobberII();
+        System.out.println(p0213.rob(new int[]{2, 3, 2}));
+        System.out.println(p0213.rob(new int[]{1, 2, 3, 1}));
+        System.out.println(p0213.rob(new int[]{1, 2, 3}));
+    }
+
+    @Test
+    public void test0740()
+    {
+        P0740DeleteAndEarn p0740 = new P0740DeleteAndEarn();
+        int[] nums1 = {3, 4, 2};
+        int[] nums2 = {2, 2, 3, 3, 3, 4};
+        System.out.println(p0740.deleteAndEarn_dp1(nums1));
+        System.out.println(p0740.deleteAndEarn_dp1(nums2));
     }
 }

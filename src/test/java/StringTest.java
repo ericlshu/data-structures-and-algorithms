@@ -5,6 +5,7 @@ import solution.math.P0067AddBinary;
 import solution.math.P0389FindTheDifference;
 import solution.string.*;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -547,5 +548,31 @@ public class StringTest
         System.out.println(p1945.getLucky_1("zbax", 2));
         System.out.println(p1945.getLucky_2("iiii", 1));
         System.out.println(p1945.getLucky_2("leetcode", 2));
+    }
+
+    @Test
+    public void testP0139()
+    {
+        P0139WordBreak obj = new P0139WordBreak();
+        String s = "catsandog";
+        List<String> wordDict = new ArrayList<>();
+        wordDict.add("cats");
+        wordDict.add("dog");
+        wordDict.add("sand");
+        wordDict.add("and");
+        wordDict.add("cat");
+        wordDict.add("leet");
+        wordDict.add("code");
+        wordDict.add("apple");
+        wordDict.add("pen");
+        System.out.println("result = " + obj.wordBreak(s, wordDict));
+    }
+
+    @Test
+    public void test0409()
+    {
+        P0409LongestPalindrome p0409 = new P0409LongestPalindrome();
+        System.out.println(p0409.longestPalindrome("abccccdd"));
+        System.out.println(p0409.longestPalindrome("a"));
     }
 }

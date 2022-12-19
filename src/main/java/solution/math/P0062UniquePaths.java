@@ -1,4 +1,4 @@
-package solution.dp;
+package solution.math;
 
 import java.util.Arrays;
 

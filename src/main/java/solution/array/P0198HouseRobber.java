@@ -1,4 +1,4 @@
-package solution.dp;
+package solution.array;
 
 /**
  * Description : 打家劫舍

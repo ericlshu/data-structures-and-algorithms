@@ -1,7 +1,10 @@
 import org.junit.Test;
-import solution.dp.Offer101FibonacciSequence;
-import solution.math.P0670MaximumSwap;
 import solution.math.*;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * Description :
@@ -147,5 +150,102 @@ public class MathTest
         System.out.println(p0150.evalRPN_stack(tokens1));
         System.out.println(p0150.evalRPN_array(tokens2));
         System.out.println(p0150.evalRPN_array(tokens3));
+    }
+
+    @Test
+    public void test0191()
+    {
+        P0191NumberOf1Bits p0191 = new P0191NumberOf1Bits();
+        System.out.println(p0191.hammingWeight_1(3));
+        System.out.println(p0191.hammingWeight_1(1));
+        System.out.println(p0191.hammingWeight_2(31));
+    }
+
+    @Test
+    public void test0231()
+    {
+        P0231PowerOfTwo p0231 = new P0231PowerOfTwo();
+        for (int i = 1; i <= 1024; i++)
+        {
+            if (p0231.isPowerOfTwo_2(i) && p0231.isPowerOfTwo_3(i))
+            {
+                System.out.println("i = " + i);
+            }
+        }
+    }
+
+    @Test
+    public void test1688()
+    {
+        P1688CountOfMatchesInTournament obj = new P1688CountOfMatchesInTournament();
+        int matches = obj.numberOfMatches(1000);
+        System.out.println("matches = " + matches);
+    }
+
+    @Test
+    public void test0367()
+    {
+        P0367ValidPerfectSquare p0367 = new P0367ValidPerfectSquare();
+        for (int i = 1; i <= 4096; i++)
+        {
+            if (p0367.isPerfectSquare_3(i))
+            {
+                System.out.print("i = " + i);
+                System.out.println("; Math.sqrt(i) = " + Math.sqrt(i));
+            }
+        }
+    }
+
+    @Test
+    public void test1232()
+    {
+        P1232CheckIfItIsAStraightLine p1232 = new P1232CheckIfItIsAStraightLine();
+        int[][] coordinates1 = {{1, 2}, {2, 3}, {3, 4}, {4, 5}, {5, 6}, {6, 7}};
+        int[][] coordinates2 = {{1, 1}, {2, 2}, {3, 4}, {4, 5}, {5, 6}, {7, 7}};
+        System.out.println(p1232.checkStraightLine(coordinates1));
+        System.out.println(p1232.checkStraightLine(coordinates2));
+    }
+
+    @Test
+    public void test0120()
+    {
+        P0120Triangle p0120 = new P0120Triangle();
+        List<List<Integer>> triangle = new ArrayList<>();
+        triangle.add(Collections.singletonList(2));
+        triangle.add(Arrays.asList(3, 4));
+        triangle.add(Arrays.asList(6, 5, 7));
+        triangle.add(Arrays.asList(4, 1, 8, 3));
+        System.out.println(p0120.minimumTotal_n2(triangle));
+        System.out.println(p0120.minimumTotal_2n(triangle));
+        System.out.println(p0120.minimumTotal_n(triangle));
+        System.out.println(p0120.minimumTotal_recursion_1(triangle));
+        System.out.println(p0120.minimumTotal_recursion_2(triangle));
+        System.out.println(p0120.minimumTotal_dpn2(triangle));
+        System.out.println(p0120.minimumTotal_dpn(triangle));
+        System.out.println(p0120.minimumTotal_iteration(triangle));
+
+    }
+
+    @Test
+    public void test0070()
+    {
+        P0070ClimbingStairs p0070 = new P0070ClimbingStairs();
+        System.out.println(p0070.climbStairs_1(45));
+        System.out.println(p0070.climbStairs_2(45));
+        System.out.println(p0070.climbStairs_3(45));
+        System.out.println(p0070.climbStairs_4(45));
+        System.out.println(p0070.climbStairs_5(45));
+        System.out.println(p0070.climbStairs_6(45));
+        System.out.println(p0070.climbStairs_7(45));
+    }
+
+    @Test
+    public void test0062()
+    {
+        P0062UniquePaths p0062 = new P0062UniquePaths();
+        System.out.println(p0062.uniquePaths_dp(3, 2));
+        System.out.println(p0062.uniquePaths_dp(3, 7));
+        System.out.println(p0062.uniquePaths_math(7, 3));
+        System.out.println(p0062.uniquePaths_math(3, 3));
     }
 }

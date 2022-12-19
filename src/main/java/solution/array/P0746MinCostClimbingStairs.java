@@ -1,4 +1,4 @@
-package solution.dp;
+package solution.array;
 
 /**
  * Description : 使用最小花费爬楼梯

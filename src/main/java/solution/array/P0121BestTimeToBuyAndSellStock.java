@@ -1,4 +1,4 @@
-package solution.dp;
+package solution.array;
 
 /**
  * Description : 买卖股票的最佳时机

@@ -1,4 +1,4 @@
-package solution.dp;
+package solution.array;
 
 /**
  * Description : 连续子数组的最大和

@@ -1,4 +1,4 @@
-package solution.dp;
+package solution.string;
 
 import java.util.*;
 
