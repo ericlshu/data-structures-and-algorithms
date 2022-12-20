@@ -1639,4 +1639,14 @@ public class ArrayTest
         System.out.println(p1567.getMaxLen_2(nums2));
         System.out.println(p1567.getMaxLen_2(nums3));
     }
+
+    @Test
+    public void test1014()
+    {
+        P1014BestSightseeingPair p1014 = new P1014BestSightseeingPair();
+        int[] values1 = {8, 1, 5, 2, 6};
+        int[] values2 = {1, 2};
+        System.out.println(p1014.maxScoreSightseeingPair(values1));
+        System.out.println(p1014.maxScoreSightseeingPair(values2));
+    }
 }
