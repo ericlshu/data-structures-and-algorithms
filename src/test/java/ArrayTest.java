@@ -1627,4 +1627,16 @@ public class ArrayTest
         System.out.println(p0152.maxProduct_1(nums1));
         System.out.println(p0152.maxProduct_2(nums2));
     }
+
+    @Test
+    public void test1567()
+    {
+        P1567MaximumLengthOfSubarrayWithPositiveProduct p1567 = new P1567MaximumLengthOfSubarrayWithPositiveProduct();
+        int[] nums1 = {1, -2, -3, 4};
+        int[] nums2 = {0, 1, -2, -3, -4};
+        int[] nums3 = {-1, -2, -3, 0, 1};
+        System.out.println(p1567.getMaxLen_1(nums1));
+        System.out.println(p1567.getMaxLen_2(nums2));
+        System.out.println(p1567.getMaxLen_2(nums3));
+    }
 }
