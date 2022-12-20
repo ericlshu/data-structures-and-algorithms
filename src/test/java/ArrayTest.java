@@ -1617,4 +1617,14 @@ public class ArrayTest
         System.out.println(p0740.deleteAndEarn_dp1(nums1));
         System.out.println(p0740.deleteAndEarn_dp1(nums2));
     }
+
+    @Test
+    public void test0152()
+    {
+        P0152MaximumProductSubarray p0152 = new P0152MaximumProductSubarray();
+        int[] nums1 = {2, 3, -2, 4};
+        int[] nums2 = {-2, 0, -1};
+        System.out.println(p0152.maxProduct_1(nums1));
+        System.out.println(p0152.maxProduct_2(nums2));
+    }
 }
