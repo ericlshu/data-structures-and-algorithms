@@ -1581,7 +1581,6 @@ public class ArrayTest
         System.out.println("result = " + obj.maxProfit_dp3(nums));
     }
 
-
     @Test
     public void testP1024()
     {
@@ -1589,7 +1588,6 @@ public class ArrayTest
         int[][] clips = {{0, 1}, {6, 8}, {0, 2}, {5, 6}, {0, 4}, {0, 3}, {6, 7}, {1, 3}, {4, 7}, {1, 4}, {2, 5}, {2, 6}, {3, 4}, {4, 5}, {5, 7}, {6, 9}};
         System.out.println("result = " + obj.videoStitching(clips, 9));
     }
-
 
     @Test
     public void test0198()
@@ -1648,5 +1646,17 @@ public class ArrayTest
         int[] values2 = {1, 2};
         System.out.println(p1014.maxScoreSightseeingPair(values1));
         System.out.println(p1014.maxScoreSightseeingPair(values2));
+    }
+
+    @Test
+    public void test2037()
+    {
+        P2037MinimumNumberOfMovesToSeatEveryone p2037 = new P2037MinimumNumberOfMovesToSeatEveryone();
+        int[] seats1 = {3, 1, 5}, students1 = {2, 7, 4};
+        int[] seats2 = {4, 1, 5, 9}, students2 = {1, 3, 2, 6};
+        int[] seats3 = {2, 2, 6, 6}, students3 = {1, 3, 2, 6};
+        System.out.println(p2037.minMovesToSeat(seats1, students1));
+        System.out.println(p2037.minMovesToSeat(seats2, students2));
+        System.out.println(p2037.minMovesToSeat(seats3, students3));
     }
 }
