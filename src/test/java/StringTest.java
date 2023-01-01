@@ -575,4 +575,12 @@ public class StringTest
         System.out.println(p0409.longestPalindrome("abccccdd"));
         System.out.println(p0409.longestPalindrome("a"));
     }
+
+    @Test
+    public void test2351()
+    {
+        P2351FirstLetterToAppearTwice p2351 = new P2351FirstLetterToAppearTwice();
+        System.out.println(p2351.repeatedCharacter_hash("abccbacz"));
+        System.out.println(p2351.repeatedCharacter_bite("abcdd"));
+    }
 }
