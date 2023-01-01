@@ -33,7 +33,7 @@ package solution.array;
  */
 public class P0034FindFirstAndLastPositionOfElementInSortedArray
 {
-    public int[] searchRange(int[] nums, int target)
+    public int[] searchRange_1(int[] nums, int target)
     {
         int[] result = new int[]{-1, -1};
         if (nums == null || nums.length == 0 || nums[0] > target || nums[nums.length - 1] < target)
@@ -59,13 +59,13 @@ public class P0034FindFirstAndLastPositionOfElementInSortedArray
         return result;
     }
 
-    public int[] searchRange_1(int[] nums, int target)
+    public int[] searchRange_2(int[] nums, int target)
     {
-        int leftIdx = binarySearch(nums, target, true);
-        int rightIdx = binarySearch(nums, target, false) - 1;
-        if (leftIdx <= rightIdx && rightIdx < nums.length && nums[leftIdx] == target && nums[rightIdx] == target)
+        int left = binarySearch(nums, target, true);
+        int right = binarySearch(nums, target, false) - 1;
+        if (left <= right && right < nums.length && nums[left] == target && nums[right] == target)
         {
-            return new int[]{leftIdx, rightIdx};
+            return new int[]{left, right};
         }
         return new int[]{-1, -1};
     }
@@ -87,5 +87,32 @@ public class P0034FindFirstAndLastPositionOfElementInSortedArray
             }
         }
         return ans;
+    }
+
+    public int[] searchRange_3(int[] nums, int target)
+    {
+        return new int[]{bs(nums, target, true), bs(nums, target, false)};
+    }
+
+    private int bs(int[] nums, int target, boolean minMode)
+    {
+        int left = 0, right = nums.length - 1, idx = -1, mid;
+        while (left <= right)
+        {
+            mid = (left + right) >>> 1;
+            if (nums[mid] < target)
+                left = mid + 1;
+            else if (nums[mid] > target)
+                right = mid - 1;
+            else
+            {
+                idx = mid;
+                if (minMode)
+                    right = mid - 1;
+                else
+                    left = mid + 1;
+            }
+        }
+        return idx;
     }
 }

@@ -124,11 +124,14 @@ public class ArrayTest
     @Test
     public void test0034()
     {
-        P0034FindFirstAndLastPositionOfElementInSortedArray obj = new P0034FindFirstAndLastPositionOfElementInSortedArray();
+        P0034FindFirstAndLastPositionOfElementInSortedArray p0034 = new P0034FindFirstAndLastPositionOfElementInSortedArray();
         int[] nums = {5, 7, 7, 8, 8, 8, 10};
-//        int[] nums = {1};
-        int[] result = obj.searchRange(nums, 8);
-        System.out.println("result = " + Arrays.toString(result));
+        System.out.println(Arrays.toString(p0034.searchRange_1(nums, 8)));
+        System.out.println(Arrays.toString(p0034.searchRange_2(nums, 8)));
+        System.out.println(Arrays.toString(p0034.searchRange_3(nums, 8)));
+        System.out.println(Arrays.toString(p0034.searchRange_1(nums, 6)));
+        System.out.println(Arrays.toString(p0034.searchRange_2(nums, 6)));
+        System.out.println(Arrays.toString(p0034.searchRange_3(nums, 6)));
     }
 
     @Test
