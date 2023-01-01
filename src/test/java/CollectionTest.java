@@ -348,4 +348,19 @@ public class CollectionTest
         ListNode node = obj.removeNthFromEnd_stack(node1, 3);
         System.out.println("node = " + node);
     }
+
+    @Test
+    public void test0373()
+    {
+        P0373FindKPairsWithSmallestSums p0373 = new P0373FindKPairsWithSmallestSums();
+        int[] nums1 = {1, 7, 11};
+        int[] nums2 = {2, 4, 6};
+        int[] nums3 = {1, 1, 2};
+        int[] nums4 = {1, 2, 3};
+        int[] nums5 = {1, 2};
+        int[] nums6 = {3};
+        System.out.println(p0373.kSmallestPairs_1(nums1, nums2, 3));
+        System.out.println(p0373.kSmallestPairs_2(nums3, nums4, 2));
+        System.out.println(p0373.kSmallestPairs_2(nums5, nums6, 3));
+    }
 }
