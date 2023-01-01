@@ -114,11 +114,11 @@ public class ArrayTest
     @Test
     public void test0033()
     {
-        P0033SearchInRotatedSortedArray obj = new P0033SearchInRotatedSortedArray();
-//        int[] nums = {4,5,6,7,0,1,2};
-        int[] nums = {1};
-        int result = obj.search(nums, 1);
-        System.out.println("result = " + result);
+        P0033SearchInRotatedSortedArray p0033 = new P0033SearchInRotatedSortedArray();
+        int[] nums = {4, 5, 6, 7, 0, 1, 2};
+        System.out.println(p0033.search_1(nums, 1));
+        System.out.println(p0033.search_2(nums, 1));
+        System.out.println(p0033.search_3(nums, 1));
     }
 
     @Test
