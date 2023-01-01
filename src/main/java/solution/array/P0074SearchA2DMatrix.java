@@ -28,17 +28,19 @@ public class P0074SearchA2DMatrix
 {
     public boolean searchMatrix_1(int[][] matrix, int target)
     {
-        int rowIndex = binarySearchFirstColumn(matrix, target);
-        if (rowIndex < 0) return false;
-        return binarySearchRow(matrix[rowIndex], target);
+        int row = bsFirstColumn(matrix, target);
+        if (row < 0)
+            return false;
+        return bsRow(matrix[row], target);
     }
 
-    private int binarySearchFirstColumn(int[][] matrix, int target)
+    private int bsFirstColumn(int[][] matrix, int target)
     {
-        int low = -1, high = matrix.length - 1;
+        int low = 0, high = matrix.length - 1, mid;
         while (low < high)
         {
-            int mid = (high - low + 1) / 2 + low;
+            // int mid = (high - low + 1) / 2 + low;
+            mid = (high + low + 1) >> 1;
             if (matrix[mid][0] <= target)
                 low = mid;
             else
@@ -47,7 +49,7 @@ public class P0074SearchA2DMatrix
         return low;
     }
 
-    private boolean binarySearchRow(int[] row, int target)
+    private boolean bsRow(int[] row, int target)
     {
         int low = 0, high = row.length - 1;
         while (low <= high)
@@ -63,7 +65,7 @@ public class P0074SearchA2DMatrix
         return false;
     }
 
-    public boolean searchMatrix(int[][] matrix, int target)
+    public boolean searchMatrix_2(int[][] matrix, int target)
     {
         int rows = matrix.length, cols = matrix[0].length;
         int left = 0, right = rows * cols - 1;

@@ -646,10 +646,15 @@ public class ArrayTest
     @Test
     public void test0074()
     {
-        P0074SearchA2DMatrix obj = new P0074SearchA2DMatrix();
-        int[][] matrix = {{1, 3, 5, 7}, {10, 11, 16, 20}, {23, 30, 34, 60}};
-        System.out.println(obj.searchMatrix(matrix, 3));
-        System.out.println(obj.searchMatrix(matrix, 13));
+        P0074SearchA2DMatrix p0074 = new P0074SearchA2DMatrix();
+        int[][] matrix = {
+                {1, 3, 5, 7},
+                {10, 11, 16, 20},
+                {23, 30, 34, 60}};
+        System.out.println(p0074.searchMatrix_1(matrix, 11));
+        System.out.println(p0074.searchMatrix_2(matrix, 11));
+        System.out.println(p0074.searchMatrix_1(matrix, 70));
+        System.out.println(p0074.searchMatrix_2(matrix, 70));
     }
 
     @Test
