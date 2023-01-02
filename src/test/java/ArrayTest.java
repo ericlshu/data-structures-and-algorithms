@@ -1667,4 +1667,14 @@ public class ArrayTest
         System.out.println(p2037.minMovesToSeat(seats2, students2));
         System.out.println(p2037.minMovesToSeat(seats3, students3));
     }
+
+    @Test
+    public void test1801()
+    {
+        P1801NumberOfOrdersInTheBacklog p1801 = new P1801NumberOfOrdersInTheBacklog();
+        int[][] orders1 = {{10, 5, 0}, {15, 2, 1}, {25, 1, 1}, {30, 4, 0}};
+        int[][] orders2 = {{7, 1000000000, 1}, {15, 3, 0}, {5, 999999995, 0}, {5, 1, 1}};
+        System.out.println(p1801.getNumberOfBacklogOrders(orders1));
+        System.out.println(p1801.getNumberOfBacklogOrders(orders2));
+    }
 }
