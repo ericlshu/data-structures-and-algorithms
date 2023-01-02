@@ -1677,4 +1677,14 @@ public class ArrayTest
         System.out.println(p1801.getNumberOfBacklogOrders(orders1));
         System.out.println(p1801.getNumberOfBacklogOrders(orders2));
     }
+
+    @Test
+    public void test0162()
+    {
+        P0162FindPeakElement p0162 = new P0162FindPeakElement();
+        int[] nums1 = {1, 2, 3, 1};
+        int[] nums2 = {1, 2, 1, 3, 5, 6, 4};
+        System.out.println(p0162.findPeakElement(nums1));
+        System.out.println(p0162.findPeakElement(nums2));
+    }
 }
