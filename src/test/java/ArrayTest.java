@@ -1687,4 +1687,16 @@ public class ArrayTest
         System.out.println(p0162.findPeakElement(nums1));
         System.out.println(p0162.findPeakElement(nums2));
     }
+
+    @Test
+    public void test0015()
+    {
+        P0015ThreeSum p0015 = new P0015ThreeSum();
+        int[] nums1 = {-1, 0, 1, 2, -1, -4};
+        int[] nums2 = {0, 1, 1};
+        int[] nums3 = {0, 0, 0};
+        System.out.println(p0015.threeSum(nums1));
+        System.out.println(p0015.threeSum(nums2));
+        System.out.println(p0015.threeSum_baoli(nums3));
+    }
 }

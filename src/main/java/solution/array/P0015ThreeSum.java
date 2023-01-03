@@ -25,7 +25,7 @@ import java.util.List;
  */
 public class P0015ThreeSum
 {
-    public List<List<Integer>> threeSum(int[] nums)
+    public List<List<Integer>> threeSum_baoli(int[] nums)
     {
         int n = nums.length;
         Arrays.sort(nums);
@@ -51,22 +51,23 @@ public class P0015ThreeSum
         return result;
     }
 
-    public List<List<Integer>> threeSum_1(int[] nums)
+    public List<List<Integer>> threeSum(int[] nums)
     {
         List<List<Integer>> result = new ArrayList<>();
-        if (nums == null || nums.length <= 2) return result;
         Arrays.sort(nums);
         for (int i = 0; i < nums.length - 2; i++)
         {
-            if (nums[i] > 0) break;
-            if (i > 0 && nums[i] == nums[i - 1]) continue;
+            if (nums[i] > 0)
+                break;
+            if (i > 0 && nums[i] == nums[i - 1])
+                continue;
             int target = -nums[i];
             int left = i + 1, right = nums.length - 1;
             while (left < right)
             {
                 if (nums[left] + nums[right] == target)
                 {
-                    result.add(new ArrayList<>(Arrays.asList(nums[i], nums[left], nums[right])));
+                    result.add(Arrays.asList(nums[i], nums[left], nums[right]));
                     left++;
                     right--;
                     while (left < right && nums[left] == nums[left - 1])
