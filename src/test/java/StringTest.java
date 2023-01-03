@@ -583,4 +583,13 @@ public class StringTest
         System.out.println(p2351.repeatedCharacter_hash("abccbacz"));
         System.out.println(p2351.repeatedCharacter_bite("abcdd"));
     }
+
+    @Test
+    public void test2042()
+    {
+        P2042CheckIfNumbersAreAscendingInASentence p2042 = new P2042CheckIfNumbersAreAscendingInASentence();
+        System.out.println(p2042.areNumbersAscending_1("1 box has 3 blue 4 red 6 green and 12 yellow marbles"));
+        System.out.println(p2042.areNumbersAscending_2("sunset is at 7 51 pm overnight lows will be in the low 50 and 60 s"));
+        System.out.println(p2042.areNumbersAscending_3("hello world 5 x 5"));
+    }
 }
