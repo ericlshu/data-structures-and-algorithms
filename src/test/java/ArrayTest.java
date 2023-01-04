@@ -1699,4 +1699,12 @@ public class ArrayTest
         System.out.println(p0015.threeSum(nums2));
         System.out.println(p0015.threeSum_baoli(nums3));
     }
+
+    @Test
+    public void test1802()
+    {
+        P1802MaximumValueAtAGivenIndexInABoundedArray p1802 = new P1802MaximumValueAtAGivenIndexInABoundedArray();
+        System.out.println(p1802.maxValue(4, 2, 6));
+        System.out.println(p1802.maxValue(6, 1, 10));
+    }
 }
