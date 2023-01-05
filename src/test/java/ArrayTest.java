@@ -1707,4 +1707,13 @@ public class ArrayTest
         System.out.println(p1802.maxValue(4, 2, 6));
         System.out.println(p1802.maxValue(6, 1, 10));
     }
+
+    @Test
+    public void test0986()
+    {
+        P0986IntervalListIntersections p0986 = new P0986IntervalListIntersections();
+        int[][] firstList = {{0, 2}, {5, 10}, {13, 23}, {24, 25}};
+        int[][] secondList = {{1, 5}, {8, 12}, {15, 24}, {25, 26}};
+        System.out.println(Arrays.deepToString(p0986.intervalIntersection(firstList, secondList)));
+    }
 }
