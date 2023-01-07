@@ -1716,4 +1716,16 @@ public class ArrayTest
         int[][] secondList = {{1, 5}, {8, 12}, {15, 24}, {25, 26}};
         System.out.println(Arrays.deepToString(p0986.intervalIntersection(firstList, secondList)));
     }
+
+    @Test
+    public void test1658()
+    {
+        P1658MinimumOperationsToReduceXToZero p1658 = new P1658MinimumOperationsToReduceXToZero();
+        int[] nums1 = {1, 1, 4, 2, 3};
+        int[] nums2 = {5, 6, 7, 8, 9};
+        int[] nums3 = {3, 2, 20, 1, 1, 3};
+        System.out.println(p1658.minOperations_1(nums1, 5));
+        System.out.println(p1658.minOperations_2(nums2, 4));
+        System.out.println(p1658.minOperations_2(nums3, 10));
+    }
 }
