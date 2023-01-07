@@ -3,6 +3,7 @@ import solution.array.*;
 import solution.bs.P0852PeakIndexInAMountainArray;
 import solution.bs.P1122RelativeSortArray;
 import solution.design.*;
+import solution.math.P2180CountIntegersWithEvenDigitSum;
 
 import java.util.Arrays;
 import java.util.List;
@@ -1727,5 +1728,13 @@ public class ArrayTest
         System.out.println(p1658.minOperations_1(nums1, 5));
         System.out.println(p1658.minOperations_2(nums2, 4));
         System.out.println(p1658.minOperations_2(nums3, 10));
+    }
+
+    @Test
+    public void test2180()
+    {
+        P2180CountIntegersWithEvenDigitSum p2180 = new P2180CountIntegersWithEvenDigitSum();
+        System.out.println(p2180.countEven_1(4));
+        System.out.println(p2180.countEven_2(30));
     }
 }
