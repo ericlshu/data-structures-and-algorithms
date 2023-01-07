@@ -1472,6 +1472,7 @@ public class ArrayTest
         P0713SubarrayProductLessThanK p0713 = new P0713SubarrayProductLessThanK();
         System.out.println(p0713.numSubarrayProductLessThanK_1(new int[]{1, 2, 3}, 0));
         System.out.println(p0713.numSubarrayProductLessThanK_2(new int[]{10, 5, 2, 6}, 100));
+        System.out.println(p0713.numSubarrayProductLessThanK_3(new int[]{10, 5, 2, 6}, 100));
     }
 
     @Test

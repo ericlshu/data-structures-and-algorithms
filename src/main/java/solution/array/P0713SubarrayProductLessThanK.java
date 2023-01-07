@@ -61,4 +61,41 @@ public class P0713SubarrayProductLessThanK
         }
         return cnt;
     }
+
+    public int numSubarrayProductLessThanK_3(int[] nums, int k)
+    {
+        if (k == 0)
+            return 0;
+        int n = nums.length;
+        double[] logPrefix = new double[n + 1];
+        for (int i = 0; i < n; i++)
+        {
+            logPrefix[i + 1] = logPrefix[i] + Math.log(nums[i]);
+        }
+        double logK = Math.log(k);
+        int res = 0;
+        int left, right, idx, mid;
+        for (int i = 0; i < n; i++)
+        {
+            left = 0;
+            right = i + 1;
+            idx = i + 1;
+            double val = logPrefix[i + 1] - logK + 1e-10;
+            while (left <= right)
+            {
+                mid = (left + right) >> 1;
+                if (logPrefix[mid] > val)
+                {
+                    idx = mid;
+                    right = mid - 1;
+                }
+                else
+                {
+                    left = mid + 1;
+                }
+            }
+            res += i - idx + 1;
+        }
+        return res;
+    }
 }
