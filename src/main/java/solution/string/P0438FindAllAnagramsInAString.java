@@ -32,7 +32,7 @@ import java.util.*;
  */
 public class P0438FindAllAnagramsInAString
 {
-    public List<Integer> findAnagrams_1(String s, String p)
+    public List<Integer> findAnagrams_baoli(String s, String p)
     {
         List<Integer> list = new ArrayList<>();
         int len = p.length();
@@ -55,12 +55,12 @@ public class P0438FindAllAnagramsInAString
         return new String(ch1).equals(new String(ch2));
     }
 
-    public List<Integer> findAnagrams(String s, String p)
+    public List<Integer> findAnagrams_sw(String s, String p)
     {
         List<Integer> list = new ArrayList<>();
         Map<Character, Integer> map = new HashMap<>();
-        int len = p.length();
-        for (int i = 0; i < len; i++)
+        int n = p.length();
+        for (int i = 0; i < n; i++)
         {
             map.put(p.charAt(i), map.getOrDefault(p.charAt(i), 0) + 1);
         }
@@ -68,17 +68,17 @@ public class P0438FindAllAnagramsInAString
         for (int i = 0; i < s.length(); i++)
         {
             sw.put(s.charAt(i), sw.getOrDefault(s.charAt(i), 0) + 1);
-            if (i >= len)
+            if (i >= n)
             {
-                char ch = s.charAt(i - len);
+                char ch = s.charAt(i - n);
                 if (sw.get(ch) == 1)
                     sw.remove(ch);
                 else
                     sw.put(ch, sw.get(ch) - 1);
             }
-            if (i >= len - 1 && map.equals(sw))
+            if (i >= n - 1 && map.equals(sw))
             {
-                list.add(i - len + 1);
+                list.add(i - n + 1);
             }
         }
         return list;

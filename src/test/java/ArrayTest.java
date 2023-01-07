@@ -1737,4 +1737,14 @@ public class ArrayTest
         System.out.println(p2180.countEven_1(4));
         System.out.println(p2180.countEven_2(30));
     }
+
+    @Test
+    public void test0011()
+    {
+        P0011ContainerWithMostWater p0011 = new P0011ContainerWithMostWater();
+        int[] height1 = {1, 8, 6, 2, 5, 4, 8, 3, 7};
+        int[] height2 = {1, 1};
+        System.out.println(p0011.maxArea(height1));
+        System.out.println(p0011.maxArea(height2));
+    }
 }

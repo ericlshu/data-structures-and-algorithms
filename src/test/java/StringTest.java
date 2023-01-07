@@ -464,8 +464,10 @@ public class StringTest
     public void test0438()
     {
         P0438FindAllAnagramsInAString p0438 = new P0438FindAllAnagramsInAString();
-        System.out.println(p0438.findAnagrams("cbaebabacd", "abc"));
+        System.out.println(p0438.findAnagrams_sw("cbaebabacd", "abc"));
+        System.out.println(p0438.findAnagrams_sw1("cbaebabacd", "abc"));
         System.out.println(p0438.findAnagrams_sw2("abab", "ab"));
+        System.out.println(p0438.findAnagrams_baoli("abab", "ab"));
     }
 
     @Test
