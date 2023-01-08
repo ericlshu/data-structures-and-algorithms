@@ -594,4 +594,14 @@ public class StringTest
         System.out.println(p2042.areNumbersAscending_2("sunset is at 7 51 pm overnight lows will be in the low 50 and 60 s"));
         System.out.println(p2042.areNumbersAscending_3("hello world 5 x 5"));
     }
+
+    @Test
+    public void test2185()
+    {
+        P2185CountingWordsWithAGivenPrefix p2185 = new P2185CountingWordsWithAGivenPrefix();
+        String[] words1 = {"pay","attention","practice","attend"};
+        String[] words2 = {"leetcode","win","loops","success"};
+        System.out.println(p2185.prefixCount(words1, "at"));
+        System.out.println(p2185.prefixCount(words2, "code"));
+    }
 }
