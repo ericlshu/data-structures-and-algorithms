@@ -1798,4 +1798,31 @@ public class ArrayTest
         System.out.println(p1091.shortestPathBinaryMatrix(grid2));
         System.out.println(p1091.shortestPathBinaryMatrix(grid3));
     }
+
+    @Test
+    public void test0130()
+    {
+        P0130SurroundedRegions p0130 = new P0130SurroundedRegions();
+        char[][] board1 = {
+                {'X', 'X', 'X', 'O'},
+                {'X', 'O', 'O', 'X'},
+                {'X', 'O', 'X', 'X'},
+                {'X', 'X', 'O', 'X'}
+        };
+        char[][] board2 = {
+                {'X', 'O', 'O', 'X', 'X', 'X', 'O', 'X', 'O', 'O'},
+                {'X', 'O', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X'},
+                {'X', 'X', 'X', 'X', 'O', 'X', 'X', 'X', 'X', 'X'},
+                {'X', 'O', 'X', 'X', 'X', 'O', 'X', 'X', 'X', 'O'},
+                {'O', 'X', 'X', 'X', 'O', 'X', 'O', 'X', 'O', 'X'},
+                {'X', 'X', 'O', 'X', 'X', 'O', 'O', 'X', 'X', 'X'},
+                {'O', 'X', 'X', 'O', 'O', 'X', 'O', 'X', 'X', 'O'},
+                {'O', 'X', 'X', 'X', 'X', 'X', 'O', 'X', 'X', 'X'},
+                {'X', 'O', 'O', 'X', 'X', 'O', 'X', 'X', 'O', 'O'},
+                {'X', 'X', 'X', 'O', 'O', 'X', 'O', 'X', 'X', 'O'}};
+        p0130.solve_dfs(board1);
+        p0130.solve_bfs(board2);
+        System.out.println("board = " + Arrays.deepToString(board1));
+        System.out.println("board = " + Arrays.deepToString(board2));
+    }
 }
