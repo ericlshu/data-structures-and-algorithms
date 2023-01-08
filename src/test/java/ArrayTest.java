@@ -1748,4 +1748,18 @@ public class ArrayTest
         System.out.println(p0011.maxArea(height1));
         System.out.println(p0011.maxArea(height2));
     }
+
+    @Test
+    public void test0209()
+    {
+        P0209MinimumSizeSubarraySum p0209 = new P0209MinimumSizeSubarraySum();
+        int[] nums1 = {2, 3, 1, 2, 4, 3};
+        int[] nums2 = {1, 4, 4};
+        int[] nums3 = {1, 1, 1, 1, 1, 1, 1, 1};
+        int[] nums4 = {1,2,3,4,5};
+        System.out.println(p0209.minSubArrayLen_n2(7, nums1));
+        System.out.println(p0209.minSubArrayLen_n(4, nums2));
+        System.out.println(p0209.minSubArrayLen_nlogn(11, nums3));
+        System.out.println(p0209.minSubArrayLen_nlogn(11, nums4));
+    }
 }
