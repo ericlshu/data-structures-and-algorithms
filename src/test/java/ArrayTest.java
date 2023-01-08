@@ -1778,4 +1778,24 @@ public class ArrayTest
         System.out.println(p0547.findCircleNum_dfs(isConnected1));
         System.out.println(p0547.findCircleNum_bfs(isConnected2));
     }
+
+    @Test
+    public void test1091()
+    {
+        P1091ShortestPathInBinaryMatrix p1091 = new P1091ShortestPathInBinaryMatrix();
+        int[][] grid1 = {
+                {0, 1},
+                {1, 0}};
+        int[][] grid2 = {
+                {0, 0, 0},
+                {1, 1, 0},
+                {1, 1, 0}};
+        int[][] grid3 = {
+                {1, 0, 0},
+                {1, 1, 0},
+                {1, 1, 0}};
+        System.out.println(p1091.shortestPathBinaryMatrix(grid1));
+        System.out.println(p1091.shortestPathBinaryMatrix(grid2));
+        System.out.println(p1091.shortestPathBinaryMatrix(grid3));
+    }
 }
