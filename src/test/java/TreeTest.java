@@ -562,4 +562,23 @@ public class TreeTest
         System.out.println(p0783.minDiffInBST(root1));
         System.out.println(p0783.minDiffInBST(root2));
     }
+
+    @Test
+    public void test0572()
+    {
+        P0572SubtreeOfAnotherTree p0572 = new P0572SubtreeOfAnotherTree();
+        TreeNode root = new TreeNode(3,
+                new TreeNode(4,
+                        new TreeNode(1),
+                        new TreeNode(2,
+                                new TreeNode(0),
+                                null)),
+                new TreeNode(5));
+
+        TreeNode subRoot =
+                new TreeNode(4,
+                        new TreeNode(1),
+                        new TreeNode(2));
+        System.out.println(p0572.isSubtree(root, subRoot));
+    }
 }
