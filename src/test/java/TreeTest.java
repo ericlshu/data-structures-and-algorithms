@@ -251,6 +251,22 @@ public class TreeTest
     }
 
     @Test
+    public void test0117()
+    {
+        P0117PopulatingNextRightPointersInEachNodeII p0117 = new P0117PopulatingNextRightPointersInEachNodeII();
+
+        Node node2 = new Node(2, new Node(4), new Node(5), null);
+        Node node3 = new Node(3, null, new Node(7), null);
+        Node node1 = new Node(1, node2, node3, null);
+        System.out.println(p0117.connect_bfs1(node1));
+
+        node2 = new Node(2, new Node(4), new Node(5), null);
+        node3 = new Node(3, null, new Node(7), null);
+        node1 = new Node(1, node2, node3, null);
+        System.out.println(p0117.connect_bfs2(node1));
+    }
+
+    @Test
     public void test0257()
     {
         P0257BinaryTreePaths p0257 = new P0257BinaryTreePaths();
