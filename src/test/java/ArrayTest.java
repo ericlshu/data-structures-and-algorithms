@@ -1825,4 +1825,13 @@ public class ArrayTest
         System.out.println("board = " + Arrays.deepToString(board1));
         System.out.println("board = " + Arrays.deepToString(board2));
     }
+
+    @Test
+    public void test0078()
+    {
+        P0078Subsets p0078 = new P0078Subsets();
+        int[] nums = {1, 2, 3};
+        System.out.println(p0078.subsets_iteration(nums));
+        System.out.println(p0078.subsets_recursion(nums));
+    }
 }
