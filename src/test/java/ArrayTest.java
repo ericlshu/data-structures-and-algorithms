@@ -1834,4 +1834,14 @@ public class ArrayTest
         System.out.println(p0078.subsets_iteration(nums));
         System.out.println(p0078.subsets_recursion(nums));
     }
+
+    @Test
+    public void test0090()
+    {
+        P0090SubsetsII p0090 = new P0090SubsetsII();
+        int[] nums = {1, 2, 2};
+        System.out.println(p0090.subsetsWithDup_1(nums));
+        System.out.println(p0090.subsetsWithDup_2(nums));
+        System.out.println(p0090.subsetsWithDup_3(nums));
+    }
 }
