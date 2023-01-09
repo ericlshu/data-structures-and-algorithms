@@ -248,4 +248,14 @@ public class MathTest
         System.out.println(p0062.uniquePaths_math(7, 3));
         System.out.println(p0062.uniquePaths_math(3, 3));
     }
+
+    @Test
+    public void test1806()
+    {
+        P1806MinimumNumberOfOperationsToReinitializeAPermutation p1806 = new P1806MinimumNumberOfOperationsToReinitializeAPermutation();
+        System.out.println(p1806.reinitializePermutation_1(2));
+        System.out.println(p1806.reinitializePermutation_1(4));
+        System.out.println(p1806.reinitializePermutation_2(6));
+        System.out.println(p1806.reinitializePermutation_2(100));
+    }
 }
