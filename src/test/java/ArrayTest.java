@@ -1460,10 +1460,10 @@ public class ArrayTest
     public void test0556()
     {
         P0556NextGreaterElementIII p0556 = new P0556NextGreaterElementIII();
-        System.out.println(p0556.nextGreaterElement(12));
-        System.out.println(p0556.nextGreaterElement(21));
-        System.out.println(p0556.nextGreaterElement(123433211));
-        System.out.println(p0556.nextGreaterElement(Integer.MAX_VALUE));
+        System.out.println(p0556.nextGreaterElement_1(12));
+        System.out.println(p0556.nextGreaterElement_1(21));
+        System.out.println(p0556.nextGreaterElement_2(123433211));
+        System.out.println(p0556.nextGreaterElement_2(Integer.MAX_VALUE));
     }
 
     @Test

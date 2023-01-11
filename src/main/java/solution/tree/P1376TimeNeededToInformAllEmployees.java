@@ -40,19 +40,21 @@ public class P1376TimeNeededToInformAllEmployees
 {
     public int numOfMinutes_1(int n, int headID, int[] manager, int[] informTime)
     {
-        int[] res = new int[n];
-        for (int i = 0; i < manager.length; i++)
-        {
-            int idx = i, time = 0;
-            while (idx != headID)
+            int[] res = new int[n];
+            int idx, time;
+            for (int i = 0; i < manager.length; i++)
             {
-                time += informTime[manager[idx]];
-                idx = manager[idx];
+                idx = i;
+                time = 0;
+                while (idx != headID)
+                {
+                    idx = manager[idx];
+                    time += informTime[idx];
+                }
+                res[i] = time;
             }
-            res[i] = time;
-        }
-        Arrays.sort(res);
-        return res[res.length - 1];
+            Arrays.sort(res);
+            return res[n - 1];
     }
 
     public int numOfMinutes_2(int n, int headID, int[] manager, int[] informTime)

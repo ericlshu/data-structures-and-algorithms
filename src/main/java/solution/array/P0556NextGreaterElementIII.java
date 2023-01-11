@@ -22,7 +22,7 @@ package solution.array;
  */
 public class P0556NextGreaterElementIII
 {
-    public int nextGreaterElement(int n)
+    public int nextGreaterElement_1(int n)
     {
         char[] nums = Integer.toString(n).toCharArray();
         int i = nums.length - 2;
@@ -59,5 +59,40 @@ public class P0556NextGreaterElementIII
         char temp = nums[i];
         nums[i] = nums[j];
         nums[j] = temp;
+    }
+
+    public int nextGreaterElement_2(int n)
+    {
+        int x1 = n, cnt1 = 1;
+        while (x1 >= 10 && x1 / 10 % 10 >= x1 % 10)
+        {
+            x1 /= 10;
+            cnt1++;
+        }
+        x1 /= 10;
+        if (x1 == 0)
+            return -1;
+        int left = x1 % 10;
+        int x2 = n, cnt2 = 0;
+        while (x2 % 10 <= left)
+        {
+            x2 /= 10;
+            cnt2++;
+        }
+        int right = x2 % 10;
+        // 把右侧比左侧大的数字换到x1
+        x1 += right - left;
+        int x;
+        for (int i = 0; i < cnt1; ++i, n /= 10)
+        {
+            // 反转 n 末尾的 cnt1 个数字拼到 x1 后
+            x = i != cnt2 ? n % 10 : left;
+            if (x1 > Integer.MAX_VALUE / 10 || (x1 == Integer.MAX_VALUE / 10 && x > 7))
+            {
+                return -1;
+            }
+            x1 = x1 * 10 + x;
+        }
+        return x1;
     }
 }
