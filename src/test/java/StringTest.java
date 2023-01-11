@@ -599,9 +599,17 @@ public class StringTest
     public void test2185()
     {
         P2185CountingWordsWithAGivenPrefix p2185 = new P2185CountingWordsWithAGivenPrefix();
-        String[] words1 = {"pay","attention","practice","attend"};
-        String[] words2 = {"leetcode","win","loops","success"};
+        String[] words1 = {"pay", "attention", "practice", "attend"};
+        String[] words2 = {"leetcode", "win", "loops", "success"};
         System.out.println(p2185.prefixCount(words1, "at"));
         System.out.println(p2185.prefixCount(words2, "code"));
+    }
+
+    @Test
+    public void test2283()
+    {
+        P2283CheckIfNumberHasEqualDigitCountAndDigitValue p2283 = new P2283CheckIfNumberHasEqualDigitCountAndDigitValue();
+        System.out.println(p2283.digitCount("1210"));
+        System.out.println(p2283.digitCount("030"));
     }
 }
