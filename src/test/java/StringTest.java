@@ -612,4 +612,15 @@ public class StringTest
         System.out.println(p2283.digitCount("1210"));
         System.out.println(p2283.digitCount("030"));
     }
+
+
+    @Test
+    public void test2287()
+    {
+        P2287RearrangeCharactersToMakeTargetString p2287 = new P2287RearrangeCharactersToMakeTargetString();
+        System.out.println(p2287.rearrangeCharacters("ilovecodingonleetcode", "code"));
+        System.out.println(p2287.rearrangeCharacters("cabcba", "abc"));
+        System.out.println(p2287.rearrangeCharacters("abc", "abcd"));
+        System.out.println(p2287.rearrangeCharacters("abbaccaddaeea", "aaaaa"));
+    }
 }
