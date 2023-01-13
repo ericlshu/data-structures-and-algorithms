@@ -1844,4 +1844,13 @@ public class ArrayTest
         System.out.println(p0090.subsetsWithDup_2(nums));
         System.out.println(p0090.subsetsWithDup_3(nums));
     }
+
+    @Test
+    public void test0910()
+    {
+        P0910SmallestRangeII p0910 = new P0910SmallestRangeII();
+        System.out.println(p0910.smallestRangeII(new int[]{1}, 0));
+        System.out.println(p0910.smallestRangeII(new int[]{0, 10}, 2));
+        System.out.println(p0910.smallestRangeII(new int[]{1, 3, 6}, 3));
+    }
 }
