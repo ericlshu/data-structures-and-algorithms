@@ -363,4 +363,22 @@ public class CollectionTest
         System.out.println(p0373.kSmallestPairs_2(nums3, nums4, 2));
         System.out.println(p0373.kSmallestPairs_2(nums5, nums6, 3));
     }
+
+    @Test
+    public void test0138()
+    {
+        P0138CopyListWithRandomPointer.Node node5 = new P0138CopyListWithRandomPointer.Node(1, null);
+        P0138CopyListWithRandomPointer.Node node4 = new P0138CopyListWithRandomPointer.Node(10, node5);
+        P0138CopyListWithRandomPointer.Node node3 = new P0138CopyListWithRandomPointer.Node(11, node4);
+        P0138CopyListWithRandomPointer.Node node2 = new P0138CopyListWithRandomPointer.Node(13, node3);
+        P0138CopyListWithRandomPointer.Node node1 = new P0138CopyListWithRandomPointer.Node(7, node2);
+        node1.setRandom(null);
+        node2.setRandom(node1);
+        node3.setRandom(node5);
+        node4.setRandom(node3);
+        node5.setRandom(node1);
+        P0138CopyListWithRandomPointer p0138 = new P0138CopyListWithRandomPointer();
+        System.out.println(p0138.copyRandomList_1(node1));
+        System.out.println(p0138.copyRandomList_2(node1));
+    }
 }
