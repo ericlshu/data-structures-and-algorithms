@@ -183,6 +183,7 @@ public class CollectionTest
         ListNode l3 = new ListNode(9, new ListNode(9, new ListNode(9)));
         ListNode l4 = new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9)))));
         System.out.println(p0002.addTwoNumbers_1(l1, l2));
+        System.out.println(p0002.addTwoNumbers_3(l1, l2));
         System.out.println(p0002.addTwoNumbers_2(l3, l4));
     }
 
