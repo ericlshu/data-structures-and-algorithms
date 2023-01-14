@@ -44,11 +44,11 @@ import java.util.List;
  * @date 2021-04-25 8:16 PM
  * @since JDK 1.8
  */
-public class P0039CombinationSum {
-
-    public List<List<Integer>> combinationSum_(int[] candidates, int target) {
+public class P0039CombinationSum
+{
+    public List<List<Integer>> combinationSum_1(int[] candidates, int target)
+    {
         List<List<Integer>> result = new ArrayList<>();
-        if (candidates.length == 0) return result;
         // 排序是剪枝的前提
         Arrays.sort(candidates);
         Deque<Integer> path = new ArrayDeque<>();
@@ -63,13 +63,16 @@ public class P0039CombinationSum {
      * @param path       从根结点到叶子结点的路径
      * @param result     结果集列表
      */
-    private void dfs(int[] candidates, int begin, int target, Deque<Integer> path, List<List<Integer>> result) {
+    private void dfs(int[] candidates, int begin, int target, Deque<Integer> path, List<List<Integer>> result)
+    {
         // 由于进入更深层的时候，小于 0 的部分被剪枝，因此递归终止条件值只判断等于 0 的情况
-        if (target == 0) {
+        if (target == 0)
+        {
             result.add(new ArrayList<>(path));
             return;
         }
-        for (int i = begin; i < candidates.length; i++) {
+        for (int i = begin; i < candidates.length; i++)
+        {
             // 重点理解这里剪枝，前提是候选数组已经有序，
             if (target - candidates[i] < 0)
                 break;
@@ -83,7 +86,8 @@ public class P0039CombinationSum {
     List<List<Integer>> result;
     Deque<Integer> path;
 
-    public List<List<Integer>> combinationSum(int[] candidates, int target) {
+    public List<List<Integer>> combinationSum_2(int[] candidates, int target)
+    {
         result = new ArrayList<>();
         length = candidates.length;
         if (length == 0) return result;
@@ -99,16 +103,20 @@ public class P0039CombinationSum {
      * @param begin      搜索起点
      * @param target     每减去一个元素，目标值变小
      */
-    private void dfs(int[] candidates, int begin, int target) {
+    private void dfs(int[] candidates, int begin, int target)
+    {
         // 由于进入更深层的时候，小于 0 的部分被剪枝，因此递归终止条件值只判断等于 0 的情况
-        if (target == 0) {
+        if (target == 0)
+        {
             result.add(new ArrayList<>(path));
             System.out.println("===> result = " + result);
             return;
         }
-        for (int i = begin; i < candidates.length; i++) {
+        for (int i = begin; i < candidates.length; i++)
+        {
             // 重点理解这里剪枝，前提是候选数组已经有序，
-            if (target - candidates[i] < 0){
+            if (target - candidates[i] < 0)
+            {
                 System.out.println("<--> begin : " + i + ", candidate : " + candidates[i] + ", left : " + (target - candidates[i]) + ", path : " + path);
                 break;
             }

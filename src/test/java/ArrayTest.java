@@ -138,11 +138,20 @@ public class ArrayTest
     @Test
     public void test0039()
     {
-        P0039CombinationSum obj = new P0039CombinationSum();
+        P0039CombinationSum p0039 = new P0039CombinationSum();
         int[] nums = {2, 3, 5};
-        System.out.println("candidates = " + Arrays.toString(nums));
-        List<List<Integer>> result = obj.combinationSum(nums, 8);
-        System.out.println("result = " + result);
+        System.out.println(p0039.combinationSum_1(nums, 8));
+        System.out.println(p0039.combinationSum_2(nums, 8));
+    }
+
+    @Test
+    public void test0040()
+    {
+        P0040CombinationSumII p0040 = new P0040CombinationSumII();
+        int[] candidates1 = {10, 1, 2, 7, 6, 1, 5};
+        int[] candidates2 = {2, 5, 2, 1, 2};
+        System.out.println(p0040.combinationSum2(candidates1, 8));
+        System.out.println(p0040.combinationSum2(candidates2, 5));
     }
 
     @Test
