@@ -1,7 +1,6 @@
-package solution.math;
+package solution.array;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 /**
  * Description : 全排列

@@ -1853,4 +1853,24 @@ public class ArrayTest
         System.out.println(p0910.smallestRangeII(new int[]{0, 10}, 2));
         System.out.println(p0910.smallestRangeII(new int[]{1, 3, 6}, 3));
     }
+
+    @Test
+    public void test0046()
+    {
+        P0046Permutations p0046 = new P0046Permutations();
+        int[] nums = {1, 2, 3};
+        System.out.println(p0046.permute_bt1(nums));
+        System.out.println(p0046.permute_dfs(nums));
+        System.out.println(p0046.permute_bt2(nums));
+    }
+
+    @Test
+    public void test0047()
+    {
+        P0047PermutationsII p0046 = new P0047PermutationsII();
+        int[] nums1 = {1, 1, 2};
+        int[] nums2 = {1, 2, 3};
+        System.out.println(p0046.permuteUnique(nums1));
+        System.out.println(p0046.permuteUnique(nums2));
+    }
 }

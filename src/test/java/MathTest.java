@@ -102,15 +102,6 @@ public class MathTest
     }
 
     @Test
-    public void test0046()
-    {
-        P0046Permutations p0046 = new P0046Permutations();
-        System.out.println(p0046.permute_bt1(new int[]{1, 2, 3}));
-        System.out.println(p0046.permute_dfs(new int[]{1, 2, 3}));
-        System.out.println(p0046.permute_bt2(new int[]{1, 2, 3}));
-    }
-
-    @Test
     public void test0784()
     {
         P0784LetterCasePermutation p0784 = new P0784LetterCasePermutation();
