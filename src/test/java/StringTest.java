@@ -599,10 +599,29 @@ public class StringTest
     public void test2185()
     {
         P2185CountingWordsWithAGivenPrefix p2185 = new P2185CountingWordsWithAGivenPrefix();
-        String[] words1 = {"pay", "attention", "practice", "attend"};
-        String[] words2 = {"leetcode", "win", "loops", "success"};
+        String[] words1 = {"pay","attention","practice","attend"};
+        String[] words2 = {"leetcode","win","loops","success"};
         System.out.println(p2185.prefixCount(words1, "at"));
         System.out.println(p2185.prefixCount(words2, "code"));
+    }
+
+    @Test
+    public void test1807()
+    {
+        P1807EvaluateTheBracketPairsOfAString p1807 = new P1807EvaluateTheBracketPairsOfAString();
+        List<List<String>> lists1 = new ArrayList<>();
+        lists1.add(List.of("name", "bob"));
+        lists1.add(List.of("age", "two"));
+        System.out.println(p1807.evaluate_2("(name)is(age)yearsold", lists1));
+
+        List<List<String>> lists2 = new ArrayList<>();
+        lists2.add(List.of("a", "b"));
+        System.out.println(p1807.evaluate_2("hi(name)", lists2));
+
+
+        List<List<String>> lists3 = new ArrayList<>();
+        lists3.add(List.of("a", "yes"));
+        System.out.println(p1807.evaluate_1("(a)(a)(a)aaa", lists3));
     }
 
     @Test
