@@ -188,6 +188,18 @@ public class CollectionTest
     }
 
     @Test
+    public void test0445()
+    {
+        P0445AddTwoNumbersII p0445 = new P0445AddTwoNumbersII();
+        ListNode l1 = new ListNode(7, new ListNode(2, new ListNode(4, new ListNode(3))));
+        ListNode l2 = new ListNode(5, new ListNode(6, new ListNode(4)));
+        ListNode l3 = new ListNode(9, new ListNode(9, new ListNode(9)));
+        ListNode l4 = new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9)))));
+        System.out.println(p0445.addTwoNumbers_1(l1, l2));
+        System.out.println(p0445.addTwoNumbers_2(l3, l4));
+    }
+
+    @Test
     public void test0082()
     {
         P0082RemoveDuplicatesFromSortedListII p0082 = new P0082RemoveDuplicatesFromSortedListII();
