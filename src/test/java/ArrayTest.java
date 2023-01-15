@@ -1882,4 +1882,13 @@ public class ArrayTest
         System.out.println(p0046.permuteUnique(nums1));
         System.out.println(p0046.permuteUnique(nums2));
     }
+
+    @Test
+    public void test2293()
+    {
+        P2293MinMaxGame p2293 = new P2293MinMaxGame();
+        System.out.println(p2293.minMaxGame_1(new int[]{1, 3, 5, 2, 4, 8, 2, 2}));
+        System.out.println(p2293.minMaxGame_2(new int[]{1, 3, 5, 2, 4, 8, 2, 2}));
+        System.out.println(p2293.minMaxGame_3(new int[]{1, 3, 5, 2, 4, 8, 2, 2}));
+    }
 }
