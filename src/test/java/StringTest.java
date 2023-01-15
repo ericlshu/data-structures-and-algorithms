@@ -1,4 +1,5 @@
 import org.junit.Test;
+import solution.array.P0022GenerateParentheses;
 import solution.array.P0242ValidAnagram;
 import solution.array.P1796SecondLargestDigitInAString;
 import solution.math.P0067AddBinary;
@@ -632,7 +633,6 @@ public class StringTest
         System.out.println(p2283.digitCount("030"));
     }
 
-
     @Test
     public void test2287()
     {
@@ -641,5 +641,15 @@ public class StringTest
         System.out.println(p2287.rearrangeCharacters("cabcba", "abc"));
         System.out.println(p2287.rearrangeCharacters("abc", "abcd"));
         System.out.println(p2287.rearrangeCharacters("abbaccaddaeea", "aaaaa"));
+    }
+
+    @Test
+    public void test0022()
+    {
+        P0022GenerateParentheses p0022 = new P0022GenerateParentheses();
+        System.out.println(p0022.generateParenthesis_1(3));
+        System.out.println(p0022.generateParenthesis_2(3));
+        System.out.println(p0022.generateParenthesis_1(1));
+        System.out.println(p0022.generateParenthesis_2(1));
     }
 }
