@@ -1891,4 +1891,17 @@ public class ArrayTest
         System.out.println(p2293.minMaxGame_2(new int[]{1, 3, 5, 2, 4, 8, 2, 2}));
         System.out.println(p2293.minMaxGame_3(new int[]{1, 3, 5, 2, 4, 8, 2, 2}));
     }
+
+    @Test
+    public void test0079()
+    {
+        P0079WordSearch p0079 = new P0079WordSearch();
+        char[][] board = {
+                {'A', 'B', 'C', 'E'},
+                {'S', 'F', 'C', 'S'},
+                {'A', 'D', 'E', 'E'}};
+        System.out.println(p0079.exist(board, "ABCCED"));
+        System.out.println(p0079.exist(board, "SEE"));
+        System.out.println(p0079.exist(board, "ABCB"));
+    }
 }
