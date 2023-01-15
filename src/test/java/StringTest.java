@@ -60,9 +60,9 @@ public class StringTest
     @Test
     public void testP0017()
     {
-        P0017LetterCombinationsOfAPhoneNumber obj = new P0017LetterCombinationsOfAPhoneNumber();
-        List<String> list = obj.letterCombinations("23");
-        System.out.println(list);
+        P0017LetterCombinationsOfAPhoneNumber p0016 = new P0017LetterCombinationsOfAPhoneNumber();
+        System.out.println(p0016.letterCombinations_1("23"));
+        System.out.println(p0016.letterCombinations_2("23"));
     }
 
     @Test
@@ -599,8 +599,8 @@ public class StringTest
     public void test2185()
     {
         P2185CountingWordsWithAGivenPrefix p2185 = new P2185CountingWordsWithAGivenPrefix();
-        String[] words1 = {"pay","attention","practice","attend"};
-        String[] words2 = {"leetcode","win","loops","success"};
+        String[] words1 = {"pay", "attention", "practice", "attend"};
+        String[] words2 = {"leetcode", "win", "loops", "success"};
         System.out.println(p2185.prefixCount(words1, "at"));
         System.out.println(p2185.prefixCount(words2, "code"));
     }

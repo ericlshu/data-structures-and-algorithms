@@ -20,7 +20,7 @@ import java.util.*;
  */
 public class P0017LetterCombinationsOfAPhoneNumber
 {
-    public List<String> letterCombinations(String digits)
+    public List<String> letterCombinations_1(String digits)
     {
         List<String> combinations = new ArrayList<>();
         if (digits == null || digits.length() == 0) return combinations;
@@ -56,26 +56,42 @@ public class P0017LetterCombinationsOfAPhoneNumber
         return combinations;
     }
 
-    private List<String> getList(List<String> list, char num)
+    Map<Character, String> phoneMap = new HashMap<>()
+    {{
+        put('2', "abc");
+        put('3', "def");
+        put('4', "ghi");
+        put('5', "jkl");
+        put('6', "mno");
+        put('7', "pqrs");
+        put('8', "tuv");
+        put('9', "wxyz");
+    }};
+
+    public List<String> letterCombinations_2(String digits)
     {
-        List<String> result = new ArrayList<>();
-        String[] strings = this.getListByNumber(num);
-        if (strings != null)
+        List<String> res = new ArrayList<>();
+        if (digits.length() == 0)
+            return res;
+        backtrack(res, digits, 0, new StringBuilder());
+        return res;
+    }
+
+    private void backtrack(List<String> res, String digits, int idx, StringBuilder comb)
+    {
+        if (idx == digits.length())
+            res.add(comb.toString());
+        else
         {
-            if (list.size() == 0)
-                return Arrays.asList(strings);
-            else
+            char digit = digits.charAt(idx);
+            String letters = phoneMap.get(digit);
+            for (int i = 0; i < letters.length(); i++)
             {
-                for (String string : strings)
-                {
-                    for (String s : list)
-                    {
-                        result.add(s + string);
-                    }
-                }
+                comb.append(letters.charAt(i));
+                backtrack(res, digits, idx + 1, comb);
+                comb.deleteCharAt(idx);
             }
         }
-        return result;
     }
 
     private String[] getListByNumber(char num)
