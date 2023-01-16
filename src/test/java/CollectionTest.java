@@ -394,4 +394,14 @@ public class CollectionTest
         System.out.println(p0138.copyRandomList_1(node1));
         System.out.println(p0138.copyRandomList_2(node1));
     }
+
+    @Test
+    public void test0061()
+    {
+        P0061RotateList p0061 = new P0061RotateList();
+        ListNode head1 = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5)))));
+        ListNode head2 = new ListNode(0, new ListNode(1, new ListNode(2)));
+        System.out.println(p0061.rotateRight_1(head1,2));
+        System.out.println(p0061.rotateRight_2(head2,4));
+    }
 }
