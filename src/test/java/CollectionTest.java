@@ -401,7 +401,21 @@ public class CollectionTest
         P0061RotateList p0061 = new P0061RotateList();
         ListNode head1 = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5)))));
         ListNode head2 = new ListNode(0, new ListNode(1, new ListNode(2)));
-        System.out.println(p0061.rotateRight_1(head1,2));
-        System.out.println(p0061.rotateRight_2(head2,4));
+        System.out.println(p0061.rotateRight_1(head1, 2));
+        System.out.println(p0061.rotateRight_2(head2, 4));
+    }
+
+    @Test
+    public void test1845()
+    {
+        P1845SeatManager p1845 = new P1845SeatManager(5);
+        System.out.println(p1845.reserve());
+        System.out.println(p1845.reserve());
+        p1845.unreserve(1);
+        System.out.println(p1845.reserve());
+        System.out.println(p1845.reserve());
+        System.out.println(p1845.reserve());
+        System.out.println(p1845.reserve());
+        p1845.unreserve(5);
     }
 }
