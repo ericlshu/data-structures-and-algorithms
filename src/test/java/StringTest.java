@@ -652,4 +652,15 @@ public class StringTest
         System.out.println(p0022.generateParenthesis_1(1));
         System.out.println(p0022.generateParenthesis_2(1));
     }
+
+    @Test
+    public void test1813()
+    {
+        P1813SentenceSimilarityIII p1813 = new P1813SentenceSimilarityIII();
+        System.out.println(p1813.areSentencesSimilar("My name is Haley", "My Haley"));
+        System.out.println(p1813.areSentencesSimilar("of", "A lot of words"));
+        System.out.println(p1813.areSentencesSimilar("Eating right now", "Eating"));
+        System.out.println(p1813.areSentencesSimilar("right now Eating", "Eating"));
+        System.out.println(p1813.areSentencesSimilar("Luky", "Lucccky"));
+    }
 }
