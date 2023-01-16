@@ -1904,4 +1904,14 @@ public class ArrayTest
         System.out.println(p0079.exist(board, "SEE"));
         System.out.println(p0079.exist(board, "ABCB"));
     }
+
+    @Test
+    public void test0860()
+    {
+        P0860LemonadeChange p0860 = new P0860LemonadeChange();
+        int[] bills1 = {5, 5, 5, 10, 20};
+        int[] bills2 = {5, 5, 10, 10, 20};
+        System.out.println(p0860.lemonadeChange(bills1));
+        System.out.println(p0860.lemonadeChange(bills2));
+    }
 }
