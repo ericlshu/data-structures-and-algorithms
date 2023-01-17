@@ -1914,4 +1914,14 @@ public class ArrayTest
         System.out.println(p0860.lemonadeChange(bills1));
         System.out.println(p0860.lemonadeChange(bills2));
     }
+
+    @Test
+    public void test1814()
+    {
+        P1814CountNicePairsInAnArray p1814 = new P1814CountNicePairsInAnArray();
+        int[] nums1 = {42, 11, 1, 97};
+        int[] nums2 = {13, 10, 35, 24, 76};
+        System.out.println(p1814.countNicePairs(nums1));
+        System.out.println(p1814.countNicePairs(nums2));
+    }
 }
