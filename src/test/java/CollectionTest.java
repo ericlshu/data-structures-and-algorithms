@@ -440,4 +440,26 @@ public class CollectionTest
         authenticationManager2.renew("bbb", 10);     // tokenId 为 "bbb" 的验证码在时刻 10 没有过期，所以 renew 操作会执行，该 token 将在时刻 15 过期。
         System.out.println(authenticationManager2.countUnexpiredTokens(15));     // tokenId 为 "bbb" 的验证码在时刻 15 过期，tokenId 为 "aaa" 的验证码在时刻 7 过期，所有验证码均已过期，所以返回 0 。
     }
+
+    @Test
+    public void test0380()
+    {
+        P0380RandomizedSet1 randomizedSet1 = new P0380RandomizedSet1();
+        System.out.println(randomizedSet1.insert(1)); // 向集合中插入 1 。返回 true 表示 1 被成功地插入。
+        System.out.println(randomizedSet1.remove(2)); // 返回 false ，表示集合中不存在 2 。
+        System.out.println(randomizedSet1.insert(2)); // 向集合中插入 2 。返回 true 。集合现在包含 [1,2] 。
+        System.out.println(randomizedSet1.getRandom());   // getRandom 应随机返回 1 或 2 。
+        System.out.println(randomizedSet1.remove(1)); // 从集合中移除 1 ，返回 true 。集合现在包含 [2] 。
+        System.out.println(randomizedSet1.insert(2)); // 2 已在集合中，所以返回 false 。
+        System.out.println(randomizedSet1.getRandom());   // 由于 2 是集合中唯一的数字，getRandom 总是返回 2 。
+
+        P0380RandomizedSet2 randomizedSet2 = new P0380RandomizedSet2();
+        System.out.println(randomizedSet2.insert(1)); // 向集合中插入 1 。返回 true 表示 1 被成功地插入。
+        System.out.println(randomizedSet2.remove(2)); // 返回 false ，表示集合中不存在 2 。
+        System.out.println(randomizedSet2.insert(2)); // 向集合中插入 2 。返回 true 。集合现在包含 [1,2] 。
+        System.out.println(randomizedSet2.getRandom());   // getRandom 应随机返回 1 或 2 。
+        System.out.println(randomizedSet2.remove(1)); // 从集合中移除 1 ，返回 true 。集合现在包含 [2] 。
+        System.out.println(randomizedSet2.insert(2)); // 2 已在集合中，所以返回 false 。
+        System.out.println(randomizedSet2.getRandom());   // 由于 2 是集合中唯一的数字，getRandom 总是返回 2 。
+    }
 }
