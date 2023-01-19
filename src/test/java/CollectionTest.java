@@ -503,4 +503,20 @@ public class CollectionTest
         System.out.println(myCircularQueue3.enQueue(4));  // 返回 true
         System.out.println(myCircularQueue3.Rear());  // 返回 4
     }
+
+    @Test
+    public void test0729()
+    {
+        P0729MyCalendar1 myCalendar1 = new P0729MyCalendar1();
+        System.out.println(myCalendar1.book(10, 20)); // return True
+        System.out.println(myCalendar1.book(15, 25)); // return False ，这个日程安排不能添加到日历中，因为时间 15 已经被另一个日程安排预订了。
+        System.out.println(myCalendar1.book(20, 30)); // return True ，这个日程安排可以添加到日历中，因为第一个日程安排预订的每个时间都小于 20 ，且不包含时间 20 。
+
+        System.out.println("-----");
+
+        P0729MyCalendar2 myCalendar2 = new P0729MyCalendar2();
+        System.out.println(myCalendar2.book(10, 20)); // return True
+        System.out.println(myCalendar2.book(15, 25)); // return False
+        System.out.println(myCalendar2.book(20, 30)); // return True
+    }
 }
