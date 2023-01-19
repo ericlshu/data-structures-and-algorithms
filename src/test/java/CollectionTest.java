@@ -462,4 +462,45 @@ public class CollectionTest
         System.out.println(randomizedSet2.insert(2)); // 2 已在集合中，所以返回 false 。
         System.out.println(randomizedSet2.getRandom());   // 由于 2 是集合中唯一的数字，getRandom 总是返回 2 。
     }
+
+    @Test
+    public void test0622()
+    {
+        P0622MyCircularQueue1 myCircularQueue1 = new P0622MyCircularQueue1(3);
+        System.out.println(myCircularQueue1.enQueue(1));  // 返回 true
+        System.out.println(myCircularQueue1.enQueue(2));  // 返回 true
+        System.out.println(myCircularQueue1.enQueue(3));  // 返回 true
+        System.out.println(myCircularQueue1.enQueue(4));  // 返回 false，队列已满
+        System.out.println(myCircularQueue1.Rear());  // 返回 3
+        System.out.println(myCircularQueue1.isFull());  // 返回 true
+        System.out.println(myCircularQueue1.deQueue());  // 返回 true
+        System.out.println(myCircularQueue1.enQueue(4));  // 返回 true
+        System.out.println(myCircularQueue1.Rear());  // 返回 4
+
+        System.out.println("-----");
+
+        P0622MyCircularQueue2 myCircularQueue2 = new P0622MyCircularQueue2(3);
+        System.out.println(myCircularQueue2.enQueue(1));  // 返回 true
+        System.out.println(myCircularQueue2.enQueue(2));  // 返回 true
+        System.out.println(myCircularQueue2.enQueue(3));  // 返回 true
+        System.out.println(myCircularQueue2.enQueue(4));  // 返回 false，队列已满
+        System.out.println(myCircularQueue2.Rear());  // 返回 3
+        System.out.println(myCircularQueue2.isFull());  // 返回 true
+        System.out.println(myCircularQueue2.deQueue());  // 返回 true
+        System.out.println(myCircularQueue2.enQueue(4));  // 返回 true
+        System.out.println(myCircularQueue2.Rear());  // 返回 4
+
+        System.out.println("-----");
+
+        P0622MyCircularQueue3 myCircularQueue3 = new P0622MyCircularQueue3(3);
+        System.out.println(myCircularQueue3.enQueue(1));  // 返回 true
+        System.out.println(myCircularQueue3.enQueue(2));  // 返回 true
+        System.out.println(myCircularQueue3.enQueue(3));  // 返回 true
+        System.out.println(myCircularQueue3.enQueue(4));  // 返回 false，队列已满
+        System.out.println(myCircularQueue3.Rear());  // 返回 3
+        System.out.println(myCircularQueue3.isFull());  // 返回 true
+        System.out.println(myCircularQueue3.deQueue());  // 返回 true
+        System.out.println(myCircularQueue3.enQueue(4));  // 返回 true
+        System.out.println(myCircularQueue3.Rear());  // 返回 4
+    }
 }
