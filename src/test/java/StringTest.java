@@ -663,4 +663,14 @@ public class StringTest
         System.out.println(p1813.areSentencesSimilar("right now Eating", "Eating"));
         System.out.println(p1813.areSentencesSimilar("Luky", "Lucccky"));
     }
+
+
+    @Test
+    public void test2299()
+    {
+        P2299StrongPasswordCheckerII p2299 = new P2299StrongPasswordCheckerII();
+        System.out.println(p2299.strongPasswordCheckerII("IloveLe3tcode!"));
+        System.out.println(p2299.strongPasswordCheckerII("Me+You--IsMyDream"));
+        System.out.println(p2299.strongPasswordCheckerII("1aB!"));
+    }
 }
