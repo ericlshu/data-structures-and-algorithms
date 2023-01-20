@@ -1924,4 +1924,14 @@ public class ArrayTest
         System.out.println(p1814.countNicePairs(nums1));
         System.out.println(p1814.countNicePairs(nums2));
     }
+
+    @Test
+    public void test1817()
+    {
+        P1817FindingTheUsersActiveMinutes p1817 = new P1817FindingTheUsersActiveMinutes();
+        int[][] logs1 = {{0, 5}, {1, 2}, {0, 2}, {0, 5}, {1, 3}};
+        int[][] logs2 = {{1, 1}, {2, 2}, {2, 3}};
+        System.out.println(Arrays.toString(p1817.findingUsersActiveMinutes(logs1, 5)));
+        System.out.println(Arrays.toString(p1817.findingUsersActiveMinutes(logs2, 4)));
+    }
 }
