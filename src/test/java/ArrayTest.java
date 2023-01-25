@@ -1943,4 +1943,14 @@ public class ArrayTest
         System.out.println(p1824.minSideJumps(new int[]{0, 1, 1, 3, 3, 0}));
         System.out.println(p1824.minSideJumps(new int[]{0, 2, 1, 0, 3, 0}));
     }
+
+    @Test
+    public void test2303()
+    {
+        P2303CalculateAmountPaidInTaxes p2303 = new P2303CalculateAmountPaidInTaxes();
+        int[][] brackets1 = {{3, 50}, {7, 10}, {12, 25}};
+        int[][] brackets2 = {{1, 0}, {4, 25}, {5, 50}};
+        System.out.println(p2303.calculateTax_1(brackets1, 10));
+        System.out.println(p2303.calculateTax_2(brackets2, 2));
+    }
 }
