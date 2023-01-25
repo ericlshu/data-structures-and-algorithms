@@ -1953,4 +1953,16 @@ public class ArrayTest
         System.out.println(p2303.calculateTax_1(brackets1, 10));
         System.out.println(p2303.calculateTax_2(brackets2, 2));
     }
+
+    @Test
+    public void test1828()
+    {
+        P1828QueriesOnNumberOfPointsInsideACircle p1828 = new P1828QueriesOnNumberOfPointsInsideACircle();
+        int[][] points1 = {{1, 3}, {3, 3}, {5, 3}, {2, 2}};
+        int[][] queries1 = {{2, 3, 1}, {4, 3, 1}, {1, 1, 2}};
+        int[][] points2 = {{1, 1}, {2, 2}, {3, 3}, {4, 4}, {5, 5}};
+        int[][] queries2 = {{1, 2, 2}, {2, 2, 2}, {4, 3, 2}, {4, 3, 3}};
+        System.out.println(Arrays.toString(p1828.countPoints(points1, queries1)));
+        System.out.println(Arrays.toString(p1828.countPoints(points2, queries2)));
+    }
 }
