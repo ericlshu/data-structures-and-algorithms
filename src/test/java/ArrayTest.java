@@ -1934,4 +1934,13 @@ public class ArrayTest
         System.out.println(Arrays.toString(p1817.findingUsersActiveMinutes(logs1, 5)));
         System.out.println(Arrays.toString(p1817.findingUsersActiveMinutes(logs2, 4)));
     }
+
+    @Test
+    public void test1824()
+    {
+        P1824MinimumSidewayJumps p1824 = new P1824MinimumSidewayJumps();
+        System.out.println(p1824.minSideJumps(new int[]{0, 1, 2, 3, 0}));
+        System.out.println(p1824.minSideJumps(new int[]{0, 1, 1, 3, 3, 0}));
+        System.out.println(p1824.minSideJumps(new int[]{0, 2, 1, 0, 3, 0}));
+    }
 }
