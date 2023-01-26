@@ -664,7 +664,6 @@ public class StringTest
         System.out.println(p1813.areSentencesSimilar("Luky", "Lucccky"));
     }
 
-
     @Test
     public void test2299()
     {
@@ -672,5 +671,14 @@ public class StringTest
         System.out.println(p2299.strongPasswordCheckerII("IloveLe3tcode!"));
         System.out.println(p2299.strongPasswordCheckerII("Me+You--IsMyDream"));
         System.out.println(p2299.strongPasswordCheckerII("1aB!"));
+    }
+
+    @Test
+    public void test1663()
+    {
+        P1663SmallestStringWithAGivenNumericValue p1663 = new P1663SmallestStringWithAGivenNumericValue();
+        System.out.println(p1663.getSmallestString_1(3, 27));
+        System.out.println(p1663.getSmallestString_2(5, 73));
+        // System.out.println(p1663.getSmallestString(100000, 2600000));
     }
 }
