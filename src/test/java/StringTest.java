@@ -681,4 +681,16 @@ public class StringTest
         System.out.println(p1663.getSmallestString_2(5, 73));
         // System.out.println(p1663.getSmallestString(100000, 2600000));
     }
+
+    @Test
+    public void test2309()
+    {
+        P2309GreatestEnglishLetterInUpperAndLowerCase p2309 = new P2309GreatestEnglishLetterInUpperAndLowerCase();
+        System.out.println(p2309.greatestLetter_arr("lEeTcOdE"));
+        System.out.println(p2309.greatestLetter_hash("lEeTcOdE"));
+        System.out.println(p2309.greatestLetter_bit("lEeTcOdE"));
+        System.out.println(p2309.greatestLetter_arr("arRAzFif"));
+        System.out.println(p2309.greatestLetter_hash("arRAzFif"));
+        System.out.println(p2309.greatestLetter_bit("arRAzFif"));
+    }
 }
