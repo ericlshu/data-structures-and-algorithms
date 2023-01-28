@@ -1965,4 +1965,16 @@ public class ArrayTest
         System.out.println(Arrays.toString(p1828.countPoints(points1, queries1)));
         System.out.println(Arrays.toString(p1828.countPoints(points2, queries2)));
     }
+
+    @Test
+    public void test1664()
+    {
+        P1664WaysToMakeAFairArray p1664 = new P1664WaysToMakeAFairArray();
+        int[] nums1 = {2, 1, 6, 4};
+        int[] nums2 = {1, 1, 1};
+        int[] nums3 = {1, 2, 3};
+        System.out.println(p1664.waysToMakeFair_2(nums1));
+        System.out.println(p1664.waysToMakeFair_2(nums2));
+        System.out.println(p1664.waysToMakeFair_1(nums3));
+    }
 }
