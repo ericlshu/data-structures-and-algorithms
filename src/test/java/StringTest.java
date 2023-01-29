@@ -693,4 +693,13 @@ public class StringTest
         System.out.println(p2309.greatestLetter_hash("arRAzFif"));
         System.out.println(p2309.greatestLetter_bit("arRAzFif"));
     }
+
+    @Test
+    public void test2315()
+    {
+        P2315CountAsterisks p2315 = new P2315CountAsterisks();
+        System.out.println(p2315.countAsterisks("l|*e*et|c**o|*de|"));
+        System.out.println(p2315.countAsterisks("iamprogrammer"));
+        System.out.println(p2315.countAsterisks("yo|uar|e**|b|e***au|tifu|l"));
+    }
 }
