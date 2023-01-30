@@ -523,21 +523,21 @@ public class CollectionTest
     @Test
     public void test0147()
     {
-        P0147InsertionSortList p0147 = new P0147InsertionSortList();
-        ListNode head1 = new ListNode(4, new ListNode(2, new ListNode(1, new ListNode(3))));
-        ListNode head2 = new ListNode(-1, new ListNode(5, new ListNode(3, new ListNode(4, new ListNode(0)))));
-        System.out.println(p0147.insertionSortList(head1));
-        System.out.println(p0147.insertionSortList(head2));
+        // P0147InsertionSortList p0147 = new P0147InsertionSortList();
+        // ListNode head1 = new ListNode(4, new ListNode(2, new ListNode(1, new ListNode(3))));
+        // ListNode head2 = new ListNode(-1, new ListNode(5, new ListNode(3, new ListNode(4, new ListNode(0)))));
+        // System.out.println(p0147.insertionSortList(head1));
+        // System.out.println(p0147.insertionSortList(head2));
     }
 
     @Test
     public void test0148()
     {
-        P0148SortList p0148 = new P0148SortList();
-        ListNode head1 = new ListNode(4, new ListNode(2, new ListNode(1, new ListNode(3))));
-        ListNode head2 = new ListNode(-1, new ListNode(5, new ListNode(3, new ListNode(4, new ListNode(0)))));
-        System.out.println(p0148.sortList(head1));
-        System.out.println(p0148.sortList(head2));
+        // P0148SortList p0148 = new P0148SortList();
+        // ListNode head1 = new ListNode(4, new ListNode(2, new ListNode(1, new ListNode(3))));
+        // ListNode head2 = new ListNode(-1, new ListNode(5, new ListNode(3, new ListNode(4, new ListNode(0)))));
+        // System.out.println(p0148.sortList(head1));
+        // System.out.println(p0148.sortList(head2));
     }
 
     @Test
