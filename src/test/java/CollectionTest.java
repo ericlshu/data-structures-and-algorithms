@@ -519,4 +519,34 @@ public class CollectionTest
         System.out.println(myCalendar2.book(15, 25)); // return False
         System.out.println(myCalendar2.book(20, 30)); // return True
     }
+
+    @Test
+    public void test0147()
+    {
+        P0147InsertionSortList p0147 = new P0147InsertionSortList();
+        ListNode head1 = new ListNode(4, new ListNode(2, new ListNode(1, new ListNode(3))));
+        ListNode head2 = new ListNode(-1, new ListNode(5, new ListNode(3, new ListNode(4, new ListNode(0)))));
+        System.out.println(p0147.insertionSortList(head1));
+        System.out.println(p0147.insertionSortList(head2));
+    }
+
+    @Test
+    public void test0148()
+    {
+        P0148SortList p0148 = new P0148SortList();
+        ListNode head1 = new ListNode(4, new ListNode(2, new ListNode(1, new ListNode(3))));
+        ListNode head2 = new ListNode(-1, new ListNode(5, new ListNode(3, new ListNode(4, new ListNode(0)))));
+        System.out.println(p0148.sortList(head1));
+        System.out.println(p0148.sortList(head2));
+    }
+
+    @Test
+    public void test1669()
+    {
+        P1669MergeInBetweenLinkedLists p1669 = new P1669MergeInBetweenLinkedLists();
+        ListNode list1 = new ListNode(0, new ListNode(1, new ListNode(2,
+                new ListNode(3, new ListNode(4, new ListNode(5))))));
+        ListNode list2 = new ListNode(1000000, new ListNode(1000001, new ListNode(1000002)));
+        System.out.println(p1669.mergeInBetween(list1, 3, 4, list2));
+    }
 }
