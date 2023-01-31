@@ -1977,4 +1977,28 @@ public class ArrayTest
         System.out.println(p1664.waysToMakeFair_2(nums2));
         System.out.println(p1664.waysToMakeFair_1(nums3));
     }
+
+    @Test
+    public void test2319()
+    {
+        P2319CheckIfMatrixIsXMatrix p2319 = new P2319CheckIfMatrixIsXMatrix();
+        int[][] grid1 = {
+                {2, 0, 0, 1},
+                {0, 3, 1, 0},
+                {0, 5, 2, 0},
+                {4, 0, 0, 2}};
+        int[][] grid2 = {
+                {5, 7, 0},
+                {0, 3, 1},
+                {0, 5, 0}};
+        int[][] grid3 = {
+                {2, 0, 0, 0, 0},
+                {0, 4, 0, 1, 0},
+                {0, 0, 5, 0, 0},
+                {0, 5, 0, 2, 0},
+                {4, 0, 0, 0, 2}};
+        System.out.println(p2319.checkXMatrix(grid1));
+        System.out.println(p2319.checkXMatrix(grid2));
+        System.out.println(p2319.checkXMatrix(grid3));
+    }
 }
