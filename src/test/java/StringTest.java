@@ -702,4 +702,13 @@ public class StringTest
         System.out.println(p2315.countAsterisks("iamprogrammer"));
         System.out.println(p2315.countAsterisks("yo|uar|e**|b|e***au|tifu|l"));
     }
+
+    @Test
+    public void test1138()
+    {
+        P1138AlphabetBoardPath p1138 = new P1138AlphabetBoardPath();
+        System.out.println(p1138.alphabetBoardPath("leet"));
+        System.out.println(p1138.alphabetBoardPath("code"));
+        System.out.println(p1138.alphabetBoardPath("zdz"));
+    }
 }
