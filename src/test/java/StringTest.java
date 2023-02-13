@@ -711,4 +711,13 @@ public class StringTest
         System.out.println(p1138.alphabetBoardPath("code"));
         System.out.println(p1138.alphabetBoardPath("zdz"));
     }
+
+    @Test
+    public void test1234()
+    {
+        P1234ReplaceTheSubstringForBalancedString p1234 = new P1234ReplaceTheSubstringForBalancedString();
+        System.out.println(p1234.balancedString_1("QQWE"));
+        System.out.println(p1234.balancedString_2("QQQW"));
+        System.out.println(p1234.balancedString_2("WWEQERQWQWWRWWERQWEQ"));
+    }
 }
