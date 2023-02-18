@@ -1,3 +1,4 @@
+import domain.CustomFunction;
 import org.junit.Test;
 import solution.array.*;
 import solution.bs.P0852PeakIndexInAMountainArray;
@@ -2010,5 +2011,14 @@ public class ArrayTest
         int[] hours2 = {6, 6, 6};
         System.out.println(p1124.longestWPI_hash(hours1));
         System.out.println(p1124.longestWPI_queue(hours2));
+    }
+
+    @Test
+    public void test1237()
+    {
+        P1237FindPositiveIntegerSolutionForAGivenEquation p1237 = new P1237FindPositiveIntegerSolutionForAGivenEquation();
+        System.out.println(p1237.findSolution_1(new CustomFunction(1), 5));
+        System.out.println(p1237.findSolution_2(new CustomFunction(2), 5));
+        System.out.println(p1237.findSolution_3(new CustomFunction(1), 5));
     }
 }
