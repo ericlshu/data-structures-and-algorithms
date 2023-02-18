@@ -2001,4 +2001,14 @@ public class ArrayTest
         System.out.println(p2319.checkXMatrix(grid2));
         System.out.println(p2319.checkXMatrix(grid3));
     }
+
+    @Test
+    public void test1124()
+    {
+        P1124LongestWellPerformingInterval p1124 = new P1124LongestWellPerformingInterval();
+        int[] hours1 = {9, 9, 6, 0, 6, 6, 9};
+        int[] hours2 = {6, 6, 6};
+        System.out.println(p1124.longestWPI_hash(hours1));
+        System.out.println(p1124.longestWPI_queue(hours2));
+    }
 }
