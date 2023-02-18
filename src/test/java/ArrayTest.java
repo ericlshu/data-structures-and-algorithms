@@ -2021,4 +2021,16 @@ public class ArrayTest
         System.out.println(p1237.findSolution_2(new CustomFunction(2), 5));
         System.out.println(p1237.findSolution_3(new CustomFunction(1), 5));
     }
+
+    @Test
+    public void test2341()
+    {
+        P2341MaximumNumberOfPairsInArray p2341 = new P2341MaximumNumberOfPairsInArray();
+        int[] nums1 = {1, 3, 2, 1, 3, 2, 2};
+        int[] nums2 = {1, 1};
+        int[] nums3 = {0};
+        System.out.println(Arrays.toString(p2341.numberOfPairs_set(nums1)));
+        System.out.println(Arrays.toString(p2341.numberOfPairs_map(nums2)));
+        System.out.println(Arrays.toString(p2341.numberOfPairs_map(nums3)));
+    }
 }
