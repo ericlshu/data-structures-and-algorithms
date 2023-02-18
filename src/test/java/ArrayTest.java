@@ -2033,4 +2033,16 @@ public class ArrayTest
         System.out.println(Arrays.toString(p2341.numberOfPairs_map(nums2)));
         System.out.println(Arrays.toString(p2341.numberOfPairs_map(nums3)));
     }
+
+    @Test
+    public void test2335()
+    {
+        P2335MinimumAmountOfTimeToFillCups p2335 = new P2335MinimumAmountOfTimeToFillCups();
+        int[] amount1 = {1, 4, 2};
+        int[] amount2 = {5, 4, 4};
+        int[] amount3 = {5, 0, 0};
+        System.out.println(p2335.fillCups_1(amount1));
+        System.out.println(p2335.fillCups_2(amount2));
+        System.out.println(p2335.fillCups_2(amount3));
+    }
 }
