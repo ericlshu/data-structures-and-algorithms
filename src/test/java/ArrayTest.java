@@ -2035,6 +2035,15 @@ public class ArrayTest
     }
 
     @Test
+    public void test1753()
+    {
+        P1753MaximumScoreFromRemovingStones p1753 = new P1753MaximumScoreFromRemovingStones();
+        System.out.println(p1753.maximumScore_1(2, 4, 6));
+        System.out.println(p1753.maximumScore_2(4, 4, 6));
+        System.out.println(p1753.maximumScore_2(1, 8, 8));
+    }
+
+    @Test
     public void test2335()
     {
         P2335MinimumAmountOfTimeToFillCups p2335 = new P2335MinimumAmountOfTimeToFillCups();
