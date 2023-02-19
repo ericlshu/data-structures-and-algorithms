@@ -2054,4 +2054,21 @@ public class ArrayTest
         System.out.println(p2335.fillCups_2(amount2));
         System.out.println(p2335.fillCups_2(amount3));
     }
+
+    @Test
+    public void test1792()
+    {
+        P1792MaximumAveragePassRatio p1792 = new P1792MaximumAveragePassRatio();
+        int[][] classes1 = {
+                {1, 2},
+                {3, 5},
+                {2, 2}};
+        int[][] classes2 = {
+                {2, 4},
+                {3, 9},
+                {4, 5},
+                {2, 10}};
+        System.out.println(p1792.maxAverageRatio(classes1, 2));
+        System.out.println(p1792.maxAverageRatio(classes2, 4));
+    }
 }
