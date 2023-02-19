@@ -2071,4 +2071,28 @@ public class ArrayTest
         System.out.println(p1792.maxAverageRatio(classes1, 2));
         System.out.println(p1792.maxAverageRatio(classes2, 4));
     }
+
+    @Test
+    public void test1139()
+    {
+        P1139Largest1BorderedSquare p1139 = new P1139Largest1BorderedSquare();
+        int[][] grid1 = {
+                {1, 1, 1},
+                {1, 0, 1},
+                {1, 1, 1}
+        };
+        int[][] grid2 = {
+                {1, 1, 0, 0},
+                {0, 0, 1, 1}
+        };
+        int[][] grid3 = {
+                {1, 0, 1, 1, 1},
+                {1, 0, 1, 0, 1},
+                {1, 1, 1, 1, 1},
+                {1, 1, 1, 0, 1},
+        };
+        System.out.println(p1139.largest1BorderedSquare_1(grid1));
+        System.out.println(p1139.largest1BorderedSquare_1(grid2));
+        System.out.println(p1139.largest1BorderedSquare_2(grid3));
+    }
 }
