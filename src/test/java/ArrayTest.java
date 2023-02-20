@@ -2095,4 +2095,19 @@ public class ArrayTest
         System.out.println(p1139.largest1BorderedSquare_1(grid2));
         System.out.println(p1139.largest1BorderedSquare_2(grid3));
     }
+
+    @Test
+    public void test2347()
+    {
+        P2347BestPokerHand p2347 = new P2347BestPokerHand();
+        int[] ranks1 = {13, 2, 3, 1, 9};
+        char[] suits1 = {'a', 'a', 'a', 'a', 'a'};
+        int[] ranks2 = {4, 4, 2, 4, 4};
+        char[] suits2 = {'d', 'a', 'a', 'b', 'c'};
+        int[] ranks3 = {11, 10, 2, 12, 9};
+        char[] suits3 = {'a', 'b', 'c', 'a', 'd'};
+        System.out.println(p2347.bestHand_arr(ranks1, suits1));
+        System.out.println(p2347.bestHand_hash(ranks2, suits2));
+        System.out.println(p2347.bestHand_hash(ranks3, suits3));
+    }
 }
