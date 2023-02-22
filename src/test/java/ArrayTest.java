@@ -2110,4 +2110,14 @@ public class ArrayTest
         System.out.println(p2347.bestHand_hash(ranks2, suits2));
         System.out.println(p2347.bestHand_hash(ranks3, suits3));
     }
+
+    @Test
+    public void test0877()
+    {
+        P0877StoneGame p0877 = new P0877StoneGame();
+        System.out.println(p0877.stoneGame_n2(new int[]{5, 3, 4, 5}));
+        System.out.println(p0877.stoneGame_n2(new int[]{3, 7, 2, 3}));
+        System.out.println(p0877.stoneGame_n(new int[]{3, 2, 10, 4}));
+        System.out.println(p0877.stoneGame_n(new int[]{8, 9, 7, 6, 7, 6}));
+    }
 }
