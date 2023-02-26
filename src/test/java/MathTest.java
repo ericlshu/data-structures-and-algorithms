@@ -257,4 +257,12 @@ public class MathTest
         System.out.println(p0089.grayCode_1(2));
         System.out.println(p0089.grayCode_2(3));
     }
+
+    @Test
+    public void test1238()
+    {
+        P1238CircularPermutationInBinaryRepresentation p1238 = new P1238CircularPermutationInBinaryRepresentation();
+        System.out.println(p1238.circularPermutation_1(2, 3));
+        System.out.println(p1238.circularPermutation_2(3, 2));
+    }
 }
