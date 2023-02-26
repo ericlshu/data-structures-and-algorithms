@@ -249,4 +249,12 @@ public class MathTest
         System.out.println(p1806.reinitializePermutation_2(6));
         System.out.println(p1806.reinitializePermutation_2(100));
     }
+
+    @Test
+    public void test0089()
+    {
+        P0089GrayCode p0089 = new P0089GrayCode();
+        System.out.println(p0089.grayCode_1(2));
+        System.out.println(p0089.grayCode_2(3));
+    }
 }
