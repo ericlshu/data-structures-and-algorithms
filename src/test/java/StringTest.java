@@ -1,4 +1,5 @@
 import org.junit.Test;
+import solution.P1247MinimumSwapsToMakeStringsEqual;
 import solution.array.P0022GenerateParentheses;
 import solution.array.P0242ValidAnagram;
 import solution.array.P1796SecondLargestDigitInAString;
@@ -719,5 +720,15 @@ public class StringTest
         System.out.println(p1234.balancedString_1("QQWE"));
         System.out.println(p1234.balancedString_2("QQQW"));
         System.out.println(p1234.balancedString_2("WWEQERQWQWWRWWERQWEQ"));
+    }
+
+    @Test
+    public void test1247()
+    {
+        P1247MinimumSwapsToMakeStringsEqual p1247 = new P1247MinimumSwapsToMakeStringsEqual();
+        System.out.println(p1247.minimumSwap("xx", "yy"));
+        System.out.println(p1247.minimumSwap("xy", "yx"));
+        System.out.println(p1247.minimumSwap("xx", "xy"));
+        System.out.println(p1247.minimumSwap("xxyyxyxyxx", "xyyxyxxxyx"));
     }
 }
