@@ -2120,4 +2120,13 @@ public class ArrayTest
         System.out.println(p0877.stoneGame_n(new int[]{3, 2, 10, 4}));
         System.out.println(p0877.stoneGame_n(new int[]{8, 9, 7, 6, 7, 6}));
     }
+
+    @Test
+    public void test2357()
+    {
+        P2357MakeArrayZeroBySubtractingEqualAmounts p2357 = new P2357MakeArrayZeroBySubtractingEqualAmounts();
+        System.out.println(p2357.minimumOperations_n2(new int[]{1, 5, 0, 3, 5}));
+        System.out.println(p2357.minimumOperations_set(new int[]{1, 5, 0, 3, 5}));
+        System.out.println(p2357.minimumOperations_api(new int[]{1, 5, 0, 3, 5}));
+    }
 }
