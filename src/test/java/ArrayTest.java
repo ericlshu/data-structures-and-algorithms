@@ -2129,4 +2129,14 @@ public class ArrayTest
         System.out.println(p2357.minimumOperations_set(new int[]{1, 5, 0, 3, 5}));
         System.out.println(p2357.minimumOperations_api(new int[]{1, 5, 0, 3, 5}));
     }
+
+    @Test
+    public void test1144()
+    {
+        P1144DecreaseElementsToMakeArrayZigzag p1144 = new P1144DecreaseElementsToMakeArrayZigzag();
+        int[] nums1 = {1, 2, 3};
+        int[] nums2 = {9, 6, 1, 6, 2};
+        System.out.println(p1144.movesToMakeZigzag(nums1));
+        System.out.println(p1144.movesToMakeZigzag(nums2));
+    }
 }
