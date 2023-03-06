@@ -2158,4 +2158,12 @@ public class ArrayTest
         System.out.println(Arrays.deepToString(p2373.largestLocal_1(grid1)));
         System.out.println(Arrays.deepToString(p2373.largestLocal_2(grid2)));
     }
+
+    @Test
+    public void test2363()
+    {
+        P2363MergeSimilarItems p2363 = new P2363MergeSimilarItems();
+        int[][] items1 = {{1, 1}, {4, 5}, {3, 8}}, items2 = {{3, 1}, {1, 5}};
+        System.out.println(p2363.mergeSimilarItems(items1, items2));
+    }
 }
