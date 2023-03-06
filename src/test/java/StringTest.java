@@ -739,4 +739,18 @@ public class StringTest
         System.out.println(p1653.minimumDeletions("aababbab"));
         System.out.println(p1653.minimumDeletions("bbaaaaabb"));
     }
+
+    @Test
+    public void test1487()
+    {
+        P1487MakingFileNamesUnique p1487 = new P1487MakingFileNamesUnique();
+        String[] names1 = {"gta", "gta(1)", "gta", "avalon"};
+        String[] names2 = {"onepiece", "onepiece(1)", "onepiece(2)", "onepiece(3)", "onepiece"};
+        String[] names3 = {"wano", "wano", "wano", "wano"};
+        String[] names4 = {"kaido","kaido(1)","kaido","kaido(1)","kaido(2)"};
+        System.out.println(Arrays.toString(p1487.getFolderNames(names1)));
+        System.out.println(Arrays.toString(p1487.getFolderNames(names2)));
+        System.out.println(Arrays.toString(p1487.getFolderNames(names3)));
+        System.out.println(Arrays.toString(p1487.getFolderNames(names4)));
+    }
 }
