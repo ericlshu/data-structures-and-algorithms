@@ -265,4 +265,12 @@ public class MathTest
         System.out.println(p1238.circularPermutation_1(2, 3));
         System.out.println(p1238.circularPermutation_2(3, 2));
     }
+
+    @Test
+    public void test0502()
+    {
+        M0502BinaryNumberToStringLCCI m0502 = new M0502BinaryNumberToStringLCCI();
+        System.out.println(m0502.printBin(0.625));
+        System.out.println(m0502.printBin(0.1));
+    }
 }
