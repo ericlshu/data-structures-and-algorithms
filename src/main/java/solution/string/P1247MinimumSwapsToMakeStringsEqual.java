@@ -1,4 +1,4 @@
-package solution;
+package solution.string;
 
 /**
  * Description : 交换字符使得字符串相同
