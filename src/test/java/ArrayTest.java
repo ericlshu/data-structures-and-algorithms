@@ -2166,4 +2166,17 @@ public class ArrayTest
         int[][] items1 = {{1, 1}, {4, 5}, {3, 8}}, items2 = {{3, 1}, {1, 5}};
         System.out.println(p2363.mergeSimilarItems(items1, items2));
     }
+
+    @Test
+    public void testOffer047()
+    {
+        Offer047TheMaximumValueOfGifts o047 = new Offer047TheMaximumValueOfGifts();
+        int[][] grid = {
+                {1, 3, 1},
+                {1, 5, 1},
+                {4, 2, 1}};
+        System.out.println(o047.maxValue_1(grid));
+        System.out.println(o047.maxValue_2(grid));
+        System.out.println(o047.maxValue_3(grid));
+    }
 }
