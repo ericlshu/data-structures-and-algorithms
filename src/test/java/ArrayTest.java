@@ -2179,4 +2179,14 @@ public class ArrayTest
         System.out.println(o047.maxValue_2(grid));
         System.out.println(o047.maxValue_3(grid));
     }
+
+    @Test
+    public void test1705()
+    {
+        M1705FindLongestSubarrayLCCI m1705 = new M1705FindLongestSubarrayLCCI();
+        String[] arr1 = {"A", "1", "B", "C", "D", "2", "3", "4", "E", "5", "F", "G", "6", "7", "H", "I", "J", "K", "L", "M"};
+        String[] arr2 = {"A", "A"};
+        System.out.println(Arrays.toString(m1705.findLongestSubarray(arr1)));
+        System.out.println(Arrays.toString(m1705.findLongestSubarray(arr2)));
+    }
 }
