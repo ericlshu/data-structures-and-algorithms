@@ -2189,4 +2189,20 @@ public class ArrayTest
         System.out.println(Arrays.toString(m1705.findLongestSubarray(arr1)));
         System.out.println(Arrays.toString(m1705.findLongestSubarray(arr2)));
     }
+
+    @Test
+    public void test1590()
+    {
+        P1590MakeSumDivisibleByP p1590 = new P1590MakeSumDivisibleByP();
+        int[] nums1 = {3, 1, 4, 2};
+        int[] nums2 = {6, 3, 5, 2};
+        int[] nums3 = {1, 2, 3};
+        int[] nums4 = {1, 2, 3};
+        int[] nums5 = {1000000000, 1000000000, 1000000000};
+        System.out.println(p1590.minSubarray(nums1, 6));
+        System.out.println(p1590.minSubarray(nums2, 9));
+        System.out.println(p1590.minSubarray(nums3, 3));
+        System.out.println(p1590.minSubarray(nums4, 7));
+        System.out.println(p1590.minSubarray(nums5, 3));
+    }
 }
