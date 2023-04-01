@@ -753,4 +753,14 @@ public class StringTest
         System.out.println(Arrays.toString(p1487.getFolderNames(names3)));
         System.out.println(Arrays.toString(p1487.getFolderNames(names4)));
     }
+
+    @Test
+    public void test0831()
+    {
+        P0831MaskingPersonalInformation p0831 = new P0831MaskingPersonalInformation();
+        System.out.println(p0831.maskPII_2("LeetCode@LeetCode.com"));
+        System.out.println(p0831.maskPII_1("AB@qq.com"));
+        System.out.println(p0831.maskPII_1("1(234)567-890"));
+        System.out.println(p0831.maskPII_2("86-(10)12345678"));
+    }
 }
