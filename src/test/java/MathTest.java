@@ -273,4 +273,16 @@ public class MathTest
         System.out.println(m0502.printBin(0.625));
         System.out.println(m0502.printBin(0.1));
     }
+
+    @Test
+    public void test1039()
+    {
+        P1039MinimumScoreTriangulationOfPolygon p1039 = new P1039MinimumScoreTriangulationOfPolygon();
+        int[] values1 = {1, 2, 3};
+        int[] values2 = {3, 7, 4, 5};
+        int[] values3 = {1, 3, 1, 4, 1, 5};
+        System.out.println(p1039.minScoreTriangulation(values1));
+        System.out.println(p1039.minScoreTriangulation(values2));
+        System.out.println(p1039.minScoreTriangulation(values3));
+    }
 }
