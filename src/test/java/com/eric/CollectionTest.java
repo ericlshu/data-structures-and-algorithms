@@ -119,6 +119,21 @@ public class CollectionTest
     }
 
     @Test
+    @DisplayName("合并 K 个升序链表")
+    public void test0023()
+    {
+        P0023MergeKSortedLists p0023 = new P0023MergeKSortedLists();
+
+        ListNode[] lists = {
+
+                ListNode.of(1, 4, 5),
+                ListNode.of(1, 3, 4),
+                ListNode.of(2, 6)
+        };
+        assertEquals(ListNode.of(1, 1, 2, 3, 4, 4, 5, 6), p0023.mergeKLists(lists));
+    }
+
+    @Test
     public void test0083()
     {
         P0083RemoveDuplicatesFromSortedList p0083 = new P0083RemoveDuplicatesFromSortedList();
