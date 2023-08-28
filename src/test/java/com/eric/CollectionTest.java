@@ -7,8 +7,7 @@ import com.eric.solution.design.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Description :
@@ -131,6 +130,20 @@ public class CollectionTest
                 ListNode.of(2, 6)
         };
         assertEquals(ListNode.of(1, 1, 2, 3, 4, 4, 5, 6), p0023.mergeKLists(lists));
+    }
+
+    @Test
+    @DisplayName("回文链表")
+    public void test0234()
+    {
+        P0234PalindromeLinkedList p0234 = new P0234PalindromeLinkedList();
+        assertTrue(p0234.isPalindrome_1(ListNode.of(1, 2, 2, 1)));
+        assertTrue(p0234.isPalindrome_1(ListNode.of(1, 2, 3, 2, 1)));
+        assertFalse(p0234.isPalindrome_1(ListNode.of(1, 2, 3)));
+
+        assertTrue(p0234.isPalindrome_2(ListNode.of(1, 2, 2, 1)));
+        assertTrue(p0234.isPalindrome_2(ListNode.of(1, 2, 3, 2, 1)));
+        assertFalse(p0234.isPalindrome_2(ListNode.of(1, 2, 3)));
     }
 
     @Test
