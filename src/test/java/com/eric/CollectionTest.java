@@ -4,7 +4,11 @@ import com.eric.domain.ListNode;
 import com.eric.domain.TreeNode;
 import com.eric.solution.collection.*;
 import com.eric.solution.design.*;
-import org.junit.Test;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 /**
  * Description :
@@ -117,17 +121,18 @@ public class CollectionTest
     @Test
     public void test0083()
     {
-        P0083RemoveDuplicatesFromSortedList obj = new P0083RemoveDuplicatesFromSortedList();
+        P0083RemoveDuplicatesFromSortedList p0083 = new P0083RemoveDuplicatesFromSortedList();
 
-        ListNode head = new ListNode(1, new ListNode(1, new ListNode(2,
-                new ListNode(3, new ListNode(3, null)))));
-
-        ListNode result = obj.deleteDuplicates(head);
-        while (result != null)
-        {
-            System.out.println(result.val);
-            result = result.next;
-        }
+        // ListNode head = new ListNode(1, new ListNode(1, new ListNode(2,
+        //         new ListNode(3, new ListNode(3, null)))));
+        //
+        // ListNode result = obj.deleteDuplicates(head);
+        // while (result != null)
+        // {
+        //     System.out.println(result.val);
+        //     result = result.next;
+        // }
+        assertEquals(ListNode.of(1, 2, 3), p0083.deleteDuplicates(ListNode.of(1, 1, 2, 3, 3)));
     }
 
     @Test
@@ -212,6 +217,10 @@ public class CollectionTest
         System.out.println(p0082.deleteDuplicates_1(head1));
         System.out.println(p0082.deleteDuplicates_2(head2));
         System.out.println(p0082.deleteDuplicates_3(head3));
+
+        assertEquals(ListNode.of(1, 2, 5), p0082.deleteDuplicates(ListNode.of(1, 2, 3, 3, 4, 4, 5)));
+        assertEquals(ListNode.of(2, 3), p0082.deleteDuplicates(ListNode.of(1, 1, 1, 2, 3)));
+        assertNull(p0082.deleteDuplicates(ListNode.of(1, 1, 1)));
     }
 
     @Test
@@ -352,16 +361,15 @@ public class CollectionTest
     }
 
     @Test
+    @DisplayName("19. 删除链表的倒数第 N 个结点")
     public void testP0019()
     {
-        P0019RemoveNthNodeFromEndOfList obj = new P0019RemoveNthNodeFromEndOfList();
-        ListNode node5 = new ListNode(5);
-        ListNode node4 = new ListNode(4, node5);
-        ListNode node3 = new ListNode(3, node4);
-        ListNode node2 = new ListNode(2, node3);
-        ListNode node1 = new ListNode(1, node2);
-        ListNode node = obj.removeNthFromEnd_stack(node1, 3);
-        System.out.println("node = " + node);
+        P0019RemoveNthNodeFromEndOfList p0019 = new P0019RemoveNthNodeFromEndOfList();
+        assertEquals(ListNode.of(1, 2, 3, 4), p0019.removeNthFromEnd(ListNode.of(1, 2, 3, 4, 5), 1));
+        assertEquals(ListNode.of(1, 2, 3, 5), p0019.removeNthFromEnd(ListNode.of(1, 2, 3, 4, 5), 2));
+        assertEquals(ListNode.of(1, 2, 4, 5), p0019.removeNthFromEnd(ListNode.of(1, 2, 3, 4, 5), 3));
+        assertEquals(ListNode.of(1, 3, 4, 5), p0019.removeNthFromEnd(ListNode.of(1, 2, 3, 4, 5), 4));
+        assertEquals(ListNode.of(2, 3, 4, 5), p0019.removeNthFromEnd(ListNode.of(1, 2, 3, 4, 5), 5));
     }
 
     @Test

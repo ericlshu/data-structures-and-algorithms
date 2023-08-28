@@ -131,4 +131,21 @@ public class P0019RemoveNthNodeFromEndOfList
         node.next = node.next.next;
         return dummyHead.next;
     }
+
+    public ListNode removeNthFromEnd(ListNode head, int n)
+    {
+        ListNode dummyHead = new ListNode(-1, head);
+        recursion(dummyHead, n);
+        return dummyHead.next;
+    }
+
+    private int recursion(ListNode node, int n)
+    {
+        if (node == null)
+            return 0;
+        int nth = recursion(node.next, n);
+        if (nth == n)
+            node.next = node.next.next;
+        return nth + 1;
+    }
 }

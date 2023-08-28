@@ -27,7 +27,7 @@ import com.eric.domain.ListNode;
  */
 public class P0083RemoveDuplicatesFromSortedList
 {
-    public ListNode deleteDuplicates(ListNode head)
+    public ListNode deleteDuplicates_1(ListNode head)
     {
         if (head == null) return null;
         ListNode curr = head;
@@ -39,5 +39,20 @@ public class P0083RemoveDuplicatesFromSortedList
                 curr = curr.next;
         }
         return head;
+    }
+
+    public ListNode deleteDuplicates(ListNode node)
+    {
+        if (node == null || node.next == null)
+            return node;
+        if (node.val == node.next.val)
+        {
+            return deleteDuplicates(node.next);
+        }
+        else
+        {
+            node.next = deleteDuplicates(node.next);
+            return node;
+        }
     }
 }
