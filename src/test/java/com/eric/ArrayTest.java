@@ -227,16 +227,20 @@ public class ArrayTest
     @Test
     public void testP0088()
     {
-        int[] nums1 = {1, 2, 3, 0, 0, 0};
-        int[] nums2 = {2, 5, 6};
-        int m = 3, n = 3;
+        // int[] nums1 = {1, 2, 3, 0, 0, 0};
+        // int[] nums2 = {2, 5, 6};
+        // int m = 3, n = 3;
 
         // int[] nums1 = {0};
         // int[] nums2 = {1};
         // int m = 0, n = 1;
 
-        P0088MergeSortedArray obj = new P0088MergeSortedArray();
-        obj.merge3(nums1, m, nums2, n);
+        int[] nums1 = {4,0,0,0,0,0};
+        int[] nums2 = {1,2,3,5,6};
+        int m = 1, n = 5;
+
+        P0088MergeSortedArray p0088 = new P0088MergeSortedArray();
+        p0088.merge_recursion(nums1, m, nums2, n);
         System.out.println("nums = " + Arrays.toString(nums1));
     }
 

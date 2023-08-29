@@ -83,13 +83,14 @@ public class P0088MergeSortedArray
         while (i >= 0 || j >= 0)
         {
             if (i == -1)
-                nums1[k--] = nums2[j--];
+                nums1[k] = nums2[j--];
             else if (j == -1)
-                nums1[k--] = nums1[i--];
+                nums1[k] = nums1[i--];
             else if (nums1[i] >= nums2[j])
-                nums1[k--] = nums1[i--];
+                nums1[k] = nums1[i--];
             else
-                nums1[k--] = nums2[j--];
+                nums1[k] = nums2[j--];
+            k--;
         }
     }
 
@@ -133,6 +134,48 @@ public class P0088MergeSortedArray
         while (n >= 0)
         {
             nums1[i--] = m >= 0 && nums1[m] > nums2[n] ? nums1[m--] : nums2[n--];
+        }
+    }
+
+    public void merge_recursion(int[] nums1, int m, int[] nums2, int n)
+    {
+        if (n == 0)
+            return;
+        if (m == 0)
+        {
+            System.arraycopy(nums2, 0, nums1, 0, n);
+            return;
+        }
+        int[] res = new int[nums1.length];
+        System.arraycopy(nums2, 0, nums1, m, n);
+        // System.out.println("nums1 = " + Arrays.toString(nums1));
+        merge(nums1, 0, m - 1, m, n + m - 1, res, 0);
+        // System.out.println("res = " + Arrays.toString(res));
+        System.arraycopy(res, 0, nums1, 0, m + n);
+    }
+
+    private void merge(int[] nums, int i, int _i, int j, int _j, int[] res, int k)
+    {
+        if (i > _i)
+        {
+            System.arraycopy(nums, j, res, k, _j - j + 1);
+            return;
+        }
+        else if (j > _j)
+        {
+            System.arraycopy(nums, i, res, k, _i - i + 1);
+            return;
+        }
+
+        if (nums[i] < nums[j])
+        {
+            res[k++] = nums[i];
+            merge(nums, i + 1, _i, j, _j, res, k);
+        }
+        else
+        {
+            res[k++] = nums[j];
+            merge(nums, i, _i, j + 1, _j, res, k);
         }
     }
 }
