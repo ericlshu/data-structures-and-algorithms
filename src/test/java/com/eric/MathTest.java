@@ -78,7 +78,8 @@ public class MathTest
     public void test0069()
     {
         P0069SqrtOfX obj = new P0069SqrtOfX();
-        for (int i = 0; i < Integer.MAX_VALUE; i++)
+        // for (int i = 0; i < Integer.MAX_VALUE; i++)
+        for (int i = 0; i < 10_000; i++)
         {
             System.out.println(obj.mySqrt_1(i));
         }

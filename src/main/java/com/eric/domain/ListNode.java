@@ -75,10 +75,4 @@ public class ListNode
         ListNode listNode = (ListNode) o;
         return val == listNode.val && Objects.equals(next, listNode.next);
     }
-
-    @Override
-    public int hashCode()
-    {
-        return Objects.hash(val, next);
-    }
 }
