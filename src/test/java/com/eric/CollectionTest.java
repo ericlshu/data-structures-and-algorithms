@@ -123,13 +123,20 @@ public class CollectionTest
     {
         P0023MergeKSortedLists p0023 = new P0023MergeKSortedLists();
 
-        ListNode[] lists = {
-
+        ListNode[] lists1 = {
                 ListNode.of(1, 4, 5),
                 ListNode.of(1, 3, 4),
-                ListNode.of(2, 6)
+                ListNode.of(2, 6),
+                null
         };
-        assertEquals(ListNode.of(1, 1, 2, 3, 4, 4, 5, 6), p0023.mergeKLists(lists));
+        assertEquals(ListNode.of(1, 1, 2, 3, 4, 4, 5, 6), p0023.mergeKLists(lists1));
+        ListNode[] lists2 = {
+                ListNode.of(1, 4, 5),
+                ListNode.of(1, 3, 4),
+                ListNode.of(2, 6),
+                null
+        };
+        assertEquals(ListNode.of(1, 1, 2, 3, 4, 4, 5, 6), p0023.mergeKListsByHeap(lists2));
     }
 
     @Test

@@ -80,4 +80,110 @@ public class P0023MergeKSortedLists
         node.next = l1 == null ? l2 : l1;
         return sentinel.next;
     }
+
+    public ListNode mergeKListsByHeap(ListNode[] lists)
+    {
+        if (lists.length == 0)
+            return null;
+        MinHeap heap = new MinHeap(lists.length);
+        for (ListNode node : lists)
+        {
+            if (node != null)
+            {
+                // 将链表的头结点加入小顶堆
+                heap.offer(node);
+            }
+        }
+        ListNode sentinel = new ListNode(-1, null);
+        ListNode pointer = sentinel;
+        while (!heap.isEmpty())
+        {
+            ListNode min = heap.poll();
+            pointer.next = min;
+            pointer = min;
+            if (min.next != null)
+            {
+                heap.offer(min.next);
+            }
+        }
+        return sentinel.next;
+    }
+
+
+    static class MinHeap
+    {
+        ListNode[] array;
+        int size;
+
+        public MinHeap(int capacity)
+        {
+            array = new ListNode[capacity];
+        }
+
+        public boolean offer(ListNode offered)
+        {
+            if (isFull())
+                return false;
+
+            int child = size++;
+            shiftUp(offered, child);
+            return true;
+        }
+
+        private void shiftUp(ListNode offered, int child)
+        {
+            int parent = (child - 1) / 2;
+            while (child > 0 && offered.val < array[parent].val)
+            {
+                array[child] = array[parent];
+                child = parent;
+                parent = (child - 1) / 2;
+            }
+            array[child] = offered;
+        }
+
+        public ListNode poll()
+        {
+            if (isEmpty())
+                return null;
+            swap(0, --size);
+            ListNode node = array[size];
+            array[size] = null;
+            shiftDown(0);
+            return node;
+        }
+
+        private void shiftDown(int parent)
+        {
+            int left = 2 * parent + 1;
+            int right = left + 1;
+            int min = parent;
+            if (left < size && array[left].val < array[min].val)
+                min = left;
+            if (right < size && array[right].val < array[min].val)
+                min = right;
+            if (min != parent)
+            {
+                swap(min, parent);
+                shiftDown(min);
+            }
+        }
+
+        private void swap(int i, int j)
+        {
+            ListNode t = array[i];
+            array[i] = array[j];
+            array[j] = t;
+        }
+
+        public boolean isFull()
+        {
+            return size == array.length;
+        }
+
+        public boolean isEmpty()
+        {
+            return size == 0;
+        }
+    }
 }
