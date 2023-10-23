@@ -16,7 +16,7 @@ class TestDoublyLinkedListSentinel {
         list.addLast(2);
         list.addLast(3);
         list.addLast(4);
-        list.remove(3);
+        list.remove(4);
     }
 
     @Test

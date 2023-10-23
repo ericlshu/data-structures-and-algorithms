@@ -1,6 +1,5 @@
 package com.itheima.datastructure.btree;
 
-import com.itheima.datastructure.btree.BTree;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -638,6 +637,51 @@ class TestBTree {
         assertEquals("[11]", tree.root.children[1].toString());
         tree.remove(9);
         assertEquals("[1, 11]", tree.root.toString());
+    }
+
+    @Test
+    @DisplayName("case5: balance left rotate")
+    public void testRemove5_2() {
+    /*
+        4|5|6  ==>  5
+                   / \
+                  4   6
+       5
+      / \        ==>      5|7    ==>    5|7
+     4   6|7|8           / | \         / | \
+                        4  6  8      2|3|4  6 8
+
+     3|5|7                     5                             5
+    / | | \  ==>             /   \                        /     \
+   2  4 6  8                3     7              ==>     3      7|9
+                           / \   / \                    / \    / | \
+                          2   4 6   8|9|10             2   4  6  8  10
+
+     5                           7
+    / \                        /   \
+   _   7|9      ==>           5     9
+   |   /|\                   / \   / \
+  2|4 6 8 10                2|4 6 8  10
+    */
+        BTree tree = new BTree(2);
+        tree.put(4);
+        tree.put(5);
+        tree.put(6);
+        tree.put(7);
+        tree.put(8);
+        tree.put(3);
+        tree.put(2);
+        tree.put(9);
+        tree.put(10);
+
+        tree.remove(3);
+        assertEquals("[7]", tree.root.toString());
+        assertEquals("[5]", tree.root.children[0].toString());
+        assertEquals("[9]", tree.root.children[1].toString());
+        assertEquals("[2, 4]", tree.root.children[0].children[0].toString());
+        assertEquals("[6]", tree.root.children[0].children[1].toString());
+        assertEquals("[8]", tree.root.children[1].children[0].toString());
+        assertEquals("[10]", tree.root.children[1].children[1].toString());
     }
 
 }
