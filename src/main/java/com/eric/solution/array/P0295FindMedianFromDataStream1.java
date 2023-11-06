@@ -2,12 +2,12 @@ package com.eric.solution.array;
 
 import java.util.Arrays;
 
-public class P0295FindMedianFromDataStream
+public class P0295FindMedianFromDataStream1
 {
     private final Heap maxHeap;
     private final Heap minHeap;
 
-    public P0295FindMedianFromDataStream()
+    public P0295FindMedianFromDataStream1()
     {
         maxHeap = new Heap(10, true);
         minHeap = new Heap(10, false);

@@ -1345,15 +1345,25 @@ public class ArrayTest
     @Test
     public void test0295()
     {
-        P0295FindMedianFromDataStream p0215 = new P0295FindMedianFromDataStream();
-        p0215.addNum(1);
-        System.out.println(p0215);
-        p0215.addNum(2);
-        System.out.println(p0215);
-        assertEquals(1.5, p0215.findMedian(), 0.0);
-        p0215.addNum(3);
-        System.out.println(p0215);
-        assertEquals(2.0, p0215.findMedian(), 0.0);
+        P0295FindMedianFromDataStream1 p0215_1 = new P0295FindMedianFromDataStream1();
+        p0215_1.addNum(1);
+        System.out.println(p0215_1);
+        p0215_1.addNum(2);
+        System.out.println(p0215_1);
+        assertEquals(1.5, p0215_1.findMedian(), 0.0);
+        p0215_1.addNum(3);
+        System.out.println(p0215_1);
+        assertEquals(2.0, p0215_1.findMedian(), 0.0);
+
+        P0295FindMedianFromDataStream2 p0215_2 = new P0295FindMedianFromDataStream2();
+        p0215_2.addNum(1);
+        System.out.println(p0215_2);
+        p0215_2.addNum(2);
+        System.out.println(p0215_2);
+        assertEquals(1.5, p0215_2.findMedian(), 0.0);
+        p0215_2.addNum(3);
+        System.out.println(p0215_2);
+        assertEquals(2.0, p0215_2.findMedian(), 0.0);
     }
 
     @Test
