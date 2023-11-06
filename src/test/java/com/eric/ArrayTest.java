@@ -12,6 +12,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Description :
@@ -1333,13 +1334,27 @@ public class ArrayTest
         // assertEquals(8, p0215.add(9));
         // assertEquals(8, p0215.add(4));
 
-        int[] arr = {-10,1,3,1,4,10,3,9,4,5,1};
-        P0703KthLargestElementInAStream p0215 = new P0703KthLargestElementInAStream(7,arr);
+        int[] arr = {-10, 1, 3, 1, 4, 10, 3, 9, 4, 5, 1};
+        P0703KthLargestElementInAStream p0215 = new P0703KthLargestElementInAStream(7, arr);
         assertEquals(3, p0215.add(3));
         assertEquals(3, p0215.add(2));
         assertEquals(3, p0215.add(3));
         assertEquals(3, p0215.add(1));
         assertEquals(3, p0215.add(2));
+    }
+
+    @Test
+    public void test0295()
+    {
+        P0295FindMedianFromDataStream p0215 = new P0295FindMedianFromDataStream();
+        p0215.addNum(1);
+        System.out.println(p0215);
+        p0215.addNum(2);
+        System.out.println(p0215);
+        assertEquals(1.5, p0215.findMedian(), 0.0);
+        p0215.addNum(3);
+        System.out.println(p0215);
+        assertEquals(2.0, p0215.findMedian(), 0.0);
     }
 
     @Test
