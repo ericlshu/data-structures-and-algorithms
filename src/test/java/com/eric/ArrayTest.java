@@ -2,12 +2,11 @@ package com.eric;
 
 import com.eric.domain.CustomFunction;
 import com.eric.solution.array.*;
-import com.eric.solution.design.*;
-import org.junit.Assert;
-import org.junit.Test;
 import com.eric.solution.bs.P0852PeakIndexInAMountainArray;
 import com.eric.solution.bs.P1122RelativeSortArray;
+import com.eric.solution.design.*;
 import com.eric.solution.math.P2180CountIntegersWithEvenDigitSum;
+import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.List;
@@ -1321,6 +1320,26 @@ public class ArrayTest
         System.out.println(p0215.findKthLargestHeap(arr2, 4));
         assertEquals(5, p0215.findKthLargestHeap(arr1, 2));
         assertEquals(4, p0215.findKthLargestHeap(arr2, 4));
+    }
+
+    @Test
+    public void test0703()
+    {
+        // int[] arr = {4, 5, 8, 2};
+        // P0703KthLargestElementInAStream p0215 = new P0703KthLargestElementInAStream(3,arr);
+        // assertEquals(4, p0215.add(3));
+        // assertEquals(5, p0215.add(5));
+        // assertEquals(5, p0215.add(10));
+        // assertEquals(8, p0215.add(9));
+        // assertEquals(8, p0215.add(4));
+
+        int[] arr = {-10,1,3,1,4,10,3,9,4,5,1};
+        P0703KthLargestElementInAStream p0215 = new P0703KthLargestElementInAStream(7,arr);
+        assertEquals(3, p0215.add(3));
+        assertEquals(3, p0215.add(2));
+        assertEquals(3, p0215.add(3));
+        assertEquals(3, p0215.add(1));
+        assertEquals(3, p0215.add(2));
     }
 
     @Test
