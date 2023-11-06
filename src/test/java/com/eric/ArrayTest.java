@@ -3,6 +3,7 @@ package com.eric;
 import com.eric.domain.CustomFunction;
 import com.eric.solution.array.*;
 import com.eric.solution.design.*;
+import org.junit.Assert;
 import org.junit.Test;
 import com.eric.solution.bs.P0852PeakIndexInAMountainArray;
 import com.eric.solution.bs.P1122RelativeSortArray;
@@ -10,6 +11,8 @@ import com.eric.solution.math.P2180CountIntegersWithEvenDigitSum;
 
 import java.util.Arrays;
 import java.util.List;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * Description :
@@ -235,8 +238,8 @@ public class ArrayTest
         // int[] nums2 = {1};
         // int m = 0, n = 1;
 
-        int[] nums1 = {4,0,0,0,0,0};
-        int[] nums2 = {1,2,3,5,6};
+        int[] nums1 = {4, 0, 0, 0, 0, 0};
+        int[] nums2 = {1, 2, 3, 5, 6};
         int m = 1, n = 5;
 
         P0088MergeSortedArray p0088 = new P0088MergeSortedArray();
@@ -1314,8 +1317,10 @@ public class ArrayTest
         P0215KthLargestElementInAnArray p0215 = new P0215KthLargestElementInAnArray();
         int[] arr1 = {3, 2, 1, 5, 6, 4};
         int[] arr2 = {3, 2, 3, 1, 2, 4, 5, 5, 6};
-        System.out.println(p0215.findKthLargest(arr1, 2));
-        System.out.println(p0215.findKthLargest(arr2, 4));
+        System.out.println(p0215.findKthLargestHeap(arr1, 2));
+        System.out.println(p0215.findKthLargestHeap(arr2, 4));
+        assertEquals(5, p0215.findKthLargestHeap(arr1, 2));
+        assertEquals(4, p0215.findKthLargestHeap(arr2, 4));
     }
 
     @Test

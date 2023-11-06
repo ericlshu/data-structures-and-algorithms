@@ -135,4 +135,95 @@ public class P0215KthLargestElementInAnArray
             a[j] = temp;
         }
     }
+
+    public int findKthLargestHeap(int[] nums, int k)
+    {
+        MinHeap minHeap = new MinHeap(k);
+        for (int i = 0; i < nums.length; i++)
+        {
+            if (i < k)
+            {
+                minHeap.offer(nums[i]);
+            }
+            else if (nums[i] > minHeap.peek())
+            {
+                minHeap.replace(nums[i]);
+            }
+        }
+        return minHeap.peek();
+    }
+
+
+    public static class MinHeap
+    {
+        int[] array;
+        int size;
+
+        public MinHeap(int capacity)
+        {
+            this.array = new int[capacity];
+        }
+
+        public int peek()
+        {
+            return array[0];
+        }
+
+        public boolean offer(int offered)
+        {
+            if (size == array.length)
+                return false;
+            up(offered);
+            size++;
+            return true;
+        }
+
+        public void replace(int replaced)
+        {
+            array[0] = replaced;
+            down(0);
+        }
+
+        private void up(int offered)
+        {
+            int child = size;
+            while (child > 0)
+            {
+                int parent = (child - 1) / 2;
+                if (offered < array[parent])
+                    array[child] = array[parent];
+                else
+                    break;
+                child = parent;
+            }
+            array[child] = offered;
+        }
+
+        private void down(int parent)
+        {
+            int left = parent * 2 + 1;
+            int right = left + 1;
+            int min = parent;
+            if (left < size && array[left] < array[min])
+            {
+                min = left;
+            }
+            if (right < size && array[right] < array[min])
+            {
+                min = right;
+            }
+            if (min != parent)
+            {
+                swap(min, parent);
+                down(min);
+            }
+        }
+
+        private void swap(int i, int j)
+        {
+            int t = array[i];
+            array[i] = array[j];
+            array[j] = t;
+        }
+    }
 }
