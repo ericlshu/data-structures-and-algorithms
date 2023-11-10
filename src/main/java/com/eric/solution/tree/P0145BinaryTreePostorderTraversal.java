@@ -97,13 +97,13 @@ public class P0145BinaryTreePostorderTraversal
 
     public List<Integer> postorderTraversalMorris(TreeNode root)
     {
-        List<Integer> res = new ArrayList<Integer>();
+        List<Integer> res = new ArrayList<>();
         if (root == null)
         {
             return res;
         }
 
-        TreeNode p1 = root, p2 = null;
+        TreeNode p1 = root, p2;
 
         while (p1 != null)
         {
