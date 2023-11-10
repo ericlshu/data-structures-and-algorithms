@@ -31,7 +31,7 @@ public class P0145BinaryTreePostorderTraversal
         list.add(node.val);
     }
 
-    public List<Integer> postorderTraversalIteration(TreeNode root)
+    public List<Integer> postorderTraversalIteration1(TreeNode root)
     {
         List<Integer> list = new ArrayList<>();
         if (root == null) return list;
@@ -56,6 +56,40 @@ public class P0145BinaryTreePostorderTraversal
             {
                 stack.push(root);
                 root = root.right;
+            }
+        }
+        return list;
+    }
+
+
+    public List<Integer> postorderTraversalIteration2(TreeNode root)
+    {
+        List<Integer> list = new ArrayList<>();
+        if (root == null) return list;
+
+        Deque<TreeNode> stack = new LinkedList<>();
+        TreeNode pop = null;
+        TreeNode curr = root;
+
+        while (!stack.isEmpty() || curr != null)
+        {
+            if (curr != null)
+            {
+                stack.push(curr);
+                curr = curr.left;
+            }
+            else
+            {
+                TreeNode peek = stack.peek();
+                if (peek.right == null || peek.right == pop)
+                {
+                    pop = stack.pop();
+                    list.add(pop.val);
+                }
+                else
+                {
+                    curr = peek.right;
+                }
             }
         }
         return list;

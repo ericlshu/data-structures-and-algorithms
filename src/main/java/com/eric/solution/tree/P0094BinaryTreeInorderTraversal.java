@@ -40,7 +40,7 @@ public class P0094BinaryTreeInorderTraversal
         inorderTraversal(node.right, list);
     }
 
-    public List<Integer> inorderTraversalIteration(TreeNode root)
+    public List<Integer> inorderTraversalIteration1(TreeNode root)
     {
         List<Integer> list = new ArrayList<>();
         if (root == null) return list;
@@ -56,6 +56,30 @@ public class P0094BinaryTreeInorderTraversal
             node = stack.pop();
             list.add(node.val);
             node = node.right;
+        }
+        return list;
+    }
+
+
+    public List<Integer> inorderTraversalIteration2(TreeNode root)
+    {
+        List<Integer> list = new ArrayList<>();
+        if (root == null) return list;
+        Deque<TreeNode> stack = new LinkedList<>();
+        TreeNode node = root;
+        while (!stack.isEmpty() || node != null)
+        {
+            if (node != null)
+            {
+                stack.push(node);
+                node = node.left;
+            }
+            else
+            {
+                node = stack.pop();
+                list.add(node.val);
+                node = node.right;
+            }
         }
         return list;
     }

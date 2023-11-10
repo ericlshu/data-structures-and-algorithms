@@ -3,12 +3,14 @@ package com.eric;
 import com.eric.domain.NaryNode;
 import com.eric.domain.Node;
 import com.eric.domain.TreeNode;
-import com.eric.solution.tree.*;
-import org.junit.Test;
 import com.eric.solution.design.P0173BSTIterator1;
 import com.eric.solution.design.P0173BSTIterator2;
+import com.eric.solution.tree.*;
+import org.junit.Test;
 
 import java.util.List;
+
+import static org.junit.Assert.assertArrayEquals;
 
 /**
  * Description :
@@ -26,44 +28,46 @@ public class TreeTest
         System.out.println("result = " + obj.isLongPressedName("saeedi", "ssaaeediixxxiii"));
     }
 
-    static TreeNode root;
+    static TreeNode root = new TreeNode(0,
+            new TreeNode(1,
+                    new TreeNode(3),
+                    new TreeNode(4)),
+            new TreeNode(2,
+                    new TreeNode(5),
+                    new TreeNode(6)));
 
-    static
+    static List<Integer> preorderList = List.of(0, 1, 3, 4, 2, 5, 6);
+    static List<Integer> inorderList = List.of(3, 1, 4, 0, 5, 2, 6);
+    static List<Integer> postorderList = List.of(3, 4, 1, 5, 6, 2, 0);
+
+    @Test
+    public void test0144()
     {
-        TreeNode node3 = new TreeNode(3);
-        TreeNode node4 = new TreeNode(4);
-        TreeNode node5 = new TreeNode(5);
-        TreeNode node6 = new TreeNode(6);
-        TreeNode node1 = new TreeNode(1, node3, node4);
-        TreeNode node2 = new TreeNode(2, node5, node6);
-        root = new TreeNode(0, node1, node2);
+        P0144BinaryTreePreorderTraversal p0144 = new P0144BinaryTreePreorderTraversal();
+        assertArrayEquals(preorderList.toArray(),p0144.preorderTraversalRecursion(root).toArray());
+        assertArrayEquals(preorderList.toArray(),p0144.preorderTraversalIteration1(root).toArray());
+        assertArrayEquals(preorderList.toArray(),p0144.preorderTraversalIteration2(root).toArray());
+        assertArrayEquals(preorderList.toArray(),p0144.preorderTraversalMorris(root).toArray());
     }
 
     @Test
     public void test0094()
     {
         P0094BinaryTreeInorderTraversal p0094 = new P0094BinaryTreeInorderTraversal();
-        System.out.println(p0094.inorderTraversalRecursion(root));
-        System.out.println(p0094.inorderTraversalIteration(root));
-        System.out.println(p0094.inorderTraversalMorris(root));
-    }
-
-    @Test
-    public void test0144()
-    {
-        P0144BinaryTreePreorderTraversal p0144 = new P0144BinaryTreePreorderTraversal();
-        System.out.println(p0144.preorderTraversalRecursion(root));
-        System.out.println(p0144.preorderTraversalIteration(root));
-        System.out.println(p0144.preorderTraversalMorris(root));
+        assertArrayEquals(inorderList.toArray(),p0094.inorderTraversalRecursion(root).toArray());
+        assertArrayEquals(inorderList.toArray(),p0094.inorderTraversalIteration1(root).toArray());
+        assertArrayEquals(inorderList.toArray(),p0094.inorderTraversalIteration2(root).toArray());
+        assertArrayEquals(inorderList.toArray(),p0094.inorderTraversalMorris(root).toArray());
     }
 
     @Test
     public void test0145()
     {
         P0145BinaryTreePostorderTraversal p0145 = new P0145BinaryTreePostorderTraversal();
-        System.out.println(p0145.postorderTraversalRecursion(root));
-        System.out.println(p0145.postorderTraversalIteration(root));
-        System.out.println(p0145.postorderTraversalMorris(root));
+        assertArrayEquals(postorderList.toArray(),p0145.postorderTraversalRecursion(root).toArray());
+        assertArrayEquals(postorderList.toArray(),p0145.postorderTraversalIteration1(root).toArray());
+        assertArrayEquals(postorderList.toArray(),p0145.postorderTraversalIteration2(root).toArray());
+        assertArrayEquals(postorderList.toArray(),p0145.postorderTraversalMorris(root).toArray());
     }
 
     @Test

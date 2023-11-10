@@ -59,7 +59,7 @@ public class P0144BinaryTreePreorderTraversal
         preorderTraversal(node.right, res);
     }
 
-    public List<Integer> preorderTraversalIteration(TreeNode root)
+    public List<Integer> preorderTraversalIteration1(TreeNode root)
     {
         List<Integer> list = new ArrayList<>();
         if (root == null) return list;
@@ -79,6 +79,33 @@ public class P0144BinaryTreePreorderTraversal
         }
         return list;
     }
+
+    public List<Integer> preorderTraversalIteration2(TreeNode root)
+    {
+        List<Integer> list = new ArrayList<>();
+        if (root == null) return list;
+
+        Deque<TreeNode> stack = new LinkedList<>();
+        TreeNode curr = root;
+        while (curr != null || !stack.isEmpty())
+        {
+            if (curr != null)
+            {
+                // System.out.println(curr.val);
+                list.add(curr.val);
+                stack.push(curr);
+                curr = curr.left;
+            }
+            else
+            {
+                TreeNode pop = stack.pop();
+                // System.out.println(pop.val);
+                curr = pop.right;
+            }
+        }
+        return list;
+    }
+
 
     public List<Integer> preorderTraversalMorris(TreeNode root)
     {
