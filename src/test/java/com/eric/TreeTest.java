@@ -11,6 +11,7 @@ import org.junit.Test;
 import java.util.List;
 
 import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Description :
@@ -44,30 +45,30 @@ public class TreeTest
     public void test0144()
     {
         P0144BinaryTreePreorderTraversal p0144 = new P0144BinaryTreePreorderTraversal();
-        assertArrayEquals(preorderList.toArray(),p0144.preorderTraversalRecursion(root).toArray());
-        assertArrayEquals(preorderList.toArray(),p0144.preorderTraversalIteration1(root).toArray());
-        assertArrayEquals(preorderList.toArray(),p0144.preorderTraversalIteration2(root).toArray());
-        assertArrayEquals(preorderList.toArray(),p0144.preorderTraversalMorris(root).toArray());
+        assertArrayEquals(preorderList.toArray(), p0144.preorderTraversalRecursion(root).toArray());
+        assertArrayEquals(preorderList.toArray(), p0144.preorderTraversalIteration1(root).toArray());
+        assertArrayEquals(preorderList.toArray(), p0144.preorderTraversalIteration2(root).toArray());
+        assertArrayEquals(preorderList.toArray(), p0144.preorderTraversalMorris(root).toArray());
     }
 
     @Test
     public void test0094()
     {
         P0094BinaryTreeInorderTraversal p0094 = new P0094BinaryTreeInorderTraversal();
-        assertArrayEquals(inorderList.toArray(),p0094.inorderTraversalRecursion(root).toArray());
-        assertArrayEquals(inorderList.toArray(),p0094.inorderTraversalIteration1(root).toArray());
-        assertArrayEquals(inorderList.toArray(),p0094.inorderTraversalIteration2(root).toArray());
-        assertArrayEquals(inorderList.toArray(),p0094.inorderTraversalMorris(root).toArray());
+        assertArrayEquals(inorderList.toArray(), p0094.inorderTraversalRecursion(root).toArray());
+        assertArrayEquals(inorderList.toArray(), p0094.inorderTraversalIteration1(root).toArray());
+        assertArrayEquals(inorderList.toArray(), p0094.inorderTraversalIteration2(root).toArray());
+        assertArrayEquals(inorderList.toArray(), p0094.inorderTraversalMorris(root).toArray());
     }
 
     @Test
     public void test0145()
     {
         P0145BinaryTreePostorderTraversal p0145 = new P0145BinaryTreePostorderTraversal();
-        assertArrayEquals(postorderList.toArray(),p0145.postorderTraversalRecursion(root).toArray());
-        assertArrayEquals(postorderList.toArray(),p0145.postorderTraversalIteration1(root).toArray());
-        assertArrayEquals(postorderList.toArray(),p0145.postorderTraversalIteration2(root).toArray());
-        assertArrayEquals(postorderList.toArray(),p0145.postorderTraversalMorris(root).toArray());
+        assertArrayEquals(postorderList.toArray(), p0145.postorderTraversalRecursion(root).toArray());
+        assertArrayEquals(postorderList.toArray(), p0145.postorderTraversalIteration1(root).toArray());
+        assertArrayEquals(postorderList.toArray(), p0145.postorderTraversalIteration2(root).toArray());
+        assertArrayEquals(postorderList.toArray(), p0145.postorderTraversalMorris(root).toArray());
     }
 
     @Test
@@ -412,9 +413,27 @@ public class TreeTest
     {
         P0105ConstructBinaryTree p0105 = new P0105ConstructBinaryTree();
         int[] preorder = {3, 9, 20, 15, 7}, inorder = {9, 3, 15, 20, 7};
-        System.out.println(p0105.buildTree_recursion(preorder, inorder));
-        System.out.println(p0105.buildTree_iteration(preorder, inorder));
-        // System.out.println(p0105.buildTree_recursion(new int[]{1, 2}, new int[]{1, 2}));
+        TreeNode expected = new TreeNode(3,
+                new TreeNode(9),
+                new TreeNode(20,
+                        new TreeNode(15),
+                        new TreeNode(7)));
+        assertEquals(expected.toString(), p0105.buildTree_recursion(preorder, inorder).toString());
+        assertEquals(expected.toString(), p0105.buildTree_iteration(preorder, inorder).toString());
+        assertEquals(expected.toString(), p0105.buildTree(preorder, inorder).toString());
+    }
+
+    @Test
+    public void test0106()
+    {
+        P0106ConstructBinaryTree p0106 = new P0106ConstructBinaryTree();
+        int[] inorder = {9, 3, 15, 20, 7}, postorder = {9, 15, 7, 20, 3};
+        TreeNode expected = new TreeNode(3,
+                new TreeNode(9),
+                new TreeNode(20,
+                        new TreeNode(15),
+                        new TreeNode(7)));
+        assertEquals(expected.toString(), p0106.buildTree(inorder, postorder).toString());
     }
 
     @Test

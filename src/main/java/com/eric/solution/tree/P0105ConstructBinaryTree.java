@@ -2,10 +2,7 @@ package com.eric.solution.tree;
 
 import com.eric.domain.TreeNode;
 
-import java.util.Deque;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Description :
@@ -28,6 +25,34 @@ public class P0105ConstructBinaryTree
         return buildTree(preorder, idxMap, 0, n - 1);
         // return buildTree(preorder, idxMap, 0, 0, n - 1);
     }
+
+    public TreeNode buildTree(int[] preorder, int[] inorder)
+    {
+        if (preorder.length == 0)
+        {
+            return null;
+        }
+        int value = preorder[0];
+        TreeNode root = new TreeNode(value);
+        for (int i = 0; i < inorder.length; i++)
+        {
+            if (inorder[i] == value)
+            {
+                int[] inLeft = Arrays.copyOfRange(inorder, 0, i);
+                int[] inRight = Arrays.copyOfRange(inorder, i + 1, inorder.length);
+
+                int[] preLeft = Arrays.copyOfRange(preorder, 1, i + 1);
+                int[] preRight = Arrays.copyOfRange(preorder, i + 1, preorder.length);
+
+                root.left = buildTree(preLeft, inLeft);
+                root.right = buildTree(preRight, inRight);
+
+                break;
+            }
+        }
+        return root;
+    }
+
 
     /**
      * @param preorder 前序遍历序列
