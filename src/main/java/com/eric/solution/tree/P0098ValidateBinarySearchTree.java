@@ -92,4 +92,28 @@ public class P0098ValidateBinarySearchTree
         }
         return true;
     }
+
+    long prev = Long.MIN_VALUE;
+
+    public boolean isValidBST(TreeNode root)
+    {
+        // if (root == null)
+        //     return true;
+        // boolean leftValid = isValidBST(root.left);
+        // if (root.val <= prev)
+        //     return false;
+        // prev = root.val;
+        // boolean rightValid = isValidBST(root.right);
+        // return leftValid && rightValid;
+
+        if (root == null)
+            return true;
+        boolean leftValid = isValidBST(root.left);
+        if(!leftValid)
+            return false;
+        if (root.val <= prev)
+            return false;
+        prev = root.val;
+        return isValidBST(root.right);
+    }
 }

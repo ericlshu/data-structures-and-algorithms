@@ -10,8 +10,7 @@ import org.junit.Test;
 
 import java.util.List;
 
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 /**
  * Description :
@@ -203,9 +202,10 @@ public class TreeTest
         TreeNode node1 = new TreeNode(3, new TreeNode(2), new TreeNode(4));
         TreeNode node2 = new TreeNode(6, null, new TreeNode(7));
         TreeNode root = new TreeNode(5, node1, node2);
-        System.out.println(p0098.isValidBST_sort(root));
-        System.out.println(p0098.isValidBST_inorder(root));
-        System.out.println(p0098.isValidBST_recursion(root));
+        assertTrue(p0098.isValidBST_sort(root));
+        assertTrue(p0098.isValidBST_inorder(root));
+        assertTrue(p0098.isValidBST_recursion(root));
+        assertTrue(p0098.isValidBST(root));
     }
 
     @Test
