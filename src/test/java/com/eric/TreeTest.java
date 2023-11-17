@@ -622,4 +622,28 @@ public class TreeTest
                         new TreeNode(2));
         System.out.println(p0572.isSubtree(root, subRoot));
     }
+
+    @Test
+    public void test0938()
+    {
+        TreeNode node1 = new TreeNode(10,
+                new TreeNode(5
+                        , new TreeNode(3), new TreeNode(7)),
+                new TreeNode(15,
+                        null,
+                        new TreeNode(18)));
+
+        TreeNode node2 = new TreeNode(10,
+                new TreeNode(5
+                        , new TreeNode(3, new TreeNode(1), null),
+                        new TreeNode(7, new TreeNode(6), null)),
+                new TreeNode(15,
+                        new TreeNode(13),
+                        new TreeNode(18)));
+        P0938RangeSumOfBST p0938 = new P0938RangeSumOfBST();
+        assertEquals(32,p0938.rangeSumBSTInorder(node1,7,15));
+        assertEquals(23,p0938.rangeSumBSTInorder(node2,6,10));
+        assertEquals(32,p0938.rangeSumBSTRecursion(node1,7,15));
+        assertEquals(23,p0938.rangeSumBSTRecursion(node2,6,10));
+    }
 }
