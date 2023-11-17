@@ -641,9 +641,28 @@ public class TreeTest
                         new TreeNode(13),
                         new TreeNode(18)));
         P0938RangeSumOfBST p0938 = new P0938RangeSumOfBST();
-        assertEquals(32,p0938.rangeSumBSTInorder(node1,7,15));
-        assertEquals(23,p0938.rangeSumBSTInorder(node2,6,10));
-        assertEquals(32,p0938.rangeSumBSTRecursion(node1,7,15));
-        assertEquals(23,p0938.rangeSumBSTRecursion(node2,6,10));
+        assertEquals(32, p0938.rangeSumBSTInorder(node1, 7, 15));
+        assertEquals(23, p0938.rangeSumBSTInorder(node2, 6, 10));
+        assertEquals(32, p0938.rangeSumBSTRecursion(node1, 7, 15));
+        assertEquals(23, p0938.rangeSumBSTRecursion(node2, 6, 10));
+    }
+
+    @Test
+    public void test1008()
+    {
+        P1008ConstructBinarySearchTreeFromPreorderTraversal p1008 = new P1008ConstructBinarySearchTreeFromPreorderTraversal();
+        int[] arr1 = {8, 5, 1, 7, 10, 12};
+        int[] arr2 = {1, 3};
+        TreeNode node1 = new TreeNode(8,
+                new TreeNode(5
+                        , new TreeNode(1), new TreeNode(7)),
+                new TreeNode(10,
+                        null,
+                        new TreeNode(12)));
+        TreeNode node2 = new TreeNode(1, null, new TreeNode(3));
+        assertEquals(node1.toString(), p1008.bstFromPreorder1(arr1).toString());
+        assertEquals(node2.toString(), p1008.bstFromPreorder1(arr2).toString());
+        assertEquals(node1.toString(), p1008.bstFromPreorder2(arr1).toString());
+        assertEquals(node1.toString(), p1008.bstFromPreorder3(arr1).toString());
     }
 }
