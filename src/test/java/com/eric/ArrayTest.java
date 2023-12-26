@@ -2276,9 +2276,23 @@ public class ArrayTest
     public void test0136()
     {
         P0136SingleNumber p0136 = new P0136SingleNumber();
-        assertEquals(1, p0136.singleNumber(new int[]{2,2,1}));
-        assertEquals(4, p0136.singleNumber(new int[]{4,1,2,1,2}));
-        assertEquals(4, p0136.singleNumberSet(new int[]{4,1,2,1,2}));
+        assertEquals(1, p0136.singleNumber(new int[]{2, 2, 1}));
+        assertEquals(4, p0136.singleNumber(new int[]{4, 1, 2, 1, 2}));
+        assertEquals(4, p0136.singleNumberSet(new int[]{4, 1, 2, 1, 2}));
         assertEquals(1, p0136.singleNumberSet(new int[]{1}));
+    }
+
+    @Test
+    public void test0819()
+    {
+        P0819MostCommonWord p0819 = new P0819MostCommonWord();
+        assertEquals("ball",
+                p0819.mostCommonWord1("Bob hit a ball, the hit BALL flew far after it was hit.", new String[]{"hit"}));
+        assertEquals("ball",
+                p0819.mostCommonWord2("Bob. hIt, baLl", new String[]{"hit"}));
+        assertEquals("a",
+                p0819.mostCommonWord2("A.", new String[]{"hit"}));
+        assertEquals("a",
+                p0819.mostCommonWord2("a", new String[]{"hit"}));
     }
 }
