@@ -1,5 +1,7 @@
 package com.eric.solution.array;
 
+import java.util.HashSet;
+
 /**
  * Description : 只出现一次的数字
  * 给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。
@@ -28,5 +30,16 @@ public class P0136SingleNumber
             nums[0] ^= nums[i];
         }
         return nums[0];
+    }
+
+    public int singleNumberSet(int[] nums)
+    {
+        HashSet<Integer> set = new HashSet<>();
+        for (int num : nums)
+        {
+            if (!set.add(num))
+                set.remove(num);
+        }
+        return set.iterator().next();
     }
 }

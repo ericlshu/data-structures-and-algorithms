@@ -11,7 +11,7 @@ import org.junit.Test;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 /**
  * Description :
@@ -2258,5 +2258,27 @@ public class ArrayTest
         System.out.println(p1590.minSubarray(nums3, 3));
         System.out.println(p1590.minSubarray(nums4, 7));
         System.out.println(p1590.minSubarray(nums5, 3));
+    }
+
+    @Test
+    public void test0217()
+    {
+        P0217ContainsDuplicate p0217 = new P0217ContainsDuplicate();
+        assertTrue(p0217.containsDuplicate1(new int[]{1, 2, 3, 1}));
+        assertTrue(p0217.containsDuplicate2(new int[]{1, 2, 3, 1}));
+        assertFalse(p0217.containsDuplicate3(new int[]{1, 2, 3, 4}));
+        assertFalse(p0217.containsDuplicate4(new int[]{1, 2, 3, 4}));
+        assertTrue(p0217.containsDuplicate5(new int[]{1, 1, 1, 3, 3, 4, 3, 2, 4, 2}));
+        assertTrue(p0217.containsDuplicate6(new int[]{1, 1, 1, 3, 3, 4, 3, 2, 4, 2}));
+    }
+
+    @Test
+    public void test0136()
+    {
+        P0136SingleNumber p0136 = new P0136SingleNumber();
+        assertEquals(1, p0136.singleNumber(new int[]{2,2,1}));
+        assertEquals(4, p0136.singleNumber(new int[]{4,1,2,1,2}));
+        assertEquals(4, p0136.singleNumberSet(new int[]{4,1,2,1,2}));
+        assertEquals(1, p0136.singleNumberSet(new int[]{1}));
     }
 }
