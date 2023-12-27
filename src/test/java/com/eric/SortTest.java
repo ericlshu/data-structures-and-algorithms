@@ -1,9 +1,6 @@
 package com.eric;
 
-import com.eric.solution.sort.BubbleSort;
-import com.eric.solution.sort.HeapSort;
-import com.eric.solution.sort.InsertionSort;
-import com.eric.solution.sort.SelectionSort;
+import com.eric.solution.sort.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -53,8 +50,15 @@ public class SortTest
         InsertionSort.sort(arr);
     }
 
+    @Test
+    public void testShellSort()
+    {
+        ShellSort.sort(arr);
+    }
+
     @After
-    public void after(){
+    public void after()
+    {
         System.out.println("after  : " + Arrays.toString(arr));
         System.out.println("/*************************************/");
     }
