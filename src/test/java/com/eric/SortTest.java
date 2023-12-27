@@ -56,6 +56,24 @@ public class SortTest
         ShellSort.sort(arr);
     }
 
+    @Test
+    public void testMergeSortTopDown()
+    {
+        MergeSort.sortTopDown(arr);
+    }
+
+    @Test
+    public void testMergeBottomUp()
+    {
+        MergeSort.sortBottomUp(arr);
+    }
+
+    @Test
+    public void testMergeInsert()
+    {
+        MergeInsertionSort.sort(arr);
+    }
+
     @After
     public void after()
     {
