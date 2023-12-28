@@ -86,6 +86,18 @@ public class SortTest
         CountingSort.sort(arr);
     }
 
+    @Test
+    public void testBucketSortByRange()
+    {
+        BucketSort.sortByRange(arr);
+    }
+
+    @Test
+    public void testBucketSortByCount()
+    {
+        BucketSort.sortByCount(arr);
+    }
+
     @After
     public void after()
     {
