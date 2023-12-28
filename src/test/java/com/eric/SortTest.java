@@ -21,8 +21,8 @@ public class SortTest
     @Before
     public void setup()
     {
-        System.out.println("/*************************************************/");
-        arr = new int[]{0, 3, 2, 7, 2, 5, 4, 4, 4, 8, 1, 4, 9, 6};
+        System.out.println("/******************************************************/");
+        arr = new int[]{0, 3, 2, 7, 2, 5, -1, 4, 4,-2, 8, 1, 4, 9, 6};
         System.out.println("before : " + Arrays.toString(arr));
     }
 
@@ -77,14 +77,19 @@ public class SortTest
     @Test
     public void testQuickSort()
     {
-        // arr = new int[]{0, 3, 2, 7, 2, 5, 4, 4, 4, 8, 1, 4, 9, 6};
         QuickSort.sort(arr);
+    }
+
+    @Test
+    public void testCountingSort()
+    {
+        CountingSort.sort(arr);
     }
 
     @After
     public void after()
     {
         System.out.println("after  : " + Arrays.toString(arr));
-        System.out.println("/*************************************************/");
+        System.out.println("/******************************************************/");
     }
 }
