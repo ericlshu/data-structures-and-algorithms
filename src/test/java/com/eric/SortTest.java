@@ -22,7 +22,7 @@ public class SortTest
     public void setup()
     {
         System.out.println("/******************************************************/");
-        arr = new int[]{0, 3, 2, 7, 2, 5, -1, 4, 4,-2, 8, 1, 4, 9, 6};
+        arr = new int[]{0, 3, 2, 7, 2, 5, -1, 4, 4, -2, 8, 1, 4, 9, 6};
         System.out.println("before : " + Arrays.toString(arr));
     }
 
@@ -69,12 +69,6 @@ public class SortTest
     }
 
     @Test
-    public void testMergeInsert()
-    {
-        MergeInsertionSort.sort(arr);
-    }
-
-    @Test
     public void testQuickSort()
     {
         QuickSort.sort(arr);
@@ -96,6 +90,25 @@ public class SortTest
     public void testBucketSortByCount()
     {
         BucketSort.sortByCount(arr);
+    }
+
+    @Test
+    public void testRadixSort()
+    {
+        String[] phoneNumbers = new String[10];  // 0~127
+        phoneNumbers[0] = "13812345678";  // int long
+        phoneNumbers[1] = "13912345678";
+        phoneNumbers[2] = "13612345678";
+        phoneNumbers[3] = "13712345678";
+        phoneNumbers[4] = "13512345678";
+        phoneNumbers[5] = "13412345678";
+        phoneNumbers[6] = "15012345678";
+        phoneNumbers[7] = "15112345678";
+        phoneNumbers[8] = "15212345678";
+        phoneNumbers[9] = "15712345678";
+        System.out.println("before : " + Arrays.toString(phoneNumbers));
+        RadixSort.sort(phoneNumbers, 11);
+        System.out.println("after  : " + Arrays.toString(phoneNumbers));
     }
 
     @After

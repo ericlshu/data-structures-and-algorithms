@@ -26,17 +26,23 @@ public class MergeSort
                 int right = Math.min(left + 2 * width - 1, len - 1);
                 int mid = Math.min(left + width - 1, len - 1);
                 // System.out.printf("width = %d, mid = %d in [%d, %d]%n", width,mid, left, right);
-                merge(arr,left,mid,mid+1,right,tmp);
+                merge(arr, left, mid, mid + 1, right, tmp);
             }
-            System.arraycopy(tmp,0,arr,0,len);
+            System.arraycopy(tmp, 0, arr, 0, len);
         }
     }
 
     private static void split(int[] arr, int left, int right, int[] tmp)
     {
         // System.out.println(Arrays.toString(Arrays.copyOfRange(arr, left, right + 1)));
-        if (left == right)
+        // if (left == right)
+        //     return;
+        // if (right - left <= 32)
+        if (right - left <= 4)
+        {
+            insert(arr, left, right);
             return;
+        }
         int mid = (left + right) >> 1;
         split(arr, left, mid, tmp);
         split(arr, mid + 1, right, tmp);
@@ -59,5 +65,22 @@ public class MergeSort
             System.arraycopy(a1, j, a2, k, jEnd - j + 1);
         if (j > jEnd)
             System.arraycopy(a1, i, a2, k, iEnd - i + 1);
+    }
+
+    private static void insert(int[] arr, int left, int right)
+    {
+        for (int i = left; i <= right; i++)
+        {
+            int tmp = arr[i];
+            int j = i - 1;
+            while (j >= left && arr[j] > tmp)
+            {
+                arr[j + 1] = arr[j--];
+            }
+            if (j + 1 != i)
+            {
+                arr[j + 1] = tmp;
+            }
+        }
     }
 }
