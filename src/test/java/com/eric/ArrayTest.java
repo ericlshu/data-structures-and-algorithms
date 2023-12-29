@@ -2301,4 +2301,20 @@ public class ArrayTest
         assertEquals("a",
                 p0819.mostCommonWord2("a", new String[]{"hit"}));
     }
+
+    @Test
+    public void test0164()
+    {
+        assertEquals(3, P0164MaximumGap.maximumGapByBucket(new int[]{3, 6, 9, 1}));
+        assertEquals(0, P0164MaximumGap.maximumGapByBucket(new int[]{1, 1, 1, 1}));
+        assertEquals(1, P0164MaximumGap.maximumGapByBucket(new int[]{1, 1, 2, 2}));
+        assertEquals(99974, P0164MaximumGap.maximumGapByRadix(new int[]{26, 16, 13, 11, 100000}));
+
+        int[] nums1 = {0,10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 220,11,12,21,22};
+        assertEquals(20, P0164MaximumGap.maximumGap(nums1));
+
+        int[] nums2 = {15252, 16764, 27963, 7817, 26155, 20757, 3478, 22602, 20404, 6739, 16790, 10588, 16521, 6644, 20880, 15632, 27078, 25463, 20124, 15728, 30042, 16604, 17223, 4388, 23646, 32683, 23688, 12439, 30630, 3895, 7926, 22101, 32406, 21540, 31799, 3768, 26679, 21799, 23740};
+        assertEquals(2901, P0164MaximumGap.maximumGapByBucket(nums2));
+        assertEquals(2901, P0164MaximumGap.maximumGap(nums2));
+    }
 }
