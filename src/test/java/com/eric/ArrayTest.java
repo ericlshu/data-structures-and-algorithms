@@ -13,6 +13,7 @@ import java.util.List;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
@@ -99,9 +100,11 @@ public class ArrayTest
     @Test
     public void test1122()
     {
-        P1122RelativeSortArray obj = new P1122RelativeSortArray();
         int[] arr1 = {2, 3, 1, 3, 2, 4, 6, 7, 9, 2, 19}, arr2 = {2, 1, 4, 3, 9, 6};
-        System.out.println("result = " + Arrays.toString(obj.relativeSortArray(arr1, arr2)));
+        int[] tar = {2, 2, 2, 1, 4, 3, 3, 9, 6, 7, 19};
+        assertArrayEquals(tar, P1122RelativeSortArray.relativeSortArray(arr1, arr2));
+        assertArrayEquals(tar, P1122RelativeSortArray.relativeSortArrayByMap(arr1, arr2));
+        assertArrayEquals(tar, P1122RelativeSortArray.relativeSortArrayByCount(arr1, arr2));
     }
 
     @Test
@@ -681,11 +684,12 @@ public class ArrayTest
     @Test
     public void test1636()
     {
-        P1636SortArrayByIncreasingFrequency obj = new P1636SortArrayByIncreasingFrequency();
         int[] nums1 = {2, 3, 1, 3, 2};
         int[] nums2 = {-1, 1, -6, 4, 5, -6, 1, 4, 1};
-        System.out.println(Arrays.toString(obj.frequencySort(nums1)));
-        System.out.println(Arrays.toString(obj.frequencySort(nums2)));
+        System.out.println(Arrays.toString(P1636SortArrayByIncreasingFrequency.frequencySort(nums1)));
+        System.out.println(Arrays.toString(P1636SortArrayByIncreasingFrequency.frequencySortByCount(nums1)));
+        System.out.println(Arrays.toString(P1636SortArrayByIncreasingFrequency.frequencySort(nums2)));
+        System.out.println(Arrays.toString(P1636SortArrayByIncreasingFrequency.frequencySortByCount(nums2)));
     }
 
     @Test

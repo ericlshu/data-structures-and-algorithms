@@ -32,45 +32,31 @@ import java.util.stream.Collectors;
  */
 public class P1636SortArrayByIncreasingFrequency
 {
-    public int[] frequencySort_2(int[] nums)
+    public static int[] frequencySort(int[] nums)
     {
         Map<Integer, Integer> frequency = new HashMap<>(10);
         for (int num : nums)
         {
             frequency.put(num, frequency.getOrDefault(num, 0) + 1);
         }
-        List<Integer> list = Arrays.stream(nums).boxed().sorted((o1, o2) ->
-        {
-            int cnt1 = frequency.get(o1), cnt2 = frequency.get(o2);
-            return cnt1 != cnt2 ? cnt1 - cnt2 : o2 - o1;
-        }).collect(Collectors.toList());
-        return list.stream().mapToInt(Integer::valueOf).toArray();
-    }
-
-    public int[] frequencySort_1(int[] nums)
-    {
-        Map<Integer, Integer> frequency = new HashMap<>(10);
-        for (int num : nums)
-        {
-            frequency.put(num, frequency.getOrDefault(num, 0) + 1);
-        }
-        List<Integer> list = Arrays.stream(nums).boxed().sorted((o1, o2) ->
-        {
-            int cnt1 = frequency.get(o1), cnt2 = frequency.get(o2);
-            return cnt1 != cnt2 ? cnt1 - cnt2 : o2 - o1;
-        }).collect(Collectors.toList());
-        return list.stream().mapToInt(Integer::valueOf).toArray();
-    }
-
-    public int[] frequencySort(int[] nums)
-    {
-        Map<Integer, Integer> frequency = new HashMap<>(10);
-        for (int num : nums)
-            frequency.put(num, frequency.getOrDefault(num, 0) + 1);
         return Arrays.stream(nums).boxed().sorted((o1, o2) ->
         {
             int cnt1 = frequency.get(o1), cnt2 = frequency.get(o2);
             return cnt1 != cnt2 ? cnt1 - cnt2 : o2 - o1;
-        }).collect(Collectors.toList()).stream().mapToInt(Integer::valueOf).toArray();
+        }).mapToInt(Integer::valueOf).toArray();
+    }
+
+    public static int[] frequencySortByCount(int[] nums)
+    {
+        int[] cnt = new int[201];
+        for (int num : nums)
+        {
+            cnt[num + 100]++;
+        }
+        return Arrays.stream(nums).boxed().sorted((o1, o2) ->
+        {
+            int cnt1 = cnt[o1 + 100], cnt2 = cnt[o2 + 100];
+            return cnt1 != cnt2 ? cnt1 - cnt2 : o2 - o1;
+        }).mapToInt(Integer::intValue).toArray();
     }
 }

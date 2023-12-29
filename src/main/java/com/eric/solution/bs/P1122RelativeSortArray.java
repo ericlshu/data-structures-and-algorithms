@@ -1,10 +1,6 @@
 package com.eric.solution.bs;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Description : 数组的相对排序
@@ -31,7 +27,7 @@ import java.util.Map;
  */
 public class P1122RelativeSortArray
 {
-    public int[] relativeSortArray(int[] arr1, int[] arr2)
+    public static int[] relativeSortArray(int[] arr1, int[] arr2)
     {
         ArrayList<Integer> list = new ArrayList<>();
         for (int num : arr1)
@@ -58,7 +54,7 @@ public class P1122RelativeSortArray
         return result;
     }
 
-    public int[] relativeSortArray_1(int[] arr1, int[] arr2)
+    public static int[] relativeSortArrayByMap(int[] arr1, int[] arr2)
     {
         Map<Integer, Integer> map = new HashMap<>();
         List<Integer> list = new ArrayList<>();
@@ -77,5 +73,33 @@ public class P1122RelativeSortArray
             return x - y;
         });
         return list.stream().mapToInt(Integer::valueOf).toArray();
+    }
+
+    public static int[] relativeSortArrayByCount(int[] arr1, int[] arr2)
+    {
+        int[] cnt = new int[1001];
+        for (int i : arr1)
+        {
+            cnt[i]++;
+        }
+        // System.out.println("cnt = " + Arrays.toString(cnt));
+        int[] res = new int[arr1.length];
+        int idx = 0;
+        for (int i : arr2)
+        {
+            while (cnt[i]-- > 0)
+            {
+                res[idx++] = i;
+            }
+        }
+        // System.out.println("cnt = " + Arrays.toString(cnt));
+        for (int i = 0; i < cnt.length; i++)
+        {
+            while (cnt[i]-- > 0)
+            {
+                res[idx++] = i;
+            }
+        }
+        return res;
     }
 }
