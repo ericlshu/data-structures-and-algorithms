@@ -594,4 +594,23 @@ public class CollectionTest
         ListNode list2 = new ListNode(1000000, new ListNode(1000001, new ListNode(1000002)));
         System.out.println(p1669.mergeInBetween(list1, 3, 4, list2));
     }
+
+
+    @Test
+    public void test2487()
+    {
+        ListNode target = new ListNode(13,new ListNode(8));
+
+        ListNode node = new ListNode(5, new ListNode(2, new ListNode(13,
+                new ListNode(3, new ListNode(8)))));
+        assertEquals(target,P2487RemoveNodesFromLinkedList.removeNodesRecursion(node));
+
+        node = new ListNode(5, new ListNode(2, new ListNode(13,
+                new ListNode(3, new ListNode(8)))));
+        assertEquals(target,P2487RemoveNodesFromLinkedList.removeNodesStack(node));
+
+        node = new ListNode(5, new ListNode(2, new ListNode(13,
+                new ListNode(3, new ListNode(8)))));
+        assertEquals(target,P2487RemoveNodesFromLinkedList.removeNodesReverse(node));
+    }
 }

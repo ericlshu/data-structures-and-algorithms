@@ -14,6 +14,15 @@ public class ListNode
     public int val;
     public ListNode next;
 
+    @Override
+    public String toString()
+    {
+        return "ListNode{" +
+                "val=" + val +
+                ", next=" + next +
+                '}';
+    }
+
     public ListNode()
     {
     }
@@ -27,23 +36,6 @@ public class ListNode
     {
         this.val = val;
         this.next = next;
-    }
-
-    @Override
-    public String toString()
-    {
-        StringBuilder sb = new StringBuilder();
-        sb.append("[");
-        ListNode p = this;
-        while (p != null)
-        {
-            sb.append(p.val);
-            if (p.next != null)
-                sb.append(",");
-            p = p.next;
-        }
-        sb.append("]");
-        return sb.toString();
     }
 
     public static ListNode of(int... elements)
