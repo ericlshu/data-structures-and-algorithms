@@ -2333,5 +2333,6 @@ public class ArrayTest
         assertEquals(3, P0322CoinChange.coinChangeRecursion(new int[]{1, 2, 5}, 11));
         assertEquals(-1, P0322CoinChange.coinChangeRecursion(new int[]{2}, 3));
         assertEquals(0, P0322CoinChange.coinChangeRecursion(new int[]{1}, 0));
+        assertEquals(5, P0322CoinChange.coinChangeGreedy(new int[]{1, 2, 5}, 18));
     }
 }
