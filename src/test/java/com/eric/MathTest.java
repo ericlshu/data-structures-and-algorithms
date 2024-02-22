@@ -8,6 +8,8 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+import static org.junit.Assert.assertEquals;
+
 /**
  * Description :
  *
@@ -217,7 +219,6 @@ public class MathTest
         System.out.println(p0120.minimumTotal_dpn2(triangle));
         System.out.println(p0120.minimumTotal_dpn(triangle));
         System.out.println(p0120.minimumTotal_iteration(triangle));
-
     }
 
     @Test
@@ -237,10 +238,12 @@ public class MathTest
     public void test0062()
     {
         P0062UniquePaths p0062 = new P0062UniquePaths();
-        System.out.println(p0062.uniquePaths_dp(3, 2));
-        System.out.println(p0062.uniquePaths_dp(3, 7));
-        System.out.println(p0062.uniquePaths_math(7, 3));
-        System.out.println(p0062.uniquePaths_math(3, 3));
+        assertEquals(3, p0062.uniquePaths_dp1(3, 2));
+        assertEquals(28, p0062.uniquePaths_dp1(3, 7));
+        assertEquals(3, p0062.uniquePaths_dp2(3, 2));
+        assertEquals(28, p0062.uniquePaths_dp2(3, 7));
+        assertEquals(28, p0062.uniquePaths_math(7, 3));
+        assertEquals(6, p0062.uniquePaths_math(3, 3));
     }
 
     @Test
