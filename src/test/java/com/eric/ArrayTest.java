@@ -2325,6 +2325,17 @@ public class ArrayTest
         assertEquals(0, P0518CoinChangeII.changeRecursion(3, new int[]{2}));
         assertEquals(1, P0518CoinChangeII.changeRecursion(10, new int[]{10}));
         assertEquals(35502874, P0518CoinChangeII.changeRecursion(500, new int[]{3, 5, 7, 8, 9, 10, 11}));
+
+        assertEquals(4, P0518CoinChangeII.changeDpNn(5, new int[]{1, 2, 5}));
+        assertEquals(0, P0518CoinChangeII.changeDpNn(3, new int[]{2}));
+        assertEquals(1, P0518CoinChangeII.changeDpNn(10, new int[]{10}));
+        assertEquals(35502874, P0518CoinChangeII.changeDpNn(500, new int[]{3, 5, 7, 8, 9, 10, 11}));
+
+        assertEquals(4, P0518CoinChangeII.changeDpn1(5, new int[]{1, 2, 5}));
+        assertEquals(0, P0518CoinChangeII.changeDpn1(3, new int[]{2}));
+        assertEquals(35502874, P0518CoinChangeII.changeDpn1(500, new int[]{3, 5, 7, 8, 9, 10, 11}));
+
+        assertEquals(35502874, P0518CoinChangeII.changeDpn2(500, new int[]{3, 5, 7, 8, 9, 10, 11}));
     }
 
     @Test
@@ -2333,11 +2344,15 @@ public class ArrayTest
         assertEquals(3, P0322CoinChange.coinChangeRecursion(new int[]{1, 2, 5}, 11));
         assertEquals(-1, P0322CoinChange.coinChangeRecursion(new int[]{2}, 3));
         assertEquals(0, P0322CoinChange.coinChangeRecursion(new int[]{1}, 0));
+
         assertEquals(5, P0322CoinChange.coinChangeGreedy(new int[]{1, 2, 5}, 18));
+
         assertEquals(5, P0322CoinChange.coinChangeDpNn(new int[]{1, 2, 5}, 18));
         assertEquals(-1, P0322CoinChange.coinChangeDpNn(new int[]{2}, 3));
+
         assertEquals(1, P0322CoinChange.coinChangeDpn1(new int[]{1, 2, 5}, 5));
         assertEquals(5, P0322CoinChange.coinChangeDpn1(new int[]{1, 2, 5}, 18));
+
         assertEquals(1, P0322CoinChange.coinChangeDpn2(new int[]{1, 2, 5}, 5));
         assertEquals(5, P0322CoinChange.coinChangeDpn2(new int[]{1, 2, 5}, 18));
     }

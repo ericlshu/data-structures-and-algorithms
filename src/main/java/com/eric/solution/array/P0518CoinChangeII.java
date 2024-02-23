@@ -28,4 +28,67 @@ public class P0518CoinChangeII
             return cnt;
         }
     }
+
+    public static int changeDpNn(int amount, int[] coins)
+    {
+        int[][] dp = new int[coins.length][amount + 1];
+        for (int i = 0; i < coins.length; i++)
+        {
+            dp[i][0] = 1;
+        }
+
+        for (int j = coins[0]; j <= amount; j++)
+        {
+            dp[0][j] = dp[0][j - coins[0]];
+        }
+
+        for (int i = 1; i < coins.length; i++)
+        {
+            for (int j = 1; j <= amount; j++)
+            {
+                if (j >= coins[i])
+                    dp[i][j] = dp[i - 1][j] + dp[i][j - coins[i]];
+                else
+                    dp[i][j] = dp[i - 1][j];
+            }
+        }
+        return dp[coins.length - 1][amount];
+    }
+
+    public static int changeDpn1(int amount, int[] coins)
+    {
+        int[] dp = new int[amount + 1];
+
+        dp[0] = 1;
+
+        for (int j = coins[0]; j <= amount; j++)
+        {
+            dp[j] = dp[j - coins[0]];
+        }
+
+        for (int i = 1; i < coins.length; i++)
+        {
+            for (int j = 1; j <= amount; j++)
+            {
+                if (j >= coins[i])
+                    dp[j] = dp[j] + dp[j - coins[i]];
+            }
+        }
+
+        return dp[amount];
+    }
+
+    public static int changeDpn2(int amount, int[] coins)
+    {
+        int[] dp = new int[amount + 1];
+        dp[0] = 1;
+        for (int coin : coins)
+        {
+            for (int j = coin; j <= amount; j++)
+            {
+                dp[j] = dp[j] + dp[j - coin];
+            }
+        }
+        return dp[amount];
+    }
 }
