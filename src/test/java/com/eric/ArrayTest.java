@@ -2334,5 +2334,11 @@ public class ArrayTest
         assertEquals(-1, P0322CoinChange.coinChangeRecursion(new int[]{2}, 3));
         assertEquals(0, P0322CoinChange.coinChangeRecursion(new int[]{1}, 0));
         assertEquals(5, P0322CoinChange.coinChangeGreedy(new int[]{1, 2, 5}, 18));
+        assertEquals(5, P0322CoinChange.coinChangeDpNn(new int[]{1, 2, 5}, 18));
+        assertEquals(-1, P0322CoinChange.coinChangeDpNn(new int[]{2}, 3));
+        assertEquals(1, P0322CoinChange.coinChangeDpn1(new int[]{1, 2, 5}, 5));
+        assertEquals(5, P0322CoinChange.coinChangeDpn1(new int[]{1, 2, 5}, 18));
+        assertEquals(1, P0322CoinChange.coinChangeDpn2(new int[]{1, 2, 5}, 5));
+        assertEquals(5, P0322CoinChange.coinChangeDpn2(new int[]{1, 2, 5}, 18));
     }
 }
