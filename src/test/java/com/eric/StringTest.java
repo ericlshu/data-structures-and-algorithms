@@ -1,16 +1,18 @@
 package com.eric;
 
-import com.eric.solution.string.*;
-import org.junit.Test;
 import com.eric.solution.array.P0022GenerateParentheses;
 import com.eric.solution.array.P0242ValidAnagram;
 import com.eric.solution.array.P1796SecondLargestDigitInAString;
 import com.eric.solution.math.P0067AddBinary;
 import com.eric.solution.math.P0389FindTheDifference;
+import com.eric.solution.string.*;
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * Description :
@@ -748,7 +750,7 @@ public class StringTest
         String[] names1 = {"gta", "gta(1)", "gta", "avalon"};
         String[] names2 = {"onepiece", "onepiece(1)", "onepiece(2)", "onepiece(3)", "onepiece"};
         String[] names3 = {"wano", "wano", "wano", "wano"};
-        String[] names4 = {"kaido","kaido(1)","kaido","kaido(1)","kaido(2)"};
+        String[] names4 = {"kaido", "kaido(1)", "kaido", "kaido(1)", "kaido(2)"};
         System.out.println(Arrays.toString(p1487.getFolderNames(names1)));
         System.out.println(Arrays.toString(p1487.getFolderNames(names2)));
         System.out.println(Arrays.toString(p1487.getFolderNames(names3)));
@@ -763,5 +765,18 @@ public class StringTest
         System.out.println(p0831.maskPII_1("AB@qq.com"));
         System.out.println(p0831.maskPII_1("1(234)567-890"));
         System.out.println(p0831.maskPII_2("86-(10)12345678"));
+    }
+
+
+    @Test
+    public void test1143()
+    {
+        assertEquals(3, P1143LongestCommonSubsequence.longestCommonSubsequenceDpnn("abcde", "ace"));
+        assertEquals(5, P1143LongestCommonSubsequence.longestCommonSubsequenceDpnn("abxyz", "abcxyz"));
+        assertEquals(0, P1143LongestCommonSubsequence.longestCommonSubsequenceDpnn("abc", "def"));
+
+        assertEquals(3, P1143LongestCommonSubsequence.longestCommonSubsequenceDpn1("abcde", "ace"));
+        assertEquals(5, P1143LongestCommonSubsequence.longestCommonSubsequenceDpn1("abxyz", "abcxyz"));
+        assertEquals(0, P1143LongestCommonSubsequence.longestCommonSubsequenceDpn1("abc", "def"));
     }
 }
