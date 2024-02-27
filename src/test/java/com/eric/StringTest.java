@@ -779,4 +779,15 @@ public class StringTest
         assertEquals(5, P1143LongestCommonSubsequence.longestCommonSubsequenceDpn1("abxyz", "abcxyz"));
         assertEquals(0, P1143LongestCommonSubsequence.longestCommonSubsequenceDpn1("abc", "def"));
     }
+
+    @Test
+    public void test05833()
+    {
+        assertEquals(2, P0583DeleteOperationForTwoStrings.minDistanceDpn1("sea", "eat"));
+        assertEquals(4, P0583DeleteOperationForTwoStrings.minDistanceDpn1("leetcode", "etco"));
+        assertEquals(3, P0583DeleteOperationForTwoStrings.minDistanceDpn1("park", "spake"));
+
+        assertEquals(4, P0583DeleteOperationForTwoStrings.minDistanceDpnn("leetcode", "etco"));
+        assertEquals(3, P0583DeleteOperationForTwoStrings.minDistanceDpnn("park", "spake"));
+    }
 }
