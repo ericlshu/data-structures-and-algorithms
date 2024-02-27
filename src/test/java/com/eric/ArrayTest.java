@@ -2356,4 +2356,13 @@ public class ArrayTest
         assertEquals(1, P0322CoinChange.coinChangeDpn2(new int[]{1, 2, 5}, 5));
         assertEquals(5, P0322CoinChange.coinChangeDpn2(new int[]{1, 2, 5}, 18));
     }
+
+    @Test
+    public void test0300()
+    {
+        assertEquals(4, P300LongestIncreasingSubsequence.lengthOfLIS(new int[]{10, 9, 2, 5, 3, 7, 101, 18}));
+        assertEquals(4, P300LongestIncreasingSubsequence.lengthOfLIS(new int[]{0, 1, 0, 3, 2, 3}));
+        assertEquals(1, P300LongestIncreasingSubsequence.lengthOfLIS(new int[]{7, 7, 7, 7, 7, 7, 7}));
+        assertEquals(6, P300LongestIncreasingSubsequence.lengthOfLIS(new int[]{1, 3, 6, 7, 9, 4, 19, 5, 6}));
+    }
 }
