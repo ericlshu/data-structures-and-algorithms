@@ -665,4 +665,15 @@ public class TreeTest
         assertEquals(node1.toString(), p1008.bstFromPreorder2(arr1).toString());
         assertEquals(node1.toString(), p1008.bstFromPreorder3(arr1).toString());
     }
+
+    @Test
+    public void test0096()
+    {
+        assertEquals(5,P0096UniqueBinarySearchTrees.numTreesDp(3));
+        assertEquals(14,P0096UniqueBinarySearchTrees.numTreesDp(4));
+        assertEquals(42,P0096UniqueBinarySearchTrees.numTreesDp(5));
+        assertEquals(1767263190,P0096UniqueBinarySearchTrees.numTreesDp(19));
+        assertEquals(42,P0096UniqueBinarySearchTrees.numTreesMath(5));
+        assertEquals(1767263190,P0096UniqueBinarySearchTrees.numTreesMath(19));
+    }
 }
