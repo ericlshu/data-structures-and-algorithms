@@ -651,10 +651,10 @@ public class StringTest
     public void test0022()
     {
         P0022GenerateParentheses p0022 = new P0022GenerateParentheses();
-        System.out.println(p0022.generateParenthesis_1(3));
-        System.out.println(p0022.generateParenthesis_2(3));
-        System.out.println(p0022.generateParenthesis_1(1));
-        System.out.println(p0022.generateParenthesis_2(1));
+        assertEquals("[((())), (()()), (())(), ()(()), ()()()]", p0022.generateParenthesis_1(3).toString());
+        assertEquals("[((())), (()()), (())(), ()(()), ()()(), <==>, ((())), (()()), (())(), ()(()), ()()()]",
+                p0022.generateParenthesis_2(3).toString());
+        assertEquals("[()()(), ()(()), (())(), (()()), ((()))]", p0022.generateParenthesisDp(3).toString());
     }
 
     @Test
