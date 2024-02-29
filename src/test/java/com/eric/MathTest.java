@@ -79,12 +79,12 @@ public class MathTest
     @Test
     public void test0069()
     {
-        P0069SqrtOfX obj = new P0069SqrtOfX();
-        // for (int i = 0; i < Integer.MAX_VALUE; i++)
-        for (int i = 0; i < 10_000; i++)
-        {
-            System.out.println(obj.mySqrt_1(i));
-        }
+        P0069SqrtOfX p0069 = new P0069SqrtOfX();
+        assertEquals(2,p0069.mySqrt1(8));
+        assertEquals(9,p0069.mySqrt2(99));
+        assertEquals(46339,p0069.mySqrt2(2147395599));
+        assertEquals(46339,p0069.mySqrtMath(2147395599));
+        assertEquals(46339,p0069.mySqrtNewton(2147395599));
     }
 
     @Test
@@ -290,5 +290,18 @@ public class MathTest
         System.out.println(p1039.minScoreTriangulation(values1));
         System.out.println(p1039.minScoreTriangulation(values2));
         System.out.println(p1039.minScoreTriangulation(values3));
+    }
+    @Test
+    public void test0050()
+    {
+        System.out.println(P0050Powxn.myPowRecursion(2.0, 10));
+        System.out.println(P0050Powxn.myPowRecursion(2.1, 3));
+        System.out.println(P0050Powxn.myPowRecursion(2.0, -2));
+        System.out.println(P0050Powxn.myPowRecursion(2.0, -2147483648));
+
+        System.out.println(P0050Powxn.myPowIteration(2.0, 10));
+        System.out.println(P0050Powxn.myPowIteration(2.1, 3));
+        System.out.println(P0050Powxn.myPowIteration(2.0, -2));
+        System.out.println(P0050Powxn.myPowIteration(2.0, -2147483648));
     }
 }

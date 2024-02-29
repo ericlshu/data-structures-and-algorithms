@@ -24,7 +24,7 @@ package com.eric.solution.math;
  */
 public class P0069SqrtOfX
 {
-    public int mySqrt_1(int x)
+    public int mySqrt1(int x)
     {
         int left = 0, right = x;
         int mid;
@@ -43,13 +43,15 @@ public class P0069SqrtOfX
         return right;
     }
 
-    public int mySqrt_2(int x)
+    public int mySqrt2(int x)
     {
         int l = 0, r = x, ans = -1;
         while (l <= r)
         {
-            int mid = l + (r - l) / 2;
-            if ((long) mid * mid <= x)
+            // int mid = l + (r - l) / 2;
+            // if ((long) mid * mid <= x)
+            int mid = (l + r) >>> 1;
+            if (mid <= x / mid)
             {
                 ans = mid;
                 l = mid + 1;
@@ -62,20 +64,20 @@ public class P0069SqrtOfX
         return ans;
     }
 
-    public int mySqrt_math(int x)
+    public int mySqrtMath(int x)
     {
         if (x == 0) return 0;
         int ans = (int) Math.exp(0.5 * Math.log(x));
         return (long) (ans + 1) * (ans + 1) <= x ? ans + 1 : ans;
     }
 
-    public int mySqrt_Newton(int x)
+    public int mySqrtNewton(int x)
     {
         if (x == 0) return 0;
-        double c = x, x0 = x;
+        double x0 = x;
         while (true)
         {
-            double xi = 0.5 * (x0 + c / x0);
+            double xi = 0.5 * (x0 + (double) x / x0);
             if (Math.abs(x0 - xi) < 1e-7)
             {
                 break;
