@@ -781,7 +781,7 @@ public class StringTest
     }
 
     @Test
-    public void test05833()
+    public void test0583()
     {
         assertEquals(2, P0583DeleteOperationForTwoStrings.minDistanceDpn1("sea", "eat"));
         assertEquals(4, P0583DeleteOperationForTwoStrings.minDistanceDpn1("leetcode", "etco"));
@@ -789,5 +789,18 @@ public class StringTest
 
         assertEquals(4, P0583DeleteOperationForTwoStrings.minDistanceDpnn("leetcode", "etco"));
         assertEquals(3, P0583DeleteOperationForTwoStrings.minDistanceDpnn("park", "spake"));
+    }
+
+    @Test
+    public void test0395()
+    {
+        P0395LongestSubstringWithAtLeastKRepeatingCharacters p0395 =
+                new P0395LongestSubstringWithAtLeastKRepeatingCharacters();
+        //
+        assertEquals(3,p0395.longestSubstring("aaabb",3));
+        assertEquals(5,p0395.longestSubstring("ababbc",2));
+        assertEquals(0,p0395.longestSubstring("ababbc",3));
+        assertEquals(3,p0395.longestSubstring("dddxxaabaaabaacciiiefbff",3));
+        assertEquals(10,p0395.longestSubstring("dddxxaabaaabbaacciiiefbff",3));
     }
 }
