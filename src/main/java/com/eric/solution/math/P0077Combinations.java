@@ -1,9 +1,6 @@
 package com.eric.solution.math;
 
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.Deque;
-import java.util.List;
+import java.util.*;
 
 /**
  * Description : 组合
@@ -61,12 +58,12 @@ public class P0077Combinations
         {
             // 向路径变量里添加一个数
             path.addLast(i);
-            System.out.println("递归之前 => " + path);
+            // System.out.println("递归之前 => " + path);
             // 下一轮搜索，设置的搜索起点要加 1，因为组合数理不允许出现重复的元素
             dfs_1(n, k, i + 1, path, lists);
             // 重点理解这里：深度优先遍历有回头的过程，因此递归之前做了什么，递归之后需要做相同操作的逆向操作
             path.removeLast();
-            System.out.println("递归之后 <= " + path);
+            // System.out.println("递归之后 <= " + path);
         }
     }
 
@@ -118,5 +115,32 @@ public class P0077Combinations
             temp.set(j, temp.get(j) + 1);
         }
         return ans;
+    }
+
+    public List<List<Integer>> combineBackTrace(int n, int k)
+    {
+        List<List<Integer>> res = new ArrayList<>();
+        backTrace(n, k, 1, new LinkedList<>(), res);
+        return res;
+    }
+
+    private void backTrace(int n, int k, int start, Deque<Integer> path, List<List<Integer>> res)
+    {
+        if (path.size() == k)
+        {
+            res.add(new ArrayList<>(path));
+            return;
+        }
+        for (int i = start; i <= n; i++)
+        {
+            // 缺的数字数 大于 备用的数字数，剪枝
+            if (k - path.size() > n - i + 1)
+                continue;
+            path.push(i);
+            // 递归
+            backTrace(n, k, i + 1, path, res);
+            // 回溯
+            path.pop();
+        }
     }
 }

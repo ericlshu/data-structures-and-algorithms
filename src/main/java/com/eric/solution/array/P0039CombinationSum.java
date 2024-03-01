@@ -109,7 +109,7 @@ public class P0039CombinationSum
         if (target == 0)
         {
             result.add(new ArrayList<>(path));
-            System.out.println("===> result = " + result);
+            // System.out.println("===> result = " + result);
             return;
         }
         for (int i = begin; i < candidates.length; i++)
@@ -117,14 +117,14 @@ public class P0039CombinationSum
             // 重点理解这里剪枝，前提是候选数组已经有序，
             if (target - candidates[i] < 0)
             {
-                System.out.println("<--> begin : " + i + ", candidate : " + candidates[i] + ", left : " + (target - candidates[i]) + ", path : " + path);
+                // System.out.println("<--> begin : " + i + ", candidate : " + candidates[i] + ", left : " + (target - candidates[i]) + ", path : " + path);
                 break;
             }
             path.addLast(candidates[i]);
-            System.out.println("|--> begin : " + i + ", candidate : " + candidates[i] + ", left : " + (target - candidates[i]) + ", path : " + path);
+            // System.out.println("|--> begin : " + i + ", candidate : " + candidates[i] + ", left : " + (target - candidates[i]) + ", path : " + path);
             dfs(candidates, i, target - candidates[i]);
             path.removeLast();
-            System.out.println("<--| begin : " + i + ", candidate : " + candidates[i] + ", left : " + (target - candidates[i]) + ", path : " + path);
+            // System.out.println("<--| begin : " + i + ", candidate : " + candidates[i] + ", left : " + (target - candidates[i]) + ", path : " + path);
         }
     }
 

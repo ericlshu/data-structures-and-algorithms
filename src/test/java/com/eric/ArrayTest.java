@@ -150,8 +150,10 @@ public class ArrayTest
     {
         P0039CombinationSum p0039 = new P0039CombinationSum();
         int[] nums = {2, 3, 5};
-        System.out.println(p0039.combinationSum_1(nums, 8));
-        System.out.println(p0039.combinationSum_2(nums, 8));
+        assertEquals("[[2, 2, 2, 2], [2, 3, 3], [3, 5]]",
+                p0039.combinationSum_1(nums, 8).toString());
+        assertEquals("[[2, 2, 2, 2], [2, 3, 3], [3, 5]]",
+                p0039.combinationSum_2(nums, 8).toString());
     }
 
     @Test
@@ -162,6 +164,14 @@ public class ArrayTest
         int[] candidates2 = {2, 5, 2, 1, 2};
         System.out.println(p0040.combinationSum2(candidates1, 8));
         System.out.println(p0040.combinationSum2(candidates2, 5));
+    }
+
+    @Test
+    public void test0216()
+    {
+        System.out.println(P0216CombinationSumIII.combinationSum3(3, 7));
+        System.out.println(P0216CombinationSumIII.combinationSum3(3, 9));
+        System.out.println(P0216CombinationSumIII.combinationSum3(4, 1));
     }
 
     @Test

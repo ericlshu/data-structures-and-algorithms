@@ -104,6 +104,18 @@ public class MathTest
         P0077Combinations p0077 = new P0077Combinations();
         System.out.println(p0077.combine_dfs(5, 3));
         System.out.println(p0077.combine_dict(5, 3));
+        System.out.println(p0077.combineBackTrace(4, 2));
+        System.out.println(p0077.combineBackTrace(4, 3));
+    }
+
+    @Test
+    public void test0216()
+    {
+        P0077Combinations p0077 = new P0077Combinations();
+        System.out.println(p0077.combine_dfs(5, 3));
+        System.out.println(p0077.combine_dict(5, 3));
+        System.out.println(p0077.combineBackTrace(4, 2));
+        System.out.println(p0077.combineBackTrace(4, 3));
     }
 
     @Test
