@@ -2375,4 +2375,18 @@ public class ArrayTest
         assertEquals(1, P300LongestIncreasingSubsequence.lengthOfLIS(new int[]{7, 7, 7, 7, 7, 7, 7}));
         assertEquals(6, P300LongestIncreasingSubsequence.lengthOfLIS(new int[]{1, 3, 6, 7, 9, 4, 19, 5, 6}));
     }
+
+    @Test
+    public void test0051()
+    {
+        System.out.println(P0051NQueens.solveNQueens(4));
+        for (int i = 1; i <= 9; i++)
+        {
+            System.out.println(i + " Queen(s) : " + P0051NQueens.solveNQueens(i).size());
+        }
+        assertEquals(2, P0051NQueens.solveNQueens(4).size());
+        assertEquals(7, P0051NQueens.solveNQueens(40).size());
+        assertEquals(8, P0051NQueens.solveNQueens(92).size());
+        assertEquals(9, P0051NQueens.solveNQueens(352).size());
+    }
 }
