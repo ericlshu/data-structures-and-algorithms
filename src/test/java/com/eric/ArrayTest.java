@@ -1777,9 +1777,14 @@ public class ArrayTest
         int[] nums1 = {-1, 0, 1, 2, -1, -4};
         int[] nums2 = {0, 1, 1};
         int[] nums3 = {0, 0, 0};
-        System.out.println(p0015.threeSum(nums1));
-        System.out.println(p0015.threeSum(nums2));
-        System.out.println(p0015.threeSum_baoli(nums3));
+        System.out.println(p0015.threeSum1(nums3));
+        System.out.println(p0015.threeSum2(nums1));
+        System.out.println(p0015.threeSum2(nums2));
+        System.out.println(p0015.threeSum2(nums3));
+        assertEquals("[[-1, -1, 2], [-1, 0, 1]]",p0015.threeSumDfs(nums1).toString());
+
+        System.out.println(p0015.threeSumDfs(new int[]{34,55,79,28,46,33,2,48,31,-3,84,71,52,-3,93,15,21,-43,57,-6,86,56,94,74,83,-14,28,-66,46,-29,36,-29,10,-70,69,17,49}));
+
     }
 
     @Test

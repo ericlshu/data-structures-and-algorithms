@@ -2,6 +2,7 @@ package com.eric.solution.array;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -25,7 +26,7 @@ import java.util.List;
  */
 public class P0015ThreeSum
 {
-    public List<List<Integer>> threeSum_baoli(int[] nums)
+    public List<List<Integer>> threeSum1(int[] nums)
     {
         int n = nums.length;
         Arrays.sort(nums);
@@ -51,7 +52,7 @@ public class P0015ThreeSum
         return result;
     }
 
-    public List<List<Integer>> threeSum(int[] nums)
+    public List<List<Integer>> threeSum2(int[] nums)
     {
         List<List<Integer>> result = new ArrayList<>();
         Arrays.sort(nums);
@@ -90,5 +91,71 @@ public class P0015ThreeSum
             }
         }
         return result;
+    }
+
+    public List<List<Integer>> threeSumDfs(int[] nums)
+    {
+        List<List<Integer>> res = new ArrayList<>();
+        Arrays.sort(nums);
+        dfs(nums, 3, 0, nums.length - 1, 0, new LinkedList<>(), res);
+
+        return res;
+    }
+
+    /**
+     * @param nums   升序数组
+     * @param n      选取的数字个数
+     * @param i      参与求解数组左边界
+     * @param j      参与求解数组右边界
+     * @param target 当前问题中数字和，初始为0
+     * @param stack  已经被固定的数字
+     * @param res    返回结果
+     */
+    private void dfs(int[] nums, int n, int i, int j, int target, LinkedList<Integer> stack, List<List<Integer>> res)
+    {
+        if (n == 2)
+        {
+            // 当n=2时，调用两数之和解法
+            twoSum(nums, i, j, target, stack, res);
+            return;
+        }
+        for (int k = i; k < j; k++)
+        {
+            // 剪枝：检查重复
+            if (k > i && nums[k] == nums[k - 1])
+                continue;
+            // 递归：固定一个数字，求n-1个数字之和
+            stack.push(nums[k]);
+            dfs(nums, n - 1, k + 1, j, target - nums[k], stack, res);
+            // 回溯
+            stack.pop();
+        }
+    }
+
+    private void twoSum(int[] nums, int i, int j, int target, LinkedList<Integer> stack, List<List<Integer>> res)
+    {
+        while (i < j)
+        {
+            int sum = nums[i] + nums[j];
+            if (sum < target)
+                i++;
+            else if (sum > target)
+                j--;
+            else
+            {
+                ArrayList<Integer> list = new ArrayList<>(stack);
+                list.add(nums[i++]);
+                list.add(nums[j--]);
+                res.add(list);
+                while (i < j && nums[i] == nums[i - 1])
+                {
+                    i++;
+                }
+                while (i < j && nums[j] == nums[j + 1])
+                {
+                    j--;
+                }
+            }
+        }
     }
 }
