@@ -49,9 +49,8 @@ public class Heap {
      */
     public int poll(int index) {
         int deleted = array[index];
-        swap(index, size - 1);
-        size--;
-        down(index);
+        up(Integer.MAX_VALUE, index);
+        poll();
         return deleted;
     }
 
@@ -75,7 +74,7 @@ public class Heap {
             // 扩容
             grow();
         }
-        up(offered);
+        up(offered, size);
         size++;
     }
 
@@ -88,8 +87,8 @@ public class Heap {
     }
 
     // 将 offered 元素上浮: 直至 offered 小于父元素或到堆顶
-    private void up(int offered) {
-        int child = size;
+    private void up(int offered, int index) {
+        int child = index;
         while (child > 0) {
             int parent = (child - 1) / 2;
             boolean cmp = max ? offered > array[parent] : offered < array[parent];
@@ -142,11 +141,41 @@ public class Heap {
         array[j] = t;
     }
 
+    /*
+              100
+           /      \
+          10      99
+         / \      / \
+        5   6    98 97
+       /\   /\   /
+      1 2  3  4 96
+
+              100
+           /      \
+          96      99
+         / \      / \
+        10   6   98 97
+       /\   /\
+      1 2  3  4
+     */
     public static void main(String[] args) {
-        Heap left = new Heap(5, true);
-        for (int i = 1; i <= 10; i++) {
-            left.offer(i);
-            System.out.println(Arrays.toString(left.array));
-        }
+        Heap heap = new Heap(5, true); //100,10,99,5,6,98,97,1,2,3,4,96
+        heap.offer(100);
+        heap.offer(10);
+        heap.offer(99);
+        heap.offer(5);
+        heap.offer(6);
+        heap.offer(98);
+        heap.offer(97);
+        heap.offer(1);
+        heap.offer(2);
+        heap.offer(3);
+        heap.offer(4);
+        heap.offer(96);
+        System.out.println(Arrays.toString(heap.array));
+        System.out.println(heap.size);
+        System.out.println(heap.poll(3));
+        System.out.println(Arrays.toString(heap.array));
+        System.out.println(heap.size);
     }
 }

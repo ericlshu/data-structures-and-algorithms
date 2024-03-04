@@ -182,7 +182,7 @@ public class BTree {
         if (parent == null) {
             Node newRoot = new Node(t);
             newRoot.leaf = false;
-            newRoot.insertChild(left, 0);
+            newRoot.insertChild(left, 0); // @TODO keyNumber 的维护（新节点没有孩子，应该不会有问题）
             this.root = newRoot;
             parent = newRoot;
         }
@@ -277,7 +277,7 @@ public class BTree {
             x.insertKey(parent.keys[i], x.keyNumber);
             // b) right中最小的孩子换爹
             if (!right.leaf) {
-                x.insertChild(right.removeLeftmostChild(), x.keyNumber + 1);
+                x.insertChild(right.removeLeftmostChild(), x.keyNumber); // @TODO 学员指出多加了1
             }
             // c) right中最小的key旋转上去
             parent.keys[i] = right.removeLeftmostKey();

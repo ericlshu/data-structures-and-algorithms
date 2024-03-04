@@ -5,6 +5,7 @@ import java.util.PriorityQueue;
 /**
  * <h3>连接棒材的最低费用</h3>
  * <p>为了装修新房，你需要加工一些长度为正整数的棒材。如果要将长度分别为 X 和 Y 的两根棒材连接在一起，你需要支付 X + Y 的费用。 返回讲所有棒材连成一根所需要的最低费用。</p>
+ * <p>与Huffman树非常类似</p>
  */
 public class Leetcode1167 {
     /*

@@ -43,9 +43,8 @@ public class MinHeap {
      */
     public int poll(int index) {
         int deleted = array[index];
-        swap(index, size - 1);
-        size--;
-        down(index);
+        up(Integer.MIN_VALUE, index);
+        poll();
         return deleted;
     }
 
@@ -69,14 +68,14 @@ public class MinHeap {
         if (size == array.length) {
             return false;
         }
-        up(offered);
+        up(offered, size);
         size++;
         return true;
     }
 
     // 将 offered 元素上浮: 直至 offered 小于父元素或到堆顶
-    private void up(int offered) {
-        int child = size;
+    private void up(int offered, int index) {
+        int child = index;
         while (child > 0) {
             int parent = (child - 1) / 2;
             if (offered < array[parent]) {

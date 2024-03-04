@@ -57,7 +57,7 @@ public class KnapsackProblem {
             level--;
             if (remainderWeight >= 0) {
                 int value = stack.stream().mapToInt(Item::getValue).sum();
-//                System.out.println(">=0 有解：" + stack + " 最大价值：" + value);
+                System.out.println(">=0 有解：" + stack + " 最大价值：" + value);
             }
             stack.pop();
         }

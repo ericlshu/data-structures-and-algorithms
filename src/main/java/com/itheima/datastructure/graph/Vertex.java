@@ -8,7 +8,7 @@ import java.util.Objects;
  */
 public class Vertex {
     String name;
-    List<Edge> edges;
+    public List<Edge> edges;
 
     boolean visited; // 是否被访问过，用在 BFS 和 DFS
     int inDegree; // 入度，用在拓扑排序

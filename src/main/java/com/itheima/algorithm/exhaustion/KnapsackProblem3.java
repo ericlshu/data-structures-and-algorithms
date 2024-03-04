@@ -53,9 +53,9 @@ public class KnapsackProblem3 {
                 int y = res(items, i + 1, total, stack);
                 max = Math.max(x, y);
                 System.out.println("放=" + x + " 不放=" + y);
-                System.out.println("有解:"+stack);
+//                System.out.println("有解:"+stack);
             } else {
-                System.out.println("无解:"+stack);
+//                System.out.println("无解:"+stack);
             }
             level--;
             return max;
