@@ -118,8 +118,10 @@ public class ArrayTest
     @Test
     public void test0018()
     {
-        P0018FourSum obj = new P0018FourSum();
-        obj.fourSum(new int[]{}, 0);
+        P0018FourSum p0018 = new P0018FourSum();
+        System.out.println(p0018.fourSum(new int[]{1, 0, -1, 0, -2, 2}, 0));
+        System.out.println(p0018.fourSumDfs(new int[]{1, 0, -1, 0, -2, 2}, 0));
+        System.out.println(p0018.fourSumDfs(new int[]{1000000000, 1000000000, 1000000000, 1000000000}, -294967296));
     }
 
     @Test
@@ -1781,9 +1783,9 @@ public class ArrayTest
         System.out.println(p0015.threeSum2(nums1));
         System.out.println(p0015.threeSum2(nums2));
         System.out.println(p0015.threeSum2(nums3));
-        assertEquals("[[-1, -1, 2], [-1, 0, 1]]",p0015.threeSumDfs(nums1).toString());
+        assertEquals("[[-1, -1, 2], [-1, 0, 1]]", p0015.threeSumDfs(nums1).toString());
 
-        System.out.println(p0015.threeSumDfs(new int[]{34,55,79,28,46,33,2,48,31,-3,84,71,52,-3,93,15,21,-43,57,-6,86,56,94,74,83,-14,28,-66,46,-29,36,-29,10,-70,69,17,49}));
+        System.out.println(p0015.threeSumDfs(new int[]{34, 55, 79, 28, 46, 33, 2, 48, 31, -3, 84, 71, 52, -3, 93, 15, 21, -43, 57, -6, 86, 56, 94, 74, 83, -14, 28, -66, 46, -29, 36, -29, 10, -70, 69, 17, 49}));
 
     }
 
@@ -2421,7 +2423,7 @@ public class ArrayTest
                 {'2', '8', '7', '4', '1', '9', '6', '3', '5'},
                 {'3', '4', '5', '2', '8', '6', '1', '7', '9'}};
         P0037SudokuSolver.solveSudoku(board);
-        assertArrayEquals(board,result);
+        assertArrayEquals(board, result);
         // System.out.println(Arrays.deepToString(board));
     }
 }
