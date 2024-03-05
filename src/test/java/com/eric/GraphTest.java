@@ -1,5 +1,7 @@
 package com.eric;
 
+import com.eric.solution.graph.P1976NumberOfWaysToArriveAtDestination;
+import org.junit.Assert;
 import org.junit.Test;
 import com.eric.solution.graph.P0797AllPathsFromSourceToTarget;
 import com.eric.solution.graph.P1971FindIfPathExistsInGraph;
@@ -33,5 +35,23 @@ public class GraphTest
         int[][] graph2 = {{4, 3, 1}, {3, 2, 4}, {3}, {4}, {}};
         System.out.println(p0797.allPathsSourceTarget_dfs(graph1));
         System.out.println(p0797.allPathsSourceTarget_bfs(graph2));
+    }
+
+    @Test
+    public void test1976()
+    {
+        P1976NumberOfWaysToArriveAtDestination p1976 = new P1976NumberOfWaysToArriveAtDestination();
+        int[][] roads = {
+                {0, 6, 7},
+                {0, 1, 2},
+                {1, 2, 3},
+                {1, 3, 3},
+                {6, 3, 3},
+                {3, 5, 1},
+                {6, 5, 1},
+                {2, 5, 1},
+                {0, 4, 5},
+                {4, 6, 2}};
+        Assert.assertEquals(4, p1976.countPaths(7, roads));
     }
 }

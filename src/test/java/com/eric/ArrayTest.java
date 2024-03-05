@@ -2426,4 +2426,15 @@ public class ArrayTest
         assertArrayEquals(board, result);
         // System.out.println(Arrays.deepToString(board));
     }
+
+    @Test
+    public void test0239()
+    {
+        assertArrayEquals(new int[]{1},
+                P0239SlidingWindowMaximum.maxSlidingWindow(new int[]{1}, 1));
+        assertArrayEquals(new int[]{3, 3, 5, 5, 6, 7},
+                P0239SlidingWindowMaximum.maxSlidingWindow(new int[]{1, 3, -1, -3, 5, 3, 6, 7}, 3));
+        assertArrayEquals(new int[]{3, 3, -1, 5, 5, 6, 7},
+                P0239SlidingWindowMaximum.maxSlidingWindow(new int[]{1, 3, -1, -3, -4, 5, 3, 6, 7}, 3));
+    }
 }
