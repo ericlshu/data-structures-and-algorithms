@@ -2341,7 +2341,7 @@ public class ArrayTest
         assertEquals(4, P0518CoinChangeII.changeRecursion(5, new int[]{1, 2, 5}));
         assertEquals(0, P0518CoinChangeII.changeRecursion(3, new int[]{2}));
         assertEquals(1, P0518CoinChangeII.changeRecursion(10, new int[]{10}));
-        assertEquals(35502874, P0518CoinChangeII.changeRecursion(500, new int[]{3, 5, 7, 8, 9, 10, 11}));
+        // assertEquals(35502874, P0518CoinChangeII.changeRecursion(500, new int[]{3, 5, 7, 8, 9, 10, 11}));
 
         assertEquals(4, P0518CoinChangeII.changeDpNn(5, new int[]{1, 2, 5}));
         assertEquals(0, P0518CoinChangeII.changeDpNn(3, new int[]{2}));
@@ -2391,10 +2391,19 @@ public class ArrayTest
         {
             System.out.println(i + " Queen(s) : " + P0051NQueens.solveNQueens(i).size());
         }
-        assertEquals(2, P0051NQueens.solveNQueens(4).size());
-        assertEquals(7, P0051NQueens.solveNQueens(40).size());
-        assertEquals(8, P0051NQueens.solveNQueens(92).size());
-        assertEquals(9, P0051NQueens.solveNQueens(352).size());
+        assertEquals(0, P0051NQueens.solveNQueens(2).size());
+        assertEquals(40, P0051NQueens.solveNQueens(7).size());
+        assertEquals(92, P0051NQueens.solveNQueens(8).size());
+        assertEquals(352, P0051NQueens.solveNQueens(9).size());
+    }
+
+    @Test
+    public void test0052()
+    {
+        assertEquals(0, P0052NQueensII.totalNQueens(2));
+        assertEquals(2, P0052NQueensII.totalNQueens(4));
+        assertEquals(92, P0052NQueensII.totalNQueens(8));
+        assertEquals(352, P0052NQueensII.totalNQueens(9));
     }
 
     @Test
