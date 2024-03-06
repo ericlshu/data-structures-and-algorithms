@@ -2445,4 +2445,11 @@ public class ArrayTest
         assertEquals(9, P0042TrappingRainWater.trap2(new int[]{4, 2, 0, 3, 2, 5}));
     }
 
+    @Test
+    public void test2917()
+    {
+        assertEquals(9, P2917FindTheKOrOfAnArray.findKOr(new int[]{7, 12, 9, 8, 9, 15}, 4));
+        assertEquals(0, P2917FindTheKOrOfAnArray.findKOr(new int[]{2, 12, 1, 11, 4, 5}, 6));
+        assertEquals(15, P2917FindTheKOrOfAnArray.findKOr(new int[]{10, 8, 5, 9, 11, 6, 8}, 1));
+    }
 }
