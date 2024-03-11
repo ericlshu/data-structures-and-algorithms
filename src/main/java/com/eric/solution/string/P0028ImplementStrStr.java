@@ -116,4 +116,55 @@ public class P0028ImplementStrStr
         }
         return -1;
     }
+
+    public int strStrKmp(String haystack, String needle)
+    {
+        char[] origin = haystack.toCharArray();
+        char[] pattern = needle.toCharArray();
+        int[] lps = this.lps(pattern);
+        int i = 0, j = 0;
+        // while (i < origin.length)
+        while (pattern.length - j <= origin.length - i)
+        {
+            if (origin[i] == pattern[j])
+            {
+                i++;
+                j++;
+            }
+            else if (j == 0)
+                i++;
+            else
+                j = lps[j - 1];
+            if (j == pattern.length)
+                return i - j;
+        }
+        return -1;
+    }
+
+    /**
+     * 求模式字符串的最长前后缀数组
+     *
+     * @param pattern 模式字符串
+     * @return 最长前后缀数组：只跟模式字符串相关
+     * 1. 索引：使用了模式字符串前 j 个字符串 - 1
+     * 2. 值：最长前后缀的长度（恰好是j要跳转的位置）
+     */
+    private int[] lps(char[] pattern)
+    {
+        int[] lps = new int[pattern.length];
+        int i = 1, j = 0;
+        while (i < pattern.length)
+        {
+            // 遇到相同字符，记录最长前后缀长度
+            if (pattern[i] == pattern[j])
+                lps[i++] = ++j;
+                // 遇到不同字符，前面没有共同部分
+            else if (j == 0)
+                i++;
+                // 遇到不同字符，前面有共同部分
+            else
+                j = lps[j - 1];
+        }
+        return lps;
+    }
 }
