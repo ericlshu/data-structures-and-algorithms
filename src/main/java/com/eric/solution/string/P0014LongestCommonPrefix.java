@@ -26,7 +26,7 @@ package com.eric.solution.string;
  */
 public class P0014LongestCommonPrefix
 {
-    public String longestCommonPrefix(String[] strs)
+    public String longestCommonPrefix1(String[] strs)
     {
         if (strs == null || strs.length == 0) return "";
         int index = 0;
@@ -39,6 +39,21 @@ public class P0014LongestCommonPrefix
                     return strs[0].substring(0, index);
             }
             index++;
+        }
+        return strs[0];
+    }
+
+    public String longestCommonPrefix2(String[] strs)
+    {
+        char[] first = strs[0].toCharArray();
+        for (int i = 0; i < first.length; i++)
+        {
+            char ch = first[i];
+            for (int j = 1; j < strs.length; j++)
+            {
+                if (strs[j].length() == i || ch != strs[j].charAt(i))
+                    return new String(first, 0, i);
+            }
         }
         return strs[0];
     }

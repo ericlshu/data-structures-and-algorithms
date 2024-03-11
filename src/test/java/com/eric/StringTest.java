@@ -48,8 +48,10 @@ public class StringTest
     @Test
     public void testP0014()
     {
-        P0014LongestCommonPrefix obj = new P0014LongestCommonPrefix();
-        System.out.println("result = " + obj.longestCommonPrefix(new String[]{"ab", "a"}));
+        P0014LongestCommonPrefix p0014 = new P0014LongestCommonPrefix();
+        assertEquals("a", p0014.longestCommonPrefix1(new String[]{"ab", "a"}));
+        assertEquals("fl", p0014.longestCommonPrefix2(new String[]{"flower", "flow", "flight"}));
+        assertEquals("", p0014.longestCommonPrefix2(new String[]{"dog", "racecar", "car"}));
     }
 
     @Test
