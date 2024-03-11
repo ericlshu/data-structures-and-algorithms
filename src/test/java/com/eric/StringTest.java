@@ -796,11 +796,17 @@ public class StringTest
     {
         P0395LongestSubstringWithAtLeastKRepeatingCharacters p0395 =
                 new P0395LongestSubstringWithAtLeastKRepeatingCharacters();
-        //
-        assertEquals(3,p0395.longestSubstring("aaabb",3));
-        assertEquals(5,p0395.longestSubstring("ababbc",2));
-        assertEquals(0,p0395.longestSubstring("ababbc",3));
-        assertEquals(3,p0395.longestSubstring("dddxxaabaaabaacciiiefbff",3));
-        assertEquals(10,p0395.longestSubstring("dddxxaabaaabbaacciiiefbff",3));
+        assertEquals(3, p0395.longestSubstring("aaabb", 3));
+        assertEquals(5, p0395.longestSubstring("ababbc", 2));
+        assertEquals(0, p0395.longestSubstring("ababbc", 3));
+        assertEquals(3, p0395.longestSubstring("dddxxaabaaabaacciiiefbff", 3));
+        assertEquals(10, p0395.longestSubstring("dddxxaabaaabbaacciiiefbff", 3));
+    }
+
+    @Test
+    public void test2129()
+    {
+        assertEquals("Capitalize The Title", P2129CapitalizeTheTitle.capitalizeTitle("capiTalIze tHe titLe"));
+        assertEquals("i Love Leetcode", P2129CapitalizeTheTitle.capitalizeTitle("i lOve leetcode"));
     }
 }

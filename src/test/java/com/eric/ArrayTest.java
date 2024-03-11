@@ -28,14 +28,11 @@ public class ArrayTest
     @Test
     public void testP0001()
     {
-        P0001TwoSum obj = new P0001TwoSum();
-        int[] numbers = {2, 5, 7, 9, 12};
-        int sum = 17;
-        int[] result = obj.twoNumbersAddUp02(numbers, sum);
-        for (int i : result)
-        {
-            System.out.println("    i = " + i);
-        }
+        P0001TwoSum p0001 = new P0001TwoSum();
+        assertArrayEquals(new int[]{0, 1},
+                p0001.twoNumbersAddUp01(new int[]{2, 7, 11, 15}, 9));
+        assertArrayEquals(new int[]{1, 4},
+                p0001.twoNumbersAddUp02(new int[]{2, 5, 7, 9, 12}, 17));
     }
 
     @Test
@@ -246,21 +243,38 @@ public class ArrayTest
     @Test
     public void testP0088()
     {
-        // int[] nums1 = {1, 2, 3, 0, 0, 0};
-        // int[] nums2 = {2, 5, 6};
-        // int m = 3, n = 3;
-
-        // int[] nums1 = {0};
-        // int[] nums2 = {1};
-        // int m = 0, n = 1;
-
-        int[] nums1 = {4, 0, 0, 0, 0, 0};
-        int[] nums2 = {1, 2, 3, 5, 6};
-        int m = 1, n = 5;
-
+        int[] nums1, nums2;
         P0088MergeSortedArray p0088 = new P0088MergeSortedArray();
-        p0088.merge_recursion(nums1, m, nums2, n);
-        System.out.println("nums = " + Arrays.toString(nums1));
+
+        nums1 = new int[]{4, 0, 0, 0, 0, 0};
+        nums2 = new int[]{1, 2, 3, 5, 6};
+        p0088.merge1(nums1, 1, nums2, 5);
+        assertArrayEquals(new int[]{1, 2, 3, 4, 5, 6}, nums1);
+
+        nums1 = new int[]{4, 0, 0, 0, 0, 0};
+        nums2 = new int[]{1, 2, 3, 5, 6};
+        p0088.merge2(nums1, 1, nums2, 5);
+        assertArrayEquals(new int[]{1, 2, 3, 4, 5, 6}, nums1);
+
+        nums1 = new int[]{4, 0, 0, 0, 0, 0};
+        nums2 = new int[]{1, 2, 3, 5, 6};
+        p0088.merge3(nums1, 1, nums2, 5);
+        assertArrayEquals(new int[]{1, 2, 3, 4, 5, 6}, nums1);
+
+        nums1 = new int[]{4, 0, 0, 0, 0, 0};
+        nums2 = new int[]{1, 2, 3, 5, 6};
+        p0088.merge4(nums1, 1, nums2, 5);
+        assertArrayEquals(new int[]{1, 2, 3, 4, 5, 6}, nums1);
+
+        nums1 = new int[]{4, 0, 0, 0, 0, 0};
+        nums2 = new int[]{1, 2, 3, 5, 6};
+        p0088.merge_recursion(nums1, 1, nums2, 5);
+        assertArrayEquals(new int[]{1, 2, 3, 4, 5, 6}, nums1);
+
+        nums1 = new int[]{1, 2, 3, 0, 0, 0};
+        nums2 = new int[]{2, 5, 6};
+        p0088.merge_recursion(nums1, 3, nums2, 3);
+        assertArrayEquals(new int[]{1, 2, 2, 3, 5, 6}, nums1);
     }
 
     @Test
@@ -351,21 +365,25 @@ public class ArrayTest
     @Test
     public void test0414()
     {
-        P0414ThirdMaximumNumber array = new P0414ThirdMaximumNumber();
-        int[] nums = {2, 2, 4, 6, 9, 9, 9, 8, 8, 3, 1};
-        // int[] nums = {2, 2,3, 1};
-        // int[] nums = {1, 1, 2};
-        System.out.println("array result = " + array.thirdMax(nums));
+        P0414ThirdMaximumNumber p0414 = new P0414ThirdMaximumNumber();
+        assertEquals(6, p0414.thirdMax(new int[]{2, 2, 4, 6, 9, 9, 9, 8, 8, 3, 1}));
+        assertEquals(1, p0414.thirdMax(new int[]{2, 2, 3, 1}));
+        assertEquals(2, p0414.thirdMax(new int[]{1, 1, 2}));
     }
 
     @Test
     public void test0283()
     {
-        int[] nums = {0, 1, 0, 3, 12};
-        // int[] nums = {2, 2,3, 1};
-        // int[] nums = {1, 1, 2};
-        new P0283MoveZeroes().moveZeroes(nums);
-        System.out.println("nums = " + Arrays.toString(nums));
+        P0283MoveZeroes p0238 = new P0283MoveZeroes();
+        int[] nums1 = {0, 1, 0, 3, 12};
+        int[] nums2 = {2, 2, 3, 1};
+        int[] nums3 = {1, 1, 2};
+        p0238.moveZeroes(nums1);
+        p0238.moveZeroes_1(nums2);
+        p0238.moveZeroes_2(nums3);
+        assertArrayEquals(new int[]{1, 3, 12, 0, 0}, nums1);
+        assertArrayEquals(new int[]{2, 2, 3, 1}, nums2);
+        assertArrayEquals(new int[]{1, 1, 2}, nums3);
     }
 
     @Test
@@ -1343,16 +1361,19 @@ public class ArrayTest
     @Test
     public void test0703()
     {
-        // int[] arr = {4, 5, 8, 2};
-        // P0703KthLargestElementInAStream p0215 = new P0703KthLargestElementInAStream(3,arr);
-        // assertEquals(4, p0215.add(3));
-        // assertEquals(5, p0215.add(5));
-        // assertEquals(5, p0215.add(10));
-        // assertEquals(8, p0215.add(9));
-        // assertEquals(8, p0215.add(4));
+        int[] arr;
+        P0703KthLargestElementInAStream p0215;
 
-        int[] arr = {-10, 1, 3, 1, 4, 10, 3, 9, 4, 5, 1};
-        P0703KthLargestElementInAStream p0215 = new P0703KthLargestElementInAStream(7, arr);
+        arr = new int[]{4, 5, 8, 2};
+        p0215 = new P0703KthLargestElementInAStream(3, arr);
+        assertEquals(4, p0215.add(3));
+        assertEquals(5, p0215.add(5));
+        assertEquals(5, p0215.add(10));
+        assertEquals(8, p0215.add(9));
+        assertEquals(8, p0215.add(4));
+
+        arr = new int[]{-10, 1, 3, 1, 4, 10, 3, 9, 4, 5, 1};
+        p0215 = new P0703KthLargestElementInAStream(7, arr);
         assertEquals(3, p0215.add(3));
         assertEquals(3, p0215.add(2));
         assertEquals(3, p0215.add(3));

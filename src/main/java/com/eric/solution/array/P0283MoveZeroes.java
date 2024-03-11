@@ -57,12 +57,12 @@ public class P0283MoveZeroes
         }
     }
 
-    // private void swap(int[] nums, int left, int right)
-    // {
-    //     int temp = nums[left];
-    //     nums[left] = nums[right];
-    //     nums[right] = temp;
-    // }
+    private void swap(int[] nums, int left, int right)
+    {
+        int temp = nums[left];
+        nums[left] = nums[right];
+        nums[right] = temp;
+    }
 
     public void moveZeroes_2(int[] nums)
     {
@@ -85,12 +85,5 @@ public class P0283MoveZeroes
             }
             left++;
         }
-    }
-
-    private void swap(int[] nums, int i, int j)
-    {
-        nums[i] = nums[i] ^ nums[j];
-        nums[j] = nums[i] ^ nums[j];
-        nums[i] = nums[i] ^ nums[j];
     }
 }
