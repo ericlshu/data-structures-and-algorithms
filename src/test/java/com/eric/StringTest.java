@@ -812,4 +812,12 @@ public class StringTest
         assertEquals("Capitalize The Title", P2129CapitalizeTheTitle.capitalizeTitle("capiTalIze tHe titLe"));
         assertEquals("i Love Leetcode", P2129CapitalizeTheTitle.capitalizeTitle("i lOve leetcode"));
     }
+
+    @Test
+    public void test0076()
+    {
+        assertEquals("BANC", P0076MinimumWindowSubstring.minWindow("ADOBECODEBANC", "ABC"));
+        assertEquals("a", P0076MinimumWindowSubstring.minWindow("a", "a"));
+        assertEquals("", P0076MinimumWindowSubstring.minWindow("a", "aa"));
+    }
 }
