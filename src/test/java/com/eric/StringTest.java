@@ -3,6 +3,7 @@ package com.eric;
 import com.eric.solution.array.P0022GenerateParentheses;
 import com.eric.solution.array.P0242ValidAnagram;
 import com.eric.solution.array.P1796SecondLargestDigitInAString;
+import com.eric.solution.design.P0535EncodeAndDecodeTinyURL;
 import com.eric.solution.math.P0067AddBinary;
 import com.eric.solution.math.P0389FindTheDifference;
 import com.eric.solution.string.*;
@@ -819,5 +820,13 @@ public class StringTest
         assertEquals("BANC", P0076MinimumWindowSubstring.minWindow("ADOBECODEBANC", "ABC"));
         assertEquals("a", P0076MinimumWindowSubstring.minWindow("a", "a"));
         assertEquals("", P0076MinimumWindowSubstring.minWindow("a", "aa"));
+    }
+
+    @Test
+    public void test0535()
+    {
+        P0535EncodeAndDecodeTinyURL.Codec p0535 = new P0535EncodeAndDecodeTinyURL.Codec();
+        assertEquals("https://leetcode.com/problems/design-tinyurl",
+                p0535.decode(p0535.encode("https://leetcode.com/problems/design-tinyurl")));
     }
 }
