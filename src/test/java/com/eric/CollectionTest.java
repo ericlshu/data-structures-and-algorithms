@@ -599,18 +599,33 @@ public class CollectionTest
     @Test
     public void test2487()
     {
-        ListNode target = new ListNode(13,new ListNode(8));
+        ListNode target = new ListNode(13, new ListNode(8));
 
         ListNode node = new ListNode(5, new ListNode(2, new ListNode(13,
                 new ListNode(3, new ListNode(8)))));
-        assertEquals(target,P2487RemoveNodesFromLinkedList.removeNodesRecursion(node));
+        assertEquals(target, P2487RemoveNodesFromLinkedList.removeNodesRecursion(node));
 
         node = new ListNode(5, new ListNode(2, new ListNode(13,
                 new ListNode(3, new ListNode(8)))));
-        assertEquals(target,P2487RemoveNodesFromLinkedList.removeNodesStack(node));
+        assertEquals(target, P2487RemoveNodesFromLinkedList.removeNodesStack(node));
 
         node = new ListNode(5, new ListNode(2, new ListNode(13,
                 new ListNode(3, new ListNode(8)))));
-        assertEquals(target,P2487RemoveNodesFromLinkedList.removeNodesReverse(node));
+        assertEquals(target, P2487RemoveNodesFromLinkedList.removeNodesReverse(node));
+    }
+
+    @Test
+    public void test0146()
+    {
+        P0146LRUCache lRUCache = new P0146LRUCache(2);
+        lRUCache.put(1, 1);                         // 缓存是 {1=1}
+        lRUCache.put(2, 2);                         // 缓存是 {1=1, 2=2}
+        assertEquals(1, lRUCache.get(1));   // 返回 1
+        lRUCache.put(3, 3);                         // 该操作会使得关键字 2 作废，缓存是 {1=1, 3=3}
+        assertEquals(-1, lRUCache.get(2));  // 返回 -1 (未找到)
+        lRUCache.put(4, 4);                         // 该操作会使得关键字 1 作废，缓存是 {4=4, 3=3}
+        assertEquals(-1, lRUCache.get(1));  // 返回 -1 (未找到)
+        assertEquals(3, lRUCache.get(3));   // 返回 3
+        assertEquals(4, lRUCache.get(4));   // 返回 4
     }
 }
