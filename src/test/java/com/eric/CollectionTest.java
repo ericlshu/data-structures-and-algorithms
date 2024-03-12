@@ -644,4 +644,19 @@ public class CollectionTest
         assertEquals(3, lfu.get(3));      // cache=[3,4], cnt(4)=1, cnt(3)=3
         assertEquals(4, lfu.get(4));      // cache=[3,4], cnt(4)=2, cnt(3)=3
     }
+
+    @Test
+    public void test1206()
+    {
+        P1206DesignSkipList.SkipList skiplist = new P1206DesignSkipList.SkipList();
+        skiplist.add(1);
+        skiplist.add(2);
+        skiplist.add(3);
+        assertFalse(skiplist.search(0));    // 返回 false
+        skiplist.add(4);
+        assertTrue(skiplist.search(1));     // 返回 true
+        assertFalse(skiplist.erase(0));     // 返回 false，0 不在跳表中
+        assertTrue(skiplist.erase(1));      // 返回 true
+        assertFalse(skiplist.search(1));   // 返回 false，1 已被擦除
+    }
 }
