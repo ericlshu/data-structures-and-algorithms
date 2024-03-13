@@ -2514,4 +2514,13 @@ public class ArrayTest
         assertEquals(0, p0123.maxProfit(new int[]{7, 6, 4, 3, 1}));
         assertEquals(0, p0123.maxProfit(new int[]{1}));
     }
+
+    @Test
+    public void test0188()
+    {
+        P0188BestTimeToBuyAndSellStockIV p0188 = new P0188BestTimeToBuyAndSellStockIV();
+        assertEquals(2, p0188.maxProfit(2, new int[]{2, 4, 1}));
+        assertEquals(7, p0188.maxProfit(2, new int[]{3, 2, 6, 5, 0, 3}));
+        assertEquals(7, p0188.maxProfit(4, new int[]{3, 2, 6, 5, 0, 3}));
+    }
 }
