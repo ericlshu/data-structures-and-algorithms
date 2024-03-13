@@ -2494,4 +2494,14 @@ public class ArrayTest
         assertEquals(8, p0714.maxProfitDp2(new int[]{1, 3, 2, 8, 4, 9}, 2));
         assertEquals(6, p0714.maxProfitDp2(new int[]{1, 3, 7, 5, 10, 3}, 3));
     }
+
+    @Test
+    public void test0309()
+    {
+        P0309BestTimeToBuyAndSellStockWithCooldown p0309 = new P0309BestTimeToBuyAndSellStockWithCooldown();
+        assertEquals(3, p0309.maxProfitDpn(new int[]{1, 2, 3, 0, 2}));
+        assertEquals(0, p0309.maxProfitDpn(new int[]{1}));
+        assertEquals(3, p0309.maxProfitDp1(new int[]{1, 2, 3, 0, 2}));
+        assertEquals(0, p0309.maxProfitDp1(new int[]{1}));
+    }
 }
