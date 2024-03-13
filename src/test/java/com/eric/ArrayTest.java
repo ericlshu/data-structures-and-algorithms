@@ -2482,4 +2482,16 @@ public class ArrayTest
         assertEquals(0, P2917FindTheKOrOfAnArray.findKOr(new int[]{2, 12, 1, 11, 4, 5}, 6));
         assertEquals(15, P2917FindTheKOrOfAnArray.findKOr(new int[]{10, 8, 5, 9, 11, 6, 8}, 1));
     }
+
+    @Test
+    public void test0714()
+    {
+        P0714BestTimeToBuyAndSellStockWithTransactionFee p0714 = new P0714BestTimeToBuyAndSellStockWithTransactionFee();
+        assertEquals(8, p0714.maxProfitDpn(new int[]{1, 3, 2, 8, 4, 9}, 2));
+        assertEquals(6, p0714.maxProfitDpn(new int[]{1, 3, 7, 5, 10, 3}, 3));
+        assertEquals(8, p0714.maxProfitDp1(new int[]{1, 3, 2, 8, 4, 9}, 2));
+        assertEquals(6, p0714.maxProfitDp1(new int[]{1, 3, 7, 5, 10, 3}, 3));
+        assertEquals(8, p0714.maxProfitDp2(new int[]{1, 3, 2, 8, 4, 9}, 2));
+        assertEquals(6, p0714.maxProfitDp2(new int[]{1, 3, 7, 5, 10, 3}, 3));
+    }
 }
