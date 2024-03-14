@@ -72,13 +72,12 @@ public class P0535EncodeAndDecodeTinyURL
             String shortUrl = long2Short.get(longUrl);
             if (shortUrl != null)
                 return shortUrl;
-
             shortUrl = getShortUrlByRandom(longUrl);
-            System.out.println("shortUrl = " + shortUrl);
+            // System.out.println("shortUrl = " + shortUrl);
             shortUrl = getShortUrlByHash(longUrl);
-            System.out.println("shortUrl = " + shortUrl);
+            // System.out.println("shortUrl = " + shortUrl);
             shortUrl = getShortUrlBySequence(longUrl);
-            System.out.println("shortUrl = " + shortUrl);
+            // System.out.println("shortUrl = " + shortUrl);
             return shortUrl;
         }
 
@@ -114,7 +113,7 @@ public class P0535EncodeAndDecodeTinyURL
             while (true)
             {
                 int id = ThreadLocalRandom.current().nextInt();
-                System.out.println("id = " + id);
+                // System.out.println("id = " + id);
                 shortUrl = SHORT_PREFIX + this.toBase62(id);
                 if (!short2Long.containsKey(shortUrl))
                 {

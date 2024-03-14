@@ -61,7 +61,7 @@ public class P1832CheckIfTheSentenceIsPangram
             char ch = sentence.charAt(i);
             state |= 1 << (ch - 'a');
         }
-        System.out.println("state = " + state);
+        // System.out.println("state = " + state);
         return state == (1 << 26) - 1;
     }
 }
