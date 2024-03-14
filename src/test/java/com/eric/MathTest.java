@@ -8,7 +8,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 /**
  * Description :
@@ -194,14 +194,14 @@ public class MathTest
     public void test0367()
     {
         P0367ValidPerfectSquare p0367 = new P0367ValidPerfectSquare();
-        for (int i = 1; i <= 4096; i++)
-        {
-            if (p0367.isPerfectSquare_3(i))
-            {
-                System.out.print("i = " + i);
-                System.out.println("; Math.sqrt(i) = " + Math.sqrt(i));
-            }
-        }
+        assertTrue(p0367.isPerfectSquare_1(1024));
+        assertTrue(p0367.isPerfectSquare_2(256));
+        assertTrue(p0367.isPerfectSquare_3(64));
+        assertTrue(p0367.isPerfectSquare_4(100));
+        assertFalse(p0367.isPerfectSquare_1(10));
+        assertFalse(p0367.isPerfectSquare_2(20));
+        assertFalse(p0367.isPerfectSquare_3(30));
+        assertFalse(p0367.isPerfectSquare_4(40));
     }
 
     @Test

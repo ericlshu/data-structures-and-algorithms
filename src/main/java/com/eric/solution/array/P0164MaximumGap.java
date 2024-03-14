@@ -175,8 +175,8 @@ public class P0164MaximumGap
                 }
                 bucket.clear();
             }
-            System.out.print("nums = " + Arrays.toString(nums));
-            System.out.println("; mod = " + mod);
+            // System.out.print("nums = " + Arrays.toString(nums));
+            // System.out.println("; mod = " + mod);
             mod *= 10;
         }
     }

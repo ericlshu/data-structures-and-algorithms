@@ -50,7 +50,7 @@ public class P0877StoneGame
                 dp[i][j] = Math.max(piles[i] - dp[i + 1][j], piles[j] - dp[i][j - 1]);
             }
         }
-        System.out.println(Arrays.deepToString(dp));
+        // System.out.println(Arrays.deepToString(dp));
         return dp[0][n - 1] > 0;
     }
 
@@ -67,7 +67,7 @@ public class P0877StoneGame
                 dp[j] = Math.max(piles[i] - dp[j], piles[j] - dp[j - 1]);
             }
         }
-        System.out.println(Arrays.toString(dp));
+        // System.out.println(Arrays.toString(dp));
         return dp[n - 1] > 0;
     }
 }

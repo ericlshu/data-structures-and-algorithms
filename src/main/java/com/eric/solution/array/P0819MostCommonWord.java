@@ -76,7 +76,7 @@ public class P0819MostCommonWord
             if (!set.contains(key))
                 freq.put(key, freq.getOrDefault(key, 0) + 1);
         }
-        System.out.println(freq);
+        // System.out.println(freq);
         for (Map.Entry<String, Integer> entry : freq.entrySet())
         {
             if (entry.getValue() > max)

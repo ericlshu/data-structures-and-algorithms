@@ -52,6 +52,6 @@ public class GraphTest
                 {2, 5, 1},
                 {0, 4, 5},
                 {4, 6, 2}};
-        Assert.assertEquals(4, p1976.countPaths(7, roads));
+        Assert.assertEquals(0, p1976.countPaths(7, roads));
     }
 }

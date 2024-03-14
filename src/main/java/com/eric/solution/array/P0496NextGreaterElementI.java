@@ -78,8 +78,8 @@ public class P0496NextGreaterElementI
             map.put(num, stack.isEmpty() ? -1 : stack.peek());
             stack.push(num);
         }
-        System.out.println("stack = " + stack);
-        System.out.println("map = " + map);
+        // System.out.println("stack = " + stack);
+        // System.out.println("map = " + map);
         for (int i = 0; i < nums1.length; i++)
         {
             nums1[i] = map.get(nums1[i]);

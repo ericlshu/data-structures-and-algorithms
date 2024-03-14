@@ -29,14 +29,23 @@ public class TreeNode
         this.right = right;
     }
 
+    // @Override
+    // public String toString()
+    // {
+    //     StringBuilder sb = new StringBuilder("TreeNode{" + "val=" + val);
+    //     if (left != null)
+    //         sb.append(", left=").append(left);
+    //     if (right != null)
+    //         sb.append(", right=").append(right);
+    //     return sb.append("}").toString();
+    // }
+
+
     @Override
     public String toString()
     {
-        StringBuilder sb = new StringBuilder("TreeNode{" + "val=" + val);
-        if (left != null)
-            sb.append(", left=").append(left);
-        if (right != null)
-            sb.append(", right=").append(right);
-        return sb.append("}").toString();
+        return "TreeNode{" +
+                "val=" + val +
+                '}';
     }
 }

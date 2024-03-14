@@ -29,37 +29,41 @@ public class P0078Subsets
 {
     public List<List<Integer>> subsets_iteration(int[] nums)
     {
-        System.out.println("-------------------------------------------------");
+        List<List<Integer>> res = new ArrayList<>();
+        List<Integer> list = new ArrayList<>();
+
+        // System.out.println("-------------------------------------------------");
         int n = nums.length, bound = 1 << n;
         for (int i = 0; i < bound; i++)
         {
             list.clear();
             for (int j = 0; j < n; j++)
             {
-                System.out.print("i : " + Integer.toBinaryString(i));
-                System.out.print("\t | (1 << j) : " + Integer.toBinaryString(1 << j));
-                System.out.println(" \t | (i & (1 << j)) : " + (i & (1 << j)));
+                // System.out.print("i : " + Integer.toBinaryString(i));
+                // System.out.print("\t | (1 << j) : " + Integer.toBinaryString(1 << j));
+                // System.out.println(" \t | (i & (1 << j)) : " + (i & (1 << j)));
                 if ((i & (1 << j)) != 0)
                 {
                     list.add(nums[j]);
                 }
             }
-            System.out.println("-------------------------------------------------");
+            // System.out.println("-------------------------------------------------");
             res.add(new ArrayList<>(list));
         }
         return res;
     }
 
-    List<List<Integer>> res = new ArrayList<>();
-    List<Integer> list = new ArrayList<>();
 
     public List<List<Integer>> subsets_recursion(int[] nums)
     {
-        dfs(0, nums);
+        List<List<Integer>> res = new ArrayList<>();
+        List<Integer> list = new ArrayList<>();
+
+        dfs(0, nums, list, res);
         return res;
     }
 
-    private void dfs(int curr, int[] nums)
+    private void dfs(int curr, int[] nums, List<Integer> list, List<List<Integer>> res)
     {
         if (curr == nums.length)
         {
@@ -67,8 +71,8 @@ public class P0078Subsets
             return;
         }
         list.add(nums[curr]);
-        dfs(curr + 1, nums);
+        dfs(curr + 1, nums, list, res);
         list.remove(list.size() - 1);
-        dfs(curr + 1, nums);
+        dfs(curr + 1, nums, list, res);
     }
 }

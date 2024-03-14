@@ -21,9 +21,9 @@ public class SortTest
     @Before
     public void setup()
     {
-        System.out.println("/******************************************************/");
+        // System.out.println("/******************************************************/");
         arr = new int[]{0, 3, 2, 7, 2, 5, -1, 4, 4, -2, 8, 1, 4, 9, 6};
-        System.out.println("before : " + Arrays.toString(arr));
+        // System.out.println("before : " + Arrays.toString(arr));
     }
 
     @Test
@@ -106,15 +106,15 @@ public class SortTest
         phoneNumbers[7] = "15112345678";
         phoneNumbers[8] = "15212345678";
         phoneNumbers[9] = "15712345678";
-        System.out.println("before : " + Arrays.toString(phoneNumbers));
+        // System.out.println("before : " + Arrays.toString(phoneNumbers));
         RadixSort.sort(phoneNumbers, 11);
-        System.out.println("after  : " + Arrays.toString(phoneNumbers));
+        // System.out.println("after  : " + Arrays.toString(phoneNumbers));
     }
 
-    @After
-    public void after()
-    {
-        System.out.println("after  : " + Arrays.toString(arr));
-        System.out.println("/******************************************************/");
-    }
+    // @After
+    // public void after()
+    // {
+    //     // System.out.println("after  : " + Arrays.toString(arr));
+    //     // System.out.println("/******************************************************/");
+    // }
 }

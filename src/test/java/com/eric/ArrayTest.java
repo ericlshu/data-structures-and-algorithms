@@ -39,9 +39,7 @@ public class ArrayTest
     public void testP0035()
     {
         P0035SearchInsertPosition obj = new P0035SearchInsertPosition();
-        int[] nums = {1, 3, 5, 6};
-        int target = 7;
-        System.out.println("result = " + obj.searchInsert_1(nums, target));
+        assertEquals(4, obj.searchInsert_1(new int[]{1, 3, 5, 6}, 7));
     }
 
     @Test
@@ -50,8 +48,8 @@ public class ArrayTest
         P0056MergeIntervals obj = new P0056MergeIntervals();
         int[][] intervals1 = {{1, 3}, {2, 6}, {8, 10}, {15, 18}};
         int[][] intervals2 = {{1, 4}, {4, 5}};
-        System.out.println(Arrays.deepToString(obj.merge_1(intervals1)));
-        System.out.println(Arrays.deepToString(obj.merge_2(intervals2)));
+        assertEquals("[[1, 6], [8, 10], [15, 18]]", Arrays.deepToString(obj.merge_1(intervals1)));
+        assertEquals("[[1, 5]]", Arrays.deepToString(obj.merge_2(intervals2)));
     }
 
     @Test
@@ -61,10 +59,9 @@ public class ArrayTest
         int[][] intervals = {{1, 2}, {3, 5}, {6, 7}, {8, 10}, {12, 16}};
         int[] newInterval = {4, 8};
         int[][] ansList = obj.insert(intervals, newInterval);
-        for (int[] nums : ansList)
-        {
-            System.out.println("ansList[i] = " + Arrays.toString(nums));
-        }
+        assertEquals("[1, 2]", Arrays.toString(ansList[0]));
+        assertEquals("[3, 10]", Arrays.toString(ansList[1]));
+        assertEquals("[12, 16]", Arrays.toString(ansList[2]));
     }
 
     @Test
@@ -74,7 +71,7 @@ public class ArrayTest
 
         // int[] arr = {0, 1, 2, 3, 4, 5, 6, 7, 8};
         int[] nums = {7, 1, 5, 3, 6, 4};
-        System.out.println("result = " + obj.maxProfit_1(nums));
+        assertEquals(7, obj.maxProfit_1(nums));
     }
 
     @Test
@@ -82,16 +79,19 @@ public class ArrayTest
     {
         P0941ValidMountainArray obj = new P0941ValidMountainArray();
         int[] nums = {9, 8, 7, 6, 5, 4};
-        System.out.println("result = " + obj.validMountainArray(nums));
+        assertFalse(obj.validMountainArray(nums));
     }
 
     @Test
     public void testP1356()
     {
         P1356SortIntegersByTheNumberOf1Bits p1356 = new P1356SortIntegersByTheNumberOf1Bits();
-        System.out.println(Arrays.toString(p1356.sortByBits(new int[]{2, 3, 5, 7, 11, 13, 17, 19})));
-        System.out.println(Arrays.toString(p1356.sortByBits_1(new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8})));
-        System.out.println(Arrays.toString(p1356.sortByBits_2(new int[]{1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1})));
+        assertArrayEquals(new int[]{2, 3, 5, 17, 7, 11, 13, 19},
+                p1356.sortByBits(new int[]{2, 3, 5, 7, 11, 13, 17, 19}));
+        assertArrayEquals(new int[]{0, 1, 2, 4, 8, 3, 5, 6, 7},
+                p1356.sortByBits_1(new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8}));
+        assertArrayEquals(new int[]{1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024},
+                p1356.sortByBits_2(new int[]{1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1}));
     }
 
     @Test
@@ -116,9 +116,12 @@ public class ArrayTest
     public void test0018()
     {
         P0018FourSum p0018 = new P0018FourSum();
-        System.out.println(p0018.fourSum(new int[]{1, 0, -1, 0, -2, 2}, 0));
-        System.out.println(p0018.fourSumDfs(new int[]{1, 0, -1, 0, -2, 2}, 0));
-        System.out.println(p0018.fourSumDfs(new int[]{1000000000, 1000000000, 1000000000, 1000000000}, -294967296));
+        assertEquals("[[-2, -1, 1, 2], [-2, 0, 0, 2], [-1, 0, 0, 1]]",
+                p0018.fourSum(new int[]{1, 0, -1, 0, -2, 2}, 0).toString());
+        assertEquals("[[-1, -2, 1, 2], [0, -2, 0, 2], [0, -1, 0, 1]]",
+                p0018.fourSumDfs(new int[]{1, 0, -1, 0, -2, 2}, 0).toString());
+        assertEquals("[]",
+                p0018.fourSumDfs(new int[]{1000000000, 1000000000, 1000000000, 1000000000}, -294967296).toString());
     }
 
     @Test
@@ -126,9 +129,9 @@ public class ArrayTest
     {
         P0033SearchInRotatedSortedArray p0033 = new P0033SearchInRotatedSortedArray();
         int[] nums = {4, 5, 6, 7, 0, 1, 2};
-        System.out.println(p0033.search_1(nums, 1));
-        System.out.println(p0033.search_2(nums, 1));
-        System.out.println(p0033.search_3(nums, 1));
+        assertEquals(5, p0033.search_1(nums, 1));
+        assertEquals(5, p0033.search_2(nums, 1));
+        assertEquals(5, p0033.search_3(nums, 1));
     }
 
     @Test
@@ -136,12 +139,12 @@ public class ArrayTest
     {
         P0034FindFirstAndLastPositionOfElementInSortedArray p0034 = new P0034FindFirstAndLastPositionOfElementInSortedArray();
         int[] nums = {5, 7, 7, 8, 8, 8, 10};
-        System.out.println(Arrays.toString(p0034.searchRange_1(nums, 8)));
-        System.out.println(Arrays.toString(p0034.searchRange_2(nums, 8)));
-        System.out.println(Arrays.toString(p0034.searchRange_3(nums, 8)));
-        System.out.println(Arrays.toString(p0034.searchRange_1(nums, 6)));
-        System.out.println(Arrays.toString(p0034.searchRange_2(nums, 6)));
-        System.out.println(Arrays.toString(p0034.searchRange_3(nums, 6)));
+        assertArrayEquals(new int[]{3, 5}, p0034.searchRange_1(nums, 8));
+        assertArrayEquals(new int[]{3, 5}, p0034.searchRange_2(nums, 8));
+        assertArrayEquals(new int[]{3, 5}, p0034.searchRange_3(nums, 8));
+        assertArrayEquals(new int[]{-1, -1}, p0034.searchRange_1(nums, 6));
+        assertArrayEquals(new int[]{-1, -1}, p0034.searchRange_2(nums, 6));
+        assertArrayEquals(new int[]{-1, -1}, p0034.searchRange_3(nums, 6));
     }
 
     @Test
@@ -161,16 +164,18 @@ public class ArrayTest
         P0040CombinationSumII p0040 = new P0040CombinationSumII();
         int[] candidates1 = {10, 1, 2, 7, 6, 1, 5};
         int[] candidates2 = {2, 5, 2, 1, 2};
-        System.out.println(p0040.combinationSum2(candidates1, 8));
-        System.out.println(p0040.combinationSum2(candidates2, 5));
+        assertEquals("[[1, 1, 6], [1, 2, 5], [1, 7], [2, 6], [1, 1, 6], [1, 2, 5], [1, 7], [2, 6]]",
+                p0040.combinationSum2(candidates1, 8).toString());
+        assertEquals("[[1, 1, 6], [1, 2, 5], [1, 7], [2, 6], [1, 1, 6], [1, 2, 5], [1, 7], [2, 6], [1, 2, 2], [5], [1, 2, 2], [5]]",
+                p0040.combinationSum2(candidates2, 5).toString());
     }
 
     @Test
     public void test0216()
     {
-        System.out.println(P0216CombinationSumIII.combinationSum3(3, 7));
-        System.out.println(P0216CombinationSumIII.combinationSum3(3, 9));
-        System.out.println(P0216CombinationSumIII.combinationSum3(4, 1));
+        assertEquals("[[4, 2, 1]]", P0216CombinationSumIII.combinationSum3(3, 7).toString());
+        assertEquals("[[6, 2, 1], [5, 3, 1], [4, 3, 2]]", P0216CombinationSumIII.combinationSum3(3, 9).toString());
+        assertEquals("[]", P0216CombinationSumIII.combinationSum3(4, 1).toString());
     }
 
     @Test
@@ -178,8 +183,7 @@ public class ArrayTest
     {
         Offer045ArrayToMinNumber obj = new Offer045ArrayToMinNumber();
         int[] nums = {3, 30, 34, 5, 9};
-        String result = obj.minNumber(nums);
-        System.out.println("result = " + result);
+        assertEquals("3033459", obj.minNumber(nums));
     }
 
     @Test
@@ -187,13 +191,8 @@ public class ArrayTest
     {
         P0080RemoveDuplicatesFromSortedArrayTwo obj = new P0080RemoveDuplicatesFromSortedArrayTwo();
         int[] nums = {0, 0, 1, 1, 1, 1, 2, 3, 3};
-        // int[] nums = {1,1,1};
         int result = obj.removeDuplicatesOfficial(nums);
-        System.out.println("result = " + result);
-        for (int i = 0; i < result; i++)
-        {
-            System.out.println("nums = " + nums[i]);
-        }
+        assertEquals(7, result);
     }
 
     @Test
@@ -201,7 +200,7 @@ public class ArrayTest
     {
         Offer003FindRepeatNumberInArray obj = new Offer003FindRepeatNumberInArray();
         int repeatNumber = obj.findRepeatNumber(new int[]{2, 3, 1, 0, 2, 5, 3});
-        System.out.println("repeatNumber = " + repeatNumber);
+        assertEquals(2, repeatNumber);
     }
 
     @Test
@@ -211,24 +210,24 @@ public class ArrayTest
         int[] nums1 = {1, 7, 3, 6, 5, 6};
         int[] nums2 = {1, 2, 3};
         int[] nums3 = {2, 1, -1};
-        System.out.println(p0724.pivotIndex_1(nums3));
-        System.out.println(p0724.pivotIndex_2(nums1));
-        System.out.println(p0724.pivotIndex_2(nums2));
-        System.out.println(p0724.pivotIndex_2(nums3));
+        assertEquals(0, p0724.pivotIndex_1(nums3));
+        assertEquals(3, p0724.pivotIndex_2(nums1));
+        assertEquals(-1, p0724.pivotIndex_2(nums2));
+        assertEquals(0, p0724.pivotIndex_2(nums3));
     }
 
     @Test
     public void test2022()
     {
         P2022Convert1DArrayInto2DArray obj = new P2022Convert1DArrayInto2DArray();
-        System.out.println("result = " + Arrays.deepToString(obj.construct2DArray(new int[]{1, 2, 3, 4}, 1, 2)));
+        assertEquals("[]", Arrays.deepToString(obj.construct2DArray(new int[]{1, 2, 3, 4}, 1, 2)));
     }
 
     @Test
     public void test0628()
     {
         P0628MaximumProductOfThreeNumbers obj = new P0628MaximumProductOfThreeNumbers();
-        System.out.println("result = " + obj.maximumProductNormalLinearScan(new int[]{1, 2, 3, 4}));
+        assertEquals(24, obj.maximumProductNormalLinearScan(new int[]{1, 2, 3, 4}));
     }
 
     @Test
@@ -236,7 +235,7 @@ public class ArrayTest
     {
         OfferII006TwoSumInSortedArray obj = new OfferII006TwoSumInSortedArray();
         int[] index = obj.twoSumByBisection(new int[]{1, 2, 3, 4, 5}, 8);
-        System.out.println("result = " + Arrays.toString(index));
+        assertEquals("[2, 4]", Arrays.toString(index));
 
     }
 
@@ -282,11 +281,8 @@ public class ArrayTest
     {
         int[] nums1 = {1, 2, 3, 0, 0, 0};
         int[] nums2 = {2, 5, 6};
-        int m = 3, n = 3;
-
-        M1001SortedMergeLCCI lcci = new M1001SortedMergeLCCI();
-        lcci.merge(nums1, m, nums2, n);
-        System.out.println("lcci = " + Arrays.toString(nums1));
+        new M1001SortedMergeLCCI().merge(nums1, 3, nums2, 3);
+        assertEquals("[1, 2, 2, 3, 5, 6]", Arrays.toString(nums1));
     }
 
     @Test
@@ -299,36 +295,38 @@ public class ArrayTest
                 7922, 8231, -4928, 7636, -3994, -243, -1327, 8425, -3468, -4218, -364, 4257, 5690, 1035, 6217, 8880,
                 4127, -6299, -1831, 2854, -4498, -6983, -677, 2216, -1938, 3348, 4099, 3591, 9076, 942, 4571, -4200,
                 7271, -6920, -1886, 662, 7844, 3658, -6562, -2106, -296, -3280, 8909, -8352, -9413, 3513, 1352, -8825};
-        System.out.println("maxAverage = " + obj.findMaxAverage3(nums, 1));
+        assertEquals(9931.0, obj.findMaxAverage3(nums, 1));
     }
 
     @Test
     public void testOffer042()
     {
-        Offer042LCOF lcof = new Offer042LCOF();
-        int maxSubArray = lcof.maxSubArray(new int[]{-2, 1, -3, 4, -1, 2, 1, -5, 4});
-        System.out.println("maxSubArray = " + maxSubArray);
+        int maxSubArray = new Offer042LCOF().maxSubArray(new int[]{-2, 1, -3, 4, -1, 2, 1, -5, 4});
+        assertEquals(6, maxSubArray);
     }
 
     @Test
     public void test0066()
     {
         P0066PlusOne p0066 = new P0066PlusOne();
-        System.out.println(Arrays.toString(p0066.plusOne_1(new int[]{4, 3, 9, 9})));
-        System.out.println(Arrays.toString(p0066.plusOne_3(new int[]{4, 3, 9, 9})));
-        System.out.println(Arrays.toString(p0066.plusOne_3(new int[]{9, 9, 9, 9})));
-        System.out.println(Arrays.toString(p0066.plusOne_2(new int[]{9, 9, 9, 9})));
+        assertEquals("[4, 4, 0, 0]", Arrays.toString(p0066.plusOne_1(new int[]{4, 3, 9, 9})));
+        assertEquals("[4, 4, 0, 0]", Arrays.toString(p0066.plusOne_3(new int[]{4, 3, 9, 9})));
+        assertEquals("[1, 0, 0, 0, 0]", Arrays.toString(p0066.plusOne_3(new int[]{9, 9, 9, 9})));
+        assertEquals("[1, 0, 0, 0, 0]", Arrays.toString(p0066.plusOne_2(new int[]{9, 9, 9, 9})));
     }
-
 
     @Test
     public void test0469()
     {
         P0496NextGreaterElementI p0496 = new P0496NextGreaterElementI();
-        System.out.println(Arrays.toString(p0496.nextGreaterElement_1(new int[]{2, 4}, new int[]{1, 2, 3, 4})));
-        System.out.println(Arrays.toString(p0496.nextGreaterElement_2(new int[]{2, 4}, new int[]{1, 2, 3, 4})));
-        System.out.println(Arrays.toString(p0496.nextGreaterElement_3(new int[]{4, 1, 2}, new int[]{1, 3, 4, 2})));
-        System.out.println(Arrays.toString(p0496.nextGreaterElement_4(new int[]{4, 1, 2}, new int[]{1, 3, 4, 2})));
+        assertEquals("[3, -1]",
+                Arrays.toString(p0496.nextGreaterElement_1(new int[]{2, 4}, new int[]{1, 2, 3, 4})));
+        assertEquals("[3, -1]",
+                Arrays.toString(p0496.nextGreaterElement_2(new int[]{2, 4}, new int[]{1, 2, 3, 4})));
+        assertEquals("[-1, 3, -1]",
+                Arrays.toString(p0496.nextGreaterElement_3(new int[]{4, 1, 2}, new int[]{1, 3, 4, 2})));
+        assertEquals("[-1, 3, -1]",
+                Arrays.toString(p0496.nextGreaterElement_4(new int[]{4, 1, 2}, new int[]{1, 3, 4, 2})));
     }
 
     @Test
@@ -336,8 +334,7 @@ public class ArrayTest
     {
         P1475FinalPricesWithASpecialDiscountInAShop obj = new P1475FinalPricesWithASpecialDiscountInAShop();
         int[] prices = {8, 4, 6, 2, 3};
-        int[] result = obj.finalPrices(prices);
-        System.out.println("result = " + Arrays.toString(result));
+        assertEquals("[4, 2, 4, 2, 3]", Arrays.toString(obj.finalPrices(prices)));
     }
 
     @Test
@@ -345,9 +342,9 @@ public class ArrayTest
     {
         P0169MajorityElement obj = new P0169MajorityElement();
         int[] nums = {2, 2, 1, 1, 1, 2, 2};
-        System.out.println("sort result = " + obj.majorityElement_sort(nums));
-        System.out.println("hash result = " + obj.majorityElement_hash(nums));
-        System.out.println("math result = " + obj.majorityElement_math(nums));
+        assertEquals(2, obj.majorityElement_sort(nums));
+        assertEquals(2, obj.majorityElement_hash(nums));
+        assertEquals(2, obj.majorityElement_math(nums));
     }
 
     @Test
@@ -356,10 +353,10 @@ public class ArrayTest
         P0268MissingNumber obj = new P0268MissingNumber();
 
         int[] nums = {9, 6, 4, 2, 3, 5, 7, 0, 1};
-        System.out.println("array result = " + obj.missingNumber_sort(nums));
-        System.out.println("hash  result = " + obj.missingNumber_hash(nums));
-        System.out.println("math  result = " + obj.missingNumber_math_sum(nums));
-        System.out.println("math  result = " + obj.missingNumber_math_bit(nums));
+        assertEquals(8, obj.missingNumber_sort(nums));
+        assertEquals(8, obj.missingNumber_hash(nums));
+        assertEquals(8, obj.missingNumber_math_sum(nums));
+        assertEquals(8, obj.missingNumber_math_bit(nums));
     }
 
     @Test
@@ -418,10 +415,10 @@ public class ArrayTest
 
         P1582SpecialPositionsInABinaryMatrix binaryMatrix = new P1582SpecialPositionsInABinaryMatrix();
 
-        System.out.println("mat1 = " + binaryMatrix.numSpecial(mat1));
-        System.out.println("mat2 = " + binaryMatrix.numSpecial(mat2));
-        System.out.println("mat3 = " + binaryMatrix.numSpecial(mat3));
-        System.out.println("mat4 = " + binaryMatrix.numSpecial(mat4));
+        assertEquals(1, binaryMatrix.numSpecial(mat1));
+        assertEquals(3, binaryMatrix.numSpecial(mat2));
+        assertEquals(2, binaryMatrix.numSpecial(mat3));
+        assertEquals(3, binaryMatrix.numSpecial(mat4));
     }
 
     @Test
@@ -430,17 +427,16 @@ public class ArrayTest
         P0448FindAllNumbersDisappearedInAnArray obj = new P0448FindAllNumbersDisappearedInAnArray();
         int[] nums = {4, 3, 2, 7, 8, 2, 3, 1};
         List<Integer> list = obj.findDisappearedNumbers(nums);
-        System.out.println("nums = " + Arrays.toString(nums));
-        System.out.println("list = " + list);
+        assertEquals("[12, 19, 18, 15, 8, 2, 11, 9]", Arrays.toString(nums));
+        assertEquals("[5, 6]", list.toString());
     }
 
     @Test
     public void test0485()
     {
         P0485MaxConsecutiveOnes obj = new P0485MaxConsecutiveOnes();
-        int[] nums = {1, 1, 0, 1, 1, 1};
-        // int[] nums = {1,1,1,1,0,1};
-        System.out.println("result = " + obj.findMaxConsecutiveOnes(nums));
+        assertEquals(3, obj.findMaxConsecutiveOnes(new int[]{1, 1, 0, 1, 1, 1}));
+        assertEquals(4, obj.findMaxConsecutiveOnes(new int[]{1, 1, 1, 1, 0, 1}));
     }
 
     @Test
@@ -449,7 +445,7 @@ public class ArrayTest
         String[] words = {"Hello", "Alaska", "Dad", "Peace"};
         P0500KeyboardRow obj = new P0500KeyboardRow();
         String[] result = obj.findWords(words);
-        System.out.println("result = " + Arrays.toString(result));
+        assertEquals("[Alaska, Dad]", Arrays.toString(result));
     }
 
     @Test
@@ -458,7 +454,7 @@ public class ArrayTest
         P0506RelativeRanks obj = new P0506RelativeRanks();
         int[] score = {10, 3, 8, 9, 4};
         String[] relativeRanks = obj.findRelativeRanks(score);
-        System.out.println("result = " + Arrays.toString(relativeRanks));
+        assertEquals("[Gold Medal, 5, Bronze Medal, Silver Medal, 4]", Arrays.toString(relativeRanks));
     }
 
     @Test
@@ -466,7 +462,7 @@ public class ArrayTest
     {
         P0561ArrayPartition obj = new P0561ArrayPartition();
         int[] nums = {6, 2, 6, 5, 1, 2};
-        System.out.println("result = " + obj.arrayPairSum(nums));
+        assertEquals(9, obj.arrayPairSum(nums));
     }
 
     @Test
@@ -474,7 +470,7 @@ public class ArrayTest
     {
         P0575DistributeCandies obj = new P0575DistributeCandies();
         int[] nums = {1, 1, 2, 2, 3, 3};
-        System.out.println("result = " + obj.distributeCandies(nums));
+        assertEquals(3, obj.distributeCandies(nums));
     }
 
     @Test
@@ -483,7 +479,7 @@ public class ArrayTest
         P0350IntersectionOfTwoArraysII obj = new P0350IntersectionOfTwoArraysII();
         int[] nums1 = {4, 9, 5};
         int[] nums2 = {9, 4, 9, 8, 4};
-        System.out.println("result = " + Arrays.toString(obj.intersect(nums1, nums2)));
+        assertEquals("[4, 9]", Arrays.toString(obj.intersect(nums1, nums2)));
     }
 
     @Test
@@ -491,7 +487,8 @@ public class ArrayTest
     {
         P0566ReshapeTheMatrix obj = new P0566ReshapeTheMatrix();
         int[][] mat = {{1, 2}, {3, 4}, {5, 6}, {7, 8}};
-        System.out.println(Arrays.deepToString(obj.matrixReshape(mat, 2, 4)));
+        assertEquals("[[1, 2, 3, 4], [5, 6, 7, 8]]",
+                Arrays.deepToString(obj.matrixReshape(mat, 2, 4)));
     }
 
     @Test
@@ -499,26 +496,35 @@ public class ArrayTest
     {
         P0118PascalsTriangle obj = new P0118PascalsTriangle();
         List<List<Integer>> lists = obj.generate(10);
-        lists.forEach(System.out::println);
+        assertEquals("[1]", lists.get(0).toString());
+        assertEquals("[1, 1]", lists.get(1).toString());
+        assertEquals("[1, 2, 1]", lists.get(2).toString());
+        assertEquals("[1, 3, 3, 1]", lists.get(3).toString());
+        assertEquals("[1, 4, 6, 4, 1]", lists.get(4).toString());
+        assertEquals("[1, 5, 10, 10, 5, 1]", lists.get(5).toString());
+        assertEquals("[1, 6, 15, 20, 15, 6, 1]", lists.get(6).toString());
+        assertEquals("[1, 7, 21, 35, 35, 21, 7, 1]", lists.get(7).toString());
+        assertEquals("[1, 8, 28, 56, 70, 56, 28, 8, 1]", lists.get(8).toString());
+        assertEquals("[1, 9, 36, 84, 126, 126, 84, 36, 9, 1]", lists.get(9).toString());
     }
 
     @Test
     public void test0119()
     {
         P0119PascalsTriangleII obj = new P0119PascalsTriangleII();
-        System.out.println(obj.getRow(5));
-        System.out.println(obj.getRow_1(6));
-        System.out.println(obj.getRow_2(7));
-        System.out.println(obj.getRow_3(8));
+        assertEquals("[1, 5, 10, 10, 5, 1]", obj.getRow(5).toString());
+        assertEquals("[1, 6, 15, 20, 15, 6, 1]", obj.getRow_1(6).toString());
+        assertEquals("[1, 7, 21, 35, 35, 21, 7, 1]", obj.getRow_2(7).toString());
+        assertEquals("[1, 8, 28, 56, 70, 56, 28, 8, 1]", obj.getRow_3(8).toString());
     }
 
     @Test
     public void test0645()
     {
         P0645SetMismatch obj = new P0645SetMismatch();
-        System.out.println(Arrays.toString(obj.findErrorNums_math(new int[]{1, 2, 2, 4})));
-        System.out.println(Arrays.toString(obj.findErrorNums_hash(new int[]{1, 2, 3, 4, 6, 5, 3})));
-        System.out.println(Arrays.toString(obj.findErrorNums_sort(new int[]{1, 2, 3, 4, 6, 5, 3})));
+        assertEquals("[2, 3]", Arrays.toString(obj.findErrorNums_math(new int[]{1, 2, 2, 4})));
+        assertEquals("[3, 7]", Arrays.toString(obj.findErrorNums_hash(new int[]{1, 2, 3, 4, 6, 5, 3})));
+        assertEquals("[3, 7]", Arrays.toString(obj.findErrorNums_sort(new int[]{1, 2, 3, 4, 6, 5, 3})));
     }
 
     @Test
@@ -543,10 +549,9 @@ public class ArrayTest
                 , {'.', '6', '.', '.', '.', '.', '2', '8', '.'}
                 , {'.', '.', '.', '4', '1', '9', '.', '.', '5'}
                 , {'.', '.', '.', '.', '8', '.', '.', '7', '9'}};
-
-        P0036ValidSudoku obj = new P0036ValidSudoku();
-        System.out.println("result 1 = " + obj.isValidSudoku(board1));
-        System.out.println("result 2 = " + obj.isValidSudoku(board2));
+        P0036ValidSudoku p0036 = new P0036ValidSudoku();
+        assertTrue(p0036.isValidSudoku(board1));
+        assertFalse(p0036.isValidSudoku(board2));
     }
 
     @Test
@@ -557,8 +562,8 @@ public class ArrayTest
         int[][] matrix2 = {{0, 1, 2, 0}, {3, 4, 5, 2}, {1, 3, 1, 5}};
         obj.setZeroes_2(matrix1);
         obj.setZeroes_3(matrix2);
-        System.out.println("matrix1 = " + Arrays.deepToString(matrix1));
-        System.out.println("matrix2 = " + Arrays.deepToString(matrix2));
+        assertEquals("[[1, 0, 1], [0, 0, 0], [1, 0, 1]]", Arrays.deepToString(matrix1));
+        assertEquals("[[0, 0, 0, 0], [0, 4, 5, 0], [0, 3, 1, 0]]", Arrays.deepToString(matrix2));
     }
 
     @Test
@@ -567,8 +572,8 @@ public class ArrayTest
         P1598CrawlerLogFolder obj = new P1598CrawlerLogFolder();
         String[] logs1 = {"d1/", "d2/", "../", "d21/", "./"};
         String[] logs2 = {"d1/", "d2/", "./", "d3/", "../", "d31/"};
-        System.out.println("logs1 = " + obj.minOperations(logs1));
-        System.out.println("logs2 = " + obj.minOperations(logs2));
+        assertEquals(2, obj.minOperations(logs1));
+        assertEquals(3, obj.minOperations(logs2));
     }
 
     @Test
@@ -576,7 +581,7 @@ public class ArrayTest
     {
         P0977SquaresOfASortedArray obj = new P0977SquaresOfASortedArray();
         int[] nums = {-7, -3, 2, 3, 11};
-        System.out.println("result = " + Arrays.toString(obj.sortedSquares(nums)));
+        assertEquals("[4, 9, 9, 49, 121]", Arrays.toString(obj.sortedSquares(nums)));
     }
 
     @Test
@@ -585,7 +590,7 @@ public class ArrayTest
         P0189RotateArray obj = new P0189RotateArray();
         int[] nums = {1, 2, 3, 4, 5, 6, 7};
         obj.rotate(nums, 3);
-        System.out.println("result = " + Arrays.toString(nums));
+        assertEquals("[5, 6, 7, 1, 2, 3, 4]", Arrays.toString(nums));
     }
 
     @Test
@@ -593,37 +598,37 @@ public class ArrayTest
     {
         int[] nums = {1, 3, 5, 6};
         P0035SearchInsertPosition obj = new P0035SearchInsertPosition();
-        System.out.println("result 5 = " + obj.searchInsert_2(nums, 5));
-        System.out.println("result 2 = " + obj.searchInsert_2(nums, 2));
-        System.out.println("result 7 = " + obj.searchInsert_2(nums, 7));
+        assertEquals(2, obj.searchInsert_2(nums, 5));
+        assertEquals(1, obj.searchInsert_2(nums, 2));
+        assertEquals(4, obj.searchInsert_2(nums, 7));
     }
 
     @Test
     public void test0167()
     {
         P0167TwoSum_II_InputArrayIsSorted obj = new P0167TwoSum_II_InputArrayIsSorted();
-        System.out.println("result = " + Arrays.toString(obj.twoSum(new int[]{2, 7, 11, 15}, 9)));
-        System.out.println("result = " + Arrays.toString(obj.twoSum(new int[]{2, 3, 4}, 6)));
-        System.out.println("result = " + Arrays.toString(obj.twoSum(new int[]{-1, 0}, -1)));
+        assertEquals("[1, 2]", Arrays.toString(obj.twoSum(new int[]{2, 7, 11, 15}, 9)));
+        assertEquals("[1, 3]", Arrays.toString(obj.twoSum(new int[]{2, 3, 4}, 6)));
+        assertEquals("[1, 2]", Arrays.toString(obj.twoSum(new int[]{-1, 0}, -1)));
     }
 
     @Test
     public void test1608()
     {
         P1608SpecialArrayWithXElementsGreaterThanOrEqualX obj = new P1608SpecialArrayWithXElementsGreaterThanOrEqualX();
-        System.out.println("obj 2  = " + obj.specialArray(new int[]{3, 5}));
-        System.out.println("obj -1 = " + obj.specialArray(new int[]{0, 0}));
-        System.out.println("obj 3  = " + obj.specialArray(new int[]{0, 4, 3, 0, 4}));
-        System.out.println("obj -1 = " + obj.specialArray(new int[]{3, 6, 7, 7, 0}));
+        assertEquals(2, obj.specialArray(new int[]{3, 5}));
+        assertEquals(-1, obj.specialArray(new int[]{0, 0}));
+        assertEquals(3, obj.specialArray(new int[]{0, 4, 3, 0, 4}));
+        assertEquals(-1, obj.specialArray(new int[]{3, 6, 7, 7, 0}));
     }
 
     @Test
     public void test0852()
     {
         P0852PeakIndexInAMountainArray obj = new P0852PeakIndexInAMountainArray();
-        System.out.println(obj.peakIndexInMountainArray_1(new int[]{0, 10, 5, 2}));
-        System.out.println(obj.peakIndexInMountainArray_2(new int[]{3, 4, 5, 1}));
-        System.out.println(obj.peakIndexInMountainArray_3(new int[]{24, 69, 100, 99, 79, 78, 67, 36, 26, 19}));
+        assertEquals(1, obj.peakIndexInMountainArray_1(new int[]{0, 10, 5, 2}));
+        assertEquals(2, obj.peakIndexInMountainArray_2(new int[]{3, 4, 5, 1}));
+        assertEquals(2, obj.peakIndexInMountainArray_3(new int[]{24, 69, 100, 99, 79, 78, 67, 36, 26, 19}));
     }
 
     @Test
@@ -635,11 +640,11 @@ public class ArrayTest
         int[] arr3 = {6, 0, 7, 0, 7, 5, 7, 8, 3, 4, 0, 7, 8, 1, 6, 8, 1, 1, 2, 4, 8, 1, 9, 5, 4, 3, 8, 5, 10, 8, 6, 6, 1, 0, 6, 10, 8, 2, 3, 4};
         int[] arr4 = {9, 7, 8, 7, 7, 8, 4, 4, 6, 8, 8, 7, 6, 8, 8, 9, 2, 6, 0, 0, 1, 10, 8, 6, 3, 3, 5, 1, 10, 9, 0, 7, 10, 0, 10, 4, 1, 10, 6, 9, 3, 6, 0, 0, 2, 7, 0, 6, 7, 2, 9, 7, 7, 3, 0, 1, 6, 1, 10, 3};
         int[] arr5 = {4, 8, 4, 10, 0, 7, 1, 3, 7, 8, 8, 3, 4, 1, 6, 2, 1, 1, 8, 0, 9, 8, 0, 3, 9, 10, 3, 10, 1, 10, 7, 3, 2, 1, 4, 9, 10, 7, 6, 4, 0, 8, 5, 1, 2, 1, 6, 2, 5, 0, 7, 10, 9, 10, 3, 7, 10, 5, 8, 5, 7, 6, 7, 6, 10, 9, 5, 10, 5, 5, 7, 2, 10, 7, 7, 8, 2, 0, 1, 1};
-        System.out.println(p1619.trimMean(arr1));
-        System.out.println(p1619.trimMean(arr2));
-        System.out.println(p1619.trimMean(arr3));
-        System.out.println(p1619.trimMean(arr4));
-        System.out.println(p1619.trimMean(arr5));
+        assertEquals(2.0, p1619.trimMean(arr1));
+        assertEquals(4.0, p1619.trimMean(arr2));
+        assertEquals(4.777777777777778, p1619.trimMean(arr3));
+        assertEquals(5.277777777777778, p1619.trimMean(arr4));
+        assertEquals(5.291666666666667, p1619.trimMean(arr5));
     }
 
 
@@ -649,33 +654,33 @@ public class ArrayTest
         P1385FindTheDistanceValueBetweenTwoArrays p1385 = new P1385FindTheDistanceValueBetweenTwoArrays();
         int[] arr1 = {4, 5, 8}, arr2 = {10, 9, 1, 8};
         int d = 2;
-        System.out.println(p1385.findTheDistanceValue_1(arr1, arr2, d));
-        System.out.println(p1385.findTheDistanceValue_2(arr1, arr2, d));
+        assertEquals(2, p1385.findTheDistanceValue_1(arr1, arr2, d));
+        assertEquals(2, p1385.findTheDistanceValue_2(arr1, arr2, d));
     }
 
     @Test
     public void test0744()
     {
         P0744FindSmallestLetterGreaterThanTarget obj = new P0744FindSmallestLetterGreaterThanTarget();
-        System.out.println(obj.nextGreatestLetter(new char[]{'c', 'f', 'j'}, 'a'));
-        System.out.println(obj.nextGreatestLetter(new char[]{'c', 'f', 'j'}, 'c'));
-        System.out.println(obj.nextGreatestLetter(new char[]{'c', 'f', 'j'}, 'd'));
+        assertEquals('c', obj.nextGreatestLetter(new char[]{'c', 'f', 'j'}, 'a'));
+        assertEquals('f', obj.nextGreatestLetter(new char[]{'c', 'f', 'j'}, 'c'));
+        assertEquals('f', obj.nextGreatestLetter(new char[]{'c', 'f', 'j'}, 'd'));
     }
 
     @Test
     public void test2539()
     {
         P1539KthMissingPositiveNumber obj = new P1539KthMissingPositiveNumber();
-        System.out.println(obj.findKthPositive(new int[]{2, 3, 4, 7, 11}, 5));
-        System.out.println(obj.findKthPositive(new int[]{1, 2, 3, 4}, 2));
+        assertEquals(9, obj.findKthPositive(new int[]{2, 3, 4, 7, 11}, 5));
+        assertEquals(6, obj.findKthPositive(new int[]{1, 2, 3, 4}, 2));
     }
 
     @Test
     public void test0441()
     {
         P0441ArrangingCoins obj = new P0441ArrangingCoins();
-        System.out.println(obj.arrangeCoins(5));
-        System.out.println(obj.arrangeCoins(8));
+        assertEquals(2, obj.arrangeCoins(5));
+        assertEquals(3, obj.arrangeCoins(8));
     }
 
     @Test
@@ -693,8 +698,8 @@ public class ArrayTest
                 {3, 2},
                 {1, 0}
         };
-        System.out.println(obj.countNegatives(grid1));
-        System.out.println(obj.countNegatives(grid2));
+        assertEquals(14, obj.countNegatives(grid1));
+        assertEquals(0, obj.countNegatives(grid2));
     }
 
     @Test
@@ -705,10 +710,10 @@ public class ArrayTest
                 {1, 3, 5, 7},
                 {10, 11, 16, 20},
                 {23, 30, 34, 60}};
-        System.out.println(p0074.searchMatrix_1(matrix, 11));
-        System.out.println(p0074.searchMatrix_2(matrix, 11));
-        System.out.println(p0074.searchMatrix_1(matrix, 70));
-        System.out.println(p0074.searchMatrix_2(matrix, 70));
+        assertTrue(p0074.searchMatrix_1(matrix, 11));
+        assertTrue(p0074.searchMatrix_2(matrix, 11));
+        assertFalse(p0074.searchMatrix_1(matrix, 70));
+        assertFalse(p0074.searchMatrix_2(matrix, 70));
     }
 
     @Test
@@ -716,10 +721,10 @@ public class ArrayTest
     {
         int[] nums1 = {2, 3, 1, 3, 2};
         int[] nums2 = {-1, 1, -6, 4, 5, -6, 1, 4, 1};
-        System.out.println(Arrays.toString(P1636SortArrayByIncreasingFrequency.frequencySort(nums1)));
-        System.out.println(Arrays.toString(P1636SortArrayByIncreasingFrequency.frequencySortByCount(nums1)));
-        System.out.println(Arrays.toString(P1636SortArrayByIncreasingFrequency.frequencySort(nums2)));
-        System.out.println(Arrays.toString(P1636SortArrayByIncreasingFrequency.frequencySortByCount(nums2)));
+        assertEquals("[1, 3, 3, 2, 2]", Arrays.toString(P1636SortArrayByIncreasingFrequency.frequencySort(nums1)));
+        assertEquals("[1, 3, 3, 2, 2]", Arrays.toString(P1636SortArrayByIncreasingFrequency.frequencySortByCount(nums1)));
+        assertEquals("[5, -1, 4, 4, -6, -6, 1, 1, 1]", Arrays.toString(P1636SortArrayByIncreasingFrequency.frequencySort(nums2)));
+        assertEquals("[5, -1, 4, 4, -6, -6, 1, 1, 1]", Arrays.toString(P1636SortArrayByIncreasingFrequency.frequencySortByCount(nums2)));
     }
 
     @Test
@@ -735,8 +740,8 @@ public class ArrayTest
                 {1, 0, 0, 0},
                 {1, 0, 0, 0}};
         P1337TheKWeakestRowsInAMatrix p1377 = new P1337TheKWeakestRowsInAMatrix();
-        System.out.println(Arrays.toString(p1377.kWeakestRows_1(mat1, 3)));
-        System.out.println(Arrays.toString(p1377.kWeakestRows_2(mat2, 2)));
+        assertEquals("[2, 0, 3]", Arrays.toString(p1377.kWeakestRows_1(mat1, 3)));
+        assertEquals("[0, 2]", Arrays.toString(p1377.kWeakestRows_2(mat2, 2)));
     }
 
     @Test
@@ -747,31 +752,22 @@ public class ArrayTest
         int[] arr2 = {7, 1, 14, 11};
         int[] arr3 = {3, 1, 7, 11};
         int[] arr4 = {-10, 12, -20, -8, 15};
-        System.out.println(p1346.checkIfExist_3(arr1));
-        System.out.println(p1346.checkIfExist_3(arr2));
-        System.out.println(p1346.checkIfExist_3(arr3));
-        System.out.println(p1346.checkIfExist_3(arr4));
+        assertTrue(p1346.checkIfExist_3(arr1));
+        assertTrue(p1346.checkIfExist_3(arr2));
+        assertFalse(p1346.checkIfExist_3(arr3));
+        assertTrue(p1346.checkIfExist_3(arr4));
     }
 
     @Test
     public void test0633()
     {
         P0633SumOfSquareNumbers p0633 = new P0633SumOfSquareNumbers();
-        for (int i = 0; i <= 100; i++)
-        {
-            if (p0633.judgeSquareSum(i))
-            {
-                System.out.print("i = " + i);
-            }
-            if (p0633.judgeSquareSum_sqrt(i))
-            {
-                System.out.print(" ; Sqrt = " + i);
-            }
-            if (p0633.judgeSquareSum_math(i))
-            {
-                System.out.println(" ; Math = " + i);
-            }
-        }
+        assertTrue(p0633.judgeSquareSum(10));
+        assertTrue(p0633.judgeSquareSum_sqrt(16));
+        assertTrue(p0633.judgeSquareSum_math(17));
+        assertFalse(p0633.judgeSquareSum(46));
+        assertFalse(p0633.judgeSquareSum_sqrt(47));
+        assertFalse(p0633.judgeSquareSum_math(48));
     }
 
     @Test
@@ -779,15 +775,15 @@ public class ArrayTest
     {
         P1855MaximumDistanceBetweenAPairOfValues p1855 = new P1855MaximumDistanceBetweenAPairOfValues();
         int[] nums1 = {55, 30, 5, 4, 2}, nums2 = {100, 20, 10, 10, 5};
-        System.out.println(p1855.maxDistance_1(nums1, nums2));
+        assertEquals(2, p1855.maxDistance_1(nums1, nums2));
 
         nums1 = new int[]{2, 2, 2};
         nums2 = new int[]{10, 10, 1};
-        System.out.println(p1855.maxDistance_2(nums1, nums2));
+        assertEquals(1, p1855.maxDistance_2(nums1, nums2));
 
         nums1 = new int[]{30, 29, 19, 5};
         nums2 = new int[]{25, 25, 25, 25, 25};
-        System.out.println(p1855.maxDistance_2(nums1, nums2));
+        assertEquals(2, p1855.maxDistance_2(nums1, nums2));
     }
 
 
@@ -798,15 +794,15 @@ public class ArrayTest
 
         int[] arr = {15, 88};
         int[][] pieces = {{88}, {15}};
-        System.out.println(p1640.canFormArray(arr, pieces));
+        assertTrue(p1640.canFormArray(arr, pieces));
 
         arr = new int[]{49, 18, 16};
         pieces = new int[][]{{16, 18, 49}};
-        System.out.println(p1640.canFormArray(arr, pieces));
+        assertFalse(p1640.canFormArray(arr, pieces));
 
         arr = new int[]{91, 4, 64, 78};
         pieces = new int[][]{{78}, {4, 64}, {91}};
-        System.out.println(p1640.canFormArray(arr, pieces));
+        assertTrue(p1640.canFormArray(arr, pieces));
     }
 
     @Test
@@ -816,18 +812,18 @@ public class ArrayTest
         int[] nums1 = {3, 4, 5, 1, 2};
         int[] nums2 = {4, 5, 6, 7, 0, 1, 2};
         int[] nums3 = {11, 13, 15, 17};
-        System.out.println(p0153.findMin(nums1));
-        System.out.println(p0153.findMin(nums2));
-        System.out.println(p0153.findMin(nums3));
+        assertEquals(1, p0153.findMin(nums1));
+        assertEquals(0, p0153.findMin(nums2));
+        assertEquals(11, p0153.findMin(nums3));
     }
 
     @Test
     public void test1652()
     {
         P1652DefuseTheBomb p1652 = new P1652DefuseTheBomb();
-        System.out.println(Arrays.toString(p1652.decrypt(new int[]{5, 7, 1, 4}, 3)));
-        System.out.println(Arrays.toString(p1652.decrypt(new int[]{1, 2, 3, 4}, 0)));
-        System.out.println(Arrays.toString(p1652.decrypt(new int[]{2, 4, 9, 3}, -2)));
+        assertEquals("[12, 10, 16, 13]", Arrays.toString(p1652.decrypt(new int[]{5, 7, 1, 4}, 3)));
+        assertEquals("[0, 0, 0, 0]", Arrays.toString(p1652.decrypt(new int[]{1, 2, 3, 4}, 0)));
+        assertEquals("[12, 5, 6, 13]", Arrays.toString(p1652.decrypt(new int[]{2, 4, 9, 3}, -2)));
     }
 
     @Test
@@ -835,11 +831,7 @@ public class ArrayTest
     {
         P0349IntersectionOfTwoArrays obj = new P0349IntersectionOfTwoArrays();
         int[] nums1 = {1, 2, 2, 1}, nums2 = {2, 2};
-        int[] result = obj.intersection(nums1, nums2);
-        for (int i : result)
-        {
-            System.out.println("i = " + i);
-        }
+        assertArrayEquals(new int[]{2}, obj.intersection(nums1, nums2));
     }
 
     @Test
@@ -847,7 +839,7 @@ public class ArrayTest
     {
         P0845LongestMountainInArray obj = new P0845LongestMountainInArray();
         int[] nums = {0, 2, 0, 0, 2, 0, 2, 1, 1, 0, 2, 1, 0, 0, 1, 0, 2, 1, 2, 0, 1, 1, 0, 2, 2, 1, 2, 2, 0, 0, 0, 1, 0, 2, 0, 0, 1, 2, 0, 1, 0, 2, 0, 2, 0, 0, 0, 0, 2, 1, 0, 0, 0, 0, 1, 0, 2, 1, 2, 2, 1, 0, 0, 1, 0, 2, 0, 0, 0, 2, 1, 0, 1, 2, 1, 0, 1, 0, 2, 1, 0, 2, 0, 2, 1, 1, 2, 0, 1, 0, 1, 1, 1, 1, 2, 1, 2, 2, 2, 0};
-        System.out.println("result = " + obj.longestMountain(nums));
+        assertEquals(5, obj.longestMountain(nums));
     }
 
     @Test
@@ -870,9 +862,12 @@ public class ArrayTest
         };
 
         P0733FloodFill p0733 = new P0733FloodFill();
-        System.out.println(Arrays.deepToString(p0733.floodFill_dfs_recursion(image1, 1, 1, 2)));
-        System.out.println(Arrays.deepToString(p0733.floodFill_dfs_stack(image2, 1, 1, 2)));
-        System.out.println(Arrays.deepToString(p0733.floodFill_bfs_queue(image3, 0, 0, 2)));
+        assertEquals("[[2, 2, 2], [2, 2, 0], [2, 0, 1]]",
+                Arrays.deepToString(p0733.floodFill_dfs_recursion(image1, 1, 1, 2)));
+        assertEquals("[[0, 0, 0], [0, 2, 0]]",
+                Arrays.deepToString(p0733.floodFill_dfs_stack(image2, 1, 1, 2)));
+        assertEquals("[[2, 2, 2], [2, 2, 2]]",
+                Arrays.deepToString(p0733.floodFill_bfs_queue(image3, 0, 0, 2)));
     }
 
     @Test
@@ -889,9 +884,9 @@ public class ArrayTest
                 {0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0},
                 {0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0}
         };
-        System.out.println(p0695.maxAreaOfIsland_bfs_queue(grid));
-        System.out.println(p0695.maxAreaOfIsland_dfs_stack(grid));
-        System.out.println(p0695.maxAreaOfIsland_dfs_recursion(grid));
+        assertEquals(12, p0695.maxAreaOfIsland_bfs_queue(grid));
+        assertEquals(0, p0695.maxAreaOfIsland_dfs_stack(grid));
+        assertEquals(0, p0695.maxAreaOfIsland_dfs_recursion(grid));
     }
 
     @Test
@@ -912,7 +907,6 @@ public class ArrayTest
                 {1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
         };
 
-
         int[][] mat = {
                 {1, 1, 1, 1, 1},
                 {1, 1, 1, 1, 1},
@@ -920,10 +914,13 @@ public class ArrayTest
                 {1, 1, 1, 1, 1},
                 {1, 1, 1, 1, 1}
         };
-        System.out.println(Arrays.deepToString(p0542.updateMatrix_bfs(mat1)));
-        System.out.println(Arrays.deepToString(p0542.updateMatrix_bfs_1(mat)));
-        System.out.println(Arrays.deepToString(p0542.updateMatrix_bfs_2(mat)));
-        System.out.println(Arrays.deepToString(p0542.updateMatrix_dp(mat)));
+        p0542.updateMatrix_bfs(mat1);
+        assertEquals("[[4, 3, 2, 3, 4], [3, 2, 1, 2, 3], [2, 1, 0, 1, 2], [3, 2, 1, 2, 3], [4, 3, 2, 3, 4]]",
+                Arrays.deepToString(p0542.updateMatrix_bfs_1(mat)));
+        assertEquals("[[0, 0, 0, 0, 0], [0, 0, 1, 0, 0], [0, 1, 0, 1, 0], [0, 0, 1, 0, 0], [0, 0, 0, 0, 0]]",
+                Arrays.deepToString(p0542.updateMatrix_bfs_2(mat)));
+        assertEquals("[[4, 3, 2, 3, 4], [3, 2, 1, 2, 3], [2, 1, 0, 1, 2], [3, 2, 1, 2, 3], [4, 3, 2, 3, 4]]",
+                Arrays.deepToString(p0542.updateMatrix_dp(mat)));
     }
 
     @Test
@@ -945,10 +942,10 @@ public class ArrayTest
                 {1, 1, 1, 0},
                 {1, 1, 1, 0},
                 {0, 0, 1, 1}};
-        System.out.println(p0994.orangesRotting(grid1));
-        System.out.println(p0994.orangesRotting(grid2));
-        System.out.println(p0994.orangesRotting(grid3));
-        System.out.println(p0994.orangesRotting(grid4));
+        assertEquals(4, p0994.orangesRotting(grid1));
+        assertEquals(-1, p0994.orangesRotting(grid2));
+        assertEquals(0, p0994.orangesRotting(grid3));
+        assertEquals(5, p0994.orangesRotting(grid4));
     }
 
     @Test
@@ -960,19 +957,21 @@ public class ArrayTest
         int[] nums3 = {12, 17, 15, 13, 10, 11, 12};
         int[] nums4 = {100, 10, 1};
         int[] nums5 = {1};
-        System.out.println(p1800.maxAscendingSum(nums1));
-        System.out.println(p1800.maxAscendingSum_dp_n(nums2));
-        System.out.println(p1800.maxAscendingSum_dp_n(nums3));
-        System.out.println(p1800.maxAscendingSum_dp_1(nums4));
-        System.out.println(p1800.maxAscendingSum_dp_1(nums5));
+        assertEquals(65, p1800.maxAscendingSum(nums1));
+        assertEquals(150, p1800.maxAscendingSum_dp_n(nums2));
+        assertEquals(33, p1800.maxAscendingSum_dp_n(nums3));
+        assertEquals(100, p1800.maxAscendingSum_dp_1(nums4));
+        assertEquals(1, p1800.maxAscendingSum_dp_1(nums5));
     }
 
     @Test
     public void test0412()
     {
         P0412FizzBuzz p0412 = new P0412FizzBuzz();
-        System.out.println(p0412.fizzBuzz_1(15));
-        System.out.println(p0412.fizzBuzz_2(15));
+        assertEquals("[1, 2, Fizz, 4, Buzz, Fizz, 7, 8, Fizz, Buzz, 11, Fizz, 13, 14, FizzBuzz]",
+                p0412.fizzBuzz_1(15).toString());
+        assertEquals("[1, 2, Fizz, 4, Buzz, Fizz, 7, 8, Fizz, Buzz, 11, Fizz, 13, 14, FizzBuzz]",
+                p0412.fizzBuzz_2(15).toString());
     }
 
     @Test
@@ -982,9 +981,9 @@ public class ArrayTest
         int[] nums1 = {1, 2, 3, 4};
         int[] nums2 = {1, 1, 1, 1, 1};
         int[] nums3 = {3, 1, 2, 10, 1};
-        System.out.println(Arrays.toString(p1480.runningSum_1(nums1)));
-        System.out.println(Arrays.toString(p1480.runningSum_1(nums2)));
-        System.out.println(Arrays.toString(p1480.runningSum_2(nums3)));
+        assertEquals("[1, 3, 6, 10]", Arrays.toString(p1480.runningSum_1(nums1)));
+        assertEquals("[1, 2, 3, 4, 5]", Arrays.toString(p1480.runningSum_1(nums2)));
+        assertEquals("[3, 4, 6, 16, 17]", Arrays.toString(p1480.runningSum_2(nums3)));
     }
 
     @Test
@@ -997,17 +996,17 @@ public class ArrayTest
         p0075.sortColors_2n(nums1);
         p0075.sortColors_n(nums2);
         p0075.sortColors(nums3);
-        System.out.println(Arrays.toString(nums1));
-        System.out.println(Arrays.toString(nums2));
-        System.out.println(Arrays.toString(nums3));
+        assertArrayEquals(new int[]{0, 0, 1, 1, 2, 2}, nums1);
+        assertArrayEquals(new int[]{0, 1, 2}, nums2);
+        assertArrayEquals(new int[]{1}, nums3);
     }
 
     @Test
     public void test0976()
     {
         P0976LargestPerimeterTriangle p0976 = new P0976LargestPerimeterTriangle();
-        System.out.println(p0976.largestPerimeter(new int[]{2, 1, 2}));
-        System.out.println(p0976.largestPerimeter(new int[]{1, 2, 1}));
+        assertEquals(5, p0976.largestPerimeter(new int[]{2, 1, 2}));
+        assertEquals(0, p0976.largestPerimeter(new int[]{1, 2, 1}));
     }
 
     @Test
@@ -1017,9 +1016,9 @@ public class ArrayTest
         int[][] points1 = {{1, 2}, {3, 1}, {2, 4}, {2, 3}, {4, 4}};
         int[][] points2 = {{3, 4}};
         int[][] points3 = {{12, 3}};
-        System.out.println(p1779.nearestValidPoint(3, 4, points1));
-        System.out.println(p1779.nearestValidPoint(3, 4, points2));
-        System.out.println(p1779.nearestValidPoint(3, 4, points3));
+        assertEquals(2, p1779.nearestValidPoint(3, 4, points1));
+        assertEquals(0, p1779.nearestValidPoint(3, 4, points2));
+        assertEquals(-1, p1779.nearestValidPoint(3, 4, points3));
     }
 
     @Test
@@ -1037,8 +1036,9 @@ public class ArrayTest
                 {15, 14, 12, 16}};
         p0048.rotate_1(matrix1);
         p0048.rotate_2(matrix2);
-        System.out.println("matrix1 = " + Arrays.deepToString(matrix1));
-        System.out.println("matrix2 = " + Arrays.deepToString(matrix2));
+        assertEquals("[[7, 4, 1], [8, 5, 2], [9, 6, 3]]", Arrays.deepToString(matrix1));
+        assertEquals("[[15, 13, 2, 5], [14, 3, 4, 1], [12, 6, 8, 9], [16, 7, 10, 11]]",
+                Arrays.deepToString(matrix2));
 
         matrix2 = new int[][]{
                 {5, 1, 9, 11},
@@ -1046,7 +1046,8 @@ public class ArrayTest
                 {13, 3, 6, 7},
                 {15, 14, 12, 16}};
         p0048.rotate_3(matrix2);
-        System.out.println("matrix2 = " + Arrays.deepToString(matrix2));
+        assertEquals("[[15, 13, 2, 5], [14, 3, 4, 1], [12, 6, 8, 9], [16, 7, 10, 11]]",
+                Arrays.deepToString(matrix2));
     }
 
     @Test
@@ -1056,17 +1057,17 @@ public class ArrayTest
         int[] nums1 = {-1, -2, -3, -4, 3, 2, 1};
         int[] nums2 = {1, 5, 0, 2, -3};
         int[] nums3 = {-1, 1, -1, 1, -1};
-        System.out.println(p1822.arraySign_1(nums1));
-        System.out.println(p1822.arraySign_1(nums2));
-        System.out.println(p1822.arraySign_2(nums3));
+        assertEquals(1, p1822.arraySign_1(nums1));
+        assertEquals(0, p1822.arraySign_1(nums2));
+        assertEquals(-1, p1822.arraySign_2(nums3));
     }
 
     @Test
     public void test1502()
     {
         P1502CanMakeArithmeticProgressionFromSequence p1502 = new P1502CanMakeArithmeticProgressionFromSequence();
-        System.out.println(p1502.canMakeArithmeticProgression_1(new int[]{3, 5, 1}));
-        System.out.println(p1502.canMakeArithmeticProgression_2(new int[]{1, 2, 4}));
+        assertTrue(p1502.canMakeArithmeticProgression_1(new int[]{3, 5, 1}));
+        assertFalse(p1502.canMakeArithmeticProgression_2(new int[]{1, 2, 4}));
     }
 
     @Test
@@ -1079,30 +1080,26 @@ public class ArrayTest
                 {3, 6, 9, 16, 22},
                 {10, 13, 14, 17, 24},
                 {18, 21, 23, 26, 30}};
-        System.out.println(p0240.searchMatrix_1(matrix, 5));
-        System.out.println(p0240.searchMatrix_1(matrix, 20));
-        System.out.println(p0240.searchMatrix_2(matrix, 14));
-        System.out.println(p0240.searchMatrix_2(matrix, 20));
+        assertTrue(p0240.searchMatrix_1(matrix, 5));
+        assertFalse(p0240.searchMatrix_1(matrix, 20));
+        assertTrue(p0240.searchMatrix_2(matrix, 14));
+        assertFalse(p0240.searchMatrix_2(matrix, 20));
     }
 
     @Test
     public void test0059()
     {
         P0059SpiralMatrixII p0059 = new P0059SpiralMatrixII();
-        System.out.println(Arrays.deepToString(p0059.generateMatrix(1)));
-        System.out.println(Arrays.deepToString(p0059.generateMatrix(3)));
-        for (int[] row : p0059.generateMatrix(20))
-        {
-            System.out.println("row = " + Arrays.toString(row));
-        }
+        assertEquals("[[1]]", Arrays.deepToString(p0059.generateMatrix(1)));
+        assertEquals("[[1, 2, 3], [8, 9, 4], [7, 6, 5]]", Arrays.deepToString(p0059.generateMatrix(3)));
     }
 
     @Test
     public void test0503()
     {
         P0503NextGreaterElementII p0503 = new P0503NextGreaterElementII();
-        System.out.println(Arrays.toString(p0503.nextGreaterElements(new int[]{1, 2, 1})));
-        System.out.println(Arrays.toString(p0503.nextGreaterElements(new int[]{1, 2, 3, 4, 3})));
+        assertEquals("[2, -1, 2]", Arrays.toString(p0503.nextGreaterElements(new int[]{1, 2, 1})));
+        assertEquals("[2, 3, 4, -1, 4]", Arrays.toString(p0503.nextGreaterElements(new int[]{1, 2, 3, 4, 3})));
     }
 
     @Test
@@ -1112,12 +1109,18 @@ public class ArrayTest
         int[] temperatures1 = {73, 74, 75, 71, 69, 72, 76, 73};
         int[] temperatures2 = {30, 40, 50, 60};
         int[] temperatures3 = {30, 60, 90};
-        System.out.println(Arrays.toString(p0739.dailyTemperatures_reverse(temperatures1)));
-        System.out.println(Arrays.toString(p0739.dailyTemperatures_reverse(temperatures2)));
-        System.out.println(Arrays.toString(p0739.dailyTemperatures_reverse(temperatures3)));
-        System.out.println(Arrays.toString(p0739.dailyTemperatures_forward(temperatures1)));
-        System.out.println(Arrays.toString(p0739.dailyTemperatures_forward(temperatures2)));
-        System.out.println(Arrays.toString(p0739.dailyTemperatures_forward(temperatures3)));
+        assertEquals("[1, 1, 4, 2, 1, 1, 0, 0]",
+                Arrays.toString(p0739.dailyTemperatures_reverse(temperatures1)));
+        assertEquals("[1, 1, 1, 0]",
+                Arrays.toString(p0739.dailyTemperatures_reverse(temperatures2)));
+        assertEquals("[1, 1, 0]",
+                Arrays.toString(p0739.dailyTemperatures_reverse(temperatures3)));
+        assertEquals("[1, 1, 4, 2, 1, 1, 0, 0]",
+                Arrays.toString(p0739.dailyTemperatures_forward(temperatures1)));
+        assertEquals("[1, 1, 1, 0]",
+                Arrays.toString(p0739.dailyTemperatures_forward(temperatures2)));
+        assertEquals("[1, 1, 0]",
+                Arrays.toString(p0739.dailyTemperatures_forward(temperatures3)));
     }
 
 
@@ -1128,9 +1131,9 @@ public class ArrayTest
         int[][] accounts1 = {{1, 2, 3}, {3, 2, 1}};
         int[][] accounts2 = {{1, 5}, {7, 3}, {3, 5}};
         int[][] accounts3 = {{2, 8, 7}, {7, 1, 3}, {1, 9, 5}};
-        System.out.println(p1672.maximumWealth(accounts1));
-        System.out.println(p1672.maximumWealth(accounts2));
-        System.out.println(p1672.maximumWealth(accounts3));
+        assertEquals(6, p1672.maximumWealth(accounts1));
+        assertEquals(10, p1672.maximumWealth(accounts2));
+        assertEquals(17, p1672.maximumWealth(accounts3));
     }
 
     @Test
@@ -1140,9 +1143,9 @@ public class ArrayTest
         int[] arr1 = {1, 4, 2, 5, 3};
         int[] arr2 = {1, 2};
         int[] arr3 = {10, 11, 12};
-        System.out.println(p1588.sumOddLengthSubArrays_n3(arr1));
-        System.out.println(p1588.sumOddLengthSubArrays_n3(arr2));
-        System.out.println(p1588.sumOddLengthSubArrays_n3(arr3));
+        assertEquals(58, p1588.sumOddLengthSubArrays_n3(arr1));
+        assertEquals(3, p1588.sumOddLengthSubArrays_n3(arr2));
+        assertEquals(66, p1588.sumOddLengthSubArrays_n3(arr3));
     }
 
     @Test
@@ -1159,9 +1162,9 @@ public class ArrayTest
                 {1, 1, 1, 1},
                 {1, 1, 1, 1}};
         int[][] mat3 = {{5}};
-        System.out.println(p1572.diagonalSum(mat1));
-        System.out.println(p1572.diagonalSum(mat2));
-        System.out.println(p1572.diagonalSum(mat3));
+        assertEquals(25, p1572.diagonalSum(mat1));
+        assertEquals(8, p1572.diagonalSum(mat2));
+        assertEquals(5, p1572.diagonalSum(mat3));
     }
 
     @Test
@@ -1171,9 +1174,9 @@ public class ArrayTest
         int[][] intervals1 = {{1, 2}, {2, 3}, {3, 4}, {1, 3}};
         int[][] intervals2 = {{1, 2}, {1, 2}, {1, 2}};
         int[][] intervals3 = {{1, 2}, {2, 3}};
-        System.out.println(p0435.eraseOverlapIntervals_1(intervals1));
-        System.out.println(p0435.eraseOverlapIntervals_2(intervals2));
-        System.out.println(p0435.eraseOverlapIntervals_2(intervals3));
+        assertEquals(1, p0435.eraseOverlapIntervals_1(intervals1));
+        assertEquals(2, p0435.eraseOverlapIntervals_2(intervals2));
+        assertEquals(0, p0435.eraseOverlapIntervals_2(intervals3));
     }
 
     @Test
@@ -1182,8 +1185,8 @@ public class ArrayTest
         P0238ProductOfArrayExceptSelf p0238 = new P0238ProductOfArrayExceptSelf();
         int[] nums1 = {1, 2, 3, 4};
         int[] nums2 = {-1, 1, 0, -3, 3};
-        System.out.println(Arrays.toString(p0238.productExceptSelf_1(nums1)));
-        System.out.println(Arrays.toString(p0238.productExceptSelf_2(nums2)));
+        assertEquals("[24, 12, 8, 6]", Arrays.toString(p0238.productExceptSelf_1(nums1)));
+        assertEquals("[0, 0, 9, 0, 0]", Arrays.toString(p0238.productExceptSelf_2(nums2)));
     }
 
     @Test
@@ -1193,9 +1196,9 @@ public class ArrayTest
         int[] nums1 = {1, 2, 3, 4, 5};
         int[] nums2 = {5, 4, 3, 2, 1};
         int[] nums3 = {2, 1, 5, 0, 4, 6};
-        System.out.println(p0334.increasingTriplet_1(nums1));
-        System.out.println(p0334.increasingTriplet_2(nums2));
-        System.out.println(p0334.increasingTriplet_2(nums3));
+        assertTrue(p0334.increasingTriplet_1(nums1));
+        assertFalse(p0334.increasingTriplet_2(nums2));
+        assertTrue(p0334.increasingTriplet_2(nums3));
     }
 
     @Test
@@ -1206,10 +1209,10 @@ public class ArrayTest
         int[] nums2 = {1, 2, 3};
         int[] nums3 = {-1, -1, 1};
         int[] nums4 = {0, 0};
-        System.out.println(p0560.subarraySum_1(nums1, 2));
-        System.out.println(p0560.subarraySum_2(nums2, 3));
-        System.out.println(p0560.subarraySum_2(nums3, 1));
-        System.out.println(p0560.subarraySum_2(nums4, 0));
+        assertEquals(2, p0560.subarraySum_1(nums1, 2));
+        assertEquals(2, p0560.subarraySum_2(nums2, 3));
+        assertEquals(1, p0560.subarraySum_2(nums3, 1));
+        assertEquals(3, p0560.subarraySum_2(nums4, 0));
     }
 
     @Test
@@ -1226,8 +1229,8 @@ public class ArrayTest
                 {'1', '1', '0', '0', '0'},
                 {'0', '0', '1', '0', '0'},
                 {'0', '0', '0', '1', '1'}};
-        System.out.println(p0200.numIslands_bfs(grid1));
-        System.out.println(p0200.numIslands_dfs(grid2));
+        assertEquals(1, p0200.numIslands_bfs(grid1));
+        assertEquals(3, p0200.numIslands_dfs(grid2));
     }
 
     @Test
@@ -1244,7 +1247,7 @@ public class ArrayTest
                 {0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0},
                 {0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0}
         };
-        System.out.println(o105.maxAreaOfIsland_bfs(grid));
+        assertEquals(12, o105.maxAreaOfIsland_bfs(grid));
         grid = new int[][]{
                 {0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0},
                 {0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0},
@@ -1255,33 +1258,31 @@ public class ArrayTest
                 {0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0},
                 {0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0}
         };
-        System.out.println(o105.maxAreaOfIsland_dfs(grid));
+        assertEquals(6, o105.maxAreaOfIsland_dfs(grid));
     }
 
     @Test
     public void test1700()
     {
         P1700NumberOfStudentsUnableToEatLunch p1700 = new P1700NumberOfStudentsUnableToEatLunch();
-        System.out.println(p1700.countStudents_1(new int[]{1, 1, 0, 0}, new int[]{0, 1, 0, 1}));
-        System.out.println(p1700.countStudents_2(new int[]{1, 1, 1, 0, 0, 1}, new int[]{1, 0, 0, 0, 1, 1}));
+        assertEquals(0, p1700.countStudents_1(new int[]{1, 1, 0, 0}, new int[]{0, 1, 0, 1}));
+        assertEquals(3, p1700.countStudents_2(new int[]{1, 1, 1, 0, 0, 1}, new int[]{1, 0, 0, 0, 1, 1}));
     }
 
     @Test
     public void test1603()
     {
         P1603ParkingSystem1 system1 = new P1603ParkingSystem1(1, 1, 0);
-        System.out.println(system1.addCar(1));
-        System.out.println(system1.addCar(2));
-        System.out.println(system1.addCar(3));
-        System.out.println(system1.addCar(1));
-
-        System.out.println("-----");
+        assertTrue(system1.addCar(1));
+        assertTrue(system1.addCar(2));
+        assertFalse(system1.addCar(3));
+        assertFalse(system1.addCar(1));
 
         P1603ParkingSystem2 system2 = new P1603ParkingSystem2(1, 1, 0);
-        System.out.println(system2.addCar(1));
-        System.out.println(system2.addCar(2));
-        System.out.println(system2.addCar(3));
-        System.out.println(system2.addCar(1));
+        assertTrue(system2.addCar(1));
+        assertTrue(system2.addCar(2));
+        assertFalse(system2.addCar(3));
+        assertFalse(system2.addCar(1));
     }
 
     @Test
@@ -1290,14 +1291,14 @@ public class ArrayTest
         int[] nums = {-2, 0, 3, -5, 2, -1};
 
         P0303NumArray1 p0303NumArray1 = new P0303NumArray1(nums);
-        System.out.println(p0303NumArray1.sumRange(0, 2)); // return 1 ((-2) + 0 + 3)
-        System.out.println(p0303NumArray1.sumRange(2, 5)); // return -1 (3 + (-5) + 2 + (-1))
-        System.out.println(p0303NumArray1.sumRange(0, 5)); // return -3 ((-2) + 0 + 3 + (-5) + 2 + (-1))
-
         P0303NumArray2 p0303NumArray2 = new P0303NumArray2(nums);
-        System.out.println(p0303NumArray2.sumRange(0, 2));
-        System.out.println(p0303NumArray2.sumRange(2, 5));
-        System.out.println(p0303NumArray2.sumRange(0, 5));
+
+        assertEquals(1, p0303NumArray1.sumRange(0, 2)); // return 1 ((-2) + 0 + 3)
+        assertEquals(-1, p0303NumArray1.sumRange(2, 5)); // return -1 (3 + (-5) + 2 + (-1))
+        assertEquals(-3, p0303NumArray1.sumRange(0, 5)); // return -3 ((-2) + 0 + 3 + (-5) + 2 + (-1))
+        assertEquals(1, p0303NumArray2.sumRange(0, 2));
+        assertEquals(-1, p0303NumArray2.sumRange(2, 5));
+        assertEquals(-3, p0303NumArray2.sumRange(0, 5));
     }
 
     @Test
@@ -1310,17 +1311,15 @@ public class ArrayTest
                 {4, 1, 0, 1, 7},
                 {1, 0, 3, 0, 5}};
 
-        // 一维前缀和
-        P0304NumMatrix1 numMatrix1 = new P0304NumMatrix1(matrix);
-        System.out.println(numMatrix1.sumRegion(2, 1, 4, 3));
-        System.out.println(numMatrix1.sumRegion(1, 1, 2, 2));
-        System.out.println(numMatrix1.sumRegion(1, 2, 2, 4));
 
-        // 二维前缀和
-        P0304NumMatrix2 numMatrix2 = new P0304NumMatrix2(matrix);
-        System.out.println(numMatrix2.sumRegion(2, 1, 4, 3));
-        System.out.println(numMatrix2.sumRegion(1, 1, 2, 2));
-        System.out.println(numMatrix2.sumRegion(1, 2, 2, 4));
+        P0304NumMatrix1 numMatrix1 = new P0304NumMatrix1(matrix);   // 一维前缀和
+        P0304NumMatrix2 numMatrix2 = new P0304NumMatrix2(matrix);   // 二维前缀和
+        assertEquals(8, numMatrix1.sumRegion(2, 1, 4, 3));
+        assertEquals(11, numMatrix1.sumRegion(1, 1, 2, 2));
+        assertEquals(12, numMatrix1.sumRegion(1, 2, 2, 4));
+        assertEquals(8, numMatrix2.sumRegion(2, 1, 4, 3));
+        assertEquals(11, numMatrix2.sumRegion(1, 1, 2, 2));
+        assertEquals(12, numMatrix2.sumRegion(1, 2, 2, 4));
     }
 
     @Test
@@ -1329,12 +1328,12 @@ public class ArrayTest
         P0746MinCostClimbingStairs p0746 = new P0746MinCostClimbingStairs();
         int[] nums1 = {10, 15, 20};
         int[] nums2 = {1, 100, 1, 1, 1, 100, 1, 1, 100, 1};
-        System.out.println(p0746.minCostClimbingStairs_dpn(nums1));
-        System.out.println(p0746.minCostClimbingStairs_dp1(nums1));
-        System.out.println(p0746.minCostClimbingStairs_dpn(nums2));
-        System.out.println(p0746.minCostClimbingStairs_dp1(nums2));
-        System.out.println(p0746.minCostClimbingStairs_dp(nums1));
-        System.out.println(p0746.minCostClimbingStairs_dp(nums2));
+        assertEquals(15, p0746.minCostClimbingStairs_dpn(nums1));
+        assertEquals(15, p0746.minCostClimbingStairs_dp1(nums1));
+        assertEquals(6, p0746.minCostClimbingStairs_dpn(nums2));
+        assertEquals(6, p0746.minCostClimbingStairs_dp1(nums2));
+        assertEquals(15, p0746.minCostClimbingStairs_dp(nums1));
+        assertEquals(6, p0746.minCostClimbingStairs_dp(nums2));
     }
 
     @Test
@@ -1342,8 +1341,8 @@ public class ArrayTest
     {
         P1046LastStoneWeight p1046 = new P1046LastStoneWeight();
         int[] stones = {2, 7, 4, 1, 8, 1};
-        System.out.println(p1046.lastStoneWeight_1(stones));
-        System.out.println(p1046.lastStoneWeight_2(stones));
+        assertEquals(1, p1046.lastStoneWeight_1(stones));
+        assertEquals(1, p1046.lastStoneWeight_2(stones));
     }
 
     @Test
@@ -1352,8 +1351,6 @@ public class ArrayTest
         P0215KthLargestElementInAnArray p0215 = new P0215KthLargestElementInAnArray();
         int[] arr1 = {3, 2, 1, 5, 6, 4};
         int[] arr2 = {3, 2, 3, 1, 2, 4, 5, 5, 6};
-        System.out.println(p0215.findKthLargestHeap(arr1, 2));
-        System.out.println(p0215.findKthLargestHeap(arr2, 4));
         assertEquals(5, p0215.findKthLargestHeap(arr1, 2));
         assertEquals(4, p0215.findKthLargestHeap(arr2, 4));
     }
@@ -1386,22 +1383,16 @@ public class ArrayTest
     {
         P0295FindMedianFromDataStream1 p0215_1 = new P0295FindMedianFromDataStream1();
         p0215_1.addNum(1);
-        System.out.println(p0215_1);
         p0215_1.addNum(2);
-        System.out.println(p0215_1);
         assertEquals(1.5, p0215_1.findMedian(), 0.0);
         p0215_1.addNum(3);
-        System.out.println(p0215_1);
         assertEquals(2.0, p0215_1.findMedian(), 0.0);
 
         P0295FindMedianFromDataStream2 p0215_2 = new P0295FindMedianFromDataStream2();
         p0215_2.addNum(1);
-        System.out.println(p0215_2);
         p0215_2.addNum(2);
-        System.out.println(p0215_2);
         assertEquals(1.5, p0215_2.findMedian(), 0.0);
         p0215_2.addNum(3);
-        System.out.println(p0215_2);
         assertEquals(2.0, p0215_2.findMedian(), 0.0);
     }
 
@@ -1410,7 +1401,7 @@ public class ArrayTest
     {
         P0347TopKFrequentElements p0347 = new P0347TopKFrequentElements();
         int[] nums1 = {1, 1, 1, 2, 2, 3, 4, 0, 0, 0, 4, 4, 4, 0, 0};
-        System.out.println(Arrays.toString(p0347.topKFrequent(nums1, 2)));
+        assertEquals("[0, 4]", Arrays.toString(p0347.topKFrequent(nums1, 2)));
     }
 
     @Test
@@ -1419,10 +1410,10 @@ public class ArrayTest
         P0973KClosestPointsToOrigin p0973 = new P0973KClosestPointsToOrigin();
         int[][] points1 = {{1, 3}, {-2, 2}};
         int[][] points2 = {{3, 3}, {5, -1}, {-2, 4}};
-        System.out.println(Arrays.deepToString(p0973.kClosest_sort(points1, 1)));
-        System.out.println(Arrays.deepToString(p0973.kClosest_pq1(points2, 2)));
-        System.out.println(Arrays.deepToString(p0973.kClosest_pq2(points1, 1)));
-        System.out.println(Arrays.deepToString(p0973.kClosest_pq2(points2, 2)));
+        assertEquals("[[-2, 2]]", Arrays.deepToString(p0973.kClosest_sort(points1, 1)));
+        assertEquals("[[3, 3], [-2, 4]]", Arrays.deepToString(p0973.kClosest_pq1(points2, 2)));
+        assertEquals("[[-2, 2]]", Arrays.deepToString(p0973.kClosest_pq2(points1, 1)));
+        assertEquals("[[-2, 4], [3, 3]]", Arrays.deepToString(p0973.kClosest_pq2(points2, 2)));
     }
 
     @Test
@@ -1432,9 +1423,9 @@ public class ArrayTest
         int[][] trust1 = {{1, 2}};
         int[][] trust2 = {{1, 3}, {2, 3}};
         int[][] trust3 = {{1, 3}, {2, 3}, {3, 1}};
-        System.out.println(p0997.findJudge_1(2, trust1));
-        System.out.println(p0997.findJudge_2(3, trust2));
-        System.out.println(p0997.findJudge_2(3, trust3));
+        assertEquals(2, p0997.findJudge_1(2, trust1));
+        assertEquals(3, p0997.findJudge_2(3, trust2));
+        assertEquals(-1, p0997.findJudge_2(3, trust3));
     }
 
     @Test
@@ -1443,10 +1434,10 @@ public class ArrayTest
         P0841KeysAndRooms p0841 = new P0841KeysAndRooms();
         List<List<Integer>> rooms1 = List.of(List.of(1), List.of(2), List.of(3), List.of());
         List<List<Integer>> rooms2 = List.of(List.of(1, 3), List.of(3, 0, 1), List.of(2), List.of(0));
-        System.out.println(p0841.canVisitAllRooms_dfs(rooms1));
-        System.out.println(p0841.canVisitAllRooms_bfs(rooms1));
-        System.out.println(p0841.canVisitAllRooms_bfs(rooms2));
-        System.out.println(p0841.canVisitAllRooms_dfs(rooms2));
+        assertTrue(p0841.canVisitAllRooms_dfs(rooms1));
+        assertTrue(p0841.canVisitAllRooms_bfs(rooms1));
+        assertFalse(p0841.canVisitAllRooms_bfs(rooms2));
+        assertFalse(p0841.canVisitAllRooms_dfs(rooms2));
     }
 
     @Test
@@ -1455,35 +1446,35 @@ public class ArrayTest
         P1557MinimumNumberOfVerticesToReachAllNodes p1557 = new P1557MinimumNumberOfVerticesToReachAllNodes();
         List<List<Integer>> edges1 = List.of(List.of(0, 1), List.of(0, 1), List.of(2, 5), List.of(3, 4), List.of(4, 2));
         List<List<Integer>> edges2 = List.of(List.of(0, 1), List.of(2, 1), List.of(3, 1), List.of(1, 4), List.of(2, 4));
-        System.out.println(p1557.findSmallestSetOfVertices(6, edges1));
-        System.out.println(p1557.findSmallestSetOfVertices(5, edges2));
+        assertEquals("[0, 3]", p1557.findSmallestSetOfVertices(6, edges1).toString());
+        assertEquals("[0, 2, 3]", p1557.findSmallestSetOfVertices(5, edges2).toString());
     }
 
     @Test
     public void test0055()
     {
         P0055JumpGame p0055 = new P0055JumpGame();
-        System.out.println(p0055.canJump_1(new int[]{2, 3, 1, 1, 4}));
-        System.out.println(p0055.canJump_2(new int[]{3, 2, 1, 0, 4}));
-        System.out.println(p0055.canJump_3(new int[]{2, 3, 0, 1, 4}));
+        assertTrue(p0055.canJump_1(new int[]{2, 3, 1, 1, 4}));
+        assertFalse(p0055.canJump_1(new int[]{3, 2, 1, 0, 4}));
+        assertTrue(p0055.canJump_1(new int[]{2, 3, 0, 1, 4}));
     }
 
     @Test
     public void test0045()
     {
         P0045JumpGameII p0045 = new P0045JumpGameII();
-        System.out.println(p0045.jump_1(new int[]{2, 3, 1, 1, 4}));
-        System.out.println(p0045.jump_2(new int[]{2, 3, 0, 1, 4}));
-        System.out.println(p0045.jump_2(new int[]{2, 3, 1, 2, 4, 2, 3}));
+        assertEquals(2, p0045.jump_1(new int[]{2, 3, 1, 1, 4}));
+        assertEquals(2, p0045.jump_2(new int[]{2, 3, 0, 1, 4}));
+        assertEquals(3, p0045.jump_2(new int[]{2, 3, 1, 2, 4, 2, 3}));
     }
 
     @Test
     public void test0896()
     {
         P0896MonotonicArray p0896 = new P0896MonotonicArray();
-        System.out.println(p0896.isMonotonic_2n(new int[]{1, 2, 2, 3}));
-        System.out.println(p0896.isMonotonic_n(new int[]{6, 5, 4, 4}));
-        System.out.println(p0896.isMonotonic_n(new int[]{1, 3, 2}));
+        assertTrue(p0896.isMonotonic_2n(new int[]{1, 2, 2, 3}));
+        assertTrue(p0896.isMonotonic_n(new int[]{6, 5, 4, 4}));
+        assertFalse(p0896.isMonotonic_n(new int[]{1, 3, 2}));
     }
 
     @Test
@@ -1510,9 +1501,9 @@ public class ArrayTest
                 {1, 1, 1},
                 {0, 1, 0},
                 {0, 0, 0}};
-        System.out.println(p1886.findRotation_1(matrix1, target1));
-        System.out.println(p1886.findRotation_1(matrix2, target2));
-        System.out.println(p1886.findRotation_2(matrix3, target3));
+        assertTrue(p1886.findRotation_1(matrix1, target1));
+        assertFalse(p1886.findRotation_1(matrix2, target2));
+        assertTrue(p1886.findRotation_2(matrix3, target3));
     }
 
     @Test
@@ -1528,20 +1519,36 @@ public class ArrayTest
                 {1, 2, 3, 4},
                 {5, 6, 7, 8},
                 {9, 10, 11, 12}};
-        System.out.println(p0054.spiralOrder_1(matrix1));
-        System.out.println(p0054.spiralOrder_2(matrix2));
-        System.out.println(p0054.spiralOrder_3(matrix2));
+        assertEquals("[1, 2, 3, 6, 9, 8, 7, 4, 5]",
+                p0054.spiralOrder_1(matrix1).toString());
+        assertEquals("[1, 2, 3, 4, 8, 12, 11, 10, 9, 5, 6, 7]",
+                p0054.spiralOrder_2(matrix2).toString());
+        assertEquals("[1, 2, 3, 4, 8, 12, 11, 10, 9, 5, 6, 7]",
+                p0054.spiralOrder_3(matrix2).toString());
     }
 
     @Test
     public void test1630()
     {
         P1630ArithmeticSubArrays p1630 = new P1630ArithmeticSubArrays();
-        System.out.println(p1630.checkArithmeticSubArrays(new int[]{4, 6, 5, 9, 3, 7}, new int[]{0, 0, 2}, new int[]{2, 3, 5}));
-        System.out.println(p1630.checkArithmeticSubArrays(new int[]{-12, -9, -3, -12, -6, 15, 20, -25, -20, -15, -10},
-                new int[]{0, 1, 6, 4, 8, 7}, new int[]{4, 4, 9, 7, 9, 10}));
-        System.out.println(p1630.checkArithmeticSubArrays(new int[]{1, 2, 10, -6, -7, 8, 16, 0, 0, 10, 20, 15, -2, -3, -1, -4, -4, -8, -2},
-                new int[]{14, 5, 11, 15, 12, 13, 9, 7, 0}, new int[]{15, 8, 14, 18, 15, 16, 12, 8, 1}));
+        assertEquals("[true, false, true]",
+                p1630.checkArithmeticSubArrays(
+                                new int[]{4, 6, 5, 9, 3, 7},
+                                new int[]{0, 0, 2},
+                                new int[]{2, 3, 5})
+                        .toString());
+        assertEquals("[false, true, false, false, true, true]",
+                p1630.checkArithmeticSubArrays(
+                                new int[]{-12, -9, -3, -12, -6, 15, 20, -25, -20, -15, -10},
+                                new int[]{0, 1, 6, 4, 8, 7},
+                                new int[]{4, 4, 9, 7, 9, 10})
+                        .toString());
+        assertEquals("[true, false, false, false, true, false, false, true, true]",
+                p1630.checkArithmeticSubArrays(
+                                new int[]{1, 2, 10, -6, -7, 8, 16, 0, 0, 10, 20, 15, -2, -3, -1, -4, -4, -8, -2},
+                                new int[]{14, 5, 11, 15, 12, 13, 9, 7, 0},
+                                new int[]{15, 8, 14, 18, 15, 16, 12, 8, 1})
+                        .toString());
     }
 
     @Test
@@ -1554,28 +1561,29 @@ public class ArrayTest
         p0031.nextPermutation(nums1);
         p0031.nextPermutation(nums2);
         p0031.nextPermutation(nums3);
-        System.out.println(Arrays.toString(nums1));
-        System.out.println(Arrays.toString(nums2));
-        System.out.println(Arrays.toString(nums3));
+        assertArrayEquals(new int[]{1, 3, 2}, nums1);
+        assertArrayEquals(new int[]{1, 2, 3}, nums2);
+        assertArrayEquals(new int[]{1, 5, 1}, nums3);
+
     }
 
     @Test
     public void test0556()
     {
         P0556NextGreaterElementIII p0556 = new P0556NextGreaterElementIII();
-        System.out.println(p0556.nextGreaterElement_1(12));
-        System.out.println(p0556.nextGreaterElement_1(21));
-        System.out.println(p0556.nextGreaterElement_2(123433211));
-        System.out.println(p0556.nextGreaterElement_2(Integer.MAX_VALUE));
+        assertEquals(21, p0556.nextGreaterElement_1(12));
+        assertEquals(-1, p0556.nextGreaterElement_1(21));
+        assertEquals(124112333, p0556.nextGreaterElement_2(123433211));
+        assertEquals(-1, p0556.nextGreaterElement_2(Integer.MAX_VALUE));
     }
 
     @Test
     public void test0713()
     {
         P0713SubarrayProductLessThanK p0713 = new P0713SubarrayProductLessThanK();
-        System.out.println(p0713.numSubarrayProductLessThanK_1(new int[]{1, 2, 3}, 0));
-        System.out.println(p0713.numSubarrayProductLessThanK_2(new int[]{10, 5, 2, 6}, 100));
-        System.out.println(p0713.numSubarrayProductLessThanK_3(new int[]{10, 5, 2, 6}, 100));
+        assertEquals(0, p0713.numSubarrayProductLessThanK_1(new int[]{1, 2, 3}, 0));
+        assertEquals(8, p0713.numSubarrayProductLessThanK_2(new int[]{10, 5, 2, 6}, 100));
+        assertEquals(8, p0713.numSubarrayProductLessThanK_3(new int[]{10, 5, 2, 6}, 100));
     }
 
     @Test
@@ -1586,8 +1594,10 @@ public class ArrayTest
         String[] list2 = {"Piatti", "The Grill at Torrey Pines", "Hungry Hunter Steakhouse", "Shogun"};
         String[] list3 = {"Shogun", "Tapioca Express", "Burger King", "KFC"};
         String[] list4 = {"Tapioca Express", "Shogun", "Burger King"};
-        System.out.println(Arrays.toString(p0599.findRestaurant(list1, list2)));
-        System.out.println(Arrays.toString(p0599.findRestaurant(list3, list4)));
+        assertEquals("[Shogun]",
+                Arrays.toString(p0599.findRestaurant(list1, list2)));
+        assertEquals("[Tapioca Express, Shogun]",
+                Arrays.toString(p0599.findRestaurant(list3, list4)));
     }
 
     @Test
@@ -1605,12 +1615,12 @@ public class ArrayTest
                 {1, 0, 0},
                 {0, 1, 0},
                 {0, 0, 0}};
-        System.out.println(p0063.uniquePathsWithObstacles_mn(obstacleGrid1));
-        System.out.println(p0063.uniquePathsWithObstacles_mn(obstacleGrid2));
-        System.out.println(p0063.uniquePathsWithObstacles_mn(obstacleGrid3));
-        System.out.println(p0063.uniquePathsWithObstacles_n(obstacleGrid1));
-        System.out.println(p0063.uniquePathsWithObstacles_n(obstacleGrid2));
-        System.out.println(p0063.uniquePathsWithObstacles_n(obstacleGrid3));
+        assertEquals(2, p0063.uniquePathsWithObstacles_mn(obstacleGrid1));
+        assertEquals(1, p0063.uniquePathsWithObstacles_mn(obstacleGrid2));
+        assertEquals(0, p0063.uniquePathsWithObstacles_mn(obstacleGrid3));
+        assertEquals(2, p0063.uniquePathsWithObstacles_n(obstacleGrid1));
+        assertEquals(1, p0063.uniquePathsWithObstacles_n(obstacleGrid2));
+        assertEquals(0, p0063.uniquePathsWithObstacles_n(obstacleGrid3));
     }
 
     @Test
@@ -1624,16 +1634,16 @@ public class ArrayTest
         int[][] grid2 = {
                 {1, 2, 3},
                 {4, 5, 6}};
-        System.out.println(p0064.minPathSum_1(grid1));
-        System.out.println(p0064.minPathSum_2(grid2));
+        assertEquals(7, p0064.minPathSum_1(grid1));
+        assertEquals(12, p0064.minPathSum_2(grid2));
     }
 
     @Test
     public void test1785()
     {
         P1785MinimumElementsToAddToFormAGivenSum p1785 = new P1785MinimumElementsToAddToFormAGivenSum();
-        System.out.println(p1785.minElements(new int[]{1, -1, 1}, 3, -4));
-        System.out.println(p1785.minElements(new int[]{1, -1, 1}, 100, -0));
+        assertEquals(2, p1785.minElements(new int[]{1, -1, 1}, 3, -4));
+        assertEquals(1, p1785.minElements(new int[]{1, -1, 1}, 100, -0));
     }
 
     @Test
@@ -1643,9 +1653,9 @@ public class ArrayTest
         int[] nums1 = {1, -2, 3, -2};
         int[] nums2 = {5, -3, 5};
         int[] nums3 = {3, -2, 2, -3};
-        System.out.println(p0918.maxSubarraySumCircular_1(nums1));
-        System.out.println(p0918.maxSubarraySumCircular_2(nums2));
-        System.out.println(p0918.maxSubarraySumCircular_2(nums3));
+        assertEquals(3, p0918.maxSubarraySumCircular_1(nums1));
+        assertEquals(10, p0918.maxSubarraySumCircular_2(nums2));
+        assertEquals(3, p0918.maxSubarraySumCircular_2(nums3));
     }
 
     @Test
@@ -1656,17 +1666,17 @@ public class ArrayTest
                 {1, -1, -1},
                 {3, -2, 0}};
         int[] nums1 = {1, -1, 0, 1, -1, -1, 3, -2, 0};
-        System.out.println(p1764.canChoose(groups1, nums1));
+        assertTrue(p1764.canChoose(groups1, nums1));
         int[][] groups2 = {
                 {10, -2},
                 {1, 2, 3, 4}};
         int[] nums2 = {1, 2, 3, 4, 10, -2};
-        System.out.println(p1764.canChoose(groups2, nums2));
+        assertFalse(p1764.canChoose(groups2, nums2));
         int[][] groups3 = {
                 {1, 2, 3},
                 {3, 4}};
         int[] nums3 = {7, 7, 1, 2, 3, 4, 7, 7};
-        System.out.println(p1764.canChoose(groups3, nums3));
+        assertFalse(p1764.canChoose(groups3, nums3));
     }
 
     @Test
@@ -1674,12 +1684,12 @@ public class ArrayTest
     {
         P0053MaximumSubarray p0053 = new P0053MaximumSubarray();
         int[] nums = {-2, -1, -3, 4, -1, 2, 1, -5, 4};
-        System.out.println(p0053.maxSubArray_greedy(nums));
-        System.out.println(p0053.maxSubArray_partition(nums));
-        System.out.println(p0053.maxSubArray_dp1(nums));
-        System.out.println(p0053.maxSubArray_dp2(nums));
-        System.out.println(p0053.maxSubArray_dp3(nums));
-        System.out.println(p0053.minSubArray(nums));
+        assertEquals(6, p0053.maxSubArray_greedy(nums));
+        assertEquals(6, p0053.maxSubArray_partition(nums));
+        assertEquals(6, p0053.maxSubArray_dp1(nums));
+        assertEquals(6, p0053.maxSubArray_dp2(nums));
+        assertEquals(6, p0053.maxSubArray_dp3(nums));
+        assertEquals(-6, p0053.minSubArray(nums));
     }
 
     @Test
@@ -1688,10 +1698,10 @@ public class ArrayTest
         P0121BestTimeToBuyAndSellStock obj = new P0121BestTimeToBuyAndSellStock();
         // int[] nums = {1, 2, 3, 4, 5, 6, 7, 8};
         int[] nums = {7, 1, 5, 3, 6, 4};
-        System.out.println("result = " + obj.maxProfit(nums));
-        System.out.println("result = " + obj.maxProfit_dp1(nums));
-        System.out.println("result = " + obj.maxProfit_dp2(nums));
-        System.out.println("result = " + obj.maxProfit_dp3(nums));
+        assertEquals(5, obj.maxProfit(nums));
+        assertEquals(5, obj.maxProfit_dp1(nums));
+        assertEquals(5, obj.maxProfit_dp2(nums));
+        assertEquals(5, obj.maxProfit_dp3(nums));
     }
 
     @Test
@@ -1699,24 +1709,24 @@ public class ArrayTest
     {
         P1024VideoStitching obj = new P1024VideoStitching();
         int[][] clips = {{0, 1}, {6, 8}, {0, 2}, {5, 6}, {0, 4}, {0, 3}, {6, 7}, {1, 3}, {4, 7}, {1, 4}, {2, 5}, {2, 6}, {3, 4}, {4, 5}, {5, 7}, {6, 9}};
-        System.out.println("result = " + obj.videoStitching(clips, 9));
+        assertEquals(3, obj.videoStitching(clips, 9));
     }
 
     @Test
     public void test0198()
     {
         P0198HouseRobber p0198 = new P0198HouseRobber();
-        System.out.println(p0198.rob_1(new int[]{1, 2, 3, 1}));
-        System.out.println(p0198.rob_2(new int[]{2, 7, 9, 3, 1}));
+        assertEquals(4, p0198.rob_1(new int[]{1, 2, 3, 1}));
+        assertEquals(12, p0198.rob_2(new int[]{2, 7, 9, 3, 1}));
     }
 
     @Test
     public void test0213()
     {
         P0213HouseRobberII p0213 = new P0213HouseRobberII();
-        System.out.println(p0213.rob(new int[]{2, 3, 2}));
-        System.out.println(p0213.rob(new int[]{1, 2, 3, 1}));
-        System.out.println(p0213.rob(new int[]{1, 2, 3}));
+        assertEquals(3, p0213.rob(new int[]{2, 3, 2}));
+        assertEquals(4, p0213.rob(new int[]{1, 2, 3, 1}));
+        assertEquals(3, p0213.rob(new int[]{1, 2, 3}));
     }
 
     @Test
@@ -1725,8 +1735,8 @@ public class ArrayTest
         P0740DeleteAndEarn p0740 = new P0740DeleteAndEarn();
         int[] nums1 = {3, 4, 2};
         int[] nums2 = {2, 2, 3, 3, 3, 4};
-        System.out.println(p0740.deleteAndEarn_dp1(nums1));
-        System.out.println(p0740.deleteAndEarn_dp1(nums2));
+        assertEquals(6, p0740.deleteAndEarn_dp1(nums1));
+        assertEquals(9, p0740.deleteAndEarn_dp1(nums2));
     }
 
     @Test
@@ -1735,8 +1745,8 @@ public class ArrayTest
         P0152MaximumProductSubarray p0152 = new P0152MaximumProductSubarray();
         int[] nums1 = {2, 3, -2, 4};
         int[] nums2 = {-2, 0, -1};
-        System.out.println(p0152.maxProduct_1(nums1));
-        System.out.println(p0152.maxProduct_2(nums2));
+        assertEquals(6, p0152.maxProduct_1(nums1));
+        assertEquals(0, p0152.maxProduct_2(nums2));
     }
 
     @Test
@@ -1746,9 +1756,9 @@ public class ArrayTest
         int[] nums1 = {1, -2, -3, 4};
         int[] nums2 = {0, 1, -2, -3, -4};
         int[] nums3 = {-1, -2, -3, 0, 1};
-        System.out.println(p1567.getMaxLen_1(nums1));
-        System.out.println(p1567.getMaxLen_2(nums2));
-        System.out.println(p1567.getMaxLen_2(nums3));
+        assertEquals(4, p1567.getMaxLen_1(nums1));
+        assertEquals(3, p1567.getMaxLen_2(nums2));
+        assertEquals(2, p1567.getMaxLen_2(nums3));
     }
 
     @Test
@@ -1757,8 +1767,8 @@ public class ArrayTest
         P1014BestSightseeingPair p1014 = new P1014BestSightseeingPair();
         int[] values1 = {8, 1, 5, 2, 6};
         int[] values2 = {1, 2};
-        System.out.println(p1014.maxScoreSightseeingPair(values1));
-        System.out.println(p1014.maxScoreSightseeingPair(values2));
+        assertEquals(11, p1014.maxScoreSightseeingPair(values1));
+        assertEquals(2, p1014.maxScoreSightseeingPair(values2));
     }
 
     @Test
@@ -1768,9 +1778,9 @@ public class ArrayTest
         int[] seats1 = {3, 1, 5}, students1 = {2, 7, 4};
         int[] seats2 = {4, 1, 5, 9}, students2 = {1, 3, 2, 6};
         int[] seats3 = {2, 2, 6, 6}, students3 = {1, 3, 2, 6};
-        System.out.println(p2037.minMovesToSeat(seats1, students1));
-        System.out.println(p2037.minMovesToSeat(seats2, students2));
-        System.out.println(p2037.minMovesToSeat(seats3, students3));
+        assertEquals(4, p2037.minMovesToSeat(seats1, students1));
+        assertEquals(7, p2037.minMovesToSeat(seats2, students2));
+        assertEquals(4, p2037.minMovesToSeat(seats3, students3));
     }
 
     @Test
@@ -1779,8 +1789,8 @@ public class ArrayTest
         P1801NumberOfOrdersInTheBacklog p1801 = new P1801NumberOfOrdersInTheBacklog();
         int[][] orders1 = {{10, 5, 0}, {15, 2, 1}, {25, 1, 1}, {30, 4, 0}};
         int[][] orders2 = {{7, 1000000000, 1}, {15, 3, 0}, {5, 999999995, 0}, {5, 1, 1}};
-        System.out.println(p1801.getNumberOfBacklogOrders(orders1));
-        System.out.println(p1801.getNumberOfBacklogOrders(orders2));
+        assertEquals(6, p1801.getNumberOfBacklogOrders(orders1));
+        assertEquals(999999984, p1801.getNumberOfBacklogOrders(orders2));
     }
 
     @Test
@@ -1789,8 +1799,8 @@ public class ArrayTest
         P0162FindPeakElement p0162 = new P0162FindPeakElement();
         int[] nums1 = {1, 2, 3, 1};
         int[] nums2 = {1, 2, 1, 3, 5, 6, 4};
-        System.out.println(p0162.findPeakElement(nums1));
-        System.out.println(p0162.findPeakElement(nums2));
+        assertEquals(2, p0162.findPeakElement(nums1));
+        assertEquals(5, p0162.findPeakElement(nums2));
     }
 
     @Test
@@ -1800,22 +1810,20 @@ public class ArrayTest
         int[] nums1 = {-1, 0, 1, 2, -1, -4};
         int[] nums2 = {0, 1, 1};
         int[] nums3 = {0, 0, 0};
-        System.out.println(p0015.threeSum1(nums3));
-        System.out.println(p0015.threeSum2(nums1));
-        System.out.println(p0015.threeSum2(nums2));
-        System.out.println(p0015.threeSum2(nums3));
+        assertEquals("[[0, 0, 0]]", p0015.threeSum1(nums3).toString());
+        assertEquals("[[-1, -1, 2], [-1, 0, 1]]", p0015.threeSum2(nums1).toString());
+        assertEquals("[]", p0015.threeSum2(nums2).toString());
+        assertEquals("[[0, 0, 0]]", p0015.threeSum2(nums3).toString());
         assertEquals("[[-1, -1, 2], [-1, 0, 1]]", p0015.threeSumDfs(nums1).toString());
-
-        System.out.println(p0015.threeSumDfs(new int[]{34, 55, 79, 28, 46, 33, 2, 48, 31, -3, 84, 71, 52, -3, 93, 15, 21, -43, 57, -6, 86, 56, 94, 74, 83, -14, 28, -66, 46, -29, 36, -29, 10, -70, 69, 17, 49}));
-
+        // System.out.println(p0015.threeSumDfs(new int[]{34, 55, 79, 28, 46, 33, 2, 48, 31, -3, 84, 71, 52, -3, 93, 15, 21, -43, 57, -6, 86, 56, 94, 74, 83, -14, 28, -66, 46, -29, 36, -29, 10, -70, 69, 17, 49}));
     }
 
     @Test
     public void test1802()
     {
         P1802MaximumValueAtAGivenIndexInABoundedArray p1802 = new P1802MaximumValueAtAGivenIndexInABoundedArray();
-        System.out.println(p1802.maxValue(4, 2, 6));
-        System.out.println(p1802.maxValue(6, 1, 10));
+        assertEquals(2, p1802.maxValue(4, 2, 6));
+        assertEquals(3, p1802.maxValue(6, 1, 10));
     }
 
     @Test
@@ -1824,7 +1832,8 @@ public class ArrayTest
         P0986IntervalListIntersections p0986 = new P0986IntervalListIntersections();
         int[][] firstList = {{0, 2}, {5, 10}, {13, 23}, {24, 25}};
         int[][] secondList = {{1, 5}, {8, 12}, {15, 24}, {25, 26}};
-        System.out.println(Arrays.deepToString(p0986.intervalIntersection(firstList, secondList)));
+        assertEquals("[[1, 2], [5, 5], [8, 10], [15, 23], [24, 24], [25, 25]]",
+                Arrays.deepToString(p0986.intervalIntersection(firstList, secondList)));
     }
 
     @Test
@@ -1834,17 +1843,17 @@ public class ArrayTest
         int[] nums1 = {1, 1, 4, 2, 3};
         int[] nums2 = {5, 6, 7, 8, 9};
         int[] nums3 = {3, 2, 20, 1, 1, 3};
-        System.out.println(p1658.minOperations_1(nums1, 5));
-        System.out.println(p1658.minOperations_2(nums2, 4));
-        System.out.println(p1658.minOperations_2(nums3, 10));
+        assertEquals(2, p1658.minOperations_1(nums1, 5));
+        assertEquals(-1, p1658.minOperations_2(nums2, 4));
+        assertEquals(5, p1658.minOperations_2(nums3, 10));
     }
 
     @Test
     public void test2180()
     {
         P2180CountIntegersWithEvenDigitSum p2180 = new P2180CountIntegersWithEvenDigitSum();
-        System.out.println(p2180.countEven_1(4));
-        System.out.println(p2180.countEven_2(30));
+        assertEquals(2, p2180.countEven_1(4));
+        assertEquals(14, p2180.countEven_2(30));
     }
 
     @Test
@@ -1853,8 +1862,8 @@ public class ArrayTest
         P0011ContainerWithMostWater p0011 = new P0011ContainerWithMostWater();
         int[] height1 = {1, 8, 6, 2, 5, 4, 8, 3, 7};
         int[] height2 = {1, 1};
-        System.out.println(p0011.maxArea(height1));
-        System.out.println(p0011.maxArea(height2));
+        assertEquals(49, p0011.maxArea(height1));
+        assertEquals(1, p0011.maxArea(height2));
     }
 
     @Test
@@ -1865,10 +1874,10 @@ public class ArrayTest
         int[] nums2 = {1, 4, 4};
         int[] nums3 = {1, 1, 1, 1, 1, 1, 1, 1};
         int[] nums4 = {1, 2, 3, 4, 5};
-        System.out.println(p0209.minSubArrayLen_n2(7, nums1));
-        System.out.println(p0209.minSubArrayLen_n(4, nums2));
-        System.out.println(p0209.minSubArrayLen_nlogn(11, nums3));
-        System.out.println(p0209.minSubArrayLen_nlogn(11, nums4));
+        assertEquals(2, p0209.minSubArrayLen_n2(7, nums1));
+        assertEquals(1, p0209.minSubArrayLen_n(4, nums2));
+        assertEquals(0, p0209.minSubArrayLen_nlogn(11, nums3));
+        assertEquals(3, p0209.minSubArrayLen_nlogn(11, nums4));
     }
 
     @Test
@@ -1883,8 +1892,8 @@ public class ArrayTest
                 {1, 0, 0},
                 {0, 1, 0},
                 {0, 0, 1}};
-        System.out.println(p0547.findCircleNum_dfs(isConnected1));
-        System.out.println(p0547.findCircleNum_bfs(isConnected2));
+        assertEquals(2, p0547.findCircleNum_dfs(isConnected1));
+        assertEquals(3, p0547.findCircleNum_bfs(isConnected2));
     }
 
     @Test
@@ -1902,9 +1911,9 @@ public class ArrayTest
                 {1, 0, 0},
                 {1, 1, 0},
                 {1, 1, 0}};
-        System.out.println(p1091.shortestPathBinaryMatrix(grid1));
-        System.out.println(p1091.shortestPathBinaryMatrix(grid2));
-        System.out.println(p1091.shortestPathBinaryMatrix(grid3));
+        assertEquals(2, p1091.shortestPathBinaryMatrix(grid1));
+        assertEquals(4, p1091.shortestPathBinaryMatrix(grid2));
+        assertEquals(-1, p1091.shortestPathBinaryMatrix(grid3));
     }
 
     @Test
@@ -1930,8 +1939,20 @@ public class ArrayTest
                 {'X', 'X', 'X', 'O', 'O', 'X', 'O', 'X', 'X', 'O'}};
         p0130.solve_dfs(board1);
         p0130.solve_bfs(board2);
-        System.out.println("board = " + Arrays.deepToString(board1));
-        System.out.println("board = " + Arrays.deepToString(board2));
+        assertEquals("[[X, X, X, O], [X, X, X, X], [X, X, X, X], [X, X, O, X]]",
+                Arrays.deepToString(board1));
+        assertEquals("[" +
+                        "[X, O, O, X, X, X, O, X, O, O], " +
+                        "[X, O, X, X, X, X, X, X, X, X], " +
+                        "[X, X, X, X, X, X, X, X, X, X], " +
+                        "[X, X, X, X, X, X, X, X, X, O], " +
+                        "[O, X, X, X, X, X, X, X, X, X], " +
+                        "[X, X, X, X, X, X, X, X, X, X], " +
+                        "[O, X, X, X, X, X, X, X, X, O], " +
+                        "[O, X, X, X, X, X, X, X, X, X], " +
+                        "[X, X, X, X, X, X, X, X, O, O], " +
+                        "[X, X, X, O, O, X, O, X, X, O]]",
+                Arrays.deepToString(board2));
     }
 
     @Test
@@ -1939,8 +1960,10 @@ public class ArrayTest
     {
         P0078Subsets p0078 = new P0078Subsets();
         int[] nums = {1, 2, 3};
-        System.out.println(p0078.subsets_iteration(nums));
-        System.out.println(p0078.subsets_recursion(nums));
+        assertEquals("[[], [1], [2], [1, 2], [3], [1, 3], [2, 3], [1, 2, 3]]",
+                p0078.subsets_iteration(nums).toString());
+        assertEquals("[[1, 2, 3], [1, 2], [1, 3], [1], [2, 3], [2], [3], []]",
+                p0078.subsets_recursion(nums).toString());
     }
 
     @Test
@@ -1948,18 +1971,21 @@ public class ArrayTest
     {
         P0090SubsetsII p0090 = new P0090SubsetsII();
         int[] nums = {1, 2, 2};
-        System.out.println(p0090.subsetsWithDup_1(nums));
-        System.out.println(p0090.subsetsWithDup_2(nums));
-        System.out.println(p0090.subsetsWithDup_3(nums));
+        assertEquals("[[1], [1, 2, 2], [], [2], [2, 2], [1, 2]]",
+                p0090.subsetsWithDup_1(nums).toString());
+        assertEquals("[[], [1], [2], [1, 2], [2, 2], [1, 2, 2]]",
+                p0090.subsetsWithDup_2(nums).toString());
+        assertEquals("[[], [2], [2, 2], [1], [1, 2], [1, 2, 2]]",
+                p0090.subsetsWithDup_3(nums).toString());
     }
 
     @Test
     public void test0910()
     {
         P0910SmallestRangeII p0910 = new P0910SmallestRangeII();
-        System.out.println(p0910.smallestRangeII(new int[]{1}, 0));
-        System.out.println(p0910.smallestRangeII(new int[]{0, 10}, 2));
-        System.out.println(p0910.smallestRangeII(new int[]{1, 3, 6}, 3));
+        assertEquals(0, p0910.smallestRangeII(new int[]{1}, 0));
+        assertEquals(6, p0910.smallestRangeII(new int[]{0, 10}, 2));
+        assertEquals(3, p0910.smallestRangeII(new int[]{1, 3, 6}, 3));
     }
 
     @Test
@@ -1967,9 +1993,12 @@ public class ArrayTest
     {
         P0046Permutations p0046 = new P0046Permutations();
         int[] nums = {1, 2, 3};
-        System.out.println(p0046.permute_bt1(nums));
-        System.out.println(p0046.permute_dfs(nums));
-        System.out.println(p0046.permute_bt2(nums));
+        assertEquals("[[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]]",
+                p0046.permute_bt1(nums).toString());
+        assertEquals("[[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]]",
+                p0046.permute_dfs(nums).toString());
+        assertEquals("[[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 2, 1], [3, 1, 2]]",
+                p0046.permute_bt2(nums).toString());
     }
 
     @Test
@@ -1978,17 +2007,18 @@ public class ArrayTest
         P0047PermutationsII p0046 = new P0047PermutationsII();
         int[] nums1 = {1, 1, 2};
         int[] nums2 = {1, 2, 3};
-        System.out.println(p0046.permuteUnique(nums1));
-        System.out.println(p0046.permuteUnique(nums2));
+        assertEquals("[[1, 1, 2], [1, 2, 1], [2, 1, 1]]", p0046.permuteUnique(nums1).toString());
+        assertEquals("[[1, 1, 2], [1, 2, 1], [2, 1, 1], [1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]]",
+                p0046.permuteUnique(nums2).toString());
     }
 
     @Test
     public void test2293()
     {
         P2293MinMaxGame p2293 = new P2293MinMaxGame();
-        System.out.println(p2293.minMaxGame_1(new int[]{1, 3, 5, 2, 4, 8, 2, 2}));
-        System.out.println(p2293.minMaxGame_2(new int[]{1, 3, 5, 2, 4, 8, 2, 2}));
-        System.out.println(p2293.minMaxGame_3(new int[]{1, 3, 5, 2, 4, 8, 2, 2}));
+        assertEquals(1, p2293.minMaxGame_1(new int[]{1, 3, 5, 2, 4, 8, 2, 2}));
+        assertEquals(1, p2293.minMaxGame_2(new int[]{1, 3, 5, 2, 4, 8, 2, 2}));
+        assertEquals(1, p2293.minMaxGame_3(new int[]{1, 3, 5, 2, 4, 8, 2, 2}));
     }
 
     @Test
@@ -1999,9 +2029,9 @@ public class ArrayTest
                 {'A', 'B', 'C', 'E'},
                 {'S', 'F', 'C', 'S'},
                 {'A', 'D', 'E', 'E'}};
-        System.out.println(p0079.exist(board, "ABCCED"));
-        System.out.println(p0079.exist(board, "SEE"));
-        System.out.println(p0079.exist(board, "ABCB"));
+        assertTrue(p0079.exist(board, "ABCCED"));
+        assertTrue(p0079.exist(board, "ABCCED"));
+        assertFalse(p0079.exist(board, "ABCB"));
     }
 
     @Test
@@ -2010,8 +2040,8 @@ public class ArrayTest
         P0860LemonadeChange p0860 = new P0860LemonadeChange();
         int[] bills1 = {5, 5, 5, 10, 20};
         int[] bills2 = {5, 5, 10, 10, 20};
-        System.out.println(p0860.lemonadeChange(bills1));
-        System.out.println(p0860.lemonadeChange(bills2));
+        assertTrue(p0860.lemonadeChange(bills1));
+        assertFalse(p0860.lemonadeChange(bills2));
     }
 
     @Test
@@ -2020,8 +2050,8 @@ public class ArrayTest
         P1814CountNicePairsInAnArray p1814 = new P1814CountNicePairsInAnArray();
         int[] nums1 = {42, 11, 1, 97};
         int[] nums2 = {13, 10, 35, 24, 76};
-        System.out.println(p1814.countNicePairs(nums1));
-        System.out.println(p1814.countNicePairs(nums2));
+        assertEquals(2, p1814.countNicePairs(nums1));
+        assertEquals(4, p1814.countNicePairs(nums2));
     }
 
     @Test
@@ -2030,17 +2060,17 @@ public class ArrayTest
         P1817FindingTheUsersActiveMinutes p1817 = new P1817FindingTheUsersActiveMinutes();
         int[][] logs1 = {{0, 5}, {1, 2}, {0, 2}, {0, 5}, {1, 3}};
         int[][] logs2 = {{1, 1}, {2, 2}, {2, 3}};
-        System.out.println(Arrays.toString(p1817.findingUsersActiveMinutes(logs1, 5)));
-        System.out.println(Arrays.toString(p1817.findingUsersActiveMinutes(logs2, 4)));
+        assertEquals("[0, 2, 0, 0, 0]", Arrays.toString(p1817.findingUsersActiveMinutes(logs1, 5)));
+        assertEquals("[1, 1, 0, 0]", Arrays.toString(p1817.findingUsersActiveMinutes(logs2, 4)));
     }
 
     @Test
     public void test1824()
     {
         P1824MinimumSidewayJumps p1824 = new P1824MinimumSidewayJumps();
-        System.out.println(p1824.minSideJumps(new int[]{0, 1, 2, 3, 0}));
-        System.out.println(p1824.minSideJumps(new int[]{0, 1, 1, 3, 3, 0}));
-        System.out.println(p1824.minSideJumps(new int[]{0, 2, 1, 0, 3, 0}));
+        assertEquals(2, p1824.minSideJumps(new int[]{0, 1, 2, 3, 0}));
+        assertEquals(0, p1824.minSideJumps(new int[]{0, 1, 1, 3, 3, 0}));
+        assertEquals(2, p1824.minSideJumps(new int[]{0, 2, 1, 0, 3, 0}));
     }
 
     @Test
@@ -2049,8 +2079,8 @@ public class ArrayTest
         P2303CalculateAmountPaidInTaxes p2303 = new P2303CalculateAmountPaidInTaxes();
         int[][] brackets1 = {{3, 50}, {7, 10}, {12, 25}};
         int[][] brackets2 = {{1, 0}, {4, 25}, {5, 50}};
-        System.out.println(p2303.calculateTax_1(brackets1, 10));
-        System.out.println(p2303.calculateTax_2(brackets2, 2));
+        assertEquals(2.65, p2303.calculateTax_1(brackets1, 10));
+        assertEquals(0.25, p2303.calculateTax_2(brackets2, 2));
     }
 
     @Test
@@ -2061,8 +2091,8 @@ public class ArrayTest
         int[][] queries1 = {{2, 3, 1}, {4, 3, 1}, {1, 1, 2}};
         int[][] points2 = {{1, 1}, {2, 2}, {3, 3}, {4, 4}, {5, 5}};
         int[][] queries2 = {{1, 2, 2}, {2, 2, 2}, {4, 3, 2}, {4, 3, 3}};
-        System.out.println(Arrays.toString(p1828.countPoints(points1, queries1)));
-        System.out.println(Arrays.toString(p1828.countPoints(points2, queries2)));
+        assertEquals("[3, 2, 2]", Arrays.toString(p1828.countPoints(points1, queries1)));
+        assertEquals("[2, 3, 2, 4]", Arrays.toString(p1828.countPoints(points2, queries2)));
     }
 
     @Test
@@ -2072,9 +2102,9 @@ public class ArrayTest
         int[] nums1 = {2, 1, 6, 4};
         int[] nums2 = {1, 1, 1};
         int[] nums3 = {1, 2, 3};
-        System.out.println(p1664.waysToMakeFair_2(nums1));
-        System.out.println(p1664.waysToMakeFair_2(nums2));
-        System.out.println(p1664.waysToMakeFair_1(nums3));
+        assertEquals(1, p1664.waysToMakeFair_2(nums1));
+        assertEquals(3, p1664.waysToMakeFair_2(nums2));
+        assertEquals(0, p1664.waysToMakeFair_1(nums3));
     }
 
     @Test
@@ -2096,9 +2126,9 @@ public class ArrayTest
                 {0, 0, 5, 0, 0},
                 {0, 5, 0, 2, 0},
                 {4, 0, 0, 0, 2}};
-        System.out.println(p2319.checkXMatrix(grid1));
-        System.out.println(p2319.checkXMatrix(grid2));
-        System.out.println(p2319.checkXMatrix(grid3));
+        assertTrue(p2319.checkXMatrix(grid1));
+        assertFalse(p2319.checkXMatrix(grid2));
+        assertFalse(p2319.checkXMatrix(grid3));
     }
 
     @Test
@@ -2107,17 +2137,20 @@ public class ArrayTest
         P1124LongestWellPerformingInterval p1124 = new P1124LongestWellPerformingInterval();
         int[] hours1 = {9, 9, 6, 0, 6, 6, 9};
         int[] hours2 = {6, 6, 6};
-        System.out.println(p1124.longestWPI_hash(hours1));
-        System.out.println(p1124.longestWPI_queue(hours2));
+        assertEquals(3, p1124.longestWPI_hash(hours1));
+        assertEquals(0, p1124.longestWPI_queue(hours2));
     }
 
     @Test
     public void test1237()
     {
         P1237FindPositiveIntegerSolutionForAGivenEquation p1237 = new P1237FindPositiveIntegerSolutionForAGivenEquation();
-        System.out.println(p1237.findSolution_1(new CustomFunction(1), 5));
-        System.out.println(p1237.findSolution_2(new CustomFunction(2), 5));
-        System.out.println(p1237.findSolution_3(new CustomFunction(1), 5));
+        assertEquals("[[1, 4], [2, 3], [3, 2], [4, 1]]",
+                p1237.findSolution_1(new CustomFunction(1), 5).toString());
+        assertEquals("[[1, 5], [5, 1]]",
+                p1237.findSolution_2(new CustomFunction(2), 5).toString());
+        assertEquals("[[1, 4], [2, 3], [3, 2], [4, 1]]",
+                p1237.findSolution_3(new CustomFunction(1), 5).toString());
     }
 
     @Test
@@ -2127,18 +2160,18 @@ public class ArrayTest
         int[] nums1 = {1, 3, 2, 1, 3, 2, 2};
         int[] nums2 = {1, 1};
         int[] nums3 = {0};
-        System.out.println(Arrays.toString(p2341.numberOfPairs_set(nums1)));
-        System.out.println(Arrays.toString(p2341.numberOfPairs_map(nums2)));
-        System.out.println(Arrays.toString(p2341.numberOfPairs_map(nums3)));
+        assertEquals("[3, 1]", Arrays.toString(p2341.numberOfPairs_set(nums1)));
+        assertEquals("[1, 0]", Arrays.toString(p2341.numberOfPairs_map(nums2)));
+        assertEquals("[0, 1]", Arrays.toString(p2341.numberOfPairs_map(nums3)));
     }
 
     @Test
     public void test1753()
     {
         P1753MaximumScoreFromRemovingStones p1753 = new P1753MaximumScoreFromRemovingStones();
-        System.out.println(p1753.maximumScore_1(2, 4, 6));
-        System.out.println(p1753.maximumScore_2(4, 4, 6));
-        System.out.println(p1753.maximumScore_2(1, 8, 8));
+        assertEquals(6, p1753.maximumScore_1(2, 4, 6));
+        assertEquals(7, p1753.maximumScore_2(4, 4, 6));
+        assertEquals(8, p1753.maximumScore_2(1, 8, 8));
     }
 
     @Test
@@ -2148,9 +2181,9 @@ public class ArrayTest
         int[] amount1 = {1, 4, 2};
         int[] amount2 = {5, 4, 4};
         int[] amount3 = {5, 0, 0};
-        System.out.println(p2335.fillCups_1(amount1));
-        System.out.println(p2335.fillCups_2(amount2));
-        System.out.println(p2335.fillCups_2(amount3));
+        assertEquals(4, p2335.fillCups_1(amount1));
+        assertEquals(7, p2335.fillCups_2(amount2));
+        assertEquals(5, p2335.fillCups_2(amount3));
     }
 
     @Test
@@ -2166,8 +2199,8 @@ public class ArrayTest
                 {3, 9},
                 {4, 5},
                 {2, 10}};
-        System.out.println(p1792.maxAverageRatio(classes1, 2));
-        System.out.println(p1792.maxAverageRatio(classes2, 4));
+        assertEquals(0.7833333333333333, p1792.maxAverageRatio(classes1, 2));
+        assertEquals(0.5348484848484849, p1792.maxAverageRatio(classes2, 4));
     }
 
     @Test
@@ -2189,9 +2222,9 @@ public class ArrayTest
                 {1, 1, 1, 1, 1},
                 {1, 1, 1, 0, 1},
         };
-        System.out.println(p1139.largest1BorderedSquare_1(grid1));
-        System.out.println(p1139.largest1BorderedSquare_1(grid2));
-        System.out.println(p1139.largest1BorderedSquare_2(grid3));
+        assertEquals(9, p1139.largest1BorderedSquare_1(grid1));
+        assertEquals(1, p1139.largest1BorderedSquare_1(grid2));
+        assertEquals(9, p1139.largest1BorderedSquare_2(grid3));
     }
 
     @Test
@@ -2204,28 +2237,28 @@ public class ArrayTest
         char[] suits2 = {'d', 'a', 'a', 'b', 'c'};
         int[] ranks3 = {11, 10, 2, 12, 9};
         char[] suits3 = {'a', 'b', 'c', 'a', 'd'};
-        System.out.println(p2347.bestHand_arr(ranks1, suits1));
-        System.out.println(p2347.bestHand_hash(ranks2, suits2));
-        System.out.println(p2347.bestHand_hash(ranks3, suits3));
+        assertEquals("Flush", p2347.bestHand_arr(ranks1, suits1));
+        assertEquals("Three of a Kind", p2347.bestHand_hash(ranks2, suits2));
+        assertEquals("High Card", p2347.bestHand_hash(ranks3, suits3));
     }
 
     @Test
     public void test0877()
     {
         P0877StoneGame p0877 = new P0877StoneGame();
-        System.out.println(p0877.stoneGame_n2(new int[]{5, 3, 4, 5}));
-        System.out.println(p0877.stoneGame_n2(new int[]{3, 7, 2, 3}));
-        System.out.println(p0877.stoneGame_n(new int[]{3, 2, 10, 4}));
-        System.out.println(p0877.stoneGame_n(new int[]{8, 9, 7, 6, 7, 6}));
+        assertTrue(p0877.stoneGame_n2(new int[]{5, 3, 4, 5}));
+        assertTrue(p0877.stoneGame_n2(new int[]{3, 7, 2, 3}));
+        assertTrue(p0877.stoneGame_n(new int[]{3, 2, 10, 4}));
+        assertTrue(p0877.stoneGame_n(new int[]{8, 9, 7, 6, 7, 6}));
     }
 
     @Test
     public void test2357()
     {
         P2357MakeArrayZeroBySubtractingEqualAmounts p2357 = new P2357MakeArrayZeroBySubtractingEqualAmounts();
-        System.out.println(p2357.minimumOperations_n2(new int[]{1, 5, 0, 3, 5}));
-        System.out.println(p2357.minimumOperations_set(new int[]{1, 5, 0, 3, 5}));
-        System.out.println(p2357.minimumOperations_api(new int[]{1, 5, 0, 3, 5}));
+        assertEquals(3, p2357.minimumOperations_n2(new int[]{1, 5, 0, 3, 5}));
+        assertEquals(3, p2357.minimumOperations_set(new int[]{1, 5, 0, 3, 5}));
+        assertEquals(3, p2357.minimumOperations_api(new int[]{1, 5, 0, 3, 5}));
     }
 
     @Test
@@ -2234,8 +2267,8 @@ public class ArrayTest
         P1144DecreaseElementsToMakeArrayZigzag p1144 = new P1144DecreaseElementsToMakeArrayZigzag();
         int[] nums1 = {1, 2, 3};
         int[] nums2 = {9, 6, 1, 6, 2};
-        System.out.println(p1144.movesToMakeZigzag(nums1));
-        System.out.println(p1144.movesToMakeZigzag(nums2));
+        assertEquals(2, p1144.movesToMakeZigzag(nums1));
+        assertEquals(4, p1144.movesToMakeZigzag(nums2));
     }
 
     @Test
@@ -2253,8 +2286,8 @@ public class ArrayTest
                 {1, 1, 2, 1, 1},
                 {1, 1, 1, 1, 1},
                 {1, 1, 1, 1, 1}};
-        System.out.println(Arrays.deepToString(p2373.largestLocal_1(grid1)));
-        System.out.println(Arrays.deepToString(p2373.largestLocal_2(grid2)));
+        assertEquals("[[9, 9], [8, 6]]", Arrays.deepToString(p2373.largestLocal_1(grid1)));
+        assertEquals("[[2, 2, 2], [2, 2, 2], [2, 2, 2]]", Arrays.deepToString(p2373.largestLocal_2(grid2)));
     }
 
     @Test
@@ -2262,7 +2295,7 @@ public class ArrayTest
     {
         P2363MergeSimilarItems p2363 = new P2363MergeSimilarItems();
         int[][] items1 = {{1, 1}, {4, 5}, {3, 8}}, items2 = {{3, 1}, {1, 5}};
-        System.out.println(p2363.mergeSimilarItems(items1, items2));
+        assertEquals("[[1, 6], [3, 9], [4, 5]]", p2363.mergeSimilarItems(items1, items2).toString());
     }
 
     @Test
@@ -2273,9 +2306,9 @@ public class ArrayTest
                 {1, 3, 1},
                 {1, 5, 1},
                 {4, 2, 1}};
-        System.out.println(o047.maxValue_1(grid));
-        System.out.println(o047.maxValue_2(grid));
-        System.out.println(o047.maxValue_3(grid));
+        assertEquals(12, o047.maxValue_1(grid));
+        assertEquals(12, o047.maxValue_2(grid));
+        assertEquals(12, o047.maxValue_3(grid));
     }
 
     @Test
@@ -2284,8 +2317,9 @@ public class ArrayTest
         M1705FindLongestSubarrayLCCI m1705 = new M1705FindLongestSubarrayLCCI();
         String[] arr1 = {"A", "1", "B", "C", "D", "2", "3", "4", "E", "5", "F", "G", "6", "7", "H", "I", "J", "K", "L", "M"};
         String[] arr2 = {"A", "A"};
-        System.out.println(Arrays.toString(m1705.findLongestSubarray(arr1)));
-        System.out.println(Arrays.toString(m1705.findLongestSubarray(arr2)));
+        assertEquals("[A, 1, B, C, D, 2, 3, 4, E, 5, F, G, 6, 7]",
+                Arrays.toString(m1705.findLongestSubarray(arr1)));
+        assertEquals("[]", Arrays.toString(m1705.findLongestSubarray(arr2)));
     }
 
     @Test
@@ -2297,11 +2331,11 @@ public class ArrayTest
         int[] nums3 = {1, 2, 3};
         int[] nums4 = {1, 2, 3};
         int[] nums5 = {1000000000, 1000000000, 1000000000};
-        System.out.println(p1590.minSubarray(nums1, 6));
-        System.out.println(p1590.minSubarray(nums2, 9));
-        System.out.println(p1590.minSubarray(nums3, 3));
-        System.out.println(p1590.minSubarray(nums4, 7));
-        System.out.println(p1590.minSubarray(nums5, 3));
+        assertEquals(1, p1590.minSubarray(nums1, 6));
+        assertEquals(2, p1590.minSubarray(nums2, 9));
+        assertEquals(0, p1590.minSubarray(nums3, 3));
+        assertEquals(-1, p1590.minSubarray(nums4, 7));
+        assertEquals(0, p1590.minSubarray(nums5, 3));
     }
 
     @Test
@@ -2407,11 +2441,6 @@ public class ArrayTest
     @Test
     public void test0051()
     {
-        System.out.println(P0051NQueens.solveNQueens(4));
-        for (int i = 1; i <= 9; i++)
-        {
-            System.out.println(i + " Queen(s) : " + P0051NQueens.solveNQueens(i).size());
-        }
         assertEquals(0, P0051NQueens.solveNQueens(2).size());
         assertEquals(40, P0051NQueens.solveNQueens(7).size());
         assertEquals(92, P0051NQueens.solveNQueens(8).size());
