@@ -1,7 +1,5 @@
 package com.eric.solution.math;
 
-import java.util.Arrays;
-
 /**
  * Description : 剑指 Offer 10- I. 斐波那契数列
  * <p>
@@ -95,7 +93,7 @@ public class Offer101FibonacciSequence {
             temp[1][0] = (result[1][0] + result[1][1]) % mod;
             temp[1][1] = (result[1][0]) % mod;
             result = temp;
-            System.out.println("result = " + Arrays.deepToString(result));
+            // System.out.println("result = " + Arrays.deepToString(result));
         }
         return result[0][0];
     }

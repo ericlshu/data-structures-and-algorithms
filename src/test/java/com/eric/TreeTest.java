@@ -11,6 +11,7 @@ import org.junit.Test;
 import java.util.List;
 
 import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Description :
@@ -25,7 +26,7 @@ public class TreeTest
     public void testP0925()
     {
         P0925LongPressedName obj = new P0925LongPressedName();
-        System.out.println("result = " + obj.isLongPressedName("saeedi", "ssaaeediixxxiii"));
+        assertFalse(obj.isLongPressedName("saeedi", "ssaaeediixxxiii"));
     }
 
     static TreeNode root = new TreeNode(0,
@@ -75,18 +76,19 @@ public class TreeTest
     {
         P0102BinaryTreeLevelOrderTraversal p0102 = new P0102BinaryTreeLevelOrderTraversal();
         List<List<Integer>> lists = p0102.levelOrderIteration(root);
-        lists.forEach(System.out::println);
-
+        assertEquals("[[0], [1, 2], [3, 4, 5, 6]]", lists.toString());
+        // lists.forEach(System.out::println);
         lists = p0102.levelOrderRecursion(root);
-        lists.forEach(System.out::println);
+        // lists.forEach(System.out::println);
+        assertEquals("[[0], [1, 2], [3, 4, 5, 6]]", lists.toString());
     }
 
     @Test
     public void test0104()
     {
         P0104MaximumDepthOfBinaryTree p0104 = new P0104MaximumDepthOfBinaryTree();
-        System.out.println(p0104.maxDepthIteration(root));
-        System.out.println(p0104.maxDepthRecursion(root));
+        assertEquals(3, p0104.maxDepthIteration(root));
+        assertEquals(3, p0104.maxDepthRecursion(root));
     }
 
     @Test
@@ -103,10 +105,10 @@ public class TreeTest
         TreeNode root = new TreeNode(1, node1, node2);
 
         P0101SymmetricTree p0101 = new P0101SymmetricTree();
-        System.out.println(p0101.isSymmetricIteration1(root));
-        System.out.println(p0101.isSymmetricIteration2(root));
-        System.out.println(p0101.isSymmetricRecursion1(root));
-        System.out.println(p0101.isSymmetricRecursion2(root));
+        assertTrue(p0101.isSymmetricIteration1(root));
+        assertTrue(p0101.isSymmetricIteration2(root));
+        assertTrue(p0101.isSymmetricRecursion1(root));
+        assertTrue(p0101.isSymmetricRecursion2(root));
     }
 
     @Test
@@ -122,18 +124,18 @@ public class TreeTest
         TreeNode node2 = new TreeNode(7, node5, node6);
         TreeNode root = new TreeNode(4, node1, node2);
 
-        System.out.println(p0144.preorderTraversalRecursion(root));
+        assertEquals("[4, 2, 1, 3, 7, 6, 9]", p0144.preorderTraversalRecursion(root).toString());
 
         P0226InvertBinaryTree p0226 = new P0226InvertBinaryTree();
 
         root = p0226.invertTreeRecursion(root);
-        System.out.println(p0144.preorderTraversalRecursion(root));
+        assertEquals("[4, 7, 9, 6, 2, 3, 1]", p0144.preorderTraversalRecursion(root).toString());
 
         root = p0226.invertTreeBFS(root);
-        System.out.println(p0144.preorderTraversalRecursion(root));
+        assertEquals("[4, 2, 1, 3, 7, 6, 9]", p0144.preorderTraversalRecursion(root).toString());
 
         root = p0226.invertTreeDFS(root);
-        System.out.println(p0144.preorderTraversalRecursion(root));
+        assertEquals("[4, 7, 9, 6, 2, 3, 1]", p0144.preorderTraversalRecursion(root).toString());
     }
 
     @Test
@@ -153,10 +155,10 @@ public class TreeTest
         TreeNode root = new TreeNode(5, node1, node2);
 
         P0112PathSum p0112 = new P0112PathSum();
-        System.out.println(p0112.hasPathSumRecursion(root, 22));
-        // System.out.println(p0112.hasPathSumBFS1(root, 22));
-        System.out.println(p0112.hasPathSumBFS2(root, 22));
-        // System.out.println(p0112.hasPathSumDFS(root, 22));
+        assertTrue(p0112.hasPathSumRecursion(root, 22));
+        assertTrue(p0112.hasPathSumBFS1(root, 22));
+        assertTrue(p0112.hasPathSumBFS2(root, 22));
+        assertFalse(p0112.hasPathSumDFS(root, 22));
     }
 
     @Test
@@ -165,8 +167,8 @@ public class TreeTest
         P0700SearchInABinarySearchTree p0700 = new P0700SearchInABinarySearchTree();
         TreeNode node = new TreeNode(2, new TreeNode(1), new TreeNode(3));
         TreeNode root = new TreeNode(4, node, new TreeNode(7));
-        System.out.println(p0700.searchBSTRecursion(root, 5));
-        System.out.println(p0700.searchBSTIteration(root, 4));
+        assertNull(p0700.searchBSTRecursion(root, 5));
+        assertEquals("TreeNode{val=4}", p0700.searchBSTIteration(root, 4).toString());
     }
 
     @Test
@@ -178,7 +180,7 @@ public class TreeTest
         TreeNode result = p0701.insertIntoBST(root, 5);
 
         P0094BinaryTreeInorderTraversal p0094 = new P0094BinaryTreeInorderTraversal();
-        System.out.println(p0094.inorderTraversalRecursion(result));
+        assertEquals("[1, 2, 3, 4, 5, 7]", p0094.inorderTraversalRecursion(result).toString());
     }
 
     @Test
@@ -188,11 +190,11 @@ public class TreeTest
         TreeNode node1 = new TreeNode(3, new TreeNode(2), new TreeNode(4));
         TreeNode node2 = new TreeNode(6, null, new TreeNode(7));
         TreeNode root = new TreeNode(5, node1, node2);
-        System.out.println(p0653.findTarget_dfs_hash(root, 9));
-        System.out.println(p0653.findTarget_dfs_hash(root, 28));
-        System.out.println(p0653.findTarget_bfs_hash(root, 12));
-        System.out.println(p0653.findTarget_dfs_pt(root, 12));
-        System.out.println(p0653.findTarget_iteration_dp(root, 12));
+        assertTrue(p0653.findTarget_dfs_hash(root, 9));
+        assertFalse(p0653.findTarget_dfs_hash(root, 28));
+        assertTrue(p0653.findTarget_bfs_hash(root, 12));
+        assertTrue(p0653.findTarget_dfs_pt(root, 12));
+        assertTrue(p0653.findTarget_iteration_dp(root, 12));
     }
 
     @Test
@@ -217,8 +219,8 @@ public class TreeTest
         TreeNode node8 = new TreeNode(8, new TreeNode(7), new TreeNode(9));
         TreeNode node6 = new TreeNode(6, node2, node8);
 
-        System.out.println(p0235.lowestCommonAncestor_nn(node6, node2, node8));
-        System.out.println(p0235.lowestCommonAncestor_n1(node6, node2, node4));
+        assertNotNull(p0235.lowestCommonAncestor_nn(node6, node2, node8));
+        assertNotNull(p0235.lowestCommonAncestor_n1(node6, node2, node4));
     }
 
     @Test
@@ -228,9 +230,9 @@ public class TreeTest
         P0144BinaryTreePreorderTraversal p0144 = new P0144BinaryTreePreorderTraversal();
         TreeNode root1 = new TreeNode(1, new TreeNode(3, new TreeNode(5), null), new TreeNode(2));
         TreeNode root2 = new TreeNode(2, new TreeNode(1, null, new TreeNode(4)), new TreeNode(3, null, new TreeNode(7)));
-        System.out.println(p0144.preorderTraversalRecursion(p0617.mergeTrees_dfs(root1, root2)));
-        System.out.println(p0144.preorderTraversalRecursion(p0617.mergeTrees_bfs_1(root1, root2)));
-        System.out.println(p0144.preorderTraversalRecursion(p0617.mergeTrees_bfs_2(root1, root2)));
+        assertEquals("[3, 4, 5, 4, 5, 7]", p0144.preorderTraversalRecursion(p0617.mergeTrees_dfs(root1, root2)).toString());
+        assertEquals("[3, 4, 5, 4, 5, 7]", p0144.preorderTraversalRecursion(p0617.mergeTrees_bfs_1(root1, root2)).toString());
+        assertEquals("[3, 4, 5, 4, 5, 7]", p0144.preorderTraversalRecursion(p0617.mergeTrees_bfs_2(root1, root2)).toString());
     }
 
     @Test
@@ -242,19 +244,19 @@ public class TreeTest
         Node node3 = new Node(3, new Node(6), new Node(7), null);
         Node node1 = new Node(3, node2, node3, null);
         node1 = p0116.connect_dfs(node1);
-        System.out.println("node1 = " + node1);
+        assertNotNull(node1);
 
         node2 = new Node(2, new Node(4), new Node(5), null);
         node3 = new Node(3, new Node(6), new Node(7), null);
         node1 = new Node(3, node2, node3, null);
         node1 = p0116.connect_bfs_1(node1);
-        System.out.println("node1 = " + node1);
+        assertNotNull(node1);
 
         node2 = new Node(2, new Node(4), new Node(5), null);
         node3 = new Node(3, new Node(6), new Node(7), null);
         node1 = new Node(3, node2, node3, null);
         node1 = p0116.connect_bfs_2(node1);
-        System.out.println("node1 = " + node1);
+        assertNotNull(node1);
     }
 
     @Test
@@ -265,12 +267,12 @@ public class TreeTest
         Node node2 = new Node(2, new Node(4), new Node(5), null);
         Node node3 = new Node(3, null, new Node(7), null);
         Node node1 = new Node(1, node2, node3, null);
-        System.out.println(p0117.connect_bfs1(node1));
+        assertNotNull(p0117.connect_bfs1(node1));
 
         node2 = new Node(2, new Node(4), new Node(5), null);
         node3 = new Node(3, null, new Node(7), null);
         node1 = new Node(1, node2, node3, null);
-        System.out.println(p0117.connect_bfs2(node1));
+        assertNotNull(p0117.connect_bfs2(node1));
     }
 
     @Test
@@ -278,8 +280,8 @@ public class TreeTest
     {
         P0257BinaryTreePaths p0257 = new P0257BinaryTreePaths();
         TreeNode root = new TreeNode(1, new TreeNode(2, null, new TreeNode(5)), new TreeNode(3));
-        System.out.println(p0257.binaryTreePaths_dfs(root));
-        System.out.println(p0257.binaryTreePaths_bfs(root));
+        assertEquals("[1->2->5, 1->3, 1->2->5, 1->3]", p0257.binaryTreePaths_dfs(root).toString());
+        assertEquals("[1->3, 1->2->5]", p0257.binaryTreePaths_bfs(root).toString());
     }
 
     @Test
@@ -288,13 +290,12 @@ public class TreeTest
         P0111MinimumDepthOfBinaryTree p0111 = new P0111MinimumDepthOfBinaryTree();
         TreeNode node1 = new TreeNode(3, new TreeNode(9), new TreeNode(20, new TreeNode(15), new TreeNode(7)));
         TreeNode node2 = new TreeNode(2, null, new TreeNode(3, null, new TreeNode(4, null, new TreeNode(5, null, new TreeNode(6)))));
-        System.out.println(p0111.minDepth_bfs(node1));
-        System.out.println(p0111.minDepth_bfs(node2));
-        System.out.println(p0111.minDepth_bfs(null));
-
-        System.out.println(p0111.minDepth_dfs_1(node1));
-        System.out.println(p0111.minDepth_dfs_2(node1));
-        System.out.println(p0111.minDepth_dfs_3(node1));
+        assertEquals(2, p0111.minDepth_bfs(node1));
+        assertEquals(5, p0111.minDepth_bfs(node2));
+        assertEquals(0, p0111.minDepth_bfs(null));
+        assertEquals(2, p0111.minDepth_dfs_1(node1));
+        assertEquals(2, p0111.minDepth_dfs_2(node1));
+        assertEquals(2, p0111.minDepth_dfs_3(node1));
     }
 
     @Test
@@ -303,12 +304,12 @@ public class TreeTest
         P0404SumOfLeftLeaves p0404 = new P0404SumOfLeftLeaves();
         TreeNode node1 = new TreeNode(3, new TreeNode(9), new TreeNode(20, new TreeNode(15), new TreeNode(7)));
         TreeNode node2 = new TreeNode(3);
-        System.out.println(p0404.sumOfLeftLeaves_status(node1));
-        System.out.println(p0404.sumOfLeftLeaves_status(node2));
-        System.out.println(p0404.sumOfLeftLeaves_dfs(node1));
-        System.out.println(p0404.sumOfLeftLeaves_dfs(node2));
-        System.out.println(p0404.sumOfLeftLeaves_bfs(node1));
-        System.out.println(p0404.sumOfLeftLeaves_bfs(node2));
+        assertEquals(24, p0404.sumOfLeftLeaves_status(node1));
+        assertEquals(0, p0404.sumOfLeftLeaves_status(node2));
+        assertEquals(24, p0404.sumOfLeftLeaves_dfs(node1));
+        assertEquals(0, p0404.sumOfLeftLeaves_dfs(node2));
+        assertEquals(24, p0404.sumOfLeftLeaves_bfs(node1));
+        assertEquals(0, p0404.sumOfLeftLeaves_bfs(node2));
     }
 
     private NaryNode construct()
@@ -334,8 +335,8 @@ public class TreeTest
     public void test0559()
     {
         P0559MaximumDepthOfNaryTree p0559 = new P0559MaximumDepthOfNaryTree();
-        System.out.println(p0559.maxDepth_dfs(construct()));
-        System.out.println(p0559.maxDepth_bfs(construct()));
+        assertEquals(5, p0559.maxDepth_dfs(construct()));
+        assertEquals(5, p0559.maxDepth_bfs(construct()));
     }
 
     @Test
@@ -343,8 +344,10 @@ public class TreeTest
     {
         P0589NaryTreePreorderTraversal p0589 = new P0589NaryTreePreorderTraversal();
         NaryNode root = construct();
-        System.out.println(p0589.preorder_iteration(root));
-        System.out.println(p0589.preorder_recursion(root));
+        assertEquals("[1, 2, 3, 6, 7, 11, 14, 4, 8, 12, 5, 9, 13, 10]",
+                p0589.preorder_iteration(root).toString());
+        assertEquals("[1, 2, 3, 6, 7, 11, 14, 4, 8, 12, 5, 9, 13, 10]",
+                p0589.preorder_recursion(root).toString());
     }
 
     @Test
@@ -352,16 +355,20 @@ public class TreeTest
     {
         P0590NaryTreePostorderTraversal p0590 = new P0590NaryTreePostorderTraversal();
         NaryNode root = construct();
-        System.out.println(p0590.postorder_recursion(root));
-        System.out.println(p0590.postorder_iteration(root));
-        System.out.println(p0590.preorder_reverse(root));
+        assertEquals("[2, 6, 14, 11, 7, 3, 12, 8, 4, 13, 9, 10, 5, 1]",
+                p0590.postorder_recursion(root).toString());
+        assertEquals("[2, 6, 14, 11, 7, 3, 12, 8, 4, 13, 9, 10, 5, 1]",
+                p0590.postorder_iteration(root).toString());
+        assertEquals("[2, 6, 14, 11, 7, 3, 12, 8, 4, 13, 9, 10, 5, 1]",
+                p0590.preorder_reverse(root).toString());
     }
 
     @Test
     public void test0429()
     {
         P0429NaryTreeLevelOrderTraversal p0429 = new P0429NaryTreeLevelOrderTraversal();
-        System.out.println(p0429.levelOrder(construct()));
+        assertEquals("[[1], [2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13], [14]]",
+                p0429.levelOrder(construct()).toString());
     }
 
     @Test
@@ -370,8 +377,8 @@ public class TreeTest
         P0108ConvertSortedArrayToBST p0108 = new P0108ConvertSortedArrayToBST();
         int[] nums1 = {-10, -3, 0, 5, 9};
         int[] nums2 = {1, 3};
-        System.out.println(p0108.sortedArrayToBST(nums1));
-        System.out.println(p0108.sortedArrayToBST(nums2));
+        assertNotNull(p0108.sortedArrayToBST(nums1));
+        assertNotNull(p0108.sortedArrayToBST(nums2));
     }
 
     @Test
@@ -380,8 +387,8 @@ public class TreeTest
         P0103BinaryTreeZigzagLevelOrderTraversal p0103 = new P0103BinaryTreeZigzagLevelOrderTraversal();
         TreeNode root = new TreeNode(3, new TreeNode(9, new TreeNode(8), new TreeNode(12)),
                 new TreeNode(20, new TreeNode(15), new TreeNode(7)));
-        System.out.println(p0103.zigzagLevelOrder_1(root));
-        System.out.println(p0103.zigzagLevelOrder_2(root));
+        assertEquals("[[3], [20, 9], [8, 12, 15, 7]]", p0103.zigzagLevelOrder_1(root).toString());
+        assertEquals("[[3], [20, 9], [8, 12, 15, 7]]", p0103.zigzagLevelOrder_2(root).toString());
     }
 
     @Test
@@ -391,8 +398,8 @@ public class TreeTest
         TreeNode root = new TreeNode(1,
                 new TreeNode(2, null, new TreeNode(5)),
                 new TreeNode(3, null, new TreeNode(4)));
-        System.out.println(p0199.rightSideView_bfs(root));
-        System.out.println(p0199.rightSideView_dfs(root));
+        assertEquals("[1, 3, 4]", p0199.rightSideView_bfs(root).toString());
+        assertEquals("[1, 3, 4]", p0199.rightSideView_dfs(root).toString());
     }
 
     @Test
@@ -404,8 +411,8 @@ public class TreeTest
         TreeNode right = new TreeNode(8, new TreeNode(13), node4);
         TreeNode left = new TreeNode(4, node11, null);
         TreeNode root = new TreeNode(5, left, right);
-        System.out.println(p0113.pathSum_dfs(root, 22));
-        System.out.println(p0113.pathSum_bfs(root, 22));
+        assertEquals("[[5, 4, 11, 2], [5, 8, 4, 5]]", p0113.pathSum_dfs(root, 22).toString());
+        assertEquals("[[5, 4, 11, 2], [5, 8, 4, 5]]", p0113.pathSum_bfs(root, 22).toString());
     }
 
     @Test
@@ -442,28 +449,26 @@ public class TreeTest
         TreeNode root = new TreeNode(7, new TreeNode(3),
                 new TreeNode(15, new TreeNode(9), new TreeNode(20)));
         P0173BSTIterator1 bstIterator1 = new P0173BSTIterator1(root);
-        System.out.println(bstIterator1.next());    // 返回 3
-        System.out.println(bstIterator1.next());    // 返回 7
-        System.out.println(bstIterator1.hasNext()); // 返回 True
-        System.out.println(bstIterator1.next());    // 返回 9
-        System.out.println(bstIterator1.hasNext()); // 返回 True
-        System.out.println(bstIterator1.next());    // 返回 15
-        System.out.println(bstIterator1.hasNext()); // 返回 True
-        System.out.println(bstIterator1.next());    // 返回 20
-        System.out.println(bstIterator1.hasNext()); // 返回 False
-
-        System.out.println("-----");
+        assertEquals(3, bstIterator1.next());
+        assertEquals(7, bstIterator1.next());
+        assertTrue(bstIterator1.hasNext());
+        assertEquals(9, bstIterator1.next());
+        assertTrue(bstIterator1.hasNext());
+        assertEquals(15, bstIterator1.next());
+        assertTrue(bstIterator1.hasNext());
+        assertEquals(20, bstIterator1.next());
+        assertFalse(bstIterator1.hasNext());
 
         P0173BSTIterator2 bstIterator2 = new P0173BSTIterator2(root);
-        System.out.println(bstIterator2.next());    // 返回 3
-        System.out.println(bstIterator2.next());    // 返回 7
-        System.out.println(bstIterator2.hasNext()); // 返回 True
-        System.out.println(bstIterator2.next());    // 返回 9
-        System.out.println(bstIterator2.hasNext()); // 返回 True
-        System.out.println(bstIterator2.next());    // 返回 15
-        System.out.println(bstIterator2.hasNext()); // 返回 True
-        System.out.println(bstIterator2.next());    // 返回 20
-        System.out.println(bstIterator2.hasNext()); // 返回 False
+        assertEquals(3, bstIterator2.next());
+        assertEquals(7, bstIterator2.next());
+        assertTrue(bstIterator2.hasNext());
+        assertEquals(9, bstIterator2.next());
+        assertTrue(bstIterator2.hasNext());
+        assertEquals(15, bstIterator2.next());
+        assertTrue(bstIterator2.hasNext());
+        assertEquals(20, bstIterator2.next());
+        assertFalse(bstIterator2.hasNext());
     }
 
     @Test
@@ -472,8 +477,8 @@ public class TreeTest
         P0230KthSmallestElementInBST p0230 = new P0230KthSmallestElementInBST();
         TreeNode root = new TreeNode(5, new TreeNode(3, new TreeNode(2, new TreeNode(1), null),
                 new TreeNode(4)), new TreeNode(6));
-        System.out.println(p0230.kthSmallest_1(root, 3));
-        System.out.println(p0230.kthSmallest_2(root, 3));
+        assertEquals(3, p0230.kthSmallest_1(root, 3));
+        assertEquals(3, p0230.kthSmallest_2(root, 3));
     }
 
     @Test
@@ -488,8 +493,8 @@ public class TreeTest
                         new TreeNode(10, new TreeNode(9), new TreeNode(11)),
                         new TreeNode(14, new TreeNode(13), new TreeNode(15)))
         );
-        System.out.println(p0450.deleteNode_recursion(root, 3));
-        System.out.println(p0450.deleteNode_iteration(root, 12));
+        assertNotNull(p0450.deleteNode_recursion(root, 3));
+        assertNotNull(p0450.deleteNode_iteration(root, 12));
     }
 
     @Test
@@ -498,8 +503,8 @@ public class TreeTest
         P0297SerializeAndDeserializeBinaryTree p0297 = new P0297SerializeAndDeserializeBinaryTree();
         TreeNode root = new TreeNode(1, new TreeNode(2), new TreeNode(3, new TreeNode(4), new TreeNode(5)));
         String serialize = p0297.serialize(root);
-        System.out.println("serialize = " + serialize);
-        System.out.println(p0297.deserialize(serialize));
+        assertEquals("1,2,None,None,3,4,None,None,5,None,None,", serialize);
+        assertNotNull(p0297.deserialize(serialize));
     }
 
     @Test
@@ -513,9 +518,9 @@ public class TreeTest
                                 new TreeNode(7), new TreeNode(4))),
                 new TreeNode(1,
                         new TreeNode(0), new TreeNode(8)));
-        System.out.println(p0236.lowestCommonAncestor_1(root, new TreeNode(5), new TreeNode(4)));
-        System.out.println(p0236.lowestCommonAncestor_2(root, new TreeNode(6), new TreeNode(4)));
-        System.out.println(p0236.lowestCommonAncestor_3(root, new TreeNode(8), new TreeNode(4)));
+        assertNotNull(p0236.lowestCommonAncestor_1(root, new TreeNode(5), new TreeNode(4)));
+        assertNotNull(p0236.lowestCommonAncestor_2(root, new TreeNode(6), new TreeNode(4)));
+        assertNotNull(p0236.lowestCommonAncestor_3(root, new TreeNode(8), new TreeNode(4)));
     }
 
     @Test
@@ -534,17 +539,17 @@ public class TreeTest
                         new TreeNode(3)),
                 new TreeNode(2));
 
-        System.out.println(p0110.isBalanced_n2(root1));
-        System.out.println(p0110.isBalanced_n(root2));
+        assertTrue(p0110.isBalanced_n2(root1));
+        assertFalse(p0110.isBalanced_n(root2));
     }
 
     @Test
     public void test1376()
     {
         P1376TimeNeededToInformAllEmployees p1376 = new P1376TimeNeededToInformAllEmployees();
-        System.out.println(p1376.numOfMinutes_1(1, 0, new int[]{-1}, new int[]{0}));
-        System.out.println(p1376.numOfMinutes_2(6, 2, new int[]{2, 2, -1, 2, 2, 2}, new int[]{0, 0, 1, 0, 0, 0}));
-        System.out.println(p1376.numOfMinutes_1(6, 2, new int[]{2, 2, -1, 2, 3, 2}, new int[]{0, 0, 1, 2, 0, 0}));
+        assertEquals(0, p1376.numOfMinutes_1(1, 0, new int[]{-1}, new int[]{0}));
+        assertEquals(1, p1376.numOfMinutes_2(6, 2, new int[]{2, 2, -1, 2, 2, 2}, new int[]{0, 0, 1, 0, 0, 0}));
+        assertEquals(3, p1376.numOfMinutes_1(6, 2, new int[]{2, 2, -1, 2, 3, 2}, new int[]{0, 0, 1, 2, 0, 0}));
     }
 
     @Test
@@ -562,10 +567,10 @@ public class TreeTest
                                 new TreeNode(4)),
                         new TreeNode(3)),
                 new TreeNode(2));
-        System.out.println(p0637.averageOfLevels_bfs(root1));
-        System.out.println(p0637.averageOfLevels_dfs(root1));
-        System.out.println(p0637.averageOfLevels_dfs(root2));
-        System.out.println(p0637.averageOfLevels_bfs(root2));
+        assertEquals("[3.0, 14.5, 11.0]", p0637.averageOfLevels_bfs(root1).toString());
+        assertEquals("[3.0, 14.5, 11.0]", p0637.averageOfLevels_dfs(root1).toString());
+        assertEquals("[1.0, 2.0, 3.0, 4.0]", p0637.averageOfLevels_dfs(root2).toString());
+        assertEquals("[1.0, 2.0, 3.0, 4.0]", p0637.averageOfLevels_bfs(root2).toString());
     }
 
     @Test
@@ -582,8 +587,8 @@ public class TreeTest
                 new TreeNode(48,
                         new TreeNode(12),
                         new TreeNode(49)));
-        System.out.println(p0530.getMinimumDifference(root1));
-        System.out.println(p0530.getMinimumDifference(root2));
+        assertEquals(1, p0530.getMinimumDifference(root1));
+        assertEquals(1, p0530.getMinimumDifference(root2));
     }
 
     @Test
@@ -600,8 +605,8 @@ public class TreeTest
                 new TreeNode(48,
                         new TreeNode(12),
                         new TreeNode(49)));
-        System.out.println(p0783.minDiffInBST(root1));
-        System.out.println(p0783.minDiffInBST(root2));
+        assertEquals(1, p0783.minDiffInBST(root1));
+        assertEquals(1, p0783.minDiffInBST(root2));
     }
 
     @Test
@@ -620,7 +625,7 @@ public class TreeTest
                 new TreeNode(4,
                         new TreeNode(1),
                         new TreeNode(2));
-        System.out.println(p0572.isSubtree(root, subRoot));
+        assertFalse(p0572.isSubtree(root, subRoot));
     }
 
     @Test
@@ -669,11 +674,11 @@ public class TreeTest
     @Test
     public void test0096()
     {
-        assertEquals(5,P0096UniqueBinarySearchTrees.numTreesDp(3));
-        assertEquals(14,P0096UniqueBinarySearchTrees.numTreesDp(4));
-        assertEquals(42,P0096UniqueBinarySearchTrees.numTreesDp(5));
-        assertEquals(1767263190,P0096UniqueBinarySearchTrees.numTreesDp(19));
-        assertEquals(42,P0096UniqueBinarySearchTrees.numTreesMath(5));
-        assertEquals(1767263190,P0096UniqueBinarySearchTrees.numTreesMath(19));
+        assertEquals(5, P0096UniqueBinarySearchTrees.numTreesDp(3));
+        assertEquals(14, P0096UniqueBinarySearchTrees.numTreesDp(4));
+        assertEquals(42, P0096UniqueBinarySearchTrees.numTreesDp(5));
+        assertEquals(1767263190, P0096UniqueBinarySearchTrees.numTreesDp(19));
+        assertEquals(42, P0096UniqueBinarySearchTrees.numTreesMath(5));
+        assertEquals(1767263190, P0096UniqueBinarySearchTrees.numTreesMath(19));
     }
 }

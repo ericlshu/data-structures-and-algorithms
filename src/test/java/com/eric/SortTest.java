@@ -1,7 +1,7 @@
 package com.eric;
 
 import com.eric.solution.sort.*;
-import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -30,66 +30,77 @@ public class SortTest
     public void testBubbleSort()
     {
         BubbleSort.sort(arr);
+        Assert.assertArrayEquals(new int[]{-2, -1, 0, 1, 2, 2, 3, 4, 4, 4, 5, 6, 7, 8, 9}, arr);
     }
 
     @Test
     public void testSelectionSort()
     {
         SelectionSort.sort(arr);
+        Assert.assertArrayEquals(new int[]{-2, -1, 0, 1, 2, 2, 3, 4, 4, 4, 5, 6, 7, 8, 9}, arr);
     }
 
     @Test
     public void testHeapSort()
     {
         HeapSort.sort(arr);
+        Assert.assertArrayEquals(new int[]{-2, -1, 0, 1, 2, 2, 3, 4, 4, 4, 5, 6, 7, 8, 9}, arr);
     }
 
     @Test
     public void testInsertionSort()
     {
         InsertionSort.sort(arr);
+        Assert.assertArrayEquals(new int[]{-2, -1, 0, 1, 2, 2, 3, 4, 4, 4, 5, 6, 7, 8, 9}, arr);
     }
 
     @Test
     public void testShellSort()
     {
         ShellSort.sort(arr);
+        Assert.assertArrayEquals(new int[]{-2, -1, 0, 1, 2, 2, 3, 4, 4, 4, 5, 6, 7, 8, 9}, arr);
     }
 
     @Test
     public void testMergeSortTopDown()
     {
         MergeSort.sortTopDown(arr);
+        Assert.assertArrayEquals(new int[]{-2, -1, 0, 1, 2, 2, 3, 4, 4, 4, 5, 6, 7, 8, 9}, arr);
     }
 
     @Test
     public void testMergeBottomUp()
     {
         MergeSort.sortBottomUp(arr);
+        Assert.assertArrayEquals(new int[]{-2, -1, 0, 1, 2, 2, 3, 4, 4, 4, 5, 6, 7, 8, 9}, arr);
     }
 
     @Test
     public void testQuickSort()
     {
         QuickSort.sort(arr);
+        Assert.assertArrayEquals(new int[]{-2, -1, 0, 1, 2, 2, 3, 4, 4, 4, 5, 6, 7, 8, 9}, arr);
     }
 
     @Test
     public void testCountingSort()
     {
         CountingSort.sort(arr);
+        Assert.assertArrayEquals(new int[]{-2, -1, 0, 1, 2, 2, 3, 4, 4, 4, 5, 6, 7, 8, 9}, arr);
     }
 
     @Test
     public void testBucketSortByRange()
     {
         BucketSort.sortByRange(arr);
+        Assert.assertArrayEquals(new int[]{-2, -1, 0, 1, 2, 2, 3, 4, 4, 4, 5, 6, 7, 8, 9}, arr);
     }
 
     @Test
     public void testBucketSortByCount()
     {
         BucketSort.sortByCount(arr);
+        Assert.assertArrayEquals(new int[]{-2, -1, 0, 1, 2, 2, 3, 4, 4, 4, 5, 6, 7, 8, 9}, arr);
     }
 
     @Test
@@ -106,15 +117,16 @@ public class SortTest
         phoneNumbers[7] = "15112345678";
         phoneNumbers[8] = "15212345678";
         phoneNumbers[9] = "15712345678";
-        // System.out.println("before : " + Arrays.toString(phoneNumbers));
         RadixSort.sort(phoneNumbers, 11);
-        // System.out.println("after  : " + Arrays.toString(phoneNumbers));
+        Assert.assertEquals("[13412345678, 13512345678, 13612345678, 13712345678, 13812345678, " +
+                        "13912345678, 15012345678, 15112345678, 15212345678, 15712345678]",
+                Arrays.toString(phoneNumbers));
     }
 
     // @After
     // public void after()
     // {
-    //     // System.out.println("after  : " + Arrays.toString(arr));
-    //     // System.out.println("/******************************************************/");
+    //     System.out.println("after  : " + Arrays.toString(arr));
+    //     System.out.println("/******************************************************/");
     // }
 }

@@ -1,7 +1,5 @@
 package com.eric.solution.array;
 
-import java.util.Arrays;
-
 /**
  * Description : 石子游戏
  * Alice 和 Bob 用几堆石子在做游戏。一共有偶数堆石子，排成一行；每堆都有 正 整数颗石子，数目为 piles[i] 。

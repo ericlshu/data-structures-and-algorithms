@@ -94,7 +94,7 @@ public class P0101SymmetricTree
                 }
                 idx++;
             }
-            System.out.println("row = " + row);
+            // System.out.println("row = " + row);
             int left = 0, right = size - 1;
             while (left <= right)
             {

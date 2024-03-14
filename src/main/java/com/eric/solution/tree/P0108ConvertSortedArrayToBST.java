@@ -32,8 +32,8 @@ public class P0108ConvertSortedArrayToBST
 {
     public TreeNode sortedArrayToBST(int[] nums)
     {
-        System.out.println(dfs_left(nums, 0, nums.length - 1));
-        System.out.println(dfs_right(nums, 0, nums.length - 1));
+        dfs_left(nums, 0, nums.length - 1);
+        dfs_right(nums, 0, nums.length - 1);
         return dfs_random(nums, 0, nums.length - 1);
     }
 

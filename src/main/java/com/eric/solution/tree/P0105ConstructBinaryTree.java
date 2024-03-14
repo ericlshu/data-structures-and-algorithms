@@ -21,7 +21,7 @@ public class P0105ConstructBinaryTree
         {
             idxMap.put(inorder[i], i);
         }
-        System.out.println(buildTree(preorder, idxMap, 0, n - 1, 0, n - 1));
+        buildTree(preorder, idxMap, 0, n - 1, 0, n - 1);
         return buildTree(preorder, idxMap, 0, n - 1);
         // return buildTree(preorder, idxMap, 0, 0, n - 1);
     }
