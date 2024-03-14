@@ -456,7 +456,6 @@ public class StringTest
         System.out.println(p0394.decodeString_baoli("3[a2[c]]"));
         System.out.println(p0394.decodeString_baoli("2[abc]3[cd]ef"));
         System.out.println(p0394.decodeString_stack("abc3[cd]xyz"));
-        System.out.println(p0394.decodeString_stack("100[leetcode]"));
     }
 
     @Test
@@ -828,5 +827,12 @@ public class StringTest
         P0535EncodeAndDecodeTinyURL.Codec p0535 = new P0535EncodeAndDecodeTinyURL.Codec();
         assertEquals("https://leetcode.com/problems/design-tinyurl",
                 p0535.decode(p0535.encode("https://leetcode.com/problems/design-tinyurl")));
+    }
+
+    @Test
+    public void test2864()
+    {
+        assertEquals("001", P2864MaximumOddBinaryNumber.maximumOddBinaryNumber("010"));
+        assertEquals("1001", P2864MaximumOddBinaryNumber.maximumOddBinaryNumber("0101"));
     }
 }

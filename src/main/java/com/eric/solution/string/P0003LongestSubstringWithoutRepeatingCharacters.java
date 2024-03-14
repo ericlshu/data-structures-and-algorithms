@@ -43,13 +43,13 @@ public class P0003LongestSubstringWithoutRepeatingCharacters
             max = Math.max(max, end - start + 1);
             map.put(ch, end);
 
-            System.out.print("| end -->> " + end + "\t");
-            System.out.print("| char = " + ch + "\t");
-            System.out.print("| stat = " + start + "\t");
-            System.out.print("| maxl = " + max + "\t");
-            System.out.print("| leng = " + (end - start + 1) + "\t");
-            System.out.print("| subs = " + s.substring(start, end + 1));
-            System.out.println();
+            // System.out.print("| end -->> " + end + "\t");
+            // System.out.print("| char = " + ch + "\t");
+            // System.out.print("| stat = " + start + "\t");
+            // System.out.print("| maxl = " + max + "\t");
+            // System.out.print("| leng = " + (end - start + 1) + "\t");
+            // System.out.print("| subs = " + s.substring(start, end + 1));
+            // System.out.println();
         }
         return max;
     }
