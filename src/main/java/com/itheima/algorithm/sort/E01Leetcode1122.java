@@ -1,6 +1,6 @@
 package com.itheima.algorithm.sort;
 
-import java.util.Arrays;
+import org.junit.Assert;
 
 /*
     根据另一个数组次序排序 前提
@@ -13,7 +13,7 @@ public class E01Leetcode1122 {
         for (int i : arr1) {
             count[i]++;
         }
-        System.out.println(Arrays.toString(count));
+        // System.out.println(Arrays.toString(count));
         // 2, 4, 1
         // 1  2  3
         // 1 1 2 2 2 2 3 原始count排序
@@ -38,9 +38,7 @@ public class E01Leetcode1122 {
     public static void main(String[] args) {
         int[] arr1 = {3, 2, 1, 2, 2, 1, 2, 5, 4};
         int[] arr2 = {2, 3, 1};
-
-        E01Leetcode1122 leetcode = new E01Leetcode1122();
-        int[] result = leetcode.relativeSortArray(arr1, arr2);
-        System.out.println(Arrays.toString(result));
+        Assert.assertArrayEquals(new int[]{2, 2, 2, 2, 3, 1, 1, 4, 5},
+                new E01Leetcode1122().relativeSortArray(arr1, arr2) );
     }
 }

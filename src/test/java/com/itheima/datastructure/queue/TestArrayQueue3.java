@@ -110,7 +110,7 @@ public class TestArrayQueue3 {
         int head = 2147483640;
         int tail = 2147483647;
         tail += 5;
-        System.out.println(tail);
-        System.out.println(tail - head);
+        assertEquals(-2147483644,tail);
+        assertEquals(12,tail - head);
     }
 }

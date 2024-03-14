@@ -106,9 +106,9 @@ public class TestSinglyLinkedList {
     public void test() {
         SinglyLinkedList list = getLinkedList();
         list.loop3(value -> {
-            System.out.println("before:" + value);
+            // System.out.println("before:" + value);
         }, value -> {
-            System.out.println("after:" + value);
+            // System.out.println("after:" + value);
         });
     }
 }

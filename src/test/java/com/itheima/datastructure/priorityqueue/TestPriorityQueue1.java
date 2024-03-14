@@ -2,8 +2,6 @@ package com.itheima.datastructure.priorityqueue;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
@@ -23,9 +21,9 @@ public class TestPriorityQueue1 {
         queue.offer(new Entry("task5", 1));
         assertFalse(queue.offer(new Entry("task6", 7)));
 
-        System.out.println(Arrays.toString(queue.array));
+        // System.out.println(Arrays.toString(queue.array));
         assertEquals(5, queue.poll().priority());
-        System.out.println(Arrays.toString(queue.array));
+        // System.out.println(Arrays.toString(queue.array));
         assertEquals(4, queue.poll().priority());
         assertEquals(3, queue.poll().priority());
         assertEquals(2, queue.poll().priority());

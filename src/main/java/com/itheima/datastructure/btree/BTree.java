@@ -312,7 +312,7 @@ public class BTree {
         int i = 0;
         for (; i < node.keyNumber; i++) {
             doTravel(node.children[i]);
-            System.out.println(node.keys[i]);
+            // System.out.println(node.keys[i]);
         }
         doTravel(node.children[i]);
     }

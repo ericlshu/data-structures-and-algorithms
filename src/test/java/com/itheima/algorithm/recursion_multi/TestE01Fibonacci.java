@@ -38,6 +38,6 @@ public class TestE01Fibonacci {
         fibonacci2(40);
         a.stop();
 
-        System.out.println(a.prettyPrint());
+        // System.out.println(a.prettyPrint());
     }
 }
