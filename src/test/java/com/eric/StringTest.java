@@ -589,8 +589,8 @@ public class StringTest
     public void test2351()
     {
         P2351FirstLetterToAppearTwice p2351 = new P2351FirstLetterToAppearTwice();
-        assertEquals('c',p2351.repeatedCharacter_hash("abccbacz"));
-        assertEquals('d',p2351.repeatedCharacter_bite("abcdd"));
+        assertEquals('c', p2351.repeatedCharacter_hash("abccbacz"));
+        assertEquals('d', p2351.repeatedCharacter_bite("abcdd"));
     }
 
     @Test
@@ -642,10 +642,10 @@ public class StringTest
     public void test2287()
     {
         P2287RearrangeCharactersToMakeTargetString p2287 = new P2287RearrangeCharactersToMakeTargetString();
-        assertEquals(2,p2287.rearrangeCharacters("ilovecodingonleetcode", "code"));
-        assertEquals(2,p2287.rearrangeCharacters("cabcba", "abc"));
-        assertEquals(0,p2287.rearrangeCharacters("abc", "abcd"));
-        assertEquals(1,p2287.rearrangeCharacters("abbaccaddaeea", "aaaaa"));
+        assertEquals(2, p2287.rearrangeCharacters("ilovecodingonleetcode", "code"));
+        assertEquals(2, p2287.rearrangeCharacters("cabcba", "abc"));
+        assertEquals(0, p2287.rearrangeCharacters("abc", "abcd"));
+        assertEquals(1, p2287.rearrangeCharacters("abbaccaddaeea", "aaaaa"));
     }
 
     @Test
@@ -691,21 +691,21 @@ public class StringTest
     public void test2309()
     {
         P2309GreatestEnglishLetterInUpperAndLowerCase p2309 = new P2309GreatestEnglishLetterInUpperAndLowerCase();
-        assertEquals("E",p2309.greatestLetter_arr("lEeTcOdE"));
-        assertEquals("E",p2309.greatestLetter_hash("lEeTcOdE"));
-        assertEquals("E",p2309.greatestLetter_bit("lEeTcOdE"));
-        assertEquals("R",p2309.greatestLetter_arr("arRAzFif"));
-        assertEquals("R",p2309.greatestLetter_hash("arRAzFif"));
-        assertEquals("R",p2309.greatestLetter_bit("arRAzFif"));
+        assertEquals("E", p2309.greatestLetter_arr("lEeTcOdE"));
+        assertEquals("E", p2309.greatestLetter_hash("lEeTcOdE"));
+        assertEquals("E", p2309.greatestLetter_bit("lEeTcOdE"));
+        assertEquals("R", p2309.greatestLetter_arr("arRAzFif"));
+        assertEquals("R", p2309.greatestLetter_hash("arRAzFif"));
+        assertEquals("R", p2309.greatestLetter_bit("arRAzFif"));
     }
 
     @Test
     public void test2315()
     {
         P2315CountAsterisks p2315 = new P2315CountAsterisks();
-        assertEquals(2,p2315.countAsterisks("l|*e*et|c**o|*de|"));
-        assertEquals(0,p2315.countAsterisks("iamprogrammer"));
-        assertEquals(5,p2315.countAsterisks("yo|uar|e**|b|e***au|tifu|l"));
+        assertEquals(2, p2315.countAsterisks("l|*e*et|c**o|*de|"));
+        assertEquals(0, p2315.countAsterisks("iamprogrammer"));
+        assertEquals(5, p2315.countAsterisks("yo|uar|e**|b|e***au|tifu|l"));
     }
 
     @Test
@@ -836,5 +836,13 @@ public class StringTest
     {
         assertEquals("001", P2864MaximumOddBinaryNumber.maximumOddBinaryNumber("010"));
         assertEquals("1001", P2864MaximumOddBinaryNumber.maximumOddBinaryNumber("0101"));
+    }
+
+    @Test
+    public void test3280()
+    {
+        assertEquals("100000100000-10-11101", P3280ConvertDateToBinary.convertDateToBinary("2080-02-29"));
+        assertEquals("11101101100-1-1", P3280ConvertDateToBinary.convertDateToBinary("1900-01-01"));
+        assertEquals("100000110100-1100-11111", P3280ConvertDateToBinary.convertDateToBinary("2100-12-31"));
     }
 }
