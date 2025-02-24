@@ -1,6 +1,7 @@
 package com.eric;
 
 import com.eric.domain.CustomFunction;
+import com.eric.domain.OrderedStream;
 import com.eric.solution.array.*;
 import com.eric.solution.bs.P0852PeakIndexInAMountainArray;
 import com.eric.solution.bs.P1122RelativeSortArray;
@@ -2551,5 +2552,16 @@ public class ArrayTest
         assertEquals(2, p0188.maxProfit(2, new int[]{2, 4, 1}));
         assertEquals(7, p0188.maxProfit(2, new int[]{3, 2, 6, 5, 0, 3}));
         assertEquals(7, p0188.maxProfit(4, new int[]{3, 2, 6, 5, 0, 3}));
+    }
+
+    @Test
+    public void test1656()
+    {
+        OrderedStream os= new OrderedStream(5);
+        System.out.println(os.insert(3, "ccccc")); // 插入 (3, "ccccc")，返回 []
+        System.out.println(os.insert(1, "aaaaa")); // 插入 (1, "aaaaa")，返回 ["aaaaa"]
+        System.out.println(os.insert(2, "bbbbb")); // 插入 (2, "bbbbb")，返回 ["bbbbb", "ccccc"]
+        System.out.println(os.insert(5, "eeeee")); // 插入 (5, "eeeee")，返回 []
+        System.out.println(os.insert(4, "ddddd")); // 插入 (4, "ddddd")，返回 ["ddddd", "eeeee"]
     }
 }
