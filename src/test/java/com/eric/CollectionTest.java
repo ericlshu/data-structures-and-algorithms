@@ -618,4 +618,20 @@ public class CollectionTest
         twitter.unfollow(1, 2);                     // 用户 1 取消关注了用户 2
         assertEquals(List.of(5), twitter.getNewsFeed(1));   // 用户 1 获取推文应当返回一个列表，其中包含一个 id 为 5 的推文。因为用户 1 已经不再关注用户 2
     }
+
+    @Test
+    public void test1472()
+    {
+        P1472BrowserHistory browserHistory = new P1472BrowserHistory("leetcode.com");
+        browserHistory.visit("google.com");
+        browserHistory.visit("facebook.com");
+        browserHistory.visit("youtube.com");
+        assertEquals("facebook.com", browserHistory.back(1));
+        assertEquals("google.com", browserHistory.back(1));
+        assertEquals("facebook.com", browserHistory.forward(1));
+        browserHistory.visit("linkedin.com");
+        assertEquals("linkedin.com", browserHistory.forward(2));
+        assertEquals("google.com", browserHistory.back(2));
+        assertEquals("leetcode.com", browserHistory.back(7));
+    }
 }
