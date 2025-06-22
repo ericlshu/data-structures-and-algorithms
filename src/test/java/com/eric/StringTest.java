@@ -845,4 +845,12 @@ public class StringTest
         assertEquals("11101101100-1-1", P3280ConvertDateToBinary.convertDateToBinary("1900-01-01"));
         assertEquals("100000110100-1100-11111", P3280ConvertDateToBinary.convertDateToBinary("2100-12-31"));
     }
+
+    @Test
+    public void test2138()
+    {
+        P2138DivideAStringIntoGroupsOfSizeK p2138 = new P2138DivideAStringIntoGroupsOfSizeK();
+        assertEquals("[abc, def, ghi]", Arrays.toString(p2138.divideString("abcdefghi",3,'x')));
+        assertEquals("[abc, def, ghi, jxx]", Arrays.toString(p2138.divideString("abcdefghij",3,'x')));
+    }
 }
