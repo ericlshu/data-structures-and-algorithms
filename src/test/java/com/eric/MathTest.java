@@ -8,7 +8,8 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
@@ -39,9 +40,9 @@ public class MathTest
     public void testOfferII072()
     {
         OfferII072 obj = new OfferII072();
-       assertEquals(46340, (int) Math.floor(Math.sqrt(2147395600)));
-       assertEquals(0, obj.mySqrtBisection(0));
-       assertEquals(46340, obj.mySqrtNewton(2147395600));
+        assertEquals(46340, (int) Math.floor(Math.sqrt(2147395600)));
+        assertEquals(0, obj.mySqrtBisection(0));
+        assertEquals(46340, obj.mySqrtNewton(2147395600));
     }
 
     @Test
@@ -49,7 +50,7 @@ public class MathTest
     {
         Offer101FibonacciSequence obj = new Offer101FibonacciSequence();
         assertEquals(832040, obj.fib3(30));
-        assertEquals(832040,obj.fib4(30));
+        assertEquals(832040, obj.fib4(30));
     }
 
     @Test
@@ -195,7 +196,7 @@ public class MathTest
     {
         P1688CountOfMatchesInTournament obj = new P1688CountOfMatchesInTournament();
         int matches = obj.numberOfMatches(1000);
-        assertEquals(999,matches);
+        assertEquals(999, matches);
     }
 
     @Test
@@ -270,10 +271,10 @@ public class MathTest
     public void test1806()
     {
         P1806MinimumNumberOfOperationsToReinitializeAPermutation p1806 = new P1806MinimumNumberOfOperationsToReinitializeAPermutation();
-        assertEquals(1,p1806.reinitializePermutation_1(2));
-        assertEquals(2,p1806.reinitializePermutation_1(4));
-        assertEquals(4,p1806.reinitializePermutation_2(6));
-        assertEquals(30,p1806.reinitializePermutation_2(100));
+        assertEquals(1, p1806.reinitializePermutation_1(2));
+        assertEquals(2, p1806.reinitializePermutation_1(4));
+        assertEquals(4, p1806.reinitializePermutation_2(6));
+        assertEquals(30, p1806.reinitializePermutation_2(100));
     }
 
     @Test
@@ -323,5 +324,14 @@ public class MathTest
         assertEquals("9.261000000000001", String.valueOf(P0050Powxn.myPowIteration(2.1, 3)));
         assertEquals("0.25", String.valueOf(P0050Powxn.myPowIteration(2.0, -2)));
         assertEquals("0.0", String.valueOf(P0050Powxn.myPowIteration(2.0, -2147483648)));
+    }
+
+    @Test
+    public void test2081()
+    {
+        P2081SumOfKMirrorNumbers p2081 = new P2081SumOfKMirrorNumbers();
+        assertEquals(25, p2081.kMirror_1(2, 5));
+        assertEquals(499, p2081.kMirror_2(3, 7));
+        assertEquals(20379000, p2081.kMirror_2(7, 17));
     }
 }
