@@ -334,4 +334,12 @@ public class MathTest
         assertEquals(499, p2081.kMirror_2(3, 7));
         assertEquals(20379000, p2081.kMirror_2(7, 17));
     }
+
+    @Test
+    public void test2311()
+    {
+        P2311LongestBinarySubsequenceLessThanOrEqualToK p2311 = new P2311LongestBinarySubsequenceLessThanOrEqualToK();
+        assertEquals(5, p2311.longestSubsequence("1001010", 5));
+        assertEquals(6, p2311.longestSubsequence("00101001", 1));
+    }
 }
