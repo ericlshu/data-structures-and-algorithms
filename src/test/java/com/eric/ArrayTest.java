@@ -2558,11 +2558,11 @@ public class ArrayTest
     public void test1656()
     {
         OrderedStream os = new OrderedStream(5);
-        System.out.println(os.insert(3, "ccccc")); // 插入 (3, "ccccc")，返回 []
-        System.out.println(os.insert(1, "aaaaa")); // 插入 (1, "aaaaa")，返回 ["aaaaa"]
-        System.out.println(os.insert(2, "bbbbb")); // 插入 (2, "bbbbb")，返回 ["bbbbb", "ccccc"]
-        System.out.println(os.insert(5, "eeeee")); // 插入 (5, "eeeee")，返回 []
-        System.out.println(os.insert(4, "ddddd")); // 插入 (4, "ddddd")，返回 ["ddddd", "eeeee"]
+        assertEquals("[]",os.insert(3, "ccccc").toString());
+        assertEquals("[aaaaa]",os.insert(1, "aaaaa").toString());
+        assertEquals("[bbbbb, ccccc]",os.insert(2, "bbbbb").toString());
+        assertEquals("[]",os.insert(5, "eeeee").toString());
+        assertEquals("[ddddd, eeeee]", os.insert(4, "ddddd").toString());
     }
 
     @Test
@@ -2572,7 +2572,6 @@ public class ArrayTest
         assertEquals(5, p0594.numSubseq1(new int[]{1, 3, 2, 2, 5, 2, 3, 7}, 5));
         assertEquals(2, p0594.numSubseq1(new int[]{1, 2, 3, 4}, 2));
         assertEquals(0, p0594.numSubseq1(new int[]{1, 1, 1, 1}, 0));
-
         assertEquals(5, p0594.numSubseq2(new int[]{1, 3, 2, 2, 5, 2, 3, 7}, 5));
         assertEquals(2, p0594.numSubseq2(new int[]{1, 2, 3, 4}, 2));
         assertEquals(0, p0594.numSubseq2(new int[]{1, 1, 1, 1}, 0));
