@@ -850,7 +850,16 @@ public class StringTest
     public void test2138()
     {
         P2138DivideAStringIntoGroupsOfSizeK p2138 = new P2138DivideAStringIntoGroupsOfSizeK();
-        assertEquals("[abc, def, ghi]", Arrays.toString(p2138.divideString("abcdefghi",3,'x')));
-        assertEquals("[abc, def, ghi, jxx]", Arrays.toString(p2138.divideString("abcdefghij",3,'x')));
+        assertEquals("[abc, def, ghi]", Arrays.toString(p2138.divideString("abcdefghi", 3, 'x')));
+        assertEquals("[abc, def, ghi, jxx]", Arrays.toString(p2138.divideString("abcdefghij", 3, 'x')));
+    }
+
+    @Test
+    public void test3330()
+    {
+        P3330FindTheOriginalTypedStringI p3330 = new P3330FindTheOriginalTypedStringI();
+        assertEquals(5, p3330.possibleStringCount("abbcccc"));
+        assertEquals(1, p3330.possibleStringCount("abcd"));
+        assertEquals(4, p3330.possibleStringCount("aaaa"));
     }
 }
