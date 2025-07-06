@@ -2558,10 +2558,10 @@ public class ArrayTest
     public void test1656()
     {
         OrderedStream os = new OrderedStream(5);
-        assertEquals("[]",os.insert(3, "ccccc").toString());
-        assertEquals("[aaaaa]",os.insert(1, "aaaaa").toString());
-        assertEquals("[bbbbb, ccccc]",os.insert(2, "bbbbb").toString());
-        assertEquals("[]",os.insert(5, "eeeee").toString());
+        assertEquals("[]", os.insert(3, "ccccc").toString());
+        assertEquals("[aaaaa]", os.insert(1, "aaaaa").toString());
+        assertEquals("[bbbbb, ccccc]", os.insert(2, "bbbbb").toString());
+        assertEquals("[]", os.insert(5, "eeeee").toString());
         assertEquals("[ddddd, eeeee]", os.insert(4, "ddddd").toString());
     }
 
@@ -2575,5 +2575,27 @@ public class ArrayTest
         assertEquals(5, p0594.numSubseq2(new int[]{1, 3, 2, 2, 5, 2, 3, 7}, 5));
         assertEquals(2, p0594.numSubseq2(new int[]{1, 2, 3, 4}, 2));
         assertEquals(0, p0594.numSubseq2(new int[]{1, 1, 1, 1}, 0));
+    }
+
+    @Test
+    public void test1865()
+    {
+        P1865FindSumPairs1 findSumPairs1 = new P1865FindSumPairs1(new int[] {1, 1, 2, 2, 2, 3}, new int[] {1, 4, 5, 2, 5, 4});
+        assertEquals(8, findSumPairs1.count(7));
+        findSumPairs1.add(3, 2);
+        assertEquals(2, findSumPairs1.count(8));
+        assertEquals(1, findSumPairs1.count(4));
+        findSumPairs1.add(0, 1);
+        findSumPairs1.add(1, 1);
+        assertEquals(11, findSumPairs1.count(7));
+
+        P1865FindSumPairs2 findSumPairs2 = new P1865FindSumPairs2(new int[] {1, 1, 2, 2, 2, 3}, new int[] {1, 4, 5, 2, 5, 4});
+        assertEquals(8, findSumPairs2.count(7));
+        findSumPairs2.add(3, 2);
+        assertEquals(2, findSumPairs2.count(8));
+        assertEquals(1, findSumPairs2.count(4));
+        findSumPairs2.add(0, 1);
+        findSumPairs2.add(1, 1);
+        assertEquals(11, findSumPairs2.count(7));
     }
 }
