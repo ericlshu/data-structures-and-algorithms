@@ -2580,7 +2580,7 @@ public class ArrayTest
     @Test
     public void test1865()
     {
-        P1865FindSumPairs1 findSumPairs1 = new P1865FindSumPairs1(new int[] {1, 1, 2, 2, 2, 3}, new int[] {1, 4, 5, 2, 5, 4});
+        P1865FindSumPairs1 findSumPairs1 = new P1865FindSumPairs1(new int[]{1, 1, 2, 2, 2, 3}, new int[]{1, 4, 5, 2, 5, 4});
         assertEquals(8, findSumPairs1.count(7));
         findSumPairs1.add(3, 2);
         assertEquals(2, findSumPairs1.count(8));
@@ -2589,7 +2589,7 @@ public class ArrayTest
         findSumPairs1.add(1, 1);
         assertEquals(11, findSumPairs1.count(7));
 
-        P1865FindSumPairs2 findSumPairs2 = new P1865FindSumPairs2(new int[] {1, 1, 2, 2, 2, 3}, new int[] {1, 4, 5, 2, 5, 4});
+        P1865FindSumPairs2 findSumPairs2 = new P1865FindSumPairs2(new int[]{1, 1, 2, 2, 2, 3}, new int[]{1, 4, 5, 2, 5, 4});
         assertEquals(8, findSumPairs2.count(7));
         findSumPairs2.add(3, 2);
         assertEquals(2, findSumPairs2.count(8));
@@ -2597,5 +2597,13 @@ public class ArrayTest
         findSumPairs2.add(0, 1);
         findSumPairs2.add(1, 1);
         assertEquals(11, findSumPairs2.count(7));
+    }
+
+    @Test
+    public void test2410()
+    {
+        P2410MaximumMatchingOfPlayersWithTrainers p2410 = new P2410MaximumMatchingOfPlayersWithTrainers();
+        assertEquals(2, p2410.matchPlayersAndTrainers(new int[]{4, 7, 9}, new int[]{8, 2, 5, 8}));
+        assertEquals(1, p2410.matchPlayersAndTrainers(new int[]{1, 1, 1}, new int[]{10}));
     }
 }
